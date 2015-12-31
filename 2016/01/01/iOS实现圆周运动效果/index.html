@@ -35,7 +35,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="圆周运动," />
 
 
 
@@ -51,15 +51,16 @@
 
 
 
-<meta name="description" content="彭天浩胡说八道的地方">
-<meta property="og:type" content="website">
-<meta property="og:title" content="永远不会被发现的仓鼠柜">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="刚刚基于iOS用定时器写了一个简单的圆周运动，这里写一下实现">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS实现圆周运动效果">
+<meta property="og:url" content="http://yoursite.com/2016/01/01/iOS实现圆周运动效果/index.html">
 <meta property="og:site_name" content="永远不会被发现的仓鼠柜">
-<meta property="og:description" content="彭天浩胡说八道的地方">
+<meta property="og:description" content="刚刚基于iOS用定时器写了一个简单的圆周运动，这里写一下实现">
+<meta property="og:updated_time" content="2015-12-31T16:53:09.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="永远不会被发现的仓鼠柜">
-<meta name="twitter:description" content="彭天浩胡说八道的地方">
+<meta name="twitter:title" content="iOS实现圆周运动效果">
+<meta name="twitter:description" content="刚刚基于iOS用定时器写了一个简单的圆周运动，这里写一下实现">
 
 
 
@@ -71,7 +72,7 @@
   };
 </script>
 
-  <title> 永远不会被发现的仓鼠柜 </title>
+  <title> iOS实现圆周运动效果 | 永远不会被发现的仓鼠柜 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -102,9 +103,7 @@
 
 
 
-  <div class="container one-column 
-   page-home 
-">
+  <div class="container one-column page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -222,24 +221,9 @@
       <div class="main-inner">
         <div id="content" class="content">
           
-  <section id="posts" class="posts-expand">
 
+  <div id="posts" class="posts-expand">
     
-
-    
-    
-      
-      
-        
-        
-        
-      
-
-      
-    
-
-    
-      
 
   
   
@@ -259,10 +243,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2016/01/01/iOS实现圆周运动效果/" itemprop="url">
-                  iOS实现圆周运动效果
-                </a>
+                iOS实现圆周运动效果
               
             
           </h1>
@@ -317,248 +298,73 @@
       
 
       
-        
-          <p>刚刚基于iOS用定时器写了一个简单的圆周运动，这里写一下实现</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/01/01/iOS实现圆周运动效果/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
+        <span itemprop="articleBody"><p>刚刚基于iOS用定时器写了一个简单的圆周运动，这里写一下实现</p>
+<a id="more"></a>
+<p>##记录下360个sin/cos值</p>
+<p>像这样</p>
+<pre><code>for(int i=0;i&lt;360;i++){
+    array[0][i]=sin(PI/180*i);
+    array[1][i]=cos(PI/180*i);
+}
+</code></pre><p>##设置定时器</p>
+<p>设置每0.01秒执行一次<code>task</code>方法</p>
+<pre><code>NSDate *scheduledTime = [NSDate dateWithTimeIntervalSinceNow:0];
+NSString *customUserObject = @&quot;To demo userInfo&quot;;
+NSTimer *timer = [[NSTimer alloc] initWithFireDate:scheduledTime
+                                          interval:0.00000001
+                                            target:self
+                                          selector:@selector(task)
+                                          userInfo:customUserObject
+                                           repeats:YES];
+NSRunLoop *runLoop = [NSRunLoop currentRunLoop];
+[runLoop addTimer:timer forMode:NSDefaultRunLoopMode];
+</code></pre><h2 id="task_u65B9_u6CD5_u8D1F_u8D23_u6539_u53D8_u5706_u7684_u4F4D_u7F6E"><a href="#task_u65B9_u6CD5_u8D1F_u8D23_u6539_u53D8_u5706_u7684_u4F4D_u7F6E" class="headerlink" title="task方法负责改变圆的位置"></a><code>task</code>方法负责改变圆的位置</h2><pre><code>-(void)task{
+_Circle.frame = CGRectMake(250+array[1][n]*R,250+array[0][n]*R, cW, cH);
+n++;
+n%=360;
+NSLog(@&quot;%f %f&quot;,_Circle.frame.origin.x,_Circle.frame.origin.y);
+}
+</code></pre><p><a href="https://github.com/pthtc/circular-motion-iOS" target="_blank" rel="external">点击这里下载demo</a></p>
+</span>
       
     </div>
 
     <footer class="post-footer">
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2015/12/26/详解LL-1-文法的判断/" itemprop="url">
-                  详解LL(1)文法的判断
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            发表于
-            <time itemprop="dateCreated" datetime="2015-12-26T16:20:16+08:00" content="2015-12-26">
-              2015-12-26
-            </time>
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/编译原理/" itemprop="url" rel="index">
-                    <span itemprop="name">编译原理</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
+            <a href="/tags/圆周运动/" rel="tag">#圆周运动</a>
           
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2015/12/26/详解LL-1-文法的判断/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/26/详解LL-1-文法的判断/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
         </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
       
 
       
-        
-          <blockquote>
-<p>LL（1）文法：第一个L代表从左向右扫描输入符号串，第二个L代表产生最左推导，1代表在分析过程中执行每一步推导都要向前查看一个输入符号——当前正在处理的输入符号</p>
-</blockquote>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/12/26/详解LL-1-文法的判断/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/12/26/详解LL-1-文法的判断/" rel="next" title="详解LL(1)文法的判断">
+                <i class="fa fa-chevron-left"></i> 详解LL(1)文法的判断
+              </a>
+            
           </div>
-        
-      
-    </div>
 
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+          <div class="post-nav-prev post-nav-item">
             
-            
-              
-                
-                <a class="post-title-link" href="/2015/12/20/记一次创业失败/" itemprop="url">
-                  记一次创业失败
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            发表于
-            <time itemprop="dateCreated" datetime="2015-12-20T18:00:04+08:00" content="2015-12-20">
-              2015-12-20
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/创业/" itemprop="url" rel="index">
-                    <span itemprop="name">创业</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2015/12/20/记一次创业失败/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/20/记一次创业失败/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
       
 
       
-        
-          <blockquote>
-<p>失败了，你可能会失望；但如果不去尝试，那么你注定要失败<br>—— 贝弗利·西尔斯</p>
-</blockquote>
-<p>开始写这篇文章的时候，电脑正压在蓝白条纹的床单上。零点已过，这算是散心旅行的最后一天。</p>
-<p>说起失败，人们总是想起美丽到不自然的鲜血，重重倒下后的尘土飞扬以及声嘶力竭的呐喊。但是，事情往往并非如此。就在不久前，我们的留学app项目失败了。</p>
-<p>一次无声无息的创业失败，承认起来并没有想象中那么困难。既然是失败，总能从中总结出点什么。然而草草理一下，发现尽是些老生常谈的琐碎，然而只有亲身体会之后，才能体会。</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/12/20/记一次创业失败/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
 
-  </section>
-
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
         </div>
@@ -567,6 +373,14 @@
 
 
         
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/01/01/iOS实现圆周运动效果/"
+           data-title="iOS实现圆周运动效果" data-url="http://yoursite.com/2016/01/01/iOS实现圆周运动效果/">
+      </div>
+    
+  </div>
+
 
       </div>
 
@@ -587,8 +401,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" src="/images/avatar.jpg" alt="彭天浩" itemprop="image"/>
           <p class="site-author-name" itemprop="name">彭天浩</p>
@@ -651,6 +474,23 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#task_u65B9_u6CD5_u8D1F_u8D23_u6539_u53D8_u5706_u7684_u4F4D_u7F6E"><span class="nav-number">1.</span> <span class="nav-text">task方法负责改变圆的位置</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
       
 
     </div>
@@ -738,6 +578,167 @@
   <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
 
   
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.2" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    motionMiddleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+      if (CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
 
   <script type="text/javascript" src="/js/bootstrap.js"></script>
 
