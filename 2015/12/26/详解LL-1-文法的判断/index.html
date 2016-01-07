@@ -57,7 +57,7 @@
 <meta property="og:url" content="http://yoursite.com/2015/12/26/详解LL-1-文法的判断/index.html">
 <meta property="og:site_name" content="永远不会被发现的仓鼠柜">
 <meta property="og:description" content="LL（1）文法：第一个L代表从左向右扫描输入符号串，第二个L代表产生最左推导，1代表在分析过程中执行每一步推导都要向前查看一个输入符号——当前正在处理的输入符号">
-<meta property="og:updated_time" content="2015-12-26T13:16:20.000Z">
+<meta property="og:updated_time" content="2016-01-07T14:58:23.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="详解LL(1)文法的判断">
 <meta name="twitter:description" content="LL（1）文法：第一个L代表从左向右扫描输入符号串，第二个L代表产生最左推导，1代表在分析过程中执行每一步推导都要向前查看一个输入符号——当前正在处理的输入符号">
@@ -302,16 +302,16 @@
 <p>LL（1）文法：第一个L代表从左向右扫描输入符号串，第二个L代表产生最左推导，1代表在分析过程中执行每一步推导都要向前查看一个输入符号——当前正在处理的输入符号</p>
 </blockquote>
 <a id="more"></a>
-<h2 id="u65B9_u6CD5"><a href="#u65B9_u6CD5" class="headerlink" title="方法"></a>方法</h2><h3 id="1-__u5224_u65ADFirst_u96C6_28_u5224_u65AD_u7684_u662F_u53F3_u90E8_u7684First_u96C6_29"><a href="#1-__u5224_u65ADFirst_u96C6_28_u5224_u65AD_u7684_u662F_u53F3_u90E8_u7684First_u96C6_29" class="headerlink" title="1. 判断First集(判断的是右部的First集)"></a>1. <strong>判断First集(判断的是右部的First集)</strong></h3><pre><code>**直接收取：**对形如U－&gt;a…的产生式（其中a是终结符），把a收入到First(U)中
+<h2 id="u65B9_u6CD5"><a href="#u65B9_u6CD5" class="headerlink" title="方法"></a>方法</h2><h3 id="1-__u5224_u65ADFirst_u96C6_28_u5224_u65AD_u7684_u662F_u53F3_u90E8_u7684First_u96C6_29"><a href="#1-__u5224_u65ADFirst_u96C6_28_u5224_u65AD_u7684_u662F_u53F3_u90E8_u7684First_u96C6_29" class="headerlink" title="1. 判断First集(判断的是右部的First集)"></a>1. <strong>判断First集(判断的是右部的First集)</strong></h3><pre><code>直接收取对形如U－&gt;a…的产生式（其中a是终结符），把a收入到First(U)中
 
-**反复传送：**对形入U－&gt;P…的产生式（其中P是非终结符），应把First(P)中的全部内容传送到First(U)中【意思就是只需要把第一个非终结符的First集传过去~这个地方是要注意的地方，也是难点】
-</code></pre><h3 id="2-__u5224_u65ADFollow_u96C6_28_u5224_u65AD_u7684_u662F_u5DE6_u90E8_u7684Follow_u96C6_u5408_29"><a href="#2-__u5224_u65ADFollow_u96C6_28_u5224_u65AD_u7684_u662F_u5DE6_u90E8_u7684Follow_u96C6_u5408_29" class="headerlink" title="2. 判断Follow集(判断的是左部的Follow集合)"></a>2. <strong>判断Follow集(判断的是左部的Follow集合)</strong></h3><pre><code>**直接收取：**注意产生式右部的每一个形如“…Ua…”的组合，把a直接收入到Follow(U)中。因a是紧跟在U后的终结符。
+反复传送：对形入U－&gt;P…的产生式（其中P是非终结符），应把First(P)中的全部内容传送到First(U)中【意思就是只需要把第一个非终结符的First集传过去~这个地方是要注意的地方，也是难点】
+</code></pre><h3 id="2-__u5224_u65ADFollow_u96C6_28_u5224_u65AD_u7684_u662F_u5DE6_u90E8_u7684Follow_u96C6_u5408_29"><a href="#2-__u5224_u65ADFollow_u96C6_28_u5224_u65AD_u7684_u662F_u5DE6_u90E8_u7684Follow_u96C6_u5408_29" class="headerlink" title="2. 判断Follow集(判断的是左部的Follow集合)"></a>2. <strong>判断Follow集(判断的是左部的Follow集合)</strong></h3><pre><code>直接收取：注意产生式右部的每一个形如“…Ua…”的组合，把a直接收入到Follow(U)中。因a是紧跟在U后的终结符。
 
-**直接收取：**对形如“…UP…”(P是非终结符)的组合，把First(P)直接收入到Follow(U)中【在这里，如果First（P）中有空字符，那么就要把左部（假设是S）的Follow（S）送入到Follow（U）中。还有就是Follow集中是没有空字符的】。
+直接收取：对形如“…UP…”(P是非终结符)的组合，把First(P)直接收入到Follow(U)中【在这里，如果First（P）中有空字符，那么就要把左部（假设是S）的Follow（S）送入到Follow（U）中。还有就是Follow集中是没有空字符的】。
 
-**直接收取：**若S－&gt;…U，即以U结尾，则井∈Follow(U)
+直接收取：若S－&gt;…U，即以U结尾，则井∈Follow(U)
 
-**反复传送：**对形如U－&gt;…P的产生式（其中P是非终结符），应把Follow(U)中的全部内容传送到Follow(P)中。
+反复传送：对形如U－&gt;…P的产生式（其中P是非终结符），应把Follow(U)中的全部内容传送到Follow(P)中。
 </code></pre><h3 id="3-__u5224_u65ADSelect_u96C6"><a href="#3-__u5224_u65ADSelect_u96C6" class="headerlink" title="3. 判断Select集"></a>3. <strong>判断Select集</strong></h3><pre><code>若α不能推出ε，则select（A—&gt;α） = first（α）。
 
 若α能推出ε，则select（A—&gt;α）= first（α）∪ follow(A)。
