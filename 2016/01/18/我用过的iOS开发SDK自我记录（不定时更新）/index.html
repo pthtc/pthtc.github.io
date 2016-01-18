@@ -35,7 +35,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="编译原理," />
+  <meta name="keywords" content="SDK,iOS,mysql," />
 
 
 
@@ -51,16 +51,16 @@
 
 
 
-<meta name="description" content="LL（1）文法：第一个L代表从左向右扫描输入符号串，第二个L代表产生最左推导，1代表在分析过程中执行每一步推导都要向前查看一个输入符号——当前正在处理的输入符号">
+<meta name="description" content="记录好用的SDK，备忘">
 <meta property="og:type" content="article">
-<meta property="og:title" content="详解LL(1)文法的判断">
-<meta property="og:url" content="http://yoursite.com/2015/12/26/详解LL-1-文法的判断/index.html">
+<meta property="og:title" content="我用过的iOS开发SDK自我记录（不定时更新）">
+<meta property="og:url" content="http://yoursite.com/2016/01/18/我用过的iOS开发SDK自我记录（不定时更新）/index.html">
 <meta property="og:site_name" content="永远不会被发现的仓鼠柜">
-<meta property="og:description" content="LL（1）文法：第一个L代表从左向右扫描输入符号串，第二个L代表产生最左推导，1代表在分析过程中执行每一步推导都要向前查看一个输入符号——当前正在处理的输入符号">
-<meta property="og:updated_time" content="2016-01-07T14:58:31.000Z">
+<meta property="og:description" content="记录好用的SDK，备忘">
+<meta property="og:updated_time" content="2016-01-18T14:18:21.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="详解LL(1)文法的判断">
-<meta name="twitter:description" content="LL（1）文法：第一个L代表从左向右扫描输入符号串，第二个L代表产生最左推导，1代表在分析过程中执行每一步推导都要向前查看一个输入符号——当前正在处理的输入符号">
+<meta name="twitter:title" content="我用过的iOS开发SDK自我记录（不定时更新）">
+<meta name="twitter:description" content="记录好用的SDK，备忘">
 
 
 
@@ -72,7 +72,7 @@
   };
 </script>
 
-  <title> 详解LL(1)文法的判断 | 永远不会被发现的仓鼠柜 </title>
+  <title> 我用过的iOS开发SDK自我记录（不定时更新） | 永远不会被发现的仓鼠柜 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -243,7 +243,7 @@
             
             
               
-                详解LL(1)文法的判断
+                我用过的iOS开发SDK自我记录（不定时更新）
               
             
           </h1>
@@ -252,8 +252,8 @@
         <div class="post-meta">
           <span class="post-time">
             发表于
-            <time itemprop="dateCreated" datetime="2015-12-26T16:20:16+08:00" content="2015-12-26">
-              2015-12-26
+            <time itemprop="dateCreated" datetime="2016-01-18T22:14:25+08:00" content="2016-01-18">
+              2016-01-18
             </time>
           </span>
 
@@ -262,8 +262,8 @@
               &nbsp; | &nbsp; 分类于
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/编译原理/" itemprop="url" rel="index">
-                    <span itemprop="name">编译原理</span>
+                  <a href="/categories/iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS</span>
                   </a>
                 </span>
 
@@ -278,8 +278,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/12/26/详解LL-1-文法的判断/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/26/详解LL-1-文法的判断/" itemprop="commentsCount"></span>
+                <a href="/2016/01/18/我用过的iOS开发SDK自我记录（不定时更新）/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/18/我用过的iOS开发SDK自我记录（不定时更新）/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -299,66 +299,15 @@
 
       
         <span itemprop="articleBody"><blockquote>
-<p>LL（1）文法：第一个L代表从左向右扫描输入符号串，第二个L代表产生最左推导，1代表在分析过程中执行每一步推导都要向前查看一个输入符号——当前正在处理的输入符号</p>
+<p>记录好用的SDK，备忘</p>
 </blockquote>
 <a id="more"></a>
-<h2 id="u65B9_u6CD5"><a href="#u65B9_u6CD5" class="headerlink" title="方法"></a>方法</h2><h3 id="1-__u5224_u65ADFirst_u96C6_28_u5224_u65AD_u7684_u662F_u53F3_u90E8_u7684First_u96C6_29"><a href="#1-__u5224_u65ADFirst_u96C6_28_u5224_u65AD_u7684_u662F_u53F3_u90E8_u7684First_u96C6_29" class="headerlink" title="1. 判断First集(判断的是右部的First集)"></a>1. <strong>判断First集(判断的是右部的First集)</strong></h3><pre><code>直接收取对形如U－&gt;a…的产生式（其中a是终结符），把a收入到First(U)中
-
-反复传送：对形入U－&gt;P…的产生式（其中P是非终结符），应把First(P)中的全部内容传送到First(U)中【意思就是只需要把第一个非终结符的First集传过去~这个地方是要注意的地方，也是难点】
-</code></pre><h3 id="2-__u5224_u65ADFollow_u96C6_28_u5224_u65AD_u7684_u662F_u5DE6_u90E8_u7684Follow_u96C6_u5408_29"><a href="#2-__u5224_u65ADFollow_u96C6_28_u5224_u65AD_u7684_u662F_u5DE6_u90E8_u7684Follow_u96C6_u5408_29" class="headerlink" title="2. 判断Follow集(判断的是左部的Follow集合)"></a>2. <strong>判断Follow集(判断的是左部的Follow集合)</strong></h3><pre><code>直接收取：注意产生式右部的每一个形如“…Ua…”的组合，把a直接收入到Follow(U)中。因a是紧跟在U后的终结符。
-
-直接收取：对形如“…UP…”(P是非终结符)的组合，把First(P)直接收入到Follow(U)中【在这里，如果First（P）中有空字符，那么就要把左部（假设是S）的Follow（S）送入到Follow（U）中。还有就是Follow集中是没有空字符的】。
-
-直接收取：若S－&gt;…U，即以U结尾，则井∈Follow(U)
-
-反复传送：对形如U－&gt;…P的产生式（其中P是非终结符），应把Follow(U)中的全部内容传送到Follow(P)中。
-</code></pre><h3 id="3-__u5224_u65ADSelect_u96C6"><a href="#3-__u5224_u65ADSelect_u96C6" class="headerlink" title="3. 判断Select集"></a>3. <strong>判断Select集</strong></h3><pre><code>若α不能推出ε，则select（A—&gt;α） = first（α）。
-
-若α能推出ε，则select（A—&gt;α）= first（α）∪ follow(A)。
-</code></pre><h3 id="4-__u68C0_u9A8C_u76F8_u540C_u975E_u7EC8_u7ED3_u7B26_u7684Select_u662F_u5426_u76F8_u540C"><a href="#4-__u68C0_u9A8C_u76F8_u540C_u975E_u7EC8_u7ED3_u7B26_u7684Select_u662F_u5426_u76F8_u540C" class="headerlink" title="4. 检验相同非终结符的Select是否相同"></a>4. <strong>检验相同非终结符的Select是否相同</strong></h3><pre><code>如果都相同，则为LL(1)文法
-如果不同，则不是
-</code></pre><h2 id="u4F8B_u9898"><a href="#u4F8B_u9898" class="headerlink" title="例题"></a>例题</h2><pre><code>若文法G[S]为
-S-&gt;AB
-S-&gt;bC
-A-&gt;ε
-A-&gt;b
-B-&gt;ε
-B-&gt;aD
-C-&gt;AD
-C-&gt;b
-D-&gt;aS
-D-&gt;c
-</code></pre><h3 id="1-__u6C42First_u96C6"><a href="#1-__u6C42First_u96C6" class="headerlink" title="1. 求First集"></a>1. 求First集</h3><pre><code>First(AB) = {b,a,ε}
-
-First(bC) = {b}
-
-First(ε) = {ε}
-
-First(b) = {b}
-
-First(aD) = {a}
-
-First(AD) = {a,b,c}
-
-First(aS) = {a}
-
-First(c) = {c}
-</code></pre><h3 id="2-__u6C42Follow_u96C6"><a href="#2-__u6C42Follow_u96C6" class="headerlink" title="2. 求Follow集"></a>2. 求Follow集</h3><pre><code>Follow(S) = {井}
-
-Follow(A) = First(B) ∪ First(D) ∪ Follow(S)= {a,c,井}
-
-Follow(B) = {井}
-
-Follow(C) = {井}
-
-Follow(D) = {井}
-</code></pre><h3 id="3-__u6C42Select_u96C6"><a href="#3-__u6C42Select_u96C6" class="headerlink" title="3. 求Select集"></a>3. 求Select集</h3><pre><code>Select(S-&gt;AB) = First(AB) ∪ Follow(s) = {a,b,井,ε}
-Select(S-&gt;bC) = First(bC) = {b}
-
-【到此已不需要继续求下去了】
-</code></pre><h3 id="4-__u6BD4_u8F83"><a href="#4-__u6BD4_u8F83" class="headerlink" title="4. 比较"></a>4. 比较</h3><pre><code>∵Select(S-&gt;AB)≠Select(S-&gt;bC)
-∴不是LL(1)文法
-</code></pre></span>
+<h2 id="u7F51_u7EDC_u8FDE_u63A5"><a href="#u7F51_u7EDC_u8FDE_u63A5" class="headerlink" title="网络连接"></a>网络连接</h2><p><a href="https://github.com/AFNetworking/AFNetworking" target="_blank" rel="external">AFNetworking</a></p>
+<h2 id="u56FE_u50CF_u5904_u7406"><a href="#u56FE_u50CF_u5904_u7406" class="headerlink" title="图像处理"></a>图像处理</h2><p><a href="http://tusdk.com" target="_blank" rel="external">TUSDK(滤镜)</a></p>
+<p><a href="http://www.dejohndong.com/2015/02/25/实现iOS的瀑布流：DDCollectionViewFlowLayout/" target="_blank" rel="external">瀑布流</a></p>
+<h2 id="u5730_u56FE"><a href="#u5730_u56FE" class="headerlink" title="地图"></a>地图</h2><p><a href="http://lbs.amap.com" target="_blank" rel="external">高德地图SDK</a></p>
+<h2 id="mysql_u8FDE_u63A5"><a href="#mysql_u8FDE_u63A5" class="headerlink" title="mysql连接"></a>mysql连接</h2><p><a href="https://github.com/thrivesmart/just-mysql-example-mac-app-objective-c-xcode" target="_blank" rel="external">在osx上连接mysql</a></p>
+</span>
       
     </div>
 
@@ -366,7 +315,11 @@ Select(S-&gt;bC) = First(bC) = {b}
       
         <div class="post-tags">
           
-            <a href="/tags/编译原理/" rel="tag">#编译原理</a>
+            <a href="/tags/SDK/" rel="tag">#SDK</a>
+          
+            <a href="/tags/iOS/" rel="tag">#iOS</a>
+          
+            <a href="/tags/mysql/" rel="tag">#mysql</a>
           
         </div>
       
@@ -375,17 +328,13 @@ Select(S-&gt;bC) = First(bC) = {b}
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/12/20/记一次创业失败/" rel="next" title="记一次创业失败">
-                <i class="fa fa-chevron-left"></i> 记一次创业失败
+              <a href="/2016/01/11/远离百度，我们有更好的/" rel="next" title="远离百度，我们有更好的">
+                <i class="fa fa-chevron-left"></i> 远离百度，我们有更好的
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/01/01/iOS实现圆周运动效果/" rel="prev" title="iOS实现圆周运动效果">
-                iOS实现圆周运动效果 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -412,8 +361,8 @@ Select(S-&gt;bC) = First(bC) = {b}
         
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2015/12/26/详解LL-1-文法的判断/"
-           data-title="详解LL(1)文法的判断" data-url="http://yoursite.com/2015/12/26/详解LL-1-文法的判断/">
+      <div class="ds-thread" data-thread-key="2016/01/18/我用过的iOS开发SDK自我记录（不定时更新）/"
+           data-title="我用过的iOS开发SDK自我记录（不定时更新）" data-url="http://yoursite.com/2016/01/18/我用过的iOS开发SDK自我记录（不定时更新）/">
       </div>
     
   </div>
@@ -521,7 +470,7 @@ Select(S-&gt;bC) = First(bC) = {b}
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#u65B9_u6CD5"><span class="nav-number">1.</span> <span class="nav-text">方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-__u5224_u65ADFirst_u96C6_28_u5224_u65AD_u7684_u662F_u53F3_u90E8_u7684First_u96C6_29"><span class="nav-number">1.1.</span> <span class="nav-text">1. 判断First集(判断的是右部的First集)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-__u5224_u65ADFollow_u96C6_28_u5224_u65AD_u7684_u662F_u5DE6_u90E8_u7684Follow_u96C6_u5408_29"><span class="nav-number">1.2.</span> <span class="nav-text">2. 判断Follow集(判断的是左部的Follow集合)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-__u5224_u65ADSelect_u96C6"><span class="nav-number">1.3.</span> <span class="nav-text">3. 判断Select集</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-__u68C0_u9A8C_u76F8_u540C_u975E_u7EC8_u7ED3_u7B26_u7684Select_u662F_u5426_u76F8_u540C"><span class="nav-number">1.4.</span> <span class="nav-text">4. 检验相同非终结符的Select是否相同</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u4F8B_u9898"><span class="nav-number">2.</span> <span class="nav-text">例题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-__u6C42First_u96C6"><span class="nav-number">2.1.</span> <span class="nav-text">1. 求First集</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-__u6C42Follow_u96C6"><span class="nav-number">2.2.</span> <span class="nav-text">2. 求Follow集</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-__u6C42Select_u96C6"><span class="nav-number">2.3.</span> <span class="nav-text">3. 求Select集</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-__u6BD4_u8F83"><span class="nav-number">2.4.</span> <span class="nav-text">4. 比较</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#u7F51_u7EDC_u8FDE_u63A5"><span class="nav-number">1.</span> <span class="nav-text">网络连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u56FE_u50CF_u5904_u7406"><span class="nav-number">2.</span> <span class="nav-text">图像处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u5730_u56FE"><span class="nav-number">3.</span> <span class="nav-text">地图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mysql_u8FDE_u63A5"><span class="nav-number">4.</span> <span class="nav-text">mysql连接</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
