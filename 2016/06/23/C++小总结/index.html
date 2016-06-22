@@ -51,34 +51,34 @@
 
 
 
-<meta name="description" content="const定义一个常数
+<meta name="description" content="来自沈逸云的博客
+
+const定义一个常数
 1const int Max = 1000;
 保护被修饰的东西
 123void func(const int x)&amp;#123;    cout &amp;lt;&amp;lt; x;&amp;#125;
-指针函数返回一个指针的函数
-函数指针指向一个函数的指针 1.指向的函数的返回类型要与声明的函数指针一致 2.指向的函数的参数类型及个数要与声明的函数指针一致
-1234567891011double">
+指针函数返回一个指针的函数">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C++小总结">
 <meta property="og:url" content="http://yoursite.com/2016/06/23/C++小总结/index.html">
 <meta property="og:site_name" content="永远不会被发现的仓鼠柜">
-<meta property="og:description" content="const定义一个常数
+<meta property="og:description" content="来自沈逸云的博客
+
+const定义一个常数
 1const int Max = 1000;
 保护被修饰的东西
 123void func(const int x)&amp;#123;    cout &amp;lt;&amp;lt; x;&amp;#125;
-指针函数返回一个指针的函数
-函数指针指向一个函数的指针 1.指向的函数的返回类型要与声明的函数指针一致 2.指向的函数的参数类型及个数要与声明的函数指针一致
-1234567891011double">
-<meta property="og:updated_time" content="2016-06-22T16:50:58.000Z">
+指针函数返回一个指针的函数">
+<meta property="og:updated_time" content="2016-06-22T16:53:58.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C++小总结">
-<meta name="twitter:description" content="const定义一个常数
+<meta name="twitter:description" content="来自沈逸云的博客
+
+const定义一个常数
 1const int Max = 1000;
 保护被修饰的东西
 123void func(const int x)&amp;#123;    cout &amp;lt;&amp;lt; x;&amp;#125;
-指针函数返回一个指针的函数
-函数指针指向一个函数的指针 1.指向的函数的返回类型要与声明的函数指针一致 2.指向的函数的参数类型及个数要与声明的函数指针一致
-1234567891011double">
+指针函数返回一个指针的函数">
 
 
 
@@ -316,11 +316,15 @@
       
 
       
-        <span itemprop="articleBody"><h1 id="const"><a href="#const" class="headerlink" title="const"></a>const</h1><p>定义一个常数</p>
+        <span itemprop="articleBody"><blockquote>
+<p>来自沈逸云的博客</p>
+</blockquote>
+<h1 id="const"><a href="#const" class="headerlink" title="const"></a>const</h1><p>定义一个常数</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> Max = <span class="number">1000</span>;</span><br></pre></td></tr></table></figure>
 <p>保护被修饰的东西</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">func</span><span class="params">(<span class="keyword">const</span> <span class="keyword">int</span> x)</span></span>&#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; x;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h1 id="u6307_u9488_u51FD_u6570"><a href="#u6307_u9488_u51FD_u6570" class="headerlink" title="指针函数"></a>指针函数</h1><p>返回一个指针的函数</p>
+<a id="more"></a>
 <h1 id="u51FD_u6570_u6307_u9488"><a href="#u51FD_u6570_u6307_u9488" class="headerlink" title="函数指针"></a>函数指针</h1><p>指向一个函数的指针 1.指向的函数的返回类型要与声明的函数指针一致 2.指向的函数的参数类型及个数要与声明的函数指针一致</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">func</span><span class="params">(<span class="keyword">double</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x * x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">double</span> (*pfunc)(<span class="keyword">double</span> x);</span><br><span class="line">    pfunc = func;</span><br><span class="line">    (*pfunc)(<span class="number">2</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>只要把函数入口的地址给函数指针就可以用函数指针执行函数了(函数名本来就是一个地址，普通函数的调用既可以 函数名(参数列表) 也可以 (*函数名)(参数列表) 只是后者不太用)。</p>
