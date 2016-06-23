@@ -1,0 +1,922 @@
+<!doctype html>
+<html class="theme-next   use-motion ">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="汇编," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.2" />
+
+
+
+
+
+
+<meta name="description" content="来自沈逸云的博客
+
+寄存器8086寄存器分为8个通用寄存器，4个段寄存器，1个标志寄存器，1个指令寄存器, 均为16位 2字节AX累加器BX基址寄存器CX计数器DX数据寄存器SI源地址寄存器DI目的地址寄存器BP基址指针SP堆栈指针
+CS代码段寄存器SS堆栈段寄存器DS数据段寄存器ES附加段寄存器
+FLAGS标志寄存器IP指令指针  专用寄存器，具有自增功能
+SP和BP均可于SS联用，SP自增自减">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++小总结">
+<meta property="og:url" content="http://yoursite.com/2016/06/23/汇编小总结/index.html">
+<meta property="og:site_name" content="永远不会被发现的仓鼠柜">
+<meta property="og:description" content="来自沈逸云的博客
+
+寄存器8086寄存器分为8个通用寄存器，4个段寄存器，1个标志寄存器，1个指令寄存器, 均为16位 2字节AX累加器BX基址寄存器CX计数器DX数据寄存器SI源地址寄存器DI目的地址寄存器BP基址指针SP堆栈指针
+CS代码段寄存器SS堆栈段寄存器DS数据段寄存器ES附加段寄存器
+FLAGS标志寄存器IP指令指针  专用寄存器，具有自增功能
+SP和BP均可于SS联用，SP自增自减">
+<meta property="og:updated_time" content="2016-06-23T07:49:35.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="C++小总结">
+<meta name="twitter:description" content="来自沈逸云的博客
+
+寄存器8086寄存器分为8个通用寄存器，4个段寄存器，1个标志寄存器，1个指令寄存器, 均为16位 2字节AX累加器BX基址寄存器CX计数器DX数据寄存器SI源地址寄存器DI目的地址寄存器BP基址指针SP堆栈指针
+CS代码段寄存器SS堆栈段寄存器DS数据段寄存器ES附加段寄存器
+FLAGS标志寄存器IP指令指针  专用寄存器，具有自增功能
+SP和BP均可于SS联用，SP自增自减">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: 'post',
+    motion: true
+  };
+</script>
+
+  <title> C++小总结 | 永远不会被发现的仓鼠柜 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?73e01b0dee523c22137e45cf054e9160";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">永远不会被发现的仓鼠柜</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu menu-left">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <form class="site-search-form">
+    <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+  </form>
+
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'gWj7XKQowsjQsmRgXg7t','2.0.0');
+</script>
+
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content">
+          
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                C++小总结
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2016-06-23T15:49:13+08:00" content="2016-06-23">
+              2016-06-23
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分类于
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/汇编/" itemprop="url" rel="index">
+                    <span itemprop="name">汇编</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/06/23/汇编小总结/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/23/汇编小总结/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <span itemprop="articleBody"><blockquote>
+<p>来自沈逸云的博客</p>
+</blockquote>
+<h1 id="u5BC4_u5B58_u5668"><a href="#u5BC4_u5B58_u5668" class="headerlink" title="寄存器"></a>寄存器</h1><p>8086寄存器分为8个通用寄存器，4个段寄存器，1个标志寄存器，1个指令寄存器, 均为16位 2字节<br>AX累加器<br>BX基址寄存器<br>CX计数器<br>DX数据寄存器<br>SI源地址寄存器<br>DI目的地址寄存器<br>BP基址指针<br>SP堆栈指针</p>
+<p>CS代码段寄存器<br>SS堆栈段寄存器<br>DS数据段寄存器<br>ES附加段寄存器</p>
+<p>FLAGS标志寄存器<br>IP指令指针  专用寄存器，具有自增功能</p>
+<p>SP和BP均可于SS联用，SP自增自减不应用于其它功能</p>
+<a id="more"></a>
+<h2 id="u6807_u5FD7_u5BC4_u5B58_u5668"><a href="#u6807_u5FD7_u5BC4_u5B58_u5668" class="headerlink" title="标志寄存器"></a>标志寄存器</h2><pre><code>CF(Carry Flag) CF = 1,表示本次运算中最高位(第7或第15位)有进位或借位，一般用于判断无符号数
+OF(Overflow Flag) OF = 1,表示算数运算结果产生溢出，一般用于判断有符号数，两个操作数符号相同而结果却相反就取1
+PF(Parity Flag) PF = 1, 表示本次运算结果的低八位中有偶数个1
+AF(Auxiliary Carry Flag) AF = 1,表示8位运算中低四位像高四位有进位或借位，常用于BCD数运算
+ZF(Zero Flag) ZF = 1,表示本次运算结果为0
+SF(Sign Flag) SF = 1, 表示本次运算的最高位(第7或第15位)为1
+</code></pre><h1 id="u5B58_u50A8_u5668"><a href="#u5B58_u50A8_u5668" class="headerlink" title="存储器"></a>存储器</h1><h2 id="u6570_u636E_u5B58_u50A8_u683C_u5F0F"><a href="#u6570_u636E_u5B58_u50A8_u683C_u5F0F" class="headerlink" title="数据存储格式"></a>数据存储格式</h2><p>位(bit):可以存放一位二进制数 0 或 1</p>
+<p>字节(byte):8 个二进制位</p>
+<p>字(word):在 8086 和 80286 中字由 2 个字节组成，16 位，位编号从右自左为$D_7 \sim D_0$。最低位称为最低有效位LSB(Least Significant Bit),即 $D_0$ 位;最高位称为最高有效位MSB(Most Significant Bit),字节为$D<em>7$位，字为$D</em>{15}$位。</p>
+<h2 id="u5B58_u50A8_u65B9_u5F0F"><a href="#u5B58_u50A8_u65B9_u5F0F" class="headerlink" title="存储方式"></a>存储方式</h2><p>一个存储单元内容是1字节。存放时低字节存入低地址，高字节存入高地址。8086这种”低对低高对高”的存储方式称为”小端对齐(Little endian)”。</p>
+<p>一个地址既可以看作字节单元地址也可以看作字单元地址。字节单元地址既可以是偶数也可以是奇数，字单元地址偶地址，双字模4地址</p>
+<p>如[0002H] = 34H, [0003H] = 12H, 则2号字单元的内容为 [0002H] = 1234H, 12为高字节存在高地址，34为低字节存在低地址</p>
+<h2 id="u5B58_u50A8_u5668_u7684_u5206_u6BB5_u7BA1_u7406"><a href="#u5B58_u50A8_u5668_u7684_u5206_u6BB5_u7BA1_u7406" class="headerlink" title="存储器的分段管理"></a>存储器的分段管理</h2><p>16位8086CPU可以方便表达$0000H \sim FFFFH$的16位存储器地址，即$2^{16} = 64KB$容量，但8086CPU的地址线是20位，所以最大寻址空间为$00000H \sim FFFFFH,2^{20}=1MB$</p>
+<p>将1MB存储器空间分为很多逻辑段(Segment),每段最大限制为64KB，即16位<br>段基地址:段内偏移地址</p>
+<p>段基地址:逻辑段在主存中的起始位置，模16地址,即$xxxx0H$,省略低4位0<br>段偏移地址:偏移量,由于每段不超过64KB，所以偏移地址可以用16位数据表示</p>
+<p>每一个存储器单元都有一个唯一的20位地址，称为该单元的物理地址和绝对地址；而编程时使用的 “段地址:偏移地址” 称为逻辑地址</p>
+<h2 id="u6BB5_u5BC4_u5B58_u5668"><a href="#u6BB5_u5BC4_u5B58_u5668" class="headerlink" title="段寄存器"></a>段寄存器</h2><pre><code>8086的段寄存器保存对应逻辑段的段基地址，每种段均有各自的用途
+CS 代码段(Code Segment)
+SS 堆栈段(Stack Segment)
+DS 数据段(Data Segment)
+ES 附加段(Extra Segment)
+每段之间并不要求必须是64KB，各段之间可以重叠，所以同一个物理地址可以有多个逻辑地址
+</code></pre><h1 id="8086_u5BFB_u5740_u65B9_u5F0F"><a href="#8086_u5BFB_u5740_u65B9_u5F0F" class="headerlink" title="8086寻址方式"></a>8086寻址方式</h1><h2 id="u7ACB_u5373_u6570_u5BFB_u5740_u65B9_u5F0F"><a href="#u7ACB_u5373_u6570_u5BFB_u5740_u65B9_u5F0F" class="headerlink" title="立即数寻址方式"></a>立即数寻址方式</h2><pre><code>操作数作为指令的一部分存放在操作码之后的主存单元中。立即数寻址方式常用于给寄存器和存储单元赋值
+mov ax, 0102h ; 高字节01H存放于高地址ah中，02H放在低地址al中
+</code></pre><h2 id="u5BC4_u5B58_u5668_u5BFB_u5740_u65B9_u5F0F"><a href="#u5BC4_u5B58_u5668_u5BFB_u5740_u65B9_u5F0F" class="headerlink" title="寄存器寻址方式"></a>寄存器寻址方式</h2><pre><code>寄存器寻址方式的操作数存放于CPU的某个内部寄存器中，不需要访问存储器，因而执行速度块
+mov bx, ax
+</code></pre><h2 id="u5B58_u50A8_u5668_u5BFB_u5740_u65B9_u5F0F"><a href="#u5B58_u50A8_u5668_u5BFB_u5740_u65B9_u5F0F" class="headerlink" title="存储器寻址方式"></a>存储器寻址方式</h2><pre><code>寄存器寻址虽然快，但CPU中寄存器数目有限，多数情况下操作数还是存储在主存中。
+指令中给出的是主存地址信息，由于8086存储器是分段管理的，所以给出的只是偏移地址(称为有效地址EA)，而段地址在默认的和用超越前缀指定的段寄存器中
+在汇编语言中用方括号[]表示存储段单元的内容
+</code></pre><h3 id="u76F4_u63A5_u5BFB_u5740_u65B9_u5F0F"><a href="#u76F4_u63A5_u5BFB_u5740_u65B9_u5F0F" class="headerlink" title="直接寻址方式"></a>直接寻址方式</h3><pre><code>指令中直接包含有有效地址。默认有效地址与数据段寄存器DS一起构成存储单元的物理地址，也可以段超越
+mov ax, [2000h]  ; ax &lt;- ds:[2000h]
+mov ax, es:[2000h]  ; ax &lt;- es:[2000h]
+</code></pre><h3 id="u5BC4_u5B58_u5668_u95F4_u63A5_u5BFB_u5740_u65B9_u5F0F"><a href="#u5BC4_u5B58_u5668_u95F4_u63A5_u5BFB_u5740_u65B9_u5F0F" class="headerlink" title="寄存器间接寻址方式"></a>寄存器间接寻址方式</h3><pre><code>有效地址存放在基址寄存器BX和变址寄存器SI、DI中。默认的段地址在DS中，可以段超越
+mov ax, [si]  ; ax &lt;- ds:[si]
+</code></pre><h3 id="u5BC4_u5B58_u5668_u76F8_u5BF9_u5BFB_u5740_u65B9_u5F0F"><a href="#u5BC4_u5B58_u5668_u76F8_u5BF9_u5BFB_u5740_u65B9_u5F0F" class="headerlink" title="寄存器相对寻址方式"></a>寄存器相对寻址方式</h3><pre><code>有效地址是寄存器内容与有符号8位和16位位移量之和。寄存器可以是BX，SI，DI或BP。BX，SI，DI寄存器默认数据段DS，BP默认堆栈段SS
+mov ax, [di + 06h] ; ax &lt;- ds:[di + 06h]
+mov ax, [bp + 06h] ; ax &lt;- ss:[bp + 06h]
+有效地址超过FFFFH取64K的模
+</code></pre><h3 id="u57FA_u5740_u53D8_u5740_u5BFB_u5740_u65B9_u5F0F"><a href="#u57FA_u5740_u53D8_u5740_u5BFB_u5740_u65B9_u5F0F" class="headerlink" title="基址变址寻址方式"></a>基址变址寻址方式</h3><pre><code>一个基址寄存器(BX或BP)的内容加上变址寄存器(SI或DI)的内容构成有效地址EA。若基址寄存器使用BX默认段位数据段DS，若基址寄存器为BP，默认段为SS
+mov ax, [bx + si] ; ax &lt;- ds:[bx + si]
+mov ax, [bp + di] ; ax &lt;- ss:[bp + si]
+有效地址超过FFFFH取64K的模
+</code></pre><h3 id="u76F8_u5BF9_u57FA_u5740_u53D8_u5740_u5BFB_u5740_u65B9_u5F0F"><a href="#u76F8_u5BF9_u57FA_u5740_u53D8_u5740_u5BFB_u5740_u65B9_u5F0F" class="headerlink" title="相对基址变址寻址方式"></a>相对基址变址寻址方式</h3><pre><code>即在基址变址的基础上在指令中还指定一个8位或16位的位移量
+有效地址超过FFFFH取64K的模
+</code></pre><h1 id="u6307_u4EE4_u7CFB_u7EDF"><a href="#u6307_u4EE4_u7CFB_u7EDF" class="headerlink" title="指令系统"></a>指令系统</h1><h2 id="u6570_u636E_u4F20_u9001_u7C7B"><a href="#u6570_u636E_u4F20_u9001_u7C7B" class="headerlink" title="数据传送类"></a>数据传送类</h2><h3 id="mov"><a href="#mov" class="headerlink" title="mov"></a>mov</h3><pre><code>传送指令将1字节和字的操作数从源地址src传送至目的地址dest
+mov reg/mem, imm  ; 8086不允许立即数传送至段寄存器
+mov reg/mem/seg, reg
+mov reg/sesg, mem
+mov reg/mem, seg
+
+mov byte ptr [si], 0ah ; 立即数0AH使用了前导0,十六进制数如果以字母开头要加前导0以便与标识符区分
+</code></pre><h3 id="xchg"><a href="#xchg" class="headerlink" title="xchg"></a>xchg</h3><pre><code>交换指令将源操作数与目的操作数内容互换
+xchg reg, reg/mem
+
+xchg ax, [2000h]
+</code></pre><h3 id="xalt"><a href="#xalt" class="headerlink" title="xalt"></a>xalt</h3><pre><code>转码指令将BX指定的缓冲区中，al指定的位移处的数据取出赋给al
+xalt ; al &lt;- ds:[bx + al]
+xalt label ; label 表示首地址的符号
+</code></pre><h3 id="push"><a href="#push" class="headerlink" title="push"></a>push</h3><pre><code>堆栈只有一个出口即当前栈顶，栈顶是地址较小的一端，由SP指定
+进栈指令先将堆栈指针SP减2然后将一个字操作数存入栈顶。低字节存入低地址，高字节存入高地址
+push r16/m16/seg ; SP &lt;- Sp -2, SS:[SP] &lt;- r16/m16/seg
+</code></pre><h3 id="pop"><a href="#pop" class="headerlink" title="pop"></a>pop</h3><pre><code>出栈指令将栈顶的一个字传送至指定的目的操作数，然后堆栈指针SP加2
+pop r16/m16/seg ; r16/m16/seg &lt;- SS:[SP], SP &lt;- SP + 2
+</code></pre><h3 id="lea"><a href="#lea" class="headerlink" title="lea"></a>lea</h3><pre><code>有效地址传送指令将存储器操作数的有效地址传送至指定寄存器
+
+lea bx, [bx + si + 0f62h] ; bx &lt;- bx + si + 0f62h, 这里bx得到的是主存单元的有效地址，不是物理地址，也不是该单元的内容
+</code></pre><h2 id="u7B97_u6570_u8FD0_u7B97_u7C7B_u6307_u4EE4"><a href="#u7B97_u6570_u8FD0_u7B97_u7C7B_u6307_u4EE4" class="headerlink" title="算数运算类指令"></a>算数运算类指令</h2><h3 id="u52A0_u51CF_u4E58_u9664"><a href="#u52A0_u51CF_u4E58_u9664" class="headerlink" title="加减乘除"></a>加减乘除</h3><h4 id="add"><a href="#add" class="headerlink" title="add"></a>add</h4><pre><code>add reg, imm/reg/mem ; reg &lt;- reg + imm/reg/mem
+add mem, imm/reg ; mem &lt;- mem + imm/reg
+</code></pre><h4 id="adc"><a href="#adc" class="headerlink" title="adc"></a>adc</h4><pre><code>adc reg, imm/reg/mem ; reg &lt;- reg + imm/reg/mem + CF
+adc mem, imm/reg ; mem &lt;- mem + imm/reg + CF
+</code></pre><h4 id="inc"><a href="#inc" class="headerlink" title="inc"></a>inc</h4><pre><code>inc reg/mem ; reg/mem &lt;- reg/mem + 1
+</code></pre><h4 id="sub"><a href="#sub" class="headerlink" title="sub"></a>sub</h4><pre><code>sub reg, imm/reg/mem ; reg &lt;- reg - imm/reg/mem
+sub mem, imm/reg ; mem &lt;- mem - imm/reg
+</code></pre><h4 id="sbb"><a href="#sbb" class="headerlink" title="sbb"></a>sbb</h4><pre><code>sbb reg, imm/reg/mem ; reg &lt;- reg - imm/reg/mem - CF
+sbb mem, imm/reg ; mem &lt;- mem - imm/reg - CF
+</code></pre><h4 id="inc-1"><a href="#inc-1" class="headerlink" title="inc"></a>inc</h4><pre><code>dec reg/mem ; reg/mem &lt;- reg/mem - 1
+</code></pre><h4 id="neg"><a href="#neg" class="headerlink" title="neg"></a>neg</h4><pre><code>求补指令对操作数进行求补运算，即用零减去操作数然后将结果返回操作数，也可以表达为将操作数按位取反加一
+</code></pre><h4 id="cmp"><a href="#cmp" class="headerlink" title="cmp"></a>cmp</h4><pre><code>与sub执行同样的操作，同样影响标志(ZF和CF等)，只是不改变目的操作数
+cmp reg, imm/reg/mem ; reg - imm/reg/mem
+cmp mem, imm/reg ; mem - imm/reg
+</code></pre><h4 id="mul__26amp_3B_26amp_3B_imul"><a href="#mul__26amp_3B_26amp_3B_imul" class="headerlink" title="mul &amp;&amp; imul"></a>mul &amp;&amp; imul</h4><pre><code>mul src
+imul src
+mul无符号数乘法, imul有符号数相乘，src不能为立即数
+隐含操作数AX和DX，若字节相乘，得到16位的字存入AX；若字相乘，得到双字，高字存入DX，低字存入AX
+只对OF，CF有影响，当相乘结果中高一半有有效数值，则OF＝CF＝1
+</code></pre><h4 id="div__26amp_3B_26amp_3B_idiv"><a href="#div__26amp_3B_26amp_3B_idiv" class="headerlink" title="div &amp;&amp; idiv"></a>div &amp;&amp; idiv</h4><pre><code>div src
+idiv src
+div无符号数除法, idiv有符号数除法,src不能为立即数
+隐含操作数AX和DX，若字节相除，8位商存入AL，8位余数存入AH；若字相乘，得到双字，16位商存入AX，16位余数存入DX
+对所有条件标志均无定义
+</code></pre><h3 id="u7B26_u53F7_u6269_u5C55_u6307_u4EE4"><a href="#u7B26_u53F7_u6269_u5C55_u6307_u4EE4" class="headerlink" title="符号扩展指令"></a>符号扩展指令</h3><pre><code>大多数指令要求两个操作数位数一致，但实际数据不一定满足要求，所以需要扩展。对有符号数使用符号扩展；无符号数使用零位扩展,直接将高位清零即可
+</code></pre><h4 id="cbw"><a href="#cbw" class="headerlink" title="cbw"></a>cbw</h4><pre><code>将al符号扩展成ax
+mov al, 80h
+cbw  ;; ax = ff80h
+</code></pre><h4 id="cwd"><a href="#cwd" class="headerlink" title="cwd"></a>cwd</h4><pre><code>将ax的内容符号扩展成dx，若ax最高位为0则dx＝0000h，若ax最高位为1,则dx＝ffffh
+mov ax, z
+cwd  ;; z -&gt; (dx, ax)
+</code></pre><h3 id="u5341_u8FDB_u5236_u8C03_u6574_u6307_u4EE4"><a href="#u5341_u8FDB_u5236_u8C03_u6574_u6307_u4EE4" class="headerlink" title="十进制调整指令"></a>十进制调整指令</h3><h4 id="daa"><a href="#daa" class="headerlink" title="daa"></a>daa</h4><pre><code>压缩BCD码是通常的8421码，用4个二进制位表示一个十进制位，1字节可以表示2个十进制位00~99
+使用daa或das指令之前，应先执行加法或减法指令
+daa跟在以al为目的操作数的的add或adc之后，对al的二进制数结果进行十进制调整
+
+ mov al, 34h
+ add al, 59h   ;; al = 8DH
+ daa           ;; al = 93H
+ mov BCD, al
+</code></pre><h4 id="das"><a href="#das" class="headerlink" title="das"></a>das</h4><pre><code>das跟在以al为目的操作数的的sub或sbb之后，对al的二进制数结果进行十进制调整
+
+已知AX＝1234H，BX＝4612H，计算1234-4612的差
+sub al, bl
+das
+xchg al, ah
+sbb al, bh
+das
+xchg al, ah   ;; ax = 6622h, CF = 1
+;; 若把1234H和4612H认为是无符号的十进制数，则利用借位1结果为6622,正确。
+;; 若把1234H和4612H认为是有符号十进制数，则1234 - 4612 = -3378   10000 - 3378 = 6622, 正确，位数为n的十进制整数d，其补码为10^n-d
+</code></pre><h4 id="aaa"><a href="#aaa" class="headerlink" title="aaa"></a>aaa</h4><pre><code>非压缩BCD码用8个二进制位表示一个十进制位，实际上只是用低4位表示0~9,高4位任意。ASCII中0~9为30H～39HH，也可以认为是非压缩BCD码
+aaa加法的非压缩BCD码调整指令
+
+mov ax, 0608h   ;; ax=0608h,表示非压缩BCD码68
+mov bl, 09h
+add, al, bl     ;; al = 08h + 09h = 11h
+aaa             ;; ax = 0707h, 实现非压缩BCD码加法
+</code></pre><h4 id="aas"><a href="#aas" class="headerlink" title="aas"></a>aas</h4><pre><code>减法的非压缩BCD码调整
+</code></pre><h4 id="aam"><a href="#aam" class="headerlink" title="aam"></a>aam</h4><pre><code>乘法的非压缩BCD码调整。该指令跟在以AX为目的操作数的mul指令之后，利用mul相乘的两个非压缩BCD码的高四位必须为0
+
+mov ax, 0608h
+mov bl, 09h
+mul bl        ;; ax = 0048h
+aam           ;; ax = 0702h
+</code></pre><h4 id="aad"><a href="#aad" class="headerlink" title="aad"></a>aad</h4><pre><code>除法的非压缩BCD码调整指令
+</code></pre><h2 id="u4F4D_u64CD_u4F5C_u6307_u4EE4"><a href="#u4F4D_u64CD_u4F5C_u6307_u4EE4" class="headerlink" title="位操作指令"></a>位操作指令</h2><pre><code>位操作指令对二进制数的各位进行操作，包括逻辑运算指令和移位指令
+</code></pre><h3 id="u903B_u8F91_u8FD0_u7B97"><a href="#u903B_u8F91_u8FD0_u7B97" class="headerlink" title="逻辑运算"></a>逻辑运算</h3><pre><code>所有双操作数的逻辑指令均置CF＝OF＝0,根据结果置SF，ZF，PF状态，对AF未定义，所以一般用xor来清零，因为它同时可以清CF和OF
+</code></pre><h4 id="and"><a href="#and" class="headerlink" title="and"></a>and</h4><pre><code>and reg, imm/reg/mem
+and mem, imm/reg
+</code></pre><h4 id="or"><a href="#or" class="headerlink" title="or"></a>or</h4><h4 id="xor"><a href="#xor" class="headerlink" title="xor"></a>xor</h4><pre><code>xor可用于求反某些位
+</code></pre><h4 id="not"><a href="#not" class="headerlink" title="not"></a>not</h4><pre><code>not reg/mem
+not对操作数按位取反，操作数不能为立即数。not不是双操作数的逻辑指令，对符号位无影响
+</code></pre><h4 id="test"><a href="#test" class="headerlink" title="test"></a>test</h4><pre><code>test指令操作与and相同但不保存执行结果只改变标志位，常用于检测某些条件是否满足
+
+test al, 01h
+jnz there     ;; ZF＝0,即D0=1,则程序转移到there
+</code></pre><h3 id="u79FB_u4F4D"><a href="#u79FB_u4F4D" class="headerlink" title="移位"></a>移位</h3><h4 id="shl"><a href="#shl" class="headerlink" title="shl"></a>shl</h4><pre><code>逻辑左移，最高位进入CF
+</code></pre><h4 id="shr"><a href="#shr" class="headerlink" title="shr"></a>shr</h4><pre><code>逻辑右移，最低位进入CF
+</code></pre><h4 id="sal"><a href="#sal" class="headerlink" title="sal"></a>sal</h4><pre><code>算数左移，和逻辑左移一样，根据最高位是否变化设置OF
+</code></pre><h4 id="sar"><a href="#sar" class="headerlink" title="sar"></a>sar</h4><pre><code>算数右移，最高位保持不变
+</code></pre><h4 id="rol"><a href="#rol" class="headerlink" title="rol"></a>rol</h4><pre><code>不带进位循环左移
+</code></pre><h4 id="ror"><a href="#ror" class="headerlink" title="ror"></a>ror</h4><pre><code>不带进位循环右移
+</code></pre><h4 id="rcl"><a href="#rcl" class="headerlink" title="rcl"></a>rcl</h4><pre><code>带进位循环左移
+</code></pre><h4 id="rcr"><a href="#rcr" class="headerlink" title="rcr"></a>rcr</h4><pre><code>带进位循环右移
+</code></pre><h2 id="u63A7_u5236_u8F6C_u79FB_u7C7B_u6307_u4EE4"><a href="#u63A7_u5236_u8F6C_u79FB_u7C7B_u6307_u4EE4" class="headerlink" title="控制转移类指令"></a>控制转移类指令</h2><h3 id="u65E0_u6761_u4EF6_u8F6C_u79FB_u6307_u4EE4"><a href="#u65E0_u6761_u4EF6_u8F6C_u79FB_u6307_u4EE4" class="headerlink" title="无条件转移指令"></a>无条件转移指令</h3><h4 id="u6BB5_u5185_u8F6C_u79FB_uFF0C_u76F8_u5BF9_u5BFB_u5740"><a href="#u6BB5_u5185_u8F6C_u79FB_uFF0C_u76F8_u5BF9_u5BFB_u5740" class="headerlink" title="段内转移，相对寻址"></a>段内转移，相对寻址</h4><pre><code>jmp label  ;; IP &lt;- IP + 位移量
+位移量是紧接着JMP后的那条指令的偏移地址到目标指令(label)的偏移地址的地址位移。汇编器会自动根据label做加减法，并根据位移量的大小自动形成短转移和近转移
+</code></pre><h4 id="u6BB5_u5185_u8F6C_u79FB_uFF0C_u95F4_u63A5_u5BFB_u5740"><a href="#u6BB5_u5185_u8F6C_u79FB_uFF0C_u95F4_u63A5_u5BFB_u5740" class="headerlink" title="段内转移，间接寻址"></a>段内转移，间接寻址</h4><pre><code>jmp word ptr [2000h]  ;; IP &lt;- [2000h]
+</code></pre><h4 id="u6BB5_u95F4_u8F6C_u79FB_uFF0C_u76F4_u63A5_u5BFB_u5740"><a href="#u6BB5_u95F4_u8F6C_u79FB_uFF0C_u76F4_u63A5_u5BFB_u5740" class="headerlink" title="段间转移，直接寻址"></a>段间转移，直接寻址</h4><pre><code>jmp far ptr label  ;; IP &lt;- label的偏移地址,CS &lt;- label的段地址
+</code></pre><h4 id="u6BB5_u95F4_u8F6C_u79FB_uFF0C_u95F4_u63A5_u5BFB_u5740"><a href="#u6BB5_u95F4_u8F6C_u79FB_uFF0C_u95F4_u63A5_u5BFB_u5740" class="headerlink" title="段间转移，间接寻址"></a>段间转移，间接寻址</h4><pre><code>jmp far ptr mem  ;; IP &lt;- [mem], CS &lt;- [mem + 2]
+
+mov word ptr [bx], 0
+mov word ptr [bx + 2], 1500h
+jmp far ptr [bx]
+</code></pre><h3 id="u6761_u4EF6_u8F6C_u79FB_u6307_u4EE4"><a href="#u6761_u4EF6_u8F6C_u79FB_u6307_u4EE4" class="headerlink" title="条件转移指令"></a>条件转移指令</h3><h3 id="u5FAA_u73AF_u6307_u4EE4"><a href="#u5FAA_u73AF_u6307_u4EE4" class="headerlink" title="循环指令"></a>循环指令</h3><pre><code>cx存放循环次数，只能使用段内相对寻址的8位位移量
+loop label  ;; cx &lt;- cx + 1; 若cx != 0,循环: IP &lt;- IP + 位移量
+loopz label  ;; cx &lt;- cx + 1; 若cx != 0且ZF ＝ 1,循环: IP &lt;- IP + 位移量
+loopnz label  ;; cx &lt;- cx + 1; 若cx != 0且 ZF ！＝ 1,循环: IP &lt;- IP + 位移量
+</code></pre><h3 id="u5B50_u7A0B_u5E8F_u6307_u4EE4"><a href="#u5B50_u7A0B_u5E8F_u6307_u4EE4" class="headerlink" title="子程序指令"></a>子程序指令</h3><pre><code>栈顶是IP
+call label    ;; 段内调用，相对寻址: SP &lt;- SP - 2, SS:[SP] &lt;- IP
+              ;; IP &lt;- IP + 16位位移量
+call r16/m16  ;; 段内调用，间接寻址: SP &lt;- SP - 2, SS:[SP] &lt;- IP
+              ;; IP &lt;- r16/m16
+call far ptr label   ;; 段间调用，直接寻址:SP &lt;- SP - 2, SS:[SP] &lt;- CS
+                     ;; SP &lt;- SP - 2, SS:[Sp] &lt;- IP
+                     ;; IP &lt;- label偏移地址,CS &lt;- label段地址
+call far ptr mem     ;; 段间调用，间接寻址:SP &lt;- SP - 2, SS:[SP] &lt;- CS
+                     ;; SP &lt;- SP - 2, SS:[Sp] &lt;- IP
+                     ;; IP &lt;- [mem],CS &lt;- [mem + 2]
+</code></pre></span>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/汇编/" rel="tag">#汇编</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/06/23/C++小总结/" rel="next" title="C++小总结">
+                <i class="fa fa-chevron-left"></i> C++小总结
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+        </div>
+
+        
+
+
+        
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/06/23/汇编小总结/"
+           data-title="C++小总结" data-url="http://yoursite.com/2016/06/23/汇编小总结/">
+      </div>
+    
+  </div>
+
+
+      </div>
+
+      
+        
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="/images/avatar.jpg" alt="彭天浩" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">彭天浩</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description">彭天浩胡说八道的地方</p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">10</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            <a href="/categories">
+              <span class="site-state-item-count">8</span>
+              <span class="site-state-item-name">分类</span>
+              </a>
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-name">标签</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/pthtc" target="_blank">
+                  
+                    <i class="fa fa-globe"></i> Github
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/peng-tian-hao-23" target="_blank">
+                  
+                    <i class="fa fa-globe"></i> 知乎
+                  
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#u5BC4_u5B58_u5668"><span class="nav-number">1.</span> <span class="nav-text">寄存器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#u6807_u5FD7_u5BC4_u5B58_u5668"><span class="nav-number">1.1.</span> <span class="nav-text">标志寄存器</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#u5B58_u50A8_u5668"><span class="nav-number">2.</span> <span class="nav-text">存储器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#u6570_u636E_u5B58_u50A8_u683C_u5F0F"><span class="nav-number">2.1.</span> <span class="nav-text">数据存储格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u5B58_u50A8_u65B9_u5F0F"><span class="nav-number">2.2.</span> <span class="nav-text">存储方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u5B58_u50A8_u5668_u7684_u5206_u6BB5_u7BA1_u7406"><span class="nav-number">2.3.</span> <span class="nav-text">存储器的分段管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u6BB5_u5BC4_u5B58_u5668"><span class="nav-number">2.4.</span> <span class="nav-text">段寄存器</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#8086_u5BFB_u5740_u65B9_u5F0F"><span class="nav-number">3.</span> <span class="nav-text">8086寻址方式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#u7ACB_u5373_u6570_u5BFB_u5740_u65B9_u5F0F"><span class="nav-number">3.1.</span> <span class="nav-text">立即数寻址方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u5BC4_u5B58_u5668_u5BFB_u5740_u65B9_u5F0F"><span class="nav-number">3.2.</span> <span class="nav-text">寄存器寻址方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u5B58_u50A8_u5668_u5BFB_u5740_u65B9_u5F0F"><span class="nav-number">3.3.</span> <span class="nav-text">存储器寻址方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u76F4_u63A5_u5BFB_u5740_u65B9_u5F0F"><span class="nav-number">3.3.1.</span> <span class="nav-text">直接寻址方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u5BC4_u5B58_u5668_u95F4_u63A5_u5BFB_u5740_u65B9_u5F0F"><span class="nav-number">3.3.2.</span> <span class="nav-text">寄存器间接寻址方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u5BC4_u5B58_u5668_u76F8_u5BF9_u5BFB_u5740_u65B9_u5F0F"><span class="nav-number">3.3.3.</span> <span class="nav-text">寄存器相对寻址方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u57FA_u5740_u53D8_u5740_u5BFB_u5740_u65B9_u5F0F"><span class="nav-number">3.3.4.</span> <span class="nav-text">基址变址寻址方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u76F8_u5BF9_u57FA_u5740_u53D8_u5740_u5BFB_u5740_u65B9_u5F0F"><span class="nav-number">3.3.5.</span> <span class="nav-text">相对基址变址寻址方式</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#u6307_u4EE4_u7CFB_u7EDF"><span class="nav-number">4.</span> <span class="nav-text">指令系统</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#u6570_u636E_u4F20_u9001_u7C7B"><span class="nav-number">4.1.</span> <span class="nav-text">数据传送类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#mov"><span class="nav-number">4.1.1.</span> <span class="nav-text">mov</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#xchg"><span class="nav-number">4.1.2.</span> <span class="nav-text">xchg</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#xalt"><span class="nav-number">4.1.3.</span> <span class="nav-text">xalt</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#push"><span class="nav-number">4.1.4.</span> <span class="nav-text">push</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pop"><span class="nav-number">4.1.5.</span> <span class="nav-text">pop</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lea"><span class="nav-number">4.1.6.</span> <span class="nav-text">lea</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u7B97_u6570_u8FD0_u7B97_u7C7B_u6307_u4EE4"><span class="nav-number">4.2.</span> <span class="nav-text">算数运算类指令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u52A0_u51CF_u4E58_u9664"><span class="nav-number">4.2.1.</span> <span class="nav-text">加减乘除</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#add"><span class="nav-number">4.2.1.1.</span> <span class="nav-text">add</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#adc"><span class="nav-number">4.2.1.2.</span> <span class="nav-text">adc</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#inc"><span class="nav-number">4.2.1.3.</span> <span class="nav-text">inc</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sub"><span class="nav-number">4.2.1.4.</span> <span class="nav-text">sub</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sbb"><span class="nav-number">4.2.1.5.</span> <span class="nav-text">sbb</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#inc-1"><span class="nav-number">4.2.1.6.</span> <span class="nav-text">inc</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#neg"><span class="nav-number">4.2.1.7.</span> <span class="nav-text">neg</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cmp"><span class="nav-number">4.2.1.8.</span> <span class="nav-text">cmp</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#mul__26amp_3B_26amp_3B_imul"><span class="nav-number">4.2.1.9.</span> <span class="nav-text">mul && imul</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#div__26amp_3B_26amp_3B_idiv"><span class="nav-number">4.2.1.10.</span> <span class="nav-text">div && idiv</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u7B26_u53F7_u6269_u5C55_u6307_u4EE4"><span class="nav-number">4.2.2.</span> <span class="nav-text">符号扩展指令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#cbw"><span class="nav-number">4.2.2.1.</span> <span class="nav-text">cbw</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cwd"><span class="nav-number">4.2.2.2.</span> <span class="nav-text">cwd</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u5341_u8FDB_u5236_u8C03_u6574_u6307_u4EE4"><span class="nav-number">4.2.3.</span> <span class="nav-text">十进制调整指令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#daa"><span class="nav-number">4.2.3.1.</span> <span class="nav-text">daa</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#das"><span class="nav-number">4.2.3.2.</span> <span class="nav-text">das</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#aaa"><span class="nav-number">4.2.3.3.</span> <span class="nav-text">aaa</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#aas"><span class="nav-number">4.2.3.4.</span> <span class="nav-text">aas</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#aam"><span class="nav-number">4.2.3.5.</span> <span class="nav-text">aam</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#aad"><span class="nav-number">4.2.3.6.</span> <span class="nav-text">aad</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u4F4D_u64CD_u4F5C_u6307_u4EE4"><span class="nav-number">4.3.</span> <span class="nav-text">位操作指令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u903B_u8F91_u8FD0_u7B97"><span class="nav-number">4.3.1.</span> <span class="nav-text">逻辑运算</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#and"><span class="nav-number">4.3.1.1.</span> <span class="nav-text">and</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#or"><span class="nav-number">4.3.1.2.</span> <span class="nav-text">or</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#xor"><span class="nav-number">4.3.1.3.</span> <span class="nav-text">xor</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#not"><span class="nav-number">4.3.1.4.</span> <span class="nav-text">not</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#test"><span class="nav-number">4.3.1.5.</span> <span class="nav-text">test</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u79FB_u4F4D"><span class="nav-number">4.3.2.</span> <span class="nav-text">移位</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#shl"><span class="nav-number">4.3.2.1.</span> <span class="nav-text">shl</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#shr"><span class="nav-number">4.3.2.2.</span> <span class="nav-text">shr</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sal"><span class="nav-number">4.3.2.3.</span> <span class="nav-text">sal</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sar"><span class="nav-number">4.3.2.4.</span> <span class="nav-text">sar</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#rol"><span class="nav-number">4.3.2.5.</span> <span class="nav-text">rol</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ror"><span class="nav-number">4.3.2.6.</span> <span class="nav-text">ror</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#rcl"><span class="nav-number">4.3.2.7.</span> <span class="nav-text">rcl</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#rcr"><span class="nav-number">4.3.2.8.</span> <span class="nav-text">rcr</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u63A7_u5236_u8F6C_u79FB_u7C7B_u6307_u4EE4"><span class="nav-number">4.4.</span> <span class="nav-text">控制转移类指令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u65E0_u6761_u4EF6_u8F6C_u79FB_u6307_u4EE4"><span class="nav-number">4.4.1.</span> <span class="nav-text">无条件转移指令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u6BB5_u5185_u8F6C_u79FB_uFF0C_u76F8_u5BF9_u5BFB_u5740"><span class="nav-number">4.4.1.1.</span> <span class="nav-text">段内转移，相对寻址</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u6BB5_u5185_u8F6C_u79FB_uFF0C_u95F4_u63A5_u5BFB_u5740"><span class="nav-number">4.4.1.2.</span> <span class="nav-text">段内转移，间接寻址</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u6BB5_u95F4_u8F6C_u79FB_uFF0C_u76F4_u63A5_u5BFB_u5740"><span class="nav-number">4.4.1.3.</span> <span class="nav-text">段间转移，直接寻址</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u6BB5_u95F4_u8F6C_u79FB_uFF0C_u95F4_u63A5_u5BFB_u5740"><span class="nav-number">4.4.1.4.</span> <span class="nav-text">段间转移，间接寻址</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u6761_u4EF6_u8F6C_u79FB_u6307_u4EE4"><span class="nav-number">4.4.2.</span> <span class="nav-text">条件转移指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u5FAA_u73AF_u6307_u4EE4"><span class="nav-number">4.4.3.</span> <span class="nav-text">循环指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u5B50_u7A0B_u5E8F_u6307_u4EE4"><span class="nav-number">4.4.4.</span> <span class="nav-text">子程序指令</span></a></li></ol></li></ol></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+      
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="icon-next-heart fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">彭天浩</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+
+  
+    
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"pengtianhao"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+    
+     
+
+
+    
+  
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.2"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.2"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+<script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+<script type="text/javascript" src="/js/motion.js?v=0.4.5.2" id="motion.global"></script>
+
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.2" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    motionMiddleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+      if (CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  <script type="text/javascript" src="/js/bootstrap.js"></script>
+
+  
+  
+
+  
+  
+
+</body>
+</html>
