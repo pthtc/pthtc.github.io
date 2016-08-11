@@ -67,7 +67,7 @@ sorted函数Swift2.0以后，sorted好像从
 sorted(array,{$1&amp;gt;$2}）
 变成了
 var arraySorted = array.sort(false)">
-<meta property="og:updated_time" content="2016-08-10T06:53:46.000Z">
+<meta property="og:updated_time" content="2016-08-11T04:51:50.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Swift学习随手记">
 <meta name="twitter:description" content="趁着这段时间有空，准备学习Swift用于iOS开发，没想到遇到了不少坑，这边记录一下
@@ -334,7 +334,21 @@ var arraySorted = array.sort(false)">
     print(&quot;Hello world&quot;)
 }
 </code></pre><p>才正确</p>
-</span>
+<h2 id="enumerate_u65B9_u6CD5"><a href="#enumerate_u65B9_u6CD5" class="headerlink" title="enumerate方法"></a>enumerate方法</h2><p>enumerate方法以前用</p>
+<pre><code>for (index, value) in enumerate(numbers) {
+    print(&quot;Item \(index + 1): \(value)&quot;)
+}
+</code></pre><p>现在改成了</p>
+<pre><code>for (index, value) in numbers.enumerate() {
+    print(&quot;Item \(index + 1): \(value)&quot;)
+}
+</code></pre><h2 id="print_u65B9_u6CD5"><a href="#print_u65B9_u6CD5" class="headerlink" title="print方法"></a>print方法</h2><p>以前打印方法有两种，print和println，现在只有print，默认换行，如果要不换行的话要这么写</p>
+<pre><code>print(&quot;这样就&quot;,terminator: &quot;&quot;);
+print(&quot;不换行了&quot;)
+</code></pre><p>结果为</p>
+<pre><code>&quot;这样就&quot;
+&quot;不换行了\n&quot;
+</code></pre></span>
       
     </div>
 
@@ -495,7 +509,7 @@ var arraySorted = array.sort(false)">
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#sorted_u51FD_u6570"><span class="nav-number">1.</span> <span class="nav-text">sorted函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#for_u5FAA_u73AF"><span class="nav-number">2.</span> <span class="nav-text">for循环</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#sorted_u51FD_u6570"><span class="nav-number">1.</span> <span class="nav-text">sorted函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#for_u5FAA_u73AF"><span class="nav-number">2.</span> <span class="nav-text">for循环</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#enumerate_u65B9_u6CD5"><span class="nav-number">3.</span> <span class="nav-text">enumerate方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#print_u65B9_u6CD5"><span class="nav-number">4.</span> <span class="nav-text">print方法</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
