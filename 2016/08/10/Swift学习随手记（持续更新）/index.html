@@ -67,7 +67,7 @@ sorted函数Swift2.0以后，sorted好像从
 sorted(array,{$1&amp;gt;$2}）
 变成了
 var arraySorted = array.sort(false)">
-<meta property="og:updated_time" content="2016-08-11T04:51:50.000Z">
+<meta property="og:updated_time" content="2016-08-11T06:09:24.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Swift学习随手记">
 <meta name="twitter:description" content="趁着这段时间有空，准备学习Swift用于iOS开发，没想到遇到了不少坑，这边记录一下
@@ -348,6 +348,22 @@ print(&quot;不换行了&quot;)
 </code></pre><p>结果为</p>
 <pre><code>&quot;这样就&quot;
 &quot;不换行了\n&quot;
+</code></pre><h2 id="u6570_u7EC4"><a href="#u6570_u7EC4" class="headerlink" title="数组"></a>数组</h2><p>数组空白初始化时候，原来用</p>
+<pre><code>var array = Int[]()
+</code></pre><p>现在用</p>
+<pre><code>var array = [Int]()
+</code></pre><h2 id="u51FD_u6570"><a href="#u51FD_u6570" class="headerlink" title="函数"></a>函数</h2><p>碰到一个很奇怪的问题，当我调用函数：</p>
+<pre><code>func f4(firstValue: Int, secondValue: Int) -&gt;Int{
+    return firstValue + secondValue
+}
+</code></pre><p>调用的时候必须用</p>
+<pre><code>f4(1, secondValue: 2)
+</code></pre><p>这个可能和内外命名有关，可能是<code>firstValue</code>被当成内部命名，还需要探索，完整写出内外命名就没问题</p>
+<pre><code>func f6(firstValue first:Int,secondValue second: Int)-&gt;Int{
+    return first+second
+}
+
+f6(firstValue: 1, secondValue: 2)
 </code></pre></span>
       
     </div>
@@ -509,7 +525,7 @@ print(&quot;不换行了&quot;)
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#sorted_u51FD_u6570"><span class="nav-number">1.</span> <span class="nav-text">sorted函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#for_u5FAA_u73AF"><span class="nav-number">2.</span> <span class="nav-text">for循环</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#enumerate_u65B9_u6CD5"><span class="nav-number">3.</span> <span class="nav-text">enumerate方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#print_u65B9_u6CD5"><span class="nav-number">4.</span> <span class="nav-text">print方法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#sorted_u51FD_u6570"><span class="nav-number">1.</span> <span class="nav-text">sorted函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#for_u5FAA_u73AF"><span class="nav-number">2.</span> <span class="nav-text">for循环</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#enumerate_u65B9_u6CD5"><span class="nav-number">3.</span> <span class="nav-text">enumerate方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#print_u65B9_u6CD5"><span class="nav-number">4.</span> <span class="nav-text">print方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u6570_u7EC4"><span class="nav-number">5.</span> <span class="nav-text">数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u51FD_u6570"><span class="nav-number">6.</span> <span class="nav-text">函数</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
