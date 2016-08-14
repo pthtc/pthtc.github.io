@@ -67,7 +67,7 @@ sorted函数Swift2.0以后，sorted好像从
 sorted(array,{$1&amp;gt;$2}）
 变成了
 var arraySorted = array.sort(false)">
-<meta property="og:updated_time" content="2016-08-11T06:09:24.000Z">
+<meta property="og:updated_time" content="2016-08-14T06:47:35.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Swift学习随手记">
 <meta name="twitter:description" content="趁着这段时间有空，准备学习Swift用于iOS开发，没想到遇到了不少坑，这边记录一下
@@ -352,7 +352,7 @@ print(&quot;不换行了&quot;)
 <pre><code>var array = Int[]()
 </code></pre><p>现在用</p>
 <pre><code>var array = [Int]()
-</code></pre><h2 id="u51FD_u6570"><a href="#u51FD_u6570" class="headerlink" title="函数"></a>函数</h2><p>碰到一个很奇怪的问题，当我调用函数：</p>
+</code></pre><h2 id="u51FD_u6570"><a href="#u51FD_u6570" class="headerlink" title="函数"></a>函数</h2><h3 id="u53C2_u6570_u95EE_u9898"><a href="#u53C2_u6570_u95EE_u9898" class="headerlink" title="参数问题"></a>参数问题</h3><p>碰到一个很奇怪的问题，当我调用函数：</p>
 <pre><code>func f4(firstValue: Int, secondValue: Int) -&gt;Int{
     return firstValue + secondValue
 }
@@ -364,6 +364,124 @@ print(&quot;不换行了&quot;)
 }
 
 f6(firstValue: 1, secondValue: 2)
+</code></pre><h3 id="u95ED_u5305"><a href="#u95ED_u5305" class="headerlink" title="闭包"></a>闭包</h3><p>闭包其实就是一种没有函数名的函数，哪里都能用</p>
+<h4 id="u5173_u4E8Ein"><a href="#u5173_u4E8Ein" class="headerlink" title="关于in"></a>关于in</h4><p>闭包里<code>in</code>之前的东西相当于函数的输入和返回</p>
+<pre><code>let numberWord = number.map{
+    (var s1)-&gt;Int in
+    let output = 123
+    return output
+}
+</code></pre><p>等于</p>
+<pre><code>func myFunc(s1: Int)-&gt;Int{
+    let output = 123
+    return output
+}
+
+let numberWord = number.map(myFunc)
+</code></pre><h4 id="u5173_u4E8E_u95ED_u5305_u5B58_u5728_u6027"><a href="#u5173_u4E8E_u95ED_u5305_u5B58_u5728_u6027" class="headerlink" title="关于闭包存在性"></a>关于闭包存在性</h4><pre><code>func makeIncrementor(forIncrement amount: Int) -&gt; () -&gt; Int {
+    var runningTotal = 0
+    func incrementor() -&gt; Int {
+        runningTotal += amount
+        return runningTotal
+    }
+    return incrementor
+}
+
+let incrementByTen = makeIncrementor(forIncrement: 10)
+
+// 10
+incrementByTen()
+// 20
+incrementByTen()
+
+let anotherIncrement = incrementByTen
+
+//30,赋值以后也指向同一闭包
+anotherIncrement()
+</code></pre><h2 id="u6BD4_u8F83_u7B26_u53F7"><a href="#u6BD4_u8F83_u7B26_u53F7" class="headerlink" title="比较符号"></a>比较符号</h2><p>他们返回的是布尔值</p>
+<h2 id="u7C7B_u548C_u7ED3_u6784_u4F53"><a href="#u7C7B_u548C_u7ED3_u6784_u4F53" class="headerlink" title="类和结构体"></a>类和结构体</h2><p>因为在Swift里看起来差不多，就记一起了</p>
+<h3 id="u5C5E_u6027"><a href="#u5C5E_u6027" class="headerlink" title="属性"></a>属性</h3><h4 id="get_u548Cset"><a href="#get_u548Cset" class="headerlink" title="get和set"></a>get和set</h4><p>get和set使得属性之间能够自动关联</p>
+<pre><code>class myCLass {
+    var varies1: Int = 1
+    var varies2 :Int {
+        get {
+            return varies1*2
+        }
+        set(myInt) {
+            varies1 = varies2
+        }
+    }
+}
+
+var myclasses = myCLass()
+
+//varies1 = 1
+myclasses.varies1
+
+//varies2 = 2
+myclasses.varies2
+
+myclasses.varies2 = 3
+
+//varies1 = 3
+myclasses.varies1
+
+//varies2 = 3
+myclasses.varies2
+</code></pre><h4 id="willSet_u548CdidSet"><a href="#willSet_u548CdidSet" class="headerlink" title="willSet和didSet"></a>willSet和didSet</h4><p>接着刚刚的类，willSet和didSet两个属性监视器每次被设置的时候就会调用,尝试过发现<strong>即使是被get修改，也会触发</strong></p>
+<pre><code>class myCLass {
+    var varies1: Int = 1{
+        willSet {
+            print(&quot;will set&quot;)
+        }
+    }
+    var varies2 :Int {
+        get {
+            return varies1*2
+        }
+        set(myInt) {
+            varies1 = varies2
+        }
+    }
+}
+</code></pre><h3 id="u65B9_u6CD5"><a href="#u65B9_u6CD5" class="headerlink" title="方法"></a>方法</h3><h4 id="struct_u4FEE_u6539_u5C5E_u6027"><a href="#struct_u4FEE_u6539_u5C5E_u6027" class="headerlink" title="struct修改属性"></a>struct修改属性</h4><p>struct在修改属性的时候需要在func前加mutating，代表突变</p>
+<pre><code>struct Point1 {
+    var x = 0.0, y = 0.0
+    mutating func moveByX(deltaX: Double, y deltaY: Double){
+        x += deltaX
+        y += deltaY
+    }
+}
+</code></pre><h3 id="u7EE7_u627F"><a href="#u7EE7_u627F" class="headerlink" title="继承"></a>继承</h3><h4 id="u521D_u59CB_u5316init"><a href="#u521D_u59CB_u5316init" class="headerlink" title="初始化init"></a>初始化init</h4><p>继承的时候初始化要加上override，这和之前只需要init不一样</p>
+<pre><code>class Bicycle: Vehicle {
+    override init() {
+        super.init()
+        numberOfWheels = 2
+    }
+}
+</code></pre><h2 id="u81EA_u5224_u65AD_u94FE_u63A5"><a href="#u81EA_u5224_u65AD_u94FE_u63A5" class="headerlink" title="自判断链接"></a>自判断链接</h2><p>一般情况下一个值必须不空，如果要可以为｀nil｀的话，一定要</p>
+<pre><code>var num : Int?
+</code></pre><p>然后拆包的时候</p>
+<pre><code>num!
+</code></pre><p>这就碰到问题了，这里拆包要求非空才行，那么要是我不知道空不空怎么办呢？</p>
+<p>普通值避免拆包就行了</p>
+<pre><code>if let numTemp = num {
+    print(&quot;not nill&quot;)
+}else {
+    print(&quot;is nill&quot;)
+}
+</code></pre><p>但是要是碰到需要操作类的属性，必须拆包呢？那就看下面</p>
+<pre><code>class myClasses{
+    var varies:Int = 0
+}
+
+var myClass:myClasses?
+
+if let classTemp = myClass?.varies {
+    print(&quot;not nill&quot;)
+}else {
+    print(&quot;is nill&quot;)
+}
 </code></pre></span>
       
     </div>
@@ -525,7 +643,7 @@ f6(firstValue: 1, secondValue: 2)
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#sorted_u51FD_u6570"><span class="nav-number">1.</span> <span class="nav-text">sorted函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#for_u5FAA_u73AF"><span class="nav-number">2.</span> <span class="nav-text">for循环</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#enumerate_u65B9_u6CD5"><span class="nav-number">3.</span> <span class="nav-text">enumerate方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#print_u65B9_u6CD5"><span class="nav-number">4.</span> <span class="nav-text">print方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u6570_u7EC4"><span class="nav-number">5.</span> <span class="nav-text">数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u51FD_u6570"><span class="nav-number">6.</span> <span class="nav-text">函数</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#sorted_u51FD_u6570"><span class="nav-number">1.</span> <span class="nav-text">sorted函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#for_u5FAA_u73AF"><span class="nav-number">2.</span> <span class="nav-text">for循环</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#enumerate_u65B9_u6CD5"><span class="nav-number">3.</span> <span class="nav-text">enumerate方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#print_u65B9_u6CD5"><span class="nav-number">4.</span> <span class="nav-text">print方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u6570_u7EC4"><span class="nav-number">5.</span> <span class="nav-text">数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u51FD_u6570"><span class="nav-number">6.</span> <span class="nav-text">函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u53C2_u6570_u95EE_u9898"><span class="nav-number">6.1.</span> <span class="nav-text">参数问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u95ED_u5305"><span class="nav-number">6.2.</span> <span class="nav-text">闭包</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u5173_u4E8Ein"><span class="nav-number">6.2.1.</span> <span class="nav-text">关于in</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u5173_u4E8E_u95ED_u5305_u5B58_u5728_u6027"><span class="nav-number">6.2.2.</span> <span class="nav-text">关于闭包存在性</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u6BD4_u8F83_u7B26_u53F7"><span class="nav-number">7.</span> <span class="nav-text">比较符号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u7C7B_u548C_u7ED3_u6784_u4F53"><span class="nav-number">8.</span> <span class="nav-text">类和结构体</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u5C5E_u6027"><span class="nav-number">8.1.</span> <span class="nav-text">属性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#get_u548Cset"><span class="nav-number">8.1.1.</span> <span class="nav-text">get和set</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#willSet_u548CdidSet"><span class="nav-number">8.1.2.</span> <span class="nav-text">willSet和didSet</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u65B9_u6CD5"><span class="nav-number">8.2.</span> <span class="nav-text">方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#struct_u4FEE_u6539_u5C5E_u6027"><span class="nav-number">8.2.1.</span> <span class="nav-text">struct修改属性</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u7EE7_u627F"><span class="nav-number">8.3.</span> <span class="nav-text">继承</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u521D_u59CB_u5316init"><span class="nav-number">8.3.1.</span> <span class="nav-text">初始化init</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u81EA_u5224_u65AD_u94FE_u63A5"><span class="nav-number">9.</span> <span class="nav-text">自判断链接</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
