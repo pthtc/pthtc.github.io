@@ -59,7 +59,7 @@ sorted(array,{$1&amp;gt;$2}）
 var arraySorted = array.sort(false)">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Swift学习随手记">
-<meta property="og:url" content="http://yoursite.com/2016/08/10/Swift学习随手记（持续更新）/index.html">
+<meta property="og:url" content="http://yoursite.com/2016/08/14/Swift学习随手记（持续更新）/index.html">
 <meta property="og:site_name" content="彭天浩胡说八道的地方">
 <meta property="og:description" content="趁着这段时间有空，准备学习Swift用于iOS开发，没想到遇到了不少坑，这边记录一下
 
@@ -67,7 +67,7 @@ sorted函数Swift2.0以后，sorted好像从
 sorted(array,{$1&amp;gt;$2}）
 变成了
 var arraySorted = array.sort(false)">
-<meta property="og:updated_time" content="2016-08-14T06:47:35.000Z">
+<meta property="og:updated_time" content="2016-08-14T08:06:18.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Swift学习随手记">
 <meta name="twitter:description" content="趁着这段时间有空，准备学习Swift用于iOS开发，没想到遇到了不少坑，这边记录一下
@@ -267,8 +267,8 @@ var arraySorted = array.sort(false)">
         <div class="post-meta">
           <span class="post-time">
             发表于
-            <time itemprop="dateCreated" datetime="2016-08-10T14:20:16+08:00" content="2016-08-10">
-              2016-08-10
+            <time itemprop="dateCreated" datetime="2016-08-14T14:20:16+08:00" content="2016-08-14">
+              2016-08-14
             </time>
           </span>
 
@@ -293,8 +293,8 @@ var arraySorted = array.sort(false)">
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/08/10/Swift学习随手记（持续更新）/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/10/Swift学习随手记（持续更新）/" itemprop="commentsCount"></span>
+                <a href="/2016/08/14/Swift学习随手记（持续更新）/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/14/Swift学习随手记（持续更新）/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -482,6 +482,22 @@ if let classTemp = myClass?.varies {
 }else {
     print(&quot;is nill&quot;)
 }
+</code></pre><h2 id="u7C7B_u578B_u8F6C_u6362"><a href="#u7C7B_u578B_u8F6C_u6362" class="headerlink" title="类型转换"></a>类型转换</h2><h3 id="is"><a href="#is" class="headerlink" title="is"></a>is</h3><p>用来对比两者的类型，要这么用:</p>
+<pre><code>var myDic = [123,&quot;this is a string&quot;]
+
+for item in myDic{
+    if item is String{
+        print(&quot;\(item) is a string!&quot;)
+    }
+}
+</code></pre><h3 id="as__u548C_as_3F"><a href="#as__u548C_as_3F" class="headerlink" title="as 和 as?"></a>as 和 as?</h3><p><code>as?</code>与<code>as</code>最大的区别是是否强制转换，as有可能出现错误，as?可以返回nil，下面是as?的用法</p>
+<pre><code>for item in myDic {
+    if let theString = item as? String {
+        print(&quot;the item \&quot;\(theString)\&quot; is a string&quot;)
+    } else if let theInt = item as? Int {
+        print(&quot;the item \&quot;\(theInt)\&quot; is a interger&quot;)
+    }
+}
 </code></pre></span>
       
     </div>
@@ -534,8 +550,8 @@ if let classTemp = myClass?.varies {
         
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/08/10/Swift学习随手记（持续更新）/"
-           data-title="Swift学习随手记" data-url="http://yoursite.com/2016/08/10/Swift学习随手记（持续更新）/">
+      <div class="ds-thread" data-thread-key="2016/08/14/Swift学习随手记（持续更新）/"
+           data-title="Swift学习随手记" data-url="http://yoursite.com/2016/08/14/Swift学习随手记（持续更新）/">
       </div>
     
   </div>
@@ -643,7 +659,7 @@ if let classTemp = myClass?.varies {
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#sorted_u51FD_u6570"><span class="nav-number">1.</span> <span class="nav-text">sorted函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#for_u5FAA_u73AF"><span class="nav-number">2.</span> <span class="nav-text">for循环</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#enumerate_u65B9_u6CD5"><span class="nav-number">3.</span> <span class="nav-text">enumerate方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#print_u65B9_u6CD5"><span class="nav-number">4.</span> <span class="nav-text">print方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u6570_u7EC4"><span class="nav-number">5.</span> <span class="nav-text">数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u51FD_u6570"><span class="nav-number">6.</span> <span class="nav-text">函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u53C2_u6570_u95EE_u9898"><span class="nav-number">6.1.</span> <span class="nav-text">参数问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u95ED_u5305"><span class="nav-number">6.2.</span> <span class="nav-text">闭包</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u5173_u4E8Ein"><span class="nav-number">6.2.1.</span> <span class="nav-text">关于in</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u5173_u4E8E_u95ED_u5305_u5B58_u5728_u6027"><span class="nav-number">6.2.2.</span> <span class="nav-text">关于闭包存在性</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u6BD4_u8F83_u7B26_u53F7"><span class="nav-number">7.</span> <span class="nav-text">比较符号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u7C7B_u548C_u7ED3_u6784_u4F53"><span class="nav-number">8.</span> <span class="nav-text">类和结构体</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u5C5E_u6027"><span class="nav-number">8.1.</span> <span class="nav-text">属性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#get_u548Cset"><span class="nav-number">8.1.1.</span> <span class="nav-text">get和set</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#willSet_u548CdidSet"><span class="nav-number">8.1.2.</span> <span class="nav-text">willSet和didSet</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u65B9_u6CD5"><span class="nav-number">8.2.</span> <span class="nav-text">方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#struct_u4FEE_u6539_u5C5E_u6027"><span class="nav-number">8.2.1.</span> <span class="nav-text">struct修改属性</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u7EE7_u627F"><span class="nav-number">8.3.</span> <span class="nav-text">继承</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u521D_u59CB_u5316init"><span class="nav-number">8.3.1.</span> <span class="nav-text">初始化init</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u81EA_u5224_u65AD_u94FE_u63A5"><span class="nav-number">9.</span> <span class="nav-text">自判断链接</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#sorted_u51FD_u6570"><span class="nav-number">1.</span> <span class="nav-text">sorted函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#for_u5FAA_u73AF"><span class="nav-number">2.</span> <span class="nav-text">for循环</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#enumerate_u65B9_u6CD5"><span class="nav-number">3.</span> <span class="nav-text">enumerate方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#print_u65B9_u6CD5"><span class="nav-number">4.</span> <span class="nav-text">print方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u6570_u7EC4"><span class="nav-number">5.</span> <span class="nav-text">数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u51FD_u6570"><span class="nav-number">6.</span> <span class="nav-text">函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u53C2_u6570_u95EE_u9898"><span class="nav-number">6.1.</span> <span class="nav-text">参数问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u95ED_u5305"><span class="nav-number">6.2.</span> <span class="nav-text">闭包</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u5173_u4E8Ein"><span class="nav-number">6.2.1.</span> <span class="nav-text">关于in</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u5173_u4E8E_u95ED_u5305_u5B58_u5728_u6027"><span class="nav-number">6.2.2.</span> <span class="nav-text">关于闭包存在性</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u6BD4_u8F83_u7B26_u53F7"><span class="nav-number">7.</span> <span class="nav-text">比较符号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u7C7B_u548C_u7ED3_u6784_u4F53"><span class="nav-number">8.</span> <span class="nav-text">类和结构体</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u5C5E_u6027"><span class="nav-number">8.1.</span> <span class="nav-text">属性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#get_u548Cset"><span class="nav-number">8.1.1.</span> <span class="nav-text">get和set</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#willSet_u548CdidSet"><span class="nav-number">8.1.2.</span> <span class="nav-text">willSet和didSet</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u65B9_u6CD5"><span class="nav-number">8.2.</span> <span class="nav-text">方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#struct_u4FEE_u6539_u5C5E_u6027"><span class="nav-number">8.2.1.</span> <span class="nav-text">struct修改属性</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u7EE7_u627F"><span class="nav-number">8.3.</span> <span class="nav-text">继承</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u521D_u59CB_u5316init"><span class="nav-number">8.3.1.</span> <span class="nav-text">初始化init</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u81EA_u5224_u65AD_u94FE_u63A5"><span class="nav-number">9.</span> <span class="nav-text">自判断链接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u7C7B_u578B_u8F6C_u6362"><span class="nav-number">10.</span> <span class="nav-text">类型转换</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#is"><span class="nav-number">10.1.</span> <span class="nav-text">is</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#as__u548C_as_3F"><span class="nav-number">10.2.</span> <span class="nav-text">as 和 as?</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
