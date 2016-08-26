@@ -35,7 +35,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Swift,cocoa,iOS," />
+  <meta name="keywords" content="Cocoa,Swift,iOS," />
 
 
 
@@ -51,28 +51,16 @@
 
 
 
-<meta name="description" content="学完Siwft以后，顺便对cocoa框架也进行一次梳理。虽然之前用oc写了不少项目，但是因为有点即学即用的感觉，并没有形成系统的认知，为后面的开发估计埋下了不少坑，现在就慢慢填吧
-
-各种命名Mac OS
-系统名称 原来叫OS X，后来改名
-框架名称 cocoa">
+<meta name="description" content="学完Siwft以后，顺便对Cocoa框架也进行一次梳理。虽然之前用oc写了不少项目，但是因为有点即学即用的感觉，并没有形成系统的认知，为后面的开发估计埋下了不少坑，现在就慢慢填吧">
 <meta property="og:type" content="article">
-<meta property="og:title" content="cocoa框架学习笔记">
-<meta property="og:url" content="http://yoursite.com/2016/08/25/cocoa框架学习笔记/index.html">
+<meta property="og:title" content="Cocoa学习笔记">
+<meta property="og:url" content="http://yoursite.com/2016/08/26/cocoa框架学习笔记/index.html">
 <meta property="og:site_name" content="彭天浩胡说八道的地方">
-<meta property="og:description" content="学完Siwft以后，顺便对cocoa框架也进行一次梳理。虽然之前用oc写了不少项目，但是因为有点即学即用的感觉，并没有形成系统的认知，为后面的开发估计埋下了不少坑，现在就慢慢填吧
-
-各种命名Mac OS
-系统名称 原来叫OS X，后来改名
-框架名称 cocoa">
-<meta property="og:updated_time" content="2016-08-25T07:32:24.000Z">
+<meta property="og:description" content="学完Siwft以后，顺便对Cocoa框架也进行一次梳理。虽然之前用oc写了不少项目，但是因为有点即学即用的感觉，并没有形成系统的认知，为后面的开发估计埋下了不少坑，现在就慢慢填吧">
+<meta property="og:updated_time" content="2016-08-26T01:47:34.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="cocoa框架学习笔记">
-<meta name="twitter:description" content="学完Siwft以后，顺便对cocoa框架也进行一次梳理。虽然之前用oc写了不少项目，但是因为有点即学即用的感觉，并没有形成系统的认知，为后面的开发估计埋下了不少坑，现在就慢慢填吧
-
-各种命名Mac OS
-系统名称 原来叫OS X，后来改名
-框架名称 cocoa">
+<meta name="twitter:title" content="Cocoa学习笔记">
+<meta name="twitter:description" content="学完Siwft以后，顺便对Cocoa框架也进行一次梳理。虽然之前用oc写了不少项目，但是因为有点即学即用的感觉，并没有形成系统的认知，为后面的开发估计埋下了不少坑，现在就慢慢填吧">
 
 
 
@@ -84,7 +72,7 @@
   };
 </script>
 
-  <title> cocoa框架学习笔记 | 彭天浩胡说八道的地方 </title>
+  <title> Cocoa学习笔记 | 彭天浩胡说八道的地方 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -255,7 +243,7 @@
             
             
               
-                cocoa框架学习笔记
+                Cocoa学习笔记
               
             
           </h1>
@@ -264,8 +252,8 @@
         <div class="post-meta">
           <span class="post-time">
             发表于
-            <time itemprop="dateCreated" datetime="2016-08-25T15:32:24+08:00" content="2016-08-25">
-              2016-08-25
+            <time itemprop="dateCreated" datetime="2016-08-26T09:47:34+08:00" content="2016-08-26">
+              2016-08-26
             </time>
           </span>
 
@@ -290,8 +278,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/08/25/cocoa框架学习笔记/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/25/cocoa框架学习笔记/" itemprop="commentsCount"></span>
+                <a href="/2016/08/26/cocoa框架学习笔记/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/26/cocoa框架学习笔记/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -311,13 +299,34 @@
 
       
         <span itemprop="articleBody"><blockquote>
-<p>学完Siwft以后，顺便对cocoa框架也进行一次梳理。虽然之前用oc写了不少项目，但是因为有点即学即用的感觉，并没有形成系统的认知，为后面的开发估计埋下了不少坑，现在就慢慢填吧</p>
+<p>学完Siwft以后，顺便对Cocoa框架也进行一次梳理。虽然之前用oc写了不少项目，但是因为有点即学即用的感觉，并没有形成系统的认知，为后面的开发估计埋下了不少坑，现在就慢慢填吧</p>
 </blockquote>
+<a id="more"></a>
 <h2 id="u5404_u79CD_u547D_u540D"><a href="#u5404_u79CD_u547D_u540D" class="headerlink" title="各种命名"></a>各种命名</h2><h3 id="Mac_OS"><a href="#Mac_OS" class="headerlink" title="Mac OS"></a>Mac OS</h3><ul>
-<li><strong>系统名称</strong> 原来叫OS X，后来改名</li>
-<li><strong>框架名称</strong> cocoa </li>
+<li><strong>MacOS</strong> 原来叫OS X，后来改名</li>
+<li><strong>Cocoa</strong> MacOS上使用的库</li>
+<li><strong>AppKit.framework</strong> MacOS的框架，每个app都会用到</li>
+<li><strong>myapp.app</strong> 软件包（myapp代指app名）</li>
+<li><strong>Contents</strong> 包含了程序本身的文件夹</li>
+<li><strong>Info.plist</strong> 描述该应用的文件，启动的时候先读它</li>
+<li><strong>MacOS</strong> 包含app编译后的二进制文件 </li>
+<li><strong>myapp</strong> 二进制文件</li>
+<li><strong>PkgInfo</strong> 介绍app的制作者和app是做什么用的,没什么用</li>
+<li><strong>Resources</strong> 包含了所有编译在内的资源文件</li>
 </ul>
-</span>
+<h3 id="iOS"><a href="#iOS" class="headerlink" title="iOS"></a>iOS</h3><ul>
+<li><strong>Cocoa Touch</strong> iOS上使用的库</li>
+<li><strong>UIKit.framework</strong> iOS的框架，每个app都会用到</li>
+<li><strong>myapp</strong> 二进制文件（myapp代指app名）</li>
+<li><strong>Info.plist</strong> 描述该应用的文件，启动的时候先读它</li>
+</ul>
+<h2 id="NSBundle_u67E5_u627E_u8D44_u6E90"><a href="#NSBundle_u67E5_u627E_u8D44_u6E90" class="headerlink" title="NSBundle查找资源"></a>NSBundle查找资源</h2><p>bundle是一个目录,其中包含了程序会使用到的资源，如图像、声音、二进制文件、nib</p>
+<h3 id="main_bundle"><a href="#main_bundle" class="headerlink" title="main bundle"></a>main bundle</h3><p>整个程序是一个bundle，它是一个包含了nib文件、编译代码以及其他资源的目录。这个目录叫做main bundle</p>
+<p>得到main bundle很容易</p>
+<pre><code>let myBudle = NSBundle.mainBundle()
+</code></pre><p>之后就可以来查找资源</p>
+<pre><code>let imagePath: NSString? = NSBundle.mainBundle().pathForResource(&quot;head&quot;, ofType: &quot;jpg&quot;)
+</code></pre></span>
       
     </div>
 
@@ -325,9 +334,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Swift/" rel="tag">#Swift</a>
+            <a href="/tags/Cocoa/" rel="tag">#Cocoa</a>
           
-            <a href="/tags/cocoa/" rel="tag">#cocoa</a>
+            <a href="/tags/Swift/" rel="tag">#Swift</a>
           
             <a href="/tags/iOS/" rel="tag">#iOS</a>
           
@@ -371,8 +380,8 @@
         
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/08/25/cocoa框架学习笔记/"
-           data-title="cocoa框架学习笔记" data-url="http://yoursite.com/2016/08/25/cocoa框架学习笔记/">
+      <div class="ds-thread" data-thread-key="2016/08/26/cocoa框架学习笔记/"
+           data-title="Cocoa学习笔记" data-url="http://yoursite.com/2016/08/26/cocoa框架学习笔记/">
       </div>
     
   </div>
@@ -430,7 +439,7 @@
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">14</span>
+              <span class="site-state-item-count">15</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>
@@ -480,7 +489,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#u5404_u79CD_u547D_u540D"><span class="nav-number">1.</span> <span class="nav-text">各种命名</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Mac_OS"><span class="nav-number">1.1.</span> <span class="nav-text">Mac OS</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#u5404_u79CD_u547D_u540D"><span class="nav-number">1.</span> <span class="nav-text">各种命名</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Mac_OS"><span class="nav-number">1.1.</span> <span class="nav-text">Mac OS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#iOS"><span class="nav-number">1.2.</span> <span class="nav-text">iOS</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NSBundle_u67E5_u627E_u8D44_u6E90"><span class="nav-number">2.</span> <span class="nav-text">NSBundle查找资源</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#main_bundle"><span class="nav-number">2.1.</span> <span class="nav-text">main bundle</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
