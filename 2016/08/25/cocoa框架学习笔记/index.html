@@ -54,10 +54,10 @@
 <meta name="description" content="学完Siwft以后，顺便对Cocoa框架也进行一次梳理。虽然之前用oc写了不少项目，但是因为有点即学即用的感觉，并没有形成系统的认知，为后面的开发估计埋下了不少坑，现在就慢慢填吧">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Cocoa学习笔记">
-<meta property="og:url" content="http://yoursite.com/2016/08/26/cocoa框架学习笔记/index.html">
+<meta property="og:url" content="http://yoursite.com/2016/08/25/cocoa框架学习笔记/index.html">
 <meta property="og:site_name" content="彭天浩胡说八道的地方">
 <meta property="og:description" content="学完Siwft以后，顺便对Cocoa框架也进行一次梳理。虽然之前用oc写了不少项目，但是因为有点即学即用的感觉，并没有形成系统的认知，为后面的开发估计埋下了不少坑，现在就慢慢填吧">
-<meta property="og:updated_time" content="2016-08-26T01:47:34.000Z">
+<meta property="og:updated_time" content="2016-08-26T07:10:09.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Cocoa学习笔记">
 <meta name="twitter:description" content="学完Siwft以后，顺便对Cocoa框架也进行一次梳理。虽然之前用oc写了不少项目，但是因为有点即学即用的感觉，并没有形成系统的认知，为后面的开发估计埋下了不少坑，现在就慢慢填吧">
@@ -252,8 +252,8 @@
         <div class="post-meta">
           <span class="post-time">
             发表于
-            <time itemprop="dateCreated" datetime="2016-08-26T09:47:34+08:00" content="2016-08-26">
-              2016-08-26
+            <time itemprop="dateCreated" datetime="2016-08-25T15:20:16+08:00" content="2016-08-25">
+              2016-08-25
             </time>
           </span>
 
@@ -278,8 +278,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/08/26/cocoa框架学习笔记/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/26/cocoa框架学习笔记/" itemprop="commentsCount"></span>
+                <a href="/2016/08/25/cocoa框架学习笔记/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/25/cocoa框架学习笔记/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -320,13 +320,60 @@
 <li><strong>myapp</strong> 二进制文件（myapp代指app名）</li>
 <li><strong>Info.plist</strong> 描述该应用的文件，启动的时候先读它</li>
 </ul>
+<h3 id="nib_2Cxib_2Cstoryboard_u7684_u533A_u522B"><a href="#nib_2Cxib_2Cstoryboard_u7684_u533A_u522B" class="headerlink" title="nib,xib,storyboard的区别"></a>nib,xib,storyboard的区别</h3><p>nib是3.0版本以前的产物，在终端下我们可以看到，NIB其实是一个文件夹，里面有可执行的二进制文件；<br>xib是一个基于xml的描述文件，可以实现可视化编程。<br>storyboard是多个xib文件集合的描述文件，也采用xml格式。</p>
 <h2 id="NSBundle_u67E5_u627E_u8D44_u6E90"><a href="#NSBundle_u67E5_u627E_u8D44_u6E90" class="headerlink" title="NSBundle查找资源"></a>NSBundle查找资源</h2><p>bundle是一个目录,其中包含了程序会使用到的资源，如图像、声音、二进制文件、nib</p>
 <h3 id="main_bundle"><a href="#main_bundle" class="headerlink" title="main bundle"></a>main bundle</h3><p>整个程序是一个bundle，它是一个包含了nib文件、编译代码以及其他资源的目录。这个目录叫做main bundle</p>
 <p>得到main bundle很容易</p>
 <pre><code>let myBudle = NSBundle.mainBundle()
 </code></pre><p>之后就可以来查找资源</p>
 <pre><code>let imagePath: NSString? = NSBundle.mainBundle().pathForResource(&quot;head&quot;, ofType: &quot;jpg&quot;)
-</code></pre></span>
+</code></pre><h2 id="u751F_u547D_u5468_u671F"><a href="#u751F_u547D_u5468_u671F" class="headerlink" title="生命周期"></a>生命周期</h2><h3 id="MacOS"><a href="#MacOS" class="headerlink" title="MacOS"></a>MacOS</h3><ol>
+<li>打开<code>Info.plist</code>，获取二进制文件位置</li>
+<li>打开nib文件，对窗口控件进行解包、链接</li>
+<li>nib文件解包时发送<code>awakeFromNib</code>消息，但是不会发<code>init</code>，因为在拖入界面时候已经初始化了</li>
+<li>发送<code>applicationDidFinishLaunching</code>消息，app开始执行</li>
+<li>app被切换时候（MacOS鼠标点击其他软件、iOS按下home键）发送<code>applicatonWillResignActive</code>,真正消失的时候发送<code>applicationDidResignActive</code></li>
+<li>当焦点又回到app时候，收到<code>applicationWillBecomeActive</code>，真正显示之后<code>applicationDidBecomeActive</code></li>
+<li>在app真正要退出时候，收到<code>applicationWillTerminate</code>，这是最后一次保存数据的机会</li>
+</ol>
+<h3 id="iOS-1"><a href="#iOS-1" class="headerlink" title="iOS"></a>iOS</h3><p>iOS拥有以上的所有特性，但是因为屏幕每次只能显示一个app，所以又有了多任务的概念</p>
+<ol>
+<li>当app进入后台的时候，会发送<code>applicationWillEnterBackground</code>和<code>applicationDidEnterBackground</code></li>
+<li>当app进入前台的时候，会发送<code>applicationWillEnterForeground</code>和<code>applicationDidEnterForeground</code></li>
+</ol>
+<p>app内存如果占用过大，那么当手机内存不够用的时候，就会被终止<br>但是app的内存占用如果在<strong> 16MB以下 </strong>，当挂起之后，会储存到闪存芯片中，唤醒的时候就会回到原来的状态，避免了被终止</p>
+<h4 id="u6302_u8D77_u540E_u53F0_u8FD0_u884C"><a href="#u6302_u8D77_u540E_u53F0_u8FD0_u884C" class="headerlink" title="挂起后台运行"></a>挂起后台运行</h4><p>如果在进入后台之后还要做一些事情，比如保存大型文件，那么就要申请后台运行，不过只有十分钟的运行时间</p>
+<pre><code>func applicationDidEnterBackground(application: UIApplication) {
+
+    var backGroundTask: UIBackgroundTaskIdentifier? = nil
+
+    //时间耗尽之后，执行这段代码
+    backGroundTask = application.beginBackgroundTaskWithExpirationHandler(){
+        application.endBackgroundTask(backGroundTask!)
+        backGroundTask = UIBackgroundTaskInvalid
+    }
+
+    let backGroundQueue = NSOperationQueue()
+
+    //在这里写执行的代码，然后必须endBackgroundTask
+    backGroundQueue.addOperationWithBlock(){
+        application.endBackgroundTask(backGroundTask!)
+        backGroundTask = UIBackgroundTaskInvalid
+    }
+
+}
+</code></pre><h4 id="u540E_u53F0_u5B9A_u65F6_u5524_u9192"><a href="#u540E_u53F0_u5B9A_u65F6_u5524_u9192" class="headerlink" title="后台定时唤醒"></a>后台定时唤醒</h4><p>有些应用，比如天气，需要定时唤醒一次获取信息，就需要后台定时唤醒，不过只有<strong> 30s </strong>的时间</p>
+<pre><code>func application(application: UIApplication, performFetchWithCompletionHandler completionHandler: (UIBackgroundFetchResult) -&gt; Void) {
+    // 这里可以进行获取数据等操作
+}
+</code></pre><p>当然也要告诉系统多久进行一次唤醒，在<code>didFinishLaunchingWithOptions</code>里写</p>
+<pre><code>application.setMinimumBackgroundFetchInterval(UIApplicationBackgroundFetchIntervalMinimum)
+</code></pre><h4 id="u540E_u53F0_u901A_u77E5"><a href="#u540E_u53F0_u901A_u77E5" class="headerlink" title="后台通知"></a>后台通知</h4><p>聊天应用等有得到推送的场景，接到推送之后会触发</p>
+<pre><code>func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+
+}
+</code></pre><p>得到一个字典</p>
+</span>
       
     </div>
 
@@ -380,8 +427,8 @@
         
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/08/26/cocoa框架学习笔记/"
-           data-title="Cocoa学习笔记" data-url="http://yoursite.com/2016/08/26/cocoa框架学习笔记/">
+      <div class="ds-thread" data-thread-key="2016/08/25/cocoa框架学习笔记/"
+           data-title="Cocoa学习笔记" data-url="http://yoursite.com/2016/08/25/cocoa框架学习笔记/">
       </div>
     
   </div>
@@ -439,7 +486,7 @@
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">15</span>
+              <span class="site-state-item-count">14</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>
@@ -489,7 +536,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#u5404_u79CD_u547D_u540D"><span class="nav-number">1.</span> <span class="nav-text">各种命名</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Mac_OS"><span class="nav-number">1.1.</span> <span class="nav-text">Mac OS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#iOS"><span class="nav-number">1.2.</span> <span class="nav-text">iOS</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NSBundle_u67E5_u627E_u8D44_u6E90"><span class="nav-number">2.</span> <span class="nav-text">NSBundle查找资源</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#main_bundle"><span class="nav-number">2.1.</span> <span class="nav-text">main bundle</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#u5404_u79CD_u547D_u540D"><span class="nav-number">1.</span> <span class="nav-text">各种命名</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Mac_OS"><span class="nav-number">1.1.</span> <span class="nav-text">Mac OS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#iOS"><span class="nav-number">1.2.</span> <span class="nav-text">iOS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#nib_2Cxib_2Cstoryboard_u7684_u533A_u522B"><span class="nav-number">1.3.</span> <span class="nav-text">nib,xib,storyboard的区别</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NSBundle_u67E5_u627E_u8D44_u6E90"><span class="nav-number">2.</span> <span class="nav-text">NSBundle查找资源</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#main_bundle"><span class="nav-number">2.1.</span> <span class="nav-text">main bundle</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u751F_u547D_u5468_u671F"><span class="nav-number">3.</span> <span class="nav-text">生命周期</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#MacOS"><span class="nav-number">3.1.</span> <span class="nav-text">MacOS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#iOS-1"><span class="nav-number">3.2.</span> <span class="nav-text">iOS</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u6302_u8D77_u540E_u53F0_u8FD0_u884C"><span class="nav-number">3.2.1.</span> <span class="nav-text">挂起后台运行</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u540E_u53F0_u5B9A_u65F6_u5524_u9192"><span class="nav-number">3.2.2.</span> <span class="nav-text">后台定时唤醒</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u540E_u53F0_u901A_u77E5"><span class="nav-number">3.2.3.</span> <span class="nav-text">后台通知</span></a></li></ol></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
