@@ -57,7 +57,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/08/25/cocoa框架学习笔记/index.html">
 <meta property="og:site_name" content="彭天浩胡说八道的地方">
 <meta property="og:description" content="学完Swift以后，顺便对Cocoa框架也进行一次梳理。虽然之前用oc写了不少项目，但是因为有点即学即用的感觉，并没有形成系统的认知，为后面的开发估计埋下了不少坑，现在就慢慢填吧">
-<meta property="og:updated_time" content="2016-08-26T07:15:58.000Z">
+<meta property="og:updated_time" content="2016-08-27T06:36:03.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Cocoa学习笔记">
 <meta name="twitter:description" content="学完Swift以后，顺便对Cocoa框架也进行一次梳理。虽然之前用oc写了不少项目，但是因为有点即学即用的感觉，并没有形成系统的认知，为后面的开发估计埋下了不少坑，现在就慢慢填吧">
@@ -320,7 +320,7 @@
 <li><strong>myapp</strong> 二进制文件（myapp代指app名）</li>
 <li><strong>Info.plist</strong> 描述该应用的文件，启动的时候先读它</li>
 </ul>
-<h3 id="nib_2Cxib_2Cstoryboard_u7684_u533A_u522B"><a href="#nib_2Cxib_2Cstoryboard_u7684_u533A_u522B" class="headerlink" title="nib,xib,storyboard的区别"></a>nib,xib,storyboard的区别</h3><p>nib是3.0版本以前的产物，在终端下我们可以看到，NIB其实是一个文件夹，里面有可执行的二进制文件；<br>xib是一个基于xml的描述文件，可以实现可视化编程。<br>storyboard是多个xib文件集合的描述文件，也采用xml格式。</p>
+<h3 id="nib_2Cxib_2Cstoryboard_u7684_u533A_u522B"><a href="#nib_2Cxib_2Cstoryboard_u7684_u533A_u522B" class="headerlink" title="nib,xib,storyboard的区别"></a>nib,xib,storyboard的区别</h3><p>nib是3.0版本以前的产物，在终端下我们可以看到，NIB其实是一个文件夹，里面有可执行的二进制文件；网上查到，nib的全称是NEXT Interface Builder，是乔帮主之前创办的NEXT公司的东西<br>xib是一个基于xml的描述文件，可以实现可视化编程<br>storyboard是多个xib文件集合的描述文件，也采用xml格式</p>
 <h2 id="NSBundle_u67E5_u627E_u8D44_u6E90"><a href="#NSBundle_u67E5_u627E_u8D44_u6E90" class="headerlink" title="NSBundle查找资源"></a>NSBundle查找资源</h2><p>bundle是一个目录,其中包含了程序会使用到的资源，如图像、声音、二进制文件、nib</p>
 <h3 id="main_bundle"><a href="#main_bundle" class="headerlink" title="main bundle"></a>main bundle</h3><p>整个程序是一个bundle，它是一个包含了nib文件、编译代码以及其他资源的目录。这个目录叫做main bundle</p>
 <p>得到main bundle很容易</p>
@@ -373,6 +373,59 @@
 
 }
 </code></pre><p>得到一个字典</p>
+<h4 id="u7528NSNotification_u8FDB_u884C_u81EA_u5B9A_u4E49_u901A_u77E5"><a href="#u7528NSNotification_u8FDB_u884C_u81EA_u5B9A_u4E49_u901A_u77E5" class="headerlink" title="用NSNotification进行自定义通知"></a>用NSNotification进行自定义通知</h4><p>当程序挂起的时候，我除了给<code>AppDelegate</code>发通知之外，还想给其他对想法通知，这时候可以用<code>NSNotification</code>来做到，这时<code>NSNotification</code>还可用来传值等，但是记得注册通知之后要销毁，还有传值用代理更好</p>
+<p>首先在目标类(比如<code>ViewController.swift</code>)里写一个当通知来了以后执行的方法</p>
+<pre><code>func whenNotificationCome(notification :NSNotification){
+
+    if notification.userInfo != nil {
+        //这里处理收到的notification
+        NSLog(&quot;%@&quot;,notification.userInfo!)
+    }
+
+    //移除监听
+    NSNotificationCenter.defaultCenter().removeObserver(self, name: &quot;myNotification&quot;, object: nil)
+
+}
+</code></pre><p>然后在初始化的地方注册接收通知</p>
+<pre><code>NSNotificationCenter.defaultCenter().addObserver(self, selector: &quot;whenNotificationCome:&quot;, name: &quot;myNotification&quot;, object: nil)
+</code></pre><p>然后这时候如果在程序进入前台的时候发送通知</p>
+<pre><code>func applicationWillEnterForeground(application: UIApplication) {
+
+    let myNotification = NSNotificationCenter.defaultCenter()
+
+    let userInfo: NSDictionary = [&quot;123&quot;:&quot;123&quot;,&quot;1234&quot;:&quot;1234&quot;]
+
+    myNotification.postNotificationName(&quot;myNotification&quot;, object: nil, userInfo:userInfo as [NSObject : AnyObject])
+}
+</code></pre><p>那当我进入按下home键后再打开app，就会打印出</p>
+<pre><code>2016-08-27 13:32:19.193 Swift-iOSTest[2983:266380] {
+    123 = 123;
+    1234 = 1234;
+}
+</code></pre><h2 id="MVC_u8BBE_u8BA1_u6A21_u5F0F"><a href="#MVC_u8BBE_u8BA1_u6A21_u5F0F" class="headerlink" title="MVC设计模式"></a>MVC设计模式</h2><p>MVC的全称是Model View Controller，是模型(model)－视图(view)－控制器(controller)的缩写。模型负责数据储存，视图呈现用户界面、接受输入和触摸等，控制器作为二者中介，提供操作逻辑</p>
+<p>在iOS应用程序开发中，所有的控件、窗口等都继承自 UIView，对应MVC中的V。UIView及其子类主要负责UI的实现，而UIView所产生的事件都可以采用委托的方式，交给UIViewController实现。</p>
+<h2 id="GUI"><a href="#GUI" class="headerlink" title="GUI"></a>GUI</h2><h3 id="Storyboard"><a href="#Storyboard" class="headerlink" title="Storyboard"></a>Storyboard</h3><p>Storyboard是一组通过<code>segue</code>链接的<code>viewController</code></p>
+<h4 id="segue_u8DF3_u8F6C"><a href="#segue_u8DF3_u8F6C" class="headerlink" title="segue跳转"></a>segue跳转</h4><p>当需要跳转的时候，就先拉线建立连接，写identifier,然后在<code>viewController</code>里写</p>
+<pre><code>self.performSegueWithIdentifier(&lt;#T##identifier: String##String#&gt;, sender: &lt;#T##AnyObject?#&gt;)
+</code></pre><p>在跳转之前也可以通过写</p>
+<pre><code>override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+
+}
+</code></pre><p>来为跳转做准备，通常可以用<code>setObject</code>来为下一个页面传值，我以前写oc的时候喜欢这么写</p>
+<pre><code>-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([segue.identifier isEqualToString:@&quot;wantJump&quot;]) {
+        UIViewController* view = segue.destinationViewController;
+        [view setValue:strArea forKey:@&quot;strArea&quot;];
+        [view setValue:endArea forKey:@&quot;endArea&quot;];
+        [view setValue:customizeId forKey:@&quot;customizeId&quot;];
+    }else if ([segue.identifier isEqualToString:@&quot;historyJump&quot;]){
+        UIViewController* view = segue.destinationViewController;
+        [view setValue:strArea forKey:@&quot;strArea&quot;];
+        [view setValue:endArea forKey:@&quot;endArea&quot;];
+        [view setValue:customizeId forKey:@&quot;customizeId&quot;];
+    }
+}
+</code></pre><p>#### </p>
 </span>
       
     </div>
@@ -536,7 +589,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#u5404_u79CD_u547D_u540D"><span class="nav-number">1.</span> <span class="nav-text">各种命名</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Mac_OS"><span class="nav-number">1.1.</span> <span class="nav-text">Mac OS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#iOS"><span class="nav-number">1.2.</span> <span class="nav-text">iOS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#nib_2Cxib_2Cstoryboard_u7684_u533A_u522B"><span class="nav-number">1.3.</span> <span class="nav-text">nib,xib,storyboard的区别</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NSBundle_u67E5_u627E_u8D44_u6E90"><span class="nav-number">2.</span> <span class="nav-text">NSBundle查找资源</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#main_bundle"><span class="nav-number">2.1.</span> <span class="nav-text">main bundle</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u751F_u547D_u5468_u671F"><span class="nav-number">3.</span> <span class="nav-text">生命周期</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#MacOS"><span class="nav-number">3.1.</span> <span class="nav-text">MacOS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#iOS-1"><span class="nav-number">3.2.</span> <span class="nav-text">iOS</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u6302_u8D77_u540E_u53F0_u8FD0_u884C"><span class="nav-number">3.2.1.</span> <span class="nav-text">挂起后台运行</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u540E_u53F0_u5B9A_u65F6_u5524_u9192"><span class="nav-number">3.2.2.</span> <span class="nav-text">后台定时唤醒</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u540E_u53F0_u901A_u77E5"><span class="nav-number">3.2.3.</span> <span class="nav-text">后台通知</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#u5404_u79CD_u547D_u540D"><span class="nav-number">1.</span> <span class="nav-text">各种命名</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Mac_OS"><span class="nav-number">1.1.</span> <span class="nav-text">Mac OS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#iOS"><span class="nav-number">1.2.</span> <span class="nav-text">iOS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#nib_2Cxib_2Cstoryboard_u7684_u533A_u522B"><span class="nav-number">1.3.</span> <span class="nav-text">nib,xib,storyboard的区别</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NSBundle_u67E5_u627E_u8D44_u6E90"><span class="nav-number">2.</span> <span class="nav-text">NSBundle查找资源</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#main_bundle"><span class="nav-number">2.1.</span> <span class="nav-text">main bundle</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u751F_u547D_u5468_u671F"><span class="nav-number">3.</span> <span class="nav-text">生命周期</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#MacOS"><span class="nav-number">3.1.</span> <span class="nav-text">MacOS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#iOS-1"><span class="nav-number">3.2.</span> <span class="nav-text">iOS</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u6302_u8D77_u540E_u53F0_u8FD0_u884C"><span class="nav-number">3.2.1.</span> <span class="nav-text">挂起后台运行</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u540E_u53F0_u5B9A_u65F6_u5524_u9192"><span class="nav-number">3.2.2.</span> <span class="nav-text">后台定时唤醒</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u540E_u53F0_u901A_u77E5"><span class="nav-number">3.2.3.</span> <span class="nav-text">后台通知</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u7528NSNotification_u8FDB_u884C_u81EA_u5B9A_u4E49_u901A_u77E5"><span class="nav-number">3.2.4.</span> <span class="nav-text">用NSNotification进行自定义通知</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MVC_u8BBE_u8BA1_u6A21_u5F0F"><span class="nav-number">4.</span> <span class="nav-text">MVC设计模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GUI"><span class="nav-number">5.</span> <span class="nav-text">GUI</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Storyboard"><span class="nav-number">5.1.</span> <span class="nav-text">Storyboard</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#segue_u8DF3_u8F6C"><span class="nav-number">5.1.1.</span> <span class="nav-text">segue跳转</span></a></li></ol></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
