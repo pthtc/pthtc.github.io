@@ -35,7 +35,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="SDK,iOS,mysql," />
+  <meta name="keywords" content="Cocoa,MacOS,Swift,iOS," />
 
 
 
@@ -51,16 +51,28 @@
 
 
 
-<meta name="description" content="记录好用的SDK，备忘">
+<meta name="description" content="之前一直使用纯代码布局，但是现在发现使用storyboard布局更快，现在学习一下
+
+布局可以用纯代码布局，运用setFrame，不过要注意取消auto layout如果是Storyboard布局，运用无论是iOS还是MacOS,在拖控件之后都需要建立约束">
 <meta property="og:type" content="article">
-<meta property="og:title" content="我用过的iOS开发SDK自我记录（不定时更新）">
-<meta property="og:url" content="http://yoursite.com/2016/03/13/我用过的iOS开发SDK自我记录（不定时更新）/index.html">
+<meta property="og:title" content="Storyboard中使用约束布局">
+<meta property="og:url" content="http://yoursite.com/2016/08/28/Storyboard中使用约束布局/index.html">
 <meta property="og:site_name" content="彭天浩胡说八道的地方">
-<meta property="og:description" content="记录好用的SDK，备忘">
-<meta property="og:updated_time" content="2016-03-13T05:13:14.000Z">
+<meta property="og:description" content="之前一直使用纯代码布局，但是现在发现使用storyboard布局更快，现在学习一下
+
+布局可以用纯代码布局，运用setFrame，不过要注意取消auto layout如果是Storyboard布局，运用无论是iOS还是MacOS,在拖控件之后都需要建立约束">
+<meta property="og:image" content="https://d17oy1vhnax1f7.cloudfront.net/items/1S0U2t3O3k1R3u2e0v0T/QQ20160828-0@2x.png">
+<meta property="og:image" content="https://d17oy1vhnax1f7.cloudfront.net/items/1S3b30210a3T3E2e2121/QQ20160828-1@2x.png">
+<meta property="og:image" content="https://d17oy1vhnax1f7.cloudfront.net/items/1S0U2t3O3k1R3u2e0v0T/QQ20160828-0@2x.png">
+<meta property="og:image" content="https://d17oy1vhnax1f7.cloudfront.net/items/0g0E2d3G440q0Z1O2W3n/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-08-28%20%E4%B8%8B%E5%8D%881.59.55.png?v=a194c595">
+<meta property="og:image" content="https://d17oy1vhnax1f7.cloudfront.net/items/1g0K1M1f0l2q1g1B3k0j/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-08-28%20%E4%B8%8B%E5%8D%882.00.13.png?v=81813200">
+<meta property="og:image" content="https://d17oy1vhnax1f7.cloudfront.net/items/0R2F33160Y3r000K0m0x/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-08-28%20%E4%B8%8B%E5%8D%882.28.29.png?v=b22e0827">
+<meta property="og:updated_time" content="2016-08-28T06:37:48.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="我用过的iOS开发SDK自我记录（不定时更新）">
-<meta name="twitter:description" content="记录好用的SDK，备忘">
+<meta name="twitter:title" content="Storyboard中使用约束布局">
+<meta name="twitter:description" content="之前一直使用纯代码布局，但是现在发现使用storyboard布局更快，现在学习一下
+
+布局可以用纯代码布局，运用setFrame，不过要注意取消auto layout如果是Storyboard布局，运用无论是iOS还是MacOS,在拖控件之后都需要建立约束">
 
 
 
@@ -72,7 +84,7 @@
   };
 </script>
 
-  <title> 我用过的iOS开发SDK自我记录（不定时更新） | 彭天浩胡说八道的地方 </title>
+  <title> Storyboard中使用约束布局 | 彭天浩胡说八道的地方 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -243,7 +255,7 @@
             
             
               
-                我用过的iOS开发SDK自我记录（不定时更新）
+                Storyboard中使用约束布局
               
             
           </h1>
@@ -252,8 +264,8 @@
         <div class="post-meta">
           <span class="post-time">
             发表于
-            <time itemprop="dateCreated" datetime="2016-03-13T13:12:25+08:00" content="2016-03-13">
-              2016-03-13
+            <time itemprop="dateCreated" datetime="2016-08-28T13:20:16+08:00" content="2016-08-28">
+              2016-08-28
             </time>
           </span>
 
@@ -262,8 +274,8 @@
               &nbsp; | &nbsp; 分类于
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/iOS/" itemprop="url" rel="index">
-                    <span itemprop="name">iOS</span>
+                  <a href="/categories/MacOS/" itemprop="url" rel="index">
+                    <span itemprop="name">MacOS</span>
                   </a>
                 </span>
 
@@ -278,8 +290,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/03/13/我用过的iOS开发SDK自我记录（不定时更新）/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/13/我用过的iOS开发SDK自我记录（不定时更新）/" itemprop="commentsCount"></span>
+                <a href="/2016/08/28/Storyboard中使用约束布局/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/28/Storyboard中使用约束布局/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -299,16 +311,58 @@
 
       
         <span itemprop="articleBody"><blockquote>
-<p>记录好用的SDK，备忘</p>
+<p>之前一直使用纯代码布局，但是现在发现使用storyboard布局更快，现在学习一下</p>
 </blockquote>
+<p>布局可以用纯代码布局，运用setFrame，不过要注意取消auto layout<br>如果是Storyboard布局，运用无论是iOS还是MacOS,在拖控件之后都需要建立约束</p>
 <a id="more"></a>
-<h2 id="u7F51_u7EDC_u8FDE_u63A5"><a href="#u7F51_u7EDC_u8FDE_u63A5" class="headerlink" title="网络连接"></a>网络连接</h2><p><a href="https://github.com/AFNetworking/AFNetworking" target="_blank" rel="external">AFNetworking</a></p>
-<h2 id="u56FE_u50CF_u5904_u7406"><a href="#u56FE_u50CF_u5904_u7406" class="headerlink" title="图像处理"></a>图像处理</h2><p><a href="http://tusdk.com" target="_blank" rel="external">TUSDK(滤镜)</a></p>
-<p><a href="http://www.dejohndong.com/2015/02/25/实现iOS的瀑布流：DDCollectionViewFlowLayout/" target="_blank" rel="external">瀑布流</a></p>
-<h2 id="u5730_u56FE"><a href="#u5730_u56FE" class="headerlink" title="地图"></a>地图</h2><p><a href="http://lbs.amap.com" target="_blank" rel="external">高德地图SDK</a></p>
-<h2 id="mysql_u8FDE_u63A5"><a href="#mysql_u8FDE_u63A5" class="headerlink" title="mysql连接"></a>mysql连接</h2><p><a href="https://github.com/thrivesmart/just-mysql-example-mac-app-objective-c-xcode" target="_blank" rel="external">在osx上连接mysql</a></p>
-<h2 id="u5012_u8BA1_u65F6"><a href="#u5012_u8BA1_u65F6" class="headerlink" title="倒计时"></a>倒计时</h2><p><a href="https://github.com/mineschan/MZTimerLabel" target="_blank" rel="external">MZTimerLable</a></p>
-<h2 id="u793E_u533A"><a href="#u793E_u533A" class="headerlink" title="社区"></a>社区</h2><p><a href="http://www.umeng.com/wsq" target="_blank" rel="external">友盟微社区</a></p>
+<h2 id="u529F_u80FD_u6309_u952E"><a href="#u529F_u80FD_u6309_u952E" class="headerlink" title="功能按键"></a>功能按键</h2><div align="left"><br><br><img src="https://d17oy1vhnax1f7.cloudfront.net/items/1S0U2t3O3k1R3u2e0v0T/QQ20160828-0@2x.png" alt=""><br><br><img src="https://d17oy1vhnax1f7.cloudfront.net/items/1S3b30210a3T3E2e2121/QQ20160828-1@2x.png" alt=""><br><br><img src="https://d17oy1vhnax1f7.cloudfront.net/items/1S0U2t3O3k1R3u2e0v0T/QQ20160828-0@2x.png" alt=""><br><br></div>
+
+<hr>
+<h2 id="u4E00_u4E2A_u5C0F_u4F8B_u5B50"><a href="#u4E00_u4E2A_u5C0F_u4F8B_u5B50" class="headerlink" title="一个小例子"></a>一个小例子</h2><h3 id="u6700_u540E_u6548_u679C"><a href="#u6700_u540E_u6548_u679C" class="headerlink" title="最后效果"></a>最后效果</h3><p><img src="https://d17oy1vhnax1f7.cloudfront.net/items/0g0E2d3G440q0Z1O2W3n/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-08-28%20%E4%B8%8B%E5%8D%881.59.55.png?v=a194c595" alt=""></p>
+<h3 id="u8981_u6C42"><a href="#u8981_u6C42" class="headerlink" title="要求"></a>要求</h3><ul>
+<li>输入框随着窗口的拖动放大缩小</li>
+<li>输入框上下左右距离窗口边缘有固定距离</li>
+<li>输入框不能太小，宽高要有一个最小值</li>
+<li>加减号按钮、button有相同且特定的宽高</li>
+<li>加减号按钮、button按钮在同一水平线上</li>
+<li>加号按钮的前端和输入框后端对齐</li>
+<li>button按钮后端和输入框后端对齐</li>
+<li>加减号、button按钮与窗口底边距离固定</li>
+<li>加减号之间有固定距离</li>
+<li>加减号和button按钮有最短距离</li>
+</ul>
+<h3 id="u89E3_u51B3_u65B9_u6848"><a href="#u89E3_u51B3_u65B9_u6848" class="headerlink" title="解决方案"></a>解决方案</h3><ul>
+<li><p>输入框随着窗口的拖动放大缩小、输入框上下左右距离窗口边缘有固定距离</p>
+<p>  //View<br>  bottom = Bordered Scroll View - Text View.bottom + 60<br>  Bordered Scroll View - Text View.leading = leading + 20<br>  trailing = Bordered Scroll View - Text View.trailing + 20<br>  Bordered Scroll View - Text View.top = top + 20</p>
+</li>
+<li><p>输入框不能太小，宽高要有一个最小值</p>
+<p>  //TextField<br>  aspect = 2:1<br>  height ≥ 220</p>
+</li>
+<li><p>加减号按钮、button有相同且特定的宽高</p>
+<p>  //addButton<br>  height = 20<br>  width = 13</p>
+<p>  //removeButton<br>  height = 20<br>  width = 13</p>
+<p>  //Button<br>  height = 20<br>  width = 69</p>
+</li>
+<li><p>加减号按钮、button按钮在同一水平线上</p>
+<p>  //View<br>  addButton.centerY = removeButton.centerY<br>  addButton.centerY = Button.centerY</p>
+</li>
+<li><p>加号按钮的前端和输入框前端对齐</p>
+<p>  //View<br>  addButton.leading = Text View.leading</p>
+</li>
+<li><p>button按钮后端和输入框后端对齐</p>
+<p>  //View<br>  Bordered Scroll View - Text View.trailing = Button.trailing</p>
+</li>
+<li><p>加减号、button按钮与窗口底边距离固定</p>
+<p>  //View<br>  addButton.top = Bordered Scroll View - Text View.bottom + 20</p>
+</li>
+<li><p>加减号之间有固定距离</p>
+<p>  //View<br>  removeButton.leading = addButton.trailing + 20</p>
+</li>
+<li><p>加减号和button按钮有最短距离</p>
+<p>  //View<br>  Button.leading ≥ removeButton.trailing + 40</p>
+</li>
+</ul>
+<h3 id="u7EA6_u675F_u7ED3_u679C"><a href="#u7EA6_u675F_u7ED3_u679C" class="headerlink" title="约束结果"></a>约束结果</h3><p><img src="https://d17oy1vhnax1f7.cloudfront.net/items/1g0K1M1f0l2q1g1B3k0j/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-08-28%20%E4%B8%8B%E5%8D%882.00.13.png?v=81813200" alt=""><br><img src="https://d17oy1vhnax1f7.cloudfront.net/items/0R2F33160Y3r000K0m0x/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-08-28%20%E4%B8%8B%E5%8D%882.28.29.png?v=b22e0827" alt=""></p>
 </span>
       
     </div>
@@ -317,11 +371,13 @@
       
         <div class="post-tags">
           
-            <a href="/tags/SDK/" rel="tag">#SDK</a>
+            <a href="/tags/Cocoa/" rel="tag">#Cocoa</a>
+          
+            <a href="/tags/MacOS/" rel="tag">#MacOS</a>
+          
+            <a href="/tags/Swift/" rel="tag">#Swift</a>
           
             <a href="/tags/iOS/" rel="tag">#iOS</a>
-          
-            <a href="/tags/mysql/" rel="tag">#mysql</a>
           
         </div>
       
@@ -330,17 +386,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/03/13/数据结构备忘（单链表-二叉树）/" rel="next" title="数据结构备忘（单链表-二叉树）">
-                <i class="fa fa-chevron-left"></i> 数据结构备忘（单链表-二叉树）
+              <a href="/2016/08/25/cocoa框架学习笔记/" rel="next" title="Cocoa学习笔记">
+                <i class="fa fa-chevron-left"></i> Cocoa学习笔记
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/04/14/包子行走隐私政策/" rel="prev" title="包子行走隐私政策">
-                包子行走隐私政策 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -367,8 +419,8 @@
         
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/03/13/我用过的iOS开发SDK自我记录（不定时更新）/"
-           data-title="我用过的iOS开发SDK自我记录（不定时更新）" data-url="http://yoursite.com/2016/03/13/我用过的iOS开发SDK自我记录（不定时更新）/">
+      <div class="ds-thread" data-thread-key="2016/08/28/Storyboard中使用约束布局/"
+           data-title="Storyboard中使用约束布局" data-url="http://yoursite.com/2016/08/28/Storyboard中使用约束布局/">
       </div>
     
   </div>
@@ -476,7 +528,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#u7F51_u7EDC_u8FDE_u63A5"><span class="nav-number">1.</span> <span class="nav-text">网络连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u56FE_u50CF_u5904_u7406"><span class="nav-number">2.</span> <span class="nav-text">图像处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u5730_u56FE"><span class="nav-number">3.</span> <span class="nav-text">地图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mysql_u8FDE_u63A5"><span class="nav-number">4.</span> <span class="nav-text">mysql连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u5012_u8BA1_u65F6"><span class="nav-number">5.</span> <span class="nav-text">倒计时</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u793E_u533A"><span class="nav-number">6.</span> <span class="nav-text">社区</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#u529F_u80FD_u6309_u952E"><span class="nav-number">1.</span> <span class="nav-text">功能按键</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u4E00_u4E2A_u5C0F_u4F8B_u5B50"><span class="nav-number">2.</span> <span class="nav-text">一个小例子</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u6700_u540E_u6548_u679C"><span class="nav-number">2.1.</span> <span class="nav-text">最后效果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u8981_u6C42"><span class="nav-number">2.2.</span> <span class="nav-text">要求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u89E3_u51B3_u65B9_u6848"><span class="nav-number">2.3.</span> <span class="nav-text">解决方案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u7EA6_u675F_u7ED3_u679C"><span class="nav-number">2.4.</span> <span class="nav-text">约束结果</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
