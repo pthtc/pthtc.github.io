@@ -35,7 +35,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="数据结构," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -51,16 +51,16 @@
 
 
 
-<meta name="description" content="二叉树和单链表是数据结构的重要基础">
+<meta name="description" content="刚刚基于iOS用定时器写了一个简单的圆周运动，这里写一下实现">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数据结构备忘（单链表-二叉树）">
-<meta property="og:url" content="http://yoursite.com/2016/03/13/数据结构备忘（单链表-二叉树）/index.html">
+<meta property="og:title" content="iOS实现圆周运动效果">
+<meta property="og:url" content="http://yoursite.com/2016/01/01/iOS实现圆周运动效果副本/index.html">
 <meta property="og:site_name" content="彭天浩胡说八道的地方">
-<meta property="og:description" content="二叉树和单链表是数据结构的重要基础">
-<meta property="og:updated_time" content="2016-03-13T05:08:19.000Z">
+<meta property="og:description" content="刚刚基于iOS用定时器写了一个简单的圆周运动，这里写一下实现">
+<meta property="og:updated_time" content="2016-01-06T15:44:04.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="数据结构备忘（单链表-二叉树）">
-<meta name="twitter:description" content="二叉树和单链表是数据结构的重要基础">
+<meta name="twitter:title" content="iOS实现圆周运动效果">
+<meta name="twitter:description" content="刚刚基于iOS用定时器写了一个简单的圆周运动，这里写一下实现">
 
 
 
@@ -72,7 +72,7 @@
   };
 </script>
 
-  <title> 数据结构备忘（单链表-二叉树） | 彭天浩胡说八道的地方 </title>
+  <title> iOS实现圆周运动效果 | 彭天浩胡说八道的地方 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -243,7 +243,7 @@
             
             
               
-                数据结构备忘（单链表-二叉树）
+                iOS实现圆周运动效果
               
             
           </h1>
@@ -252,34 +252,19 @@
         <div class="post-meta">
           <span class="post-time">
             发表于
-            <time itemprop="dateCreated" datetime="2016-03-13T13:06:25+08:00" content="2016-03-13">
-              2016-03-13
+            <time itemprop="dateCreated" datetime="2016-01-01T00:41:42+08:00" content="2016-01-01">
+              2016-01-01
             </time>
           </span>
 
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/数据结构/" itemprop="url" rel="index">
-                    <span itemprop="name">数据结构</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
           
 
           
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/03/13/数据结构备忘（单链表-二叉树）/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/13/数据结构备忘（单链表-二叉树）/" itemprop="commentsCount"></span>
+                <a href="/2016/01/01/iOS实现圆周运动效果副本/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/01/iOS实现圆周运动效果副本/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -298,148 +283,52 @@
       
 
       
-        <span itemprop="articleBody"><blockquote>
-<p>二叉树和单链表是数据结构的重要基础</p>
-</blockquote>
+        <span itemprop="articleBody"><p>刚刚基于iOS用定时器写了一个简单的圆周运动，这里写一下实现</p>
 <a id="more"></a>
-<h2 id="u5355_u94FE_u8868"><a href="#u5355_u94FE_u8868" class="headerlink" title="单链表"></a>单链表</h2><pre><code>#include &lt;iostream&gt;
-using namespace std;
-
-struct List
-{
-    int num;
-    List *next;
-};
-
-//在下一行建立头指针
-List *head;
-
-List *Create()
-{
-        //从下一行开始构造单链表
-    List *p = NULL;
-    List *q = NULL;
-    head = NULL;
-    for(int i =0; i &lt; 3; i++){
-        p=new List;
-        cin &gt;&gt; p-&gt;num;
-    if(head == NULL){
-    head = p;
-    }else{
-        q-&gt;next = p;
-        }
-        q=p;
-    }
-    if(head != NULL){
-    q-&gt;next = NULL;
-    }
-    return head;
+<h2 id="u8BB0_u5F55_u4E0B360_u4E2Asin/cos_u503C"><a href="#u8BB0_u5F55_u4E0B360_u4E2Asin/cos_u503C" class="headerlink" title="记录下360个sin/cos值"></a>记录下360个sin/cos值</h2><p>像这样</p>
+<pre><code>for(int i=0;i&lt;360;i++){
+    array[0][i]=sin(PI/180*i);
+    array[1][i]=cos(PI/180*i);
 }
-
-void displayList(List *head)
-{
-    while ( head != NULL ) {
-        cout &lt;&lt; head-&gt;num &lt;&lt; endl;
-        head = head-&gt;next;
-    }
+</code></pre><h2 id="u8BBE_u7F6E_u5B9A_u65F6_u5668"><a href="#u8BBE_u7F6E_u5B9A_u65F6_u5668" class="headerlink" title="设置定时器"></a>设置定时器</h2><p>设置每0.01秒执行一次<code>task</code>方法</p>
+<pre><code>NSDate *scheduledTime = [NSDate dateWithTimeIntervalSinceNow:0];
+NSString *customUserObject = @&quot;To demo userInfo&quot;;
+NSTimer *timer = [[NSTimer alloc] initWithFireDate:scheduledTime
+                                          interval:0.00000001
+                                            target:self
+                                          selector:@selector(task)
+                                          userInfo:customUserObject
+                                           repeats:YES];
+NSRunLoop *runLoop = [NSRunLoop currentRunLoop];
+[runLoop addTimer:timer forMode:NSDefaultRunLoopMode];
+</code></pre><h2 id="task_u65B9_u6CD5_u8D1F_u8D23_u6539_u53D8_u5706_u7684_u4F4D_u7F6E"><a href="#task_u65B9_u6CD5_u8D1F_u8D23_u6539_u53D8_u5706_u7684_u4F4D_u7F6E" class="headerlink" title="task方法负责改变圆的位置"></a><code>task</code>方法负责改变圆的位置</h2><pre><code>-(void)task{
+_Circle.frame = CGRectMake(250+array[1][n]*R,250+array[0][n]*R, cW, cH);
+n++;
+n%=360;
+NSLog(@&quot;%f %f&quot;,_Circle.frame.origin.x,_Circle.frame.origin.y);
 }
-
-int main() {
-       Create();
-    displayList(head);
-    return 0;
-}
-</code></pre><h2 id="u4E8C_u53C9_u6811"><a href="#u4E8C_u53C9_u6811" class="headerlink" title="二叉树"></a>二叉树</h2><pre><code>#include &lt;iostream&gt;
-using namespace std;
-struct BiTNode{
-    char data;
-    struct BiTNode *lchild, *rchild;
-};
-BiTNode*T;
-void CreateBiTree(BiTNode* &amp;T);
-void Inorder(BiTNode* &amp;T);
-void PreOrderTraverse(BiTNode* &amp;T);
-void Posorder(BiTNode* &amp;T);
-
-int main(){
-    CreateBiTree(T);
-    cout&lt;&lt;&quot;先序递归遍历：&quot;&lt;&lt;endl;
-    PreOrderTraverse(T);
-    cout&lt;&lt;endl;
-    cout&lt;&lt;&quot;中序递归遍历：&quot;&lt;&lt;endl;
-    Inorder(T);
-    cout&lt;&lt;endl;
-    cout&lt;&lt;&quot;后序递归遍历：&quot;&lt;&lt;endl;
-    Posorder(T);
-    cout&lt;&lt;endl;
-    return 1;
-}
-
-void CreateBiTree(BiTNode* &amp;T){
-    char ch;
-    if((ch=getchar())==&apos;#&apos;){
-        T=NULL;
-    }
-    else{
-        T=new BiTNode;
-        T-&gt;data=ch;
-        CreateBiTree(T-&gt;lchild);//递归创建左子树
-        CreateBiTree(T-&gt;rchild);//递归创建右子树
-    }
-}
-
-void PreOrderTraverse(BiTNode* &amp;T){
-    if(T){
-        cout&lt;&lt;T-&gt;data;
-        PreOrderTraverse(T-&gt;lchild);//
-        PreOrderTraverse(T-&gt;rchild);
-    }else cout&lt;&lt;&quot;&quot;;
-}
-
-void Inorder(BiTNode* &amp;T){
-    if(T){
-        Inorder(T-&gt;lchild);
-        cout&lt;&lt;T-&gt;data;
-        Inorder(T-&gt;rchild);
-    }
-    else cout&lt;&lt;&quot;&quot;;
-}
-
-void Posorder(BiTNode* &amp;T){
-    if(T){
-        Posorder(T-&gt;lchild);
-        Posorder(T-&gt;rchild);
-        cout&lt;&lt;T-&gt;data;
-    }
-    else cout&lt;&lt;&quot;&quot;;
-}
-</code></pre></span>
+</code></pre><p><a href="https://github.com/pthtc/circular-motion-iOS" target="_blank" rel="external">点击这里下载demo</a></p>
+</span>
       
     </div>
 
     <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/数据结构/" rel="tag">#数据结构</a>
-          
-        </div>
       
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/01/11/远离百度，我们有更好的/" rel="next" title="远离百度，我们有更好的">
-                <i class="fa fa-chevron-left"></i> 远离百度，我们有更好的
+              <a href="/2016/01/01/iOS实现圆周运动效果/" rel="next" title="iOS实现圆周运动效果">
+                <i class="fa fa-chevron-left"></i> iOS实现圆周运动效果
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/03/13/我用过的iOS开发SDK自我记录（不定时更新）/" rel="prev" title="我用过的iOS开发SDK自我记录（不定时更新）">
-                我用过的iOS开发SDK自我记录（不定时更新） <i class="fa fa-chevron-right"></i>
+              <a href="/2016/01/11/远离百度，我们有更好的/" rel="prev" title="远离百度，我们有更好的">
+                远离百度，我们有更好的 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -467,8 +356,8 @@ void Posorder(BiTNode* &amp;T){
         
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/03/13/数据结构备忘（单链表-二叉树）/"
-           data-title="数据结构备忘（单链表-二叉树）" data-url="http://yoursite.com/2016/03/13/数据结构备忘（单链表-二叉树）/">
+      <div class="ds-thread" data-thread-key="2016/01/01/iOS实现圆周运动效果副本/"
+           data-title="iOS实现圆周运动效果" data-url="http://yoursite.com/2016/01/01/iOS实现圆周运动效果副本/">
       </div>
     
   </div>
@@ -576,7 +465,7 @@ void Posorder(BiTNode* &amp;T){
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#u5355_u94FE_u8868"><span class="nav-number">1.</span> <span class="nav-text">单链表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u4E8C_u53C9_u6811"><span class="nav-number">2.</span> <span class="nav-text">二叉树</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#u8BB0_u5F55_u4E0B360_u4E2Asin/cos_u503C"><span class="nav-number">1.</span> <span class="nav-text">记录下360个sin/cos值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u8BBE_u7F6E_u5B9A_u65F6_u5668"><span class="nav-number">2.</span> <span class="nav-text">设置定时器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#task_u65B9_u6CD5_u8D1F_u8D23_u6539_u53D8_u5706_u7684_u4F4D_u7F6E"><span class="nav-number">3.</span> <span class="nav-text">task方法负责改变圆的位置</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">

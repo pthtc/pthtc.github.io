@@ -35,7 +35,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="圆周运动," />
+  <meta name="keywords" content="Cocoa,iOS," />
 
 
 
@@ -57,7 +57,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/01/01/iOS实现圆周运动效果/index.html">
 <meta property="og:site_name" content="彭天浩胡说八道的地方">
 <meta property="og:description" content="刚刚基于iOS用定时器写了一个简单的圆周运动，这里写一下实现">
-<meta property="og:updated_time" content="2016-01-06T15:44:04.000Z">
+<meta property="og:updated_time" content="2016-08-29T04:46:34.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS实现圆周运动效果">
 <meta name="twitter:description" content="刚刚基于iOS用定时器写了一个简单的圆周运动，这里写一下实现">
@@ -298,7 +298,9 @@
       
 
       
-        <span itemprop="articleBody"><p>刚刚基于iOS用定时器写了一个简单的圆周运动，这里写一下实现</p>
+        <span itemprop="articleBody"><blockquote>
+<p>刚刚基于iOS用定时器写了一个简单的圆周运动，这里写一下实现</p>
+</blockquote>
 <a id="more"></a>
 <h2 id="u8BB0_u5F55_u4E0B360_u4E2Asin/cos_u503C"><a href="#u8BB0_u5F55_u4E0B360_u4E2Asin/cos_u503C" class="headerlink" title="记录下360个sin/cos值"></a>记录下360个sin/cos值</h2><p>像这样</p>
 <pre><code>for(int i=0;i&lt;360;i++){
@@ -316,11 +318,11 @@ NSTimer *timer = [[NSTimer alloc] initWithFireDate:scheduledTime
                                            repeats:YES];
 NSRunLoop *runLoop = [NSRunLoop currentRunLoop];
 [runLoop addTimer:timer forMode:NSDefaultRunLoopMode];
-</code></pre><h2 id="task_u65B9_u6CD5_u8D1F_u8D23_u6539_u53D8_u5706_u7684_u4F4D_u7F6E"><a href="#task_u65B9_u6CD5_u8D1F_u8D23_u6539_u53D8_u5706_u7684_u4F4D_u7F6E" class="headerlink" title="task方法负责改变圆的位置"></a><code>task</code>方法负责改变圆的位置</h2><pre><code>-(void)task{
-_Circle.frame = CGRectMake(250+array[1][n]*R,250+array[0][n]*R, cW, cH);
-n++;
-n%=360;
-NSLog(@&quot;%f %f&quot;,_Circle.frame.origin.x,_Circle.frame.origin.y);
+</code></pre><h2 id="task_u65B9_u6CD5_u8D1F_u8D23_u6539_u53D8_u5706_u7684_u4F4D_u7F6E"><a href="#task_u65B9_u6CD5_u8D1F_u8D23_u6539_u53D8_u5706_u7684_u4F4D_u7F6E" class="headerlink" title="task方法负责改变圆的位置"></a>task方法负责改变圆的位置</h2><pre><code>-(void)task{
+    _Circle.frame = CGRectMake(250+array[1][n]*R,250+array[0][n]*R, cW, cH);
+    n++;
+    n%=360;
+    NSLog(@&quot;%f %f&quot;,_Circle.frame.origin.x,_Circle.frame.origin.y);
 }
 </code></pre><p><a href="https://github.com/pthtc/circular-motion-iOS" target="_blank" rel="external">点击这里下载demo</a></p>
 </span>
@@ -331,7 +333,9 @@ NSLog(@&quot;%f %f&quot;,_Circle.frame.origin.x,_Circle.frame.origin.y);
       
         <div class="post-tags">
           
-            <a href="/tags/圆周运动/" rel="tag">#圆周运动</a>
+            <a href="/tags/Cocoa/" rel="tag">#Cocoa</a>
+          
+            <a href="/tags/iOS/" rel="tag">#iOS</a>
           
         </div>
       
@@ -348,8 +352,8 @@ NSLog(@&quot;%f %f&quot;,_Circle.frame.origin.x,_Circle.frame.origin.y);
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/01/11/远离百度，我们有更好的/" rel="prev" title="远离百度，我们有更好的">
-                远离百度，我们有更好的 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/01/01/iOS实现圆周运动效果副本/" rel="prev" title="iOS实现圆周运动效果">
+                iOS实现圆周运动效果 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -422,7 +426,7 @@ NSLog(@&quot;%f %f&quot;,_Circle.frame.origin.x,_Circle.frame.origin.y);
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-count">14</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

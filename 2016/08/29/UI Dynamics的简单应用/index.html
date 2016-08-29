@@ -35,7 +35,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="数据结构," />
+  <meta name="keywords" content="Cocoa,Swift,iOS," />
 
 
 
@@ -51,16 +51,16 @@
 
 
 
-<meta name="description" content="二叉树和单链表是数据结构的重要基础">
+<meta name="description" content="UI Dynamics是基于 UIKit构建的，提供了一些与物理学有关的功能，一共有UIAttachmentBehavior，UICollisionBehavior，UIGravityBehavior，UIPushBehavior，UISnapBehavior五种效果">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数据结构备忘（单链表-二叉树）">
-<meta property="og:url" content="http://yoursite.com/2016/03/13/数据结构备忘（单链表-二叉树）/index.html">
+<meta property="og:title" content="UI Dynamics的简单应用">
+<meta property="og:url" content="http://yoursite.com/2016/08/29/UI Dynamics的简单应用/index.html">
 <meta property="og:site_name" content="彭天浩胡说八道的地方">
-<meta property="og:description" content="二叉树和单链表是数据结构的重要基础">
-<meta property="og:updated_time" content="2016-03-13T05:08:19.000Z">
+<meta property="og:description" content="UI Dynamics是基于 UIKit构建的，提供了一些与物理学有关的功能，一共有UIAttachmentBehavior，UICollisionBehavior，UIGravityBehavior，UIPushBehavior，UISnapBehavior五种效果">
+<meta property="og:updated_time" content="2016-08-29T07:13:52.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="数据结构备忘（单链表-二叉树）">
-<meta name="twitter:description" content="二叉树和单链表是数据结构的重要基础">
+<meta name="twitter:title" content="UI Dynamics的简单应用">
+<meta name="twitter:description" content="UI Dynamics是基于 UIKit构建的，提供了一些与物理学有关的功能，一共有UIAttachmentBehavior，UICollisionBehavior，UIGravityBehavior，UIPushBehavior，UISnapBehavior五种效果">
 
 
 
@@ -72,7 +72,7 @@
   };
 </script>
 
-  <title> 数据结构备忘（单链表-二叉树） | 彭天浩胡说八道的地方 </title>
+  <title> UI Dynamics的简单应用 | 彭天浩胡说八道的地方 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -243,7 +243,7 @@
             
             
               
-                数据结构备忘（单链表-二叉树）
+                UI Dynamics的简单应用
               
             
           </h1>
@@ -252,8 +252,8 @@
         <div class="post-meta">
           <span class="post-time">
             发表于
-            <time itemprop="dateCreated" datetime="2016-03-13T13:06:25+08:00" content="2016-03-13">
-              2016-03-13
+            <time itemprop="dateCreated" datetime="2016-08-29T12:45:42+08:00" content="2016-08-29">
+              2016-08-29
             </time>
           </span>
 
@@ -262,8 +262,8 @@
               &nbsp; | &nbsp; 分类于
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/数据结构/" itemprop="url" rel="index">
-                    <span itemprop="name">数据结构</span>
+                  <a href="/categories/iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS</span>
                   </a>
                 </span>
 
@@ -278,8 +278,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/03/13/数据结构备忘（单链表-二叉树）/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/13/数据结构备忘（单链表-二叉树）/" itemprop="commentsCount"></span>
+                <a href="/2016/08/29/UI Dynamics的简单应用/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/29/UI Dynamics的简单应用/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -299,121 +299,79 @@
 
       
         <span itemprop="articleBody"><blockquote>
-<p>二叉树和单链表是数据结构的重要基础</p>
+<p>UI Dynamics是基于 UIKit构建的，提供了一些与物理学有关的功能，一共有UIAttachmentBehavior，UICollisionBehavior，UIGravityBehavior，UIPushBehavior，UISnapBehavior五种效果</p>
 </blockquote>
 <a id="more"></a>
-<h2 id="u5355_u94FE_u8868"><a href="#u5355_u94FE_u8868" class="headerlink" title="单链表"></a>单链表</h2><pre><code>#include &lt;iostream&gt;
-using namespace std;
+<h2 id="u91CD_u529B_u3001_u78B0_u649E_u6548_u679C"><a href="#u91CD_u529B_u3001_u78B0_u649E_u6548_u679C" class="headerlink" title="重力、碰撞效果"></a>重力、碰撞效果</h2><p>下面的例子可以实现label从空中掉落知道与地面碰撞停止的效果</p>
+<pre><code>var animator = UIDynamicAnimator()
+@IBOutlet weak var myLabel: UILabel!
+override func viewDidLoad() {
+    super.viewDidLoad();
 
-struct List
-{
-    int num;
-    List *next;
-};
+    //向自己的view添加绘制者
+    animator = UIDynamicAnimator(referenceView: self.view)
 
-//在下一行建立头指针
-List *head;
+    //向label添加重力
+    let gBehavior = UIGravityBehavior(items: [self.myLabel])
+    animator.addBehavior(gBehavior)
 
-List *Create()
-{
-        //从下一行开始构造单链表
-    List *p = NULL;
-    List *q = NULL;
-    head = NULL;
-    for(int i =0; i &lt; 3; i++){
-        p=new List;
-        cin &gt;&gt; p-&gt;num;
-    if(head == NULL){
-    head = p;
-    }else{
-        q-&gt;next = p;
-        }
-        q=p;
-    }
-    if(head != NULL){
-    q-&gt;next = NULL;
-    }
-    return head;
+    //向label添加碰撞，设定碰撞边界范围为view边界
+    let aBehavior = UICollisionBehavior(items: [self.myLabel])
+    aBehavior.translatesReferenceBoundsIntoBoundary = true
+    animator.addBehavior(aBehavior)
+}
+</code></pre><h2 id="u6355_u6349_u6548_u679C"><a href="#u6355_u6349_u6548_u679C" class="headerlink" title="捕捉效果"></a>捕捉效果</h2><p>下面的例子可以实现label随着鼠标点击移动的效果</p>
+<pre><code>var animator = UIDynamicAnimator()
+@IBOutlet var tapped: UIView!
+@IBOutlet weak var myLabel: UILabel!
+override func viewDidLoad() {
+    super.viewDidLoad();
+
+    //向自己的view添加绘制者
+    animator = UIDynamicAnimator(referenceView: self.view)
 }
 
-void displayList(List *head)
-{
-    while ( head != NULL ) {
-        cout &lt;&lt; head-&gt;num &lt;&lt; endl;
-        head = head-&gt;next;
-    }
+@IBAction func tapped(sender: AnyObject) {
+
+    //获取点击在view中的坐标
+    let tap = sender as! UITapGestureRecognizer
+    let point = tap.locationInView(self.view)
+
+    //因为点击多次的，所以要清除上一次的behavior
+    self.animator.removeAllBehaviors()
+
+    //向label添加吸附动作
+    self.snap = UISnapBehavior(item: self.myLabel, snapToPoint: point)
+    self.animator.addBehavior(snap!)
+}
+</code></pre><h2 id="u63A8_u52A8_u6548_u679C"><a href="#u63A8_u52A8_u6548_u679C" class="headerlink" title="推动效果"></a>推动效果</h2><p>下面例子可以实现推动效果</p>
+<pre><code>var animator = UIDynamicAnimator()
+@IBOutlet var tapped: UIView!
+@IBOutlet weak var myLabel: UILabel!
+var push: UIPushBehavior?
+
+override func viewDidLoad() {
+    super.viewDidLoad();
+    animator = UIDynamicAnimator(referenceView: self.view)
 }
 
-int main() {
-       Create();
-    displayList(head);
-    return 0;
-}
-</code></pre><h2 id="u4E8C_u53C9_u6811"><a href="#u4E8C_u53C9_u6811" class="headerlink" title="二叉树"></a>二叉树</h2><pre><code>#include &lt;iostream&gt;
-using namespace std;
-struct BiTNode{
-    char data;
-    struct BiTNode *lchild, *rchild;
-};
-BiTNode*T;
-void CreateBiTree(BiTNode* &amp;T);
-void Inorder(BiTNode* &amp;T);
-void PreOrderTraverse(BiTNode* &amp;T);
-void Posorder(BiTNode* &amp;T);
+@IBAction func tapped(sender: AnyObject) {
 
-int main(){
-    CreateBiTree(T);
-    cout&lt;&lt;&quot;先序递归遍历：&quot;&lt;&lt;endl;
-    PreOrderTraverse(T);
-    cout&lt;&lt;endl;
-    cout&lt;&lt;&quot;中序递归遍历：&quot;&lt;&lt;endl;
-    Inorder(T);
-    cout&lt;&lt;endl;
-    cout&lt;&lt;&quot;后序递归遍历：&quot;&lt;&lt;endl;
-    Posorder(T);
-    cout&lt;&lt;endl;
-    return 1;
-}
+    let tap = sender as! UITapGestureRecognizer
+    let point = tap.locationInView(self.view)
 
-void CreateBiTree(BiTNode* &amp;T){
-    char ch;
-    if((ch=getchar())==&apos;#&apos;){
-        T=NULL;
-    }
-    else{
-        T=new BiTNode;
-        T-&gt;data=ch;
-        CreateBiTree(T-&gt;lchild);//递归创建左子树
-        CreateBiTree(T-&gt;rchild);//递归创建右子树
-    }
-}
+    self.animator.removeAllBehaviors()
 
-void PreOrderTraverse(BiTNode* &amp;T){
-    if(T){
-        cout&lt;&lt;T-&gt;data;
-        PreOrderTraverse(T-&gt;lchild);//
-        PreOrderTraverse(T-&gt;rchild);
-    }else cout&lt;&lt;&quot;&quot;;
-}
+    //mode可以有一次性的和持续推力
+    self.push = UIPushBehavior(items: [self.myLabel], mode:UIPushBehaviorMode.Instantaneous)
 
-void Inorder(BiTNode* &amp;T){
-    if(T){
-        Inorder(T-&gt;lchild);
-        cout&lt;&lt;T-&gt;data;
-        Inorder(T-&gt;rchild);
-    }
-    else cout&lt;&lt;&quot;&quot;;
+    //设置动作的方向和力度
+    push?.pushDirection = CGVectorMake(point.x,point.y)
+    push?.magnitude = 1
+    self.animator.addBehavior(push!)
 }
-
-void Posorder(BiTNode* &amp;T){
-    if(T){
-        Posorder(T-&gt;lchild);
-        Posorder(T-&gt;rchild);
-        cout&lt;&lt;T-&gt;data;
-    }
-    else cout&lt;&lt;&quot;&quot;;
-}
-</code></pre></span>
+</code></pre><h2 id="u5438_u9644_u6548_u679C"><a href="#u5438_u9644_u6548_u679C" class="headerlink" title="吸附效果"></a>吸附效果</h2><p>写代码的时候试图写: <code>self.attach?.attachedBehaviorType = UIAttachmentBehaviorType.Items</code>,后来发现是一个getonly类型</p>
+</span>
       
     </div>
 
@@ -421,7 +379,11 @@ void Posorder(BiTNode* &amp;T){
       
         <div class="post-tags">
           
-            <a href="/tags/数据结构/" rel="tag">#数据结构</a>
+            <a href="/tags/Cocoa/" rel="tag">#Cocoa</a>
+          
+            <a href="/tags/Swift/" rel="tag">#Swift</a>
+          
+            <a href="/tags/iOS/" rel="tag">#iOS</a>
           
         </div>
       
@@ -430,17 +392,13 @@ void Posorder(BiTNode* &amp;T){
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/01/11/远离百度，我们有更好的/" rel="next" title="远离百度，我们有更好的">
-                <i class="fa fa-chevron-left"></i> 远离百度，我们有更好的
+              <a href="/2016/08/28/Storyboard中使用约束布局/" rel="next" title="Storyboard中使用约束布局">
+                <i class="fa fa-chevron-left"></i> Storyboard中使用约束布局
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/03/13/我用过的iOS开发SDK自我记录（不定时更新）/" rel="prev" title="我用过的iOS开发SDK自我记录（不定时更新）">
-                我用过的iOS开发SDK自我记录（不定时更新） <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -467,8 +425,8 @@ void Posorder(BiTNode* &amp;T){
         
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/03/13/数据结构备忘（单链表-二叉树）/"
-           data-title="数据结构备忘（单链表-二叉树）" data-url="http://yoursite.com/2016/03/13/数据结构备忘（单链表-二叉树）/">
+      <div class="ds-thread" data-thread-key="2016/08/29/UI Dynamics的简单应用/"
+           data-title="UI Dynamics的简单应用" data-url="http://yoursite.com/2016/08/29/UI Dynamics的简单应用/">
       </div>
     
   </div>
@@ -576,7 +534,7 @@ void Posorder(BiTNode* &amp;T){
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#u5355_u94FE_u8868"><span class="nav-number">1.</span> <span class="nav-text">单链表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u4E8C_u53C9_u6811"><span class="nav-number">2.</span> <span class="nav-text">二叉树</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#u91CD_u529B_u3001_u78B0_u649E_u6548_u679C"><span class="nav-number">1.</span> <span class="nav-text">重力、碰撞效果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u6355_u6349_u6548_u679C"><span class="nav-number">2.</span> <span class="nav-text">捕捉效果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u63A8_u52A8_u6548_u679C"><span class="nav-number">3.</span> <span class="nav-text">推动效果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u5438_u9644_u6548_u679C"><span class="nav-number">4.</span> <span class="nav-text">吸附效果</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
