@@ -57,7 +57,8 @@
 <meta property="og:url" content="http://yoursite.com/2016/09/20/数电逻辑笔记/index.html">
 <meta property="og:site_name" content="彭天浩胡说八道的地方">
 <meta property="og:description" content="数字电路的一些总结，持续更新">
-<meta property="og:updated_time" content="2016-09-20T10:26:59.000Z">
+<meta property="og:image" content="https://d17oy1vhnax1f7.cloudfront.net/items/1N0s1t2t461j2H0V0E0p/QQ20160920-1@2x.png?v=c779a9cf">
+<meta property="og:updated_time" content="2016-09-20T12:13:44.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数电逻辑笔记">
 <meta name="twitter:description" content="数字电路的一些总结，持续更新">
@@ -415,6 +416,104 @@ D+E+BC = (D+E+B)(D+E+C)
 <li><code>AB+¬AC+BC = AB+¬AC</code></li>
 <li><code>AB+¬AC = (A+C)(¬A+B)</code></li>
 </ol>
+<h4 id="u903B_u8F91_u51FD_u6570_u7684_u6807_u51C6_u5F62_u5F0F"><a href="#u903B_u8F91_u51FD_u6570_u7684_u6807_u51C6_u5F62_u5F0F" class="headerlink" title="逻辑函数的标准形式"></a>逻辑函数的标准形式</h4><h4 id="u4E94_u79CD_u7B49_u4EF7_u5F62_u5F0F"><a href="#u4E94_u79CD_u7B49_u4EF7_u5F62_u5F0F" class="headerlink" title="五种等价形式"></a>五种等价形式</h4><ol>
+<li>与或表达式</li>
+<li>由(1)对偶两次</li>
+<li>由(1)两次取反</li>
+<li>由(2)两次反演</li>
+<li>由(4)反演</li>
+</ol>
+<h4 id="u6700_u5C0F_u9879_u3001_u6700_u5927_u9879_u8868_u8FBE_u5F0F"><a href="#u6700_u5C0F_u9879_u3001_u6700_u5927_u9879_u8868_u8FBE_u5F0F" class="headerlink" title="最小项、最大项表达式"></a>最小项、最大项表达式</h4><h5 id="u6700_u5C0F_u9879_u8868_u8FBE_u5F0F"><a href="#u6700_u5C0F_u9879_u8868_u8FBE_u5F0F" class="headerlink" title="最小项表达式"></a>最小项表达式</h5><ul>
+<li><p><strong>符号</strong> ∑m(1,2,3,4)</p>
+</li>
+<li><p><strong>编号意义</strong> 最小项为1时候的取值</p>
+</li>
+<li><p><strong>最小项</strong> 包含全部输入变量的乘积项</p>
+</li>
+<li><p><strong>最小项表达式</strong> 全部由最小项相加构成的与-或表达式</p>
+</li>
+</ul>
+<p>长这样:<code>ABC+AB¬C+¬ABC</code></p>
+<p>包含全部变量的乘积项等于1的可能性最小</p>
+<p><strong>方法:</strong></p>
+<ol>
+<li>找到每个乘积项的缺省元素</li>
+<li>一扩二，比如<code>AB</code>差个<code>C</code>，那么就是变成<code>ABC+AB¬C</code></li>
+<li>合并相同项</li>
+</ol>
+<h5 id="u6700_u5927_u9879_u8868_u8FBE_u5F0F"><a href="#u6700_u5927_u9879_u8868_u8FBE_u5F0F" class="headerlink" title="最大项表达式"></a>最大项表达式</h5><ul>
+<li><p><strong>符号</strong> ∏m(1,2,3,4)</p>
+</li>
+<li><p><strong>编号意义</strong> 最大项为0时候的取值</p>
+</li>
+<li><p><strong>最大项</strong> 包含全部输入变量的乘积项</p>
+</li>
+<li><p><strong>最大项表达式</strong> 全部由最小项相加构成的或-与表达式</p>
+</li>
+</ul>
+<p>长这样:<code>(A+B+C)(A+B+¬C)</code></p>
+<p><strong>方法:</strong></p>
+<ol>
+<li>找到每个乘积项的缺省元素</li>
+<li>一扩二，比如<code>A+C</code>差个<code>B</code>，那么就是变成<code>(A+B¬B+C)</code></li>
+<li>？</li>
+</ol>
+<h5 id="u6700_u5927_u9879_u8868_u8FBE_u5F0F_u4E0E_u6700_u5C0F_u9879_u8868_u8FBE_u5F0F_u5173_u7CFB"><a href="#u6700_u5927_u9879_u8868_u8FBE_u5F0F_u4E0E_u6700_u5C0F_u9879_u8868_u8FBE_u5F0F_u5173_u7CFB" class="headerlink" title="最大项表达式与最小项表达式关系"></a>最大项表达式与最小项表达式关系</h5><p>F(A,B,C) = ∑m(1,2,3,4) = ∏M(5,6,7,8) 互补</p>
+<h4 id="u51FD_u6570_u5316_u7B80"><a href="#u51FD_u6570_u5316_u7B80" class="headerlink" title="函数化简"></a>函数化简</h4><h5 id="u516C_u5F0F_u6CD5"><a href="#u516C_u5F0F_u6CD5" class="headerlink" title="公式法"></a>公式法</h5><p>合并项法<code>AB+A¬B = A</code></p>
+<p>吸收法 1. <code>A+AB=A</code> 2. <code>AB+¬AC+BC=AB+¬AC</code></p>
+<p>消去法<code>A+¬AB=A+B</code></p>
+<p>配项法 1. 乘以<code>(A+¬A)</code>然后展开 2. 利用<code>AB+¬AC=AB+¬AC+BC</code>增加BC</p>
+<h5 id="u5361_u8BFA_u56FE"><a href="#u5361_u8BFA_u56FE" class="headerlink" title="卡诺图"></a>卡诺图</h5><table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">00</th>
+<th style="text-align:center">01</th>
+<th style="text-align:center">11</th>
+<th style="text-align:center">10</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">00</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">01</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">11</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">10</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+</tr>
+</tbody>
+</table>
+<p>步骤:</p>
+<ol>
+<li>将函数化为最小项表达式</li>
+<li>填进卡诺图</li>
+<li>画圈消去互为反变量的因子</li>
+</ol>
+<p>上面那个图的答案就应该是 <strong><code>BC¬D+¬BCD</code></strong></p>
+<p><img src="https://d17oy1vhnax1f7.cloudfront.net/items/1N0s1t2t461j2H0V0E0p/QQ20160920-1@2x.png?v=c779a9cf" alt=""></p>
+<p><strong>如果是最大限表达式的话，就圈0</strong></p>
+<h5 id="u5217_u8868_u6CD5"><a href="#u5217_u8868_u6CD5" class="headerlink" title="列表法"></a>列表法</h5><p>&lt;待续&gt;</p>
 <h2 id="u4F5C_u4E1A_u7B54_u6848"><a href="#u4F5C_u4E1A_u7B54_u6848" class="headerlink" title="作业答案"></a>作业答案</h2><h3 id="u7B2C_u4E00_u6B21_u4F5C_u4E1A"><a href="#u7B2C_u4E00_u6B21_u4F5C_u4E1A" class="headerlink" title="第一次作业"></a>第一次作业</h3><h4 id="1-1_285_29"><a href="#1-1_285_29" class="headerlink" title="1-1(5)"></a>1-1(5)</h4><p><strong>二进制转换十进制</strong> 101001.10010</p>
 <pre><code>101001.10010 = 1*2^5+1*2^3+1*2^0+1*2^(-1)+1*2^(-4) = 32+8+1+0.5+0.0625 = 41.5625`
 </code></pre><p>答案为 41.5625</p>
@@ -680,7 +779,7 @@ F* =(A·B)·¬(C+D)·¬(B+C)·¬(¬D·¬(C+E)·¬(B·E))
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#u7EEA_u8BBA"><span class="nav-number">1.</span> <span class="nav-text">绪论</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u6570_u5236_u8F6C_u6362"><span class="nav-number">1.1.</span> <span class="nav-text">数制转换</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u6574_u6570_u8F6C_u6362"><span class="nav-number">1.1.1.</span> <span class="nav-text">整数转换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u5C0F_u6570_u8F6C_u6362"><span class="nav-number">1.1.2.</span> <span class="nav-text">小数转换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u5C0F_u6570_u8F6C_u6362_u7684_u7CBE_u786E_u5EA6_u95EE_u9898"><span class="nav-number">1.1.3.</span> <span class="nav-text">小数转换的精确度问题</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BCD_u7801"><span class="nav-number">1.2.</span> <span class="nav-text">BCD码</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u6709_u6743_u7801"><span class="nav-number">1.2.1.</span> <span class="nav-text">有权码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u65E0_u6743_u7801"><span class="nav-number">1.2.2.</span> <span class="nav-text">无权码</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u7B97_u672F_u8FD0_u7B97"><span class="nav-number">1.3.</span> <span class="nav-text">算术运算</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u903B_u8F91_u51FD_u6570_u53CA_u5176_u7B80_u5316"><span class="nav-number">2.</span> <span class="nav-text">逻辑函数及其简化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u7B80_u5355_u903B_u8F91_u89E3_u91CA"><span class="nav-number">2.1.</span> <span class="nav-text">简单逻辑解释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u771F_u503C_u8868_u4E0E_u903B_u8F91_u51FD_u6570"><span class="nav-number">2.2.</span> <span class="nav-text">真值表与逻辑函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u771F_u503C_u8868"><span class="nav-number">2.2.1.</span> <span class="nav-text">真值表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u903B_u8F91_u89C4_u5219"><span class="nav-number">2.2.2.</span> <span class="nav-text">逻辑规则</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#u903B_u8F91_u8BA1_u7B97_u89C4_u5F8B"><span class="nav-number">2.2.2.1.</span> <span class="nav-text">逻辑计算规律</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#u4EE3_u5165_u89C4_u5219"><span class="nav-number">2.2.2.2.</span> <span class="nav-text">代入规则</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#u53CD_u6F14_u89C4_u5219"><span class="nav-number">2.2.2.3.</span> <span class="nav-text">反演规则</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#u5BF9_u5076_u89C4_u5219"><span class="nav-number">2.2.2.4.</span> <span class="nav-text">对偶规则</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u5E38_u7528_u516C_u5F0F"><span class="nav-number">2.2.3.</span> <span class="nav-text">常用公式</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u4F5C_u4E1A_u7B54_u6848"><span class="nav-number">3.</span> <span class="nav-text">作业答案</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u7B2C_u4E00_u6B21_u4F5C_u4E1A"><span class="nav-number">3.1.</span> <span class="nav-text">第一次作业</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1_285_29"><span class="nav-number">3.1.1.</span> <span class="nav-text">1-1(5)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2_283_29"><span class="nav-number">3.1.2.</span> <span class="nav-text">1-2(3)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4_282_29"><span class="nav-number">3.1.3.</span> <span class="nav-text">1-4(2)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-6_281_29"><span class="nav-number">3.1.4.</span> <span class="nav-text">1-6(1)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1_281_29"><span class="nav-number">3.1.5.</span> <span class="nav-text">2-1(1)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3_284_29"><span class="nav-number">3.1.6.</span> <span class="nav-text">2-3(4)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-4_282_29"><span class="nav-number">3.1.7.</span> <span class="nav-text">2-4(2)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-6_283_29"><span class="nav-number">3.1.8.</span> <span class="nav-text">2-6(3)</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#u7EEA_u8BBA"><span class="nav-number">1.</span> <span class="nav-text">绪论</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u6570_u5236_u8F6C_u6362"><span class="nav-number">1.1.</span> <span class="nav-text">数制转换</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u6574_u6570_u8F6C_u6362"><span class="nav-number">1.1.1.</span> <span class="nav-text">整数转换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u5C0F_u6570_u8F6C_u6362"><span class="nav-number">1.1.2.</span> <span class="nav-text">小数转换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u5C0F_u6570_u8F6C_u6362_u7684_u7CBE_u786E_u5EA6_u95EE_u9898"><span class="nav-number">1.1.3.</span> <span class="nav-text">小数转换的精确度问题</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BCD_u7801"><span class="nav-number">1.2.</span> <span class="nav-text">BCD码</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u6709_u6743_u7801"><span class="nav-number">1.2.1.</span> <span class="nav-text">有权码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u65E0_u6743_u7801"><span class="nav-number">1.2.2.</span> <span class="nav-text">无权码</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u7B97_u672F_u8FD0_u7B97"><span class="nav-number">1.3.</span> <span class="nav-text">算术运算</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u903B_u8F91_u51FD_u6570_u53CA_u5176_u7B80_u5316"><span class="nav-number">2.</span> <span class="nav-text">逻辑函数及其简化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u7B80_u5355_u903B_u8F91_u89E3_u91CA"><span class="nav-number">2.1.</span> <span class="nav-text">简单逻辑解释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u771F_u503C_u8868_u4E0E_u903B_u8F91_u51FD_u6570"><span class="nav-number">2.2.</span> <span class="nav-text">真值表与逻辑函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u771F_u503C_u8868"><span class="nav-number">2.2.1.</span> <span class="nav-text">真值表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u903B_u8F91_u89C4_u5219"><span class="nav-number">2.2.2.</span> <span class="nav-text">逻辑规则</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#u903B_u8F91_u8BA1_u7B97_u89C4_u5F8B"><span class="nav-number">2.2.2.1.</span> <span class="nav-text">逻辑计算规律</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#u4EE3_u5165_u89C4_u5219"><span class="nav-number">2.2.2.2.</span> <span class="nav-text">代入规则</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#u53CD_u6F14_u89C4_u5219"><span class="nav-number">2.2.2.3.</span> <span class="nav-text">反演规则</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#u5BF9_u5076_u89C4_u5219"><span class="nav-number">2.2.2.4.</span> <span class="nav-text">对偶规则</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u5E38_u7528_u516C_u5F0F"><span class="nav-number">2.2.3.</span> <span class="nav-text">常用公式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u903B_u8F91_u51FD_u6570_u7684_u6807_u51C6_u5F62_u5F0F"><span class="nav-number">2.2.4.</span> <span class="nav-text">逻辑函数的标准形式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u4E94_u79CD_u7B49_u4EF7_u5F62_u5F0F"><span class="nav-number">2.2.5.</span> <span class="nav-text">五种等价形式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u6700_u5C0F_u9879_u3001_u6700_u5927_u9879_u8868_u8FBE_u5F0F"><span class="nav-number">2.2.6.</span> <span class="nav-text">最小项、最大项表达式</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#u6700_u5C0F_u9879_u8868_u8FBE_u5F0F"><span class="nav-number">2.2.6.1.</span> <span class="nav-text">最小项表达式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#u6700_u5927_u9879_u8868_u8FBE_u5F0F"><span class="nav-number">2.2.6.2.</span> <span class="nav-text">最大项表达式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#u6700_u5927_u9879_u8868_u8FBE_u5F0F_u4E0E_u6700_u5C0F_u9879_u8868_u8FBE_u5F0F_u5173_u7CFB"><span class="nav-number">2.2.6.3.</span> <span class="nav-text">最大项表达式与最小项表达式关系</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u51FD_u6570_u5316_u7B80"><span class="nav-number">2.2.7.</span> <span class="nav-text">函数化简</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#u516C_u5F0F_u6CD5"><span class="nav-number">2.2.7.1.</span> <span class="nav-text">公式法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#u5361_u8BFA_u56FE"><span class="nav-number">2.2.7.2.</span> <span class="nav-text">卡诺图</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#u5217_u8868_u6CD5"><span class="nav-number">2.2.7.3.</span> <span class="nav-text">列表法</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u4F5C_u4E1A_u7B54_u6848"><span class="nav-number">3.</span> <span class="nav-text">作业答案</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u7B2C_u4E00_u6B21_u4F5C_u4E1A"><span class="nav-number">3.1.</span> <span class="nav-text">第一次作业</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1_285_29"><span class="nav-number">3.1.1.</span> <span class="nav-text">1-1(5)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2_283_29"><span class="nav-number">3.1.2.</span> <span class="nav-text">1-2(3)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4_282_29"><span class="nav-number">3.1.3.</span> <span class="nav-text">1-4(2)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-6_281_29"><span class="nav-number">3.1.4.</span> <span class="nav-text">1-6(1)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1_281_29"><span class="nav-number">3.1.5.</span> <span class="nav-text">2-1(1)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3_284_29"><span class="nav-number">3.1.6.</span> <span class="nav-text">2-3(4)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-4_282_29"><span class="nav-number">3.1.7.</span> <span class="nav-text">2-4(2)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-6_283_29"><span class="nav-number">3.1.8.</span> <span class="nav-text">2-6(3)</span></a></li></ol></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
