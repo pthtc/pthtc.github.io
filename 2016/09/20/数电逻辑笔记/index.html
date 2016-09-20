@@ -1,0 +1,948 @@
+<!doctype html>
+<html class="theme-next   use-motion ">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="基础,数电逻辑," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.2" />
+
+
+
+
+
+
+<meta name="description" content="数字电路的一些总结，持续更新">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数电逻辑笔记">
+<meta property="og:url" content="http://yoursite.com/2016/09/20/数电逻辑笔记/index.html">
+<meta property="og:site_name" content="彭天浩胡说八道的地方">
+<meta property="og:description" content="数字电路的一些总结，持续更新">
+<meta property="og:updated_time" content="2016-09-20T10:26:59.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="数电逻辑笔记">
+<meta name="twitter:description" content="数字电路的一些总结，持续更新">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: 'post',
+    motion: true
+  };
+</script>
+
+  <title> 数电逻辑笔记 | 彭天浩胡说八道的地方 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?73e01b0dee523c22137e45cf054e9160";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">彭天浩胡说八道的地方</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu menu-left">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <form class="site-search-form">
+    <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+  </form>
+
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'gWj7XKQowsjQsmRgXg7t','2.0.0');
+</script>
+
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content">
+          
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                数电逻辑笔记
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2016-09-20T16:43:42+08:00" content="2016-09-20">
+              2016-09-20
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分类于
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/计算机基础/" itemprop="url" rel="index">
+                    <span itemprop="name">计算机基础</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/20/数电逻辑笔记/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/20/数电逻辑笔记/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <span itemprop="articleBody"><blockquote>
+<p>数字电路的一些总结，持续更新</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="u7EEA_u8BBA"><a href="#u7EEA_u8BBA" class="headerlink" title="绪论"></a>绪论</h2><h3 id="u6570_u5236_u8F6C_u6362"><a href="#u6570_u5236_u8F6C_u6362" class="headerlink" title="数制转换"></a>数制转换</h3><p>数字拆分：<code>431.21（10） = 1*10^2+3*10^1+1*10^0+2*10^(-1)+1*10^(-2)</code></p>
+<p><strong><em>下面的R都指进制</em></strong></p>
+<h4 id="u6574_u6570_u8F6C_u6362"><a href="#u6574_u6570_u8F6C_u6362" class="headerlink" title="整数转换"></a>整数转换</h4><p><strong>以10转2为例</strong></p>
+<p>数值逐次除R（这里是2），除一次就得到一个低位位，一直到结果为0为止</p>
+<pre><code>//括号里为余数
+53/2 = 26(1)/2 = 13(0)/2 = 6(1)/2 = 3(0)/2 = 1(1)/2 = 0(1)
+</code></pre><p>结果为 <strong>110101</strong></p>
+<h4 id="u5C0F_u6570_u8F6C_u6362"><a href="#u5C0F_u6570_u8F6C_u6362" class="headerlink" title="小数转换"></a>小数转换</h4><p><strong>以10转2为例</strong></p>
+<p>每次乘R（这里是2），保存整数位结果作为高位，然后去掉高位，直到乘积为0或者一定精度就停止</p>
+<pre><code>//括号里是整数位
+0.375*2 = 0.750（0）*2 = 0.5（1）*2 = 0（1）
+</code></pre><p>结果为 <strong>0.11</strong></p>
+<h4 id="u5C0F_u6570_u8F6C_u6362_u7684_u7CBE_u786E_u5EA6_u95EE_u9898"><a href="#u5C0F_u6570_u8F6C_u6362_u7684_u7CBE_u786E_u5EA6_u95EE_u9898" class="headerlink" title="小数转换的精确度问题"></a>小数转换的精确度问题</h4><p>比如0.1%的精度，其实就是问<code>0.001*R^n &gt;=1</code>,n就是要求的位数</p>
+<p><strong>以8进制为例</strong></p>
+<pre><code>0.001*8^3 = 0.512 &lt;1
+0.001*8^4 = 4.069 &gt;1
+</code></pre><p>精度要求0.001时候，8进制小数转换需要4位</p>
+<h3 id="BCD_u7801"><a href="#BCD_u7801" class="headerlink" title="BCD码"></a>BCD码</h3><p>其实就是<strong><em>二进制（B，binary）-十进制（D，decimal）码（code）</em></strong>，用2进制表示10进制，但是坑爹的是BCD码并不一定要<code>0000</code>对应<code>0</code>，<code>0101</code>对应<code>5</code>，它可以乱来，所以把这个code记成密码理解起来简单一点。</p>
+<p>因为10进制一位数有0~9，一共10种变化，所以需要二进制里用4（<code>2^4 = 16 &gt;10</code>）来对应</p>
+<h4 id="u6709_u6743_u7801"><a href="#u6709_u6743_u7801" class="headerlink" title="有权码"></a>有权码</h4><p>有权码的意思是四位2进制码每一位都有特定的权值，蛮简单的，计算方法就是按权值计算，然后加起来</p>
+<ul>
+<li><strong>8421码</strong>    也就是普通的二进制，1001的计算方法是 <code>1001（2）= 1*8+0*4+0*2+1*1 = 9</code></li>
+<li><strong>2421码</strong>    这个的好处是可以直观判断<code>1111</code>就是<code>9</code>，1001的计算方法是 <code>1001（2）= 1*2+0*4+0*2+1*1 = 3</code></li>
+</ul>
+<h4 id="u65E0_u6743_u7801"><a href="#u65E0_u6743_u7801" class="headerlink" title="无权码"></a>无权码</h4><p>无权码不能通过加权计算，但是其实也不难</p>
+<ul>
+<li><strong>余3码</strong> 本质是每个8421码+3（0011）得到，比如<code>0 = 0000（8421） = 0011（余3码）</code></li>
+</ul>
+<h3 id="u7B97_u672F_u8FD0_u7B97"><a href="#u7B97_u672F_u8FD0_u7B97" class="headerlink" title="算术运算"></a>算术运算</h3><p>本质上来说和之前的运算没有任何区别</p>
+<ul>
+<li><strong>二进制加法</strong> <code>1001+0110 = 1111</code></li>
+<li><strong>二进制减法</strong> <code>1001-0110 = 0011</code></li>
+<li><strong>二进制乘法</strong> <code>1001*0110 = 0000+10010+100100+0000000 = 110110</code> </li>
+<li><strong>二进制除法</strong> <code>1001/0110 -&gt; 0110（1）-&gt;0(0.1) = 1.1</code> 箭头后为相减后余数移位的数值，括号中为产生的一位结果。</li>
+</ul>
+<h2 id="u903B_u8F91_u51FD_u6570_u53CA_u5176_u7B80_u5316"><a href="#u903B_u8F91_u51FD_u6570_u53CA_u5176_u7B80_u5316" class="headerlink" title="逻辑函数及其简化"></a>逻辑函数及其简化</h2><h3 id="u7B80_u5355_u903B_u8F91_u89E3_u91CA"><a href="#u7B80_u5355_u903B_u8F91_u89E3_u91CA" class="headerlink" title="简单逻辑解释"></a>简单逻辑解释</h3><ul>
+<li><strong>与</strong> P = A·B</li>
+<li><strong>或</strong> P = A+B</li>
+<li><strong>非</strong> P = ¬A</li>
+<li><strong>与非</strong> P = ¬(A·B)</li>
+<li><strong>或非</strong> P = ¬(A+B)</li>
+<li><strong>同或</strong> P = ¬A·¬B+A·B(相同为真)</li>
+<li><strong>异或</strong> P = ¬A·B+A·¬B(相异为真)</li>
+</ul>
+<h3 id="u771F_u503C_u8868_u4E0E_u903B_u8F91_u51FD_u6570"><a href="#u771F_u503C_u8868_u4E0E_u903B_u8F91_u51FD_u6570" class="headerlink" title="真值表与逻辑函数"></a>真值表与逻辑函数</h3><h4 id="u771F_u503C_u8868"><a href="#u771F_u503C_u8868" class="headerlink" title="真值表"></a>真值表</h4><p>大概就是这个玩意</p>
+<table>
+<thead>
+<tr>
+<th>A</th>
+<th style="text-align:center">B</th>
+<th style="text-align:right">P</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:right">1</td>
+</tr>
+<tr>
+<td>0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td>1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:right">1</td>
+</tr>
+<tr>
+<td>1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:right">1</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>可以用<strong>真值表</strong>来证明逻辑函数相等</li>
+</ul>
+<h4 id="u903B_u8F91_u89C4_u5219"><a href="#u903B_u8F91_u89C4_u5219" class="headerlink" title="逻辑规则"></a>逻辑规则</h4><h5 id="u903B_u8F91_u8BA1_u7B97_u89C4_u5F8B"><a href="#u903B_u8F91_u8BA1_u7B97_u89C4_u5F8B" class="headerlink" title="逻辑计算规律"></a>逻辑计算规律</h5><p>普通规律</p>
+<ul>
+<li><strong>分配律</strong> 特别注意的是 <code>A+BC = (A+B)(A+C)</code></li>
+<li><strong>结合律</strong> 每种都支持</li>
+<li><strong>交换律</strong> 每种都支持</li>
+</ul>
+<hr>
+<p>特殊规则</p>
+<ul>
+<li><strong>反演律1</strong> <code>¬(A+B)=¬A·¬B</code></li>
+<li><strong>反演律2</strong> <code>¬(AB)=¬A+¬B</code></li>
+</ul>
+<h5 id="u4EE3_u5165_u89C4_u5219"><a href="#u4EE3_u5165_u89C4_u5219" class="headerlink" title="代入规则"></a>代入规则</h5><p>讲逻辑等式中任何一种(比如全部的A)替换成任意一种逻辑函数，等式依然成立</p>
+<pre><code>A+BC = (A+B)(A+C)
+
+//A替换为(D+E)
+D+E+BC = (D+E+B)(D+E+C)
+</code></pre><h5 id="u53CD_u6F14_u89C4_u5219"><a href="#u53CD_u6F14_u89C4_u5219" class="headerlink" title="反演规则"></a>反演规则</h5><p>将逻辑函数中所有的<code>·</code>替换为<code>+</code>，所有的<code>+</code>替换为<code>·</code>;所有的<code>0</code>替换为<code>1</code>，所有的<code>1</code>替换为<code>2</code>;所有的<code>原变量</code>替换为<code>反变量</code>，所有的<code>反变量</code>替换为<code>原变量</code></p>
+<p>要注意的是</p>
+<ol>
+<li><strong>原来的变量计算先后顺序关系不变</strong></li>
+<li><p><strong>只替换原变量和反变量，不要把不作用于变量的取反也变了</strong></p>
+<p> //例子1<br> F = ¬A¬B+CD<br> ¬F = (A+B)(¬C+¬D)</p>
+<p> //例子2，这个解释了两个注意点，最好在反演之前把所有先后顺序都用括号打起来<br> F = ¬(A+B)<br> ¬F = ¬(¬A·¬B)</p>
+</li>
+</ol>
+<h5 id="u5BF9_u5076_u89C4_u5219"><a href="#u5BF9_u5076_u89C4_u5219" class="headerlink" title="对偶规则"></a>对偶规则</h5><p>这就比反演规则少以一条，变量不用取反，但是还是要小心</p>
+<h4 id="u5E38_u7528_u516C_u5F0F"><a href="#u5E38_u7528_u516C_u5F0F" class="headerlink" title="常用公式"></a>常用公式</h4><ol>
+<li><code>AB+A¬B = A</code> </li>
+<li><code>A+AB = A</code></li>
+<li><code>A+¬AB = A+B</code> -&gt; <code>(A+¬A)(A+B)</code> -&gt;<code>1·(A+B)</code></li>
+<li><code>AB+¬AC+BC = AB+¬AC</code></li>
+<li><code>AB+¬AC = (A+C)(¬A+B)</code></li>
+</ol>
+<h2 id="u4F5C_u4E1A_u7B54_u6848"><a href="#u4F5C_u4E1A_u7B54_u6848" class="headerlink" title="作业答案"></a>作业答案</h2><h3 id="u7B2C_u4E00_u6B21_u4F5C_u4E1A"><a href="#u7B2C_u4E00_u6B21_u4F5C_u4E1A" class="headerlink" title="第一次作业"></a>第一次作业</h3><h4 id="1-1_285_29"><a href="#1-1_285_29" class="headerlink" title="1-1(5)"></a>1-1(5)</h4><p><strong>二进制转换十进制</strong> 101001.10010</p>
+<pre><code>101001.10010 = 1*2^5+1*2^3+1*2^0+1*2^(-1)+1*2^(-4) = 32+8+1+0.5+0.0625 = 41.5625`
+</code></pre><p>答案为 41.5625</p>
+<h4 id="1-2_283_29"><a href="#1-2_283_29" class="headerlink" title="1-2(3)"></a>1-2(3)</h4><p><strong>十进制转二进制</strong> 12.34<br>101001.1001</p>
+<p>这个要拆分成两部分</p>
+<pre><code>12/2 = 6(0)/2 = 3(0)/2 = 1(1)/2 = 0(1) -&gt;1100
+
+//为啥这个这么长还不给精度~~
+0.34*2 = 0.68(0)*2 = 0.36(1)*2 = 0.72(0)*2 
+= 0.44(1)*2 = 0.88(0)*2 = 0.76(1)*2 = 0.52(1)*2 = 0.04(1)//……不算了
+-&gt;0.01010111
+</code></pre><p>结果为: 1100.010101110000101000111101011100001010001111010111</p>
+<h4 id="1-4_282_29"><a href="#1-4_282_29" class="headerlink" title="1-4(2)"></a>1-4(2)</h4><p><strong>完成数制转换</strong> 432.B7（16进制）</p>
+<pre><code>//转2进制，注意这里的『432』是16进制的！！！！
+432/2 = 219(0)/2 = 10C(1)/2 = 86(0)/2 = 43(0)/2 
+= 21(1)/2 = 10(1)/2 =  8(0)/2 = 4(0)/2 = 2(0)/2 = 1(0)/2 = 0(1) -&gt; 10000110010
+
+0.B7*2 = 0.6E(1)*2 = 0.DC(0)*2 = 0.B8(1)*2 = 0.7(1)*2 = 0.E(0)*2 = 0.C(1)*2 = 0.8(1)*2 = 0(1)
+-&gt; 0.10110111
+</code></pre><p>答案为 110110000.10110111</p>
+<pre><code>//转8进制
+432/8 = 86(2)    /8 = 10(6)/8 = 2(0)/8 = 0(2) -&gt;2062
+
+0.B7*8 = 0.B8(5)*8 = 0.C(5)*8 = 0(6) 0-&gt;0.556
+</code></pre><p>答案为 2062.556</p>
+<h4 id="1-6_281_29"><a href="#1-6_281_29" class="headerlink" title="1-6(1)"></a>1-6(1)</h4><p><strong>完成数制转换</strong> 73.26（10进制）= ?(8421码)</p>
+<pre><code>73/2 = 36(1)/2 = 18(0)/2 = 9(0)/2 = 4(1)/2 
+= 2(0)/2 = 1(0)/2 = 0(1)  -&gt;1001001
+
+0.26*2 = 0.52（0.52上面那道题碰到过，直接贴答案了）
+-&gt;0.01000010100011110101110000101
+</code></pre><p>答案为 1001001.01000010100011110101110000101</p>
+<h4 id="2-1_281_29"><a href="#2-1_281_29" class="headerlink" title="2-1(1)"></a>2-1(1)</h4><p><strong>有a、b、c三个输入信号，如果三个输入信号均为0或其中一个为1时，输出信号Y=1，其余情况下，输出Y=0</strong></p>
+<table>
+<thead>
+<tr>
+<th>A</th>
+<th style="text-align:center">B</th>
+<th style="text-align:right">C</th>
+<th style="text-align:right">Y</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">1</td>
+</tr>
+<tr>
+<td>1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">1</td>
+</tr>
+<tr>
+<td>0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">1</td>
+</tr>
+<tr>
+<td>0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">1</td>
+</tr>
+<tr>
+<td>1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td>0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td>1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td>1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">0</td>
+</tr>
+</tbody>
+</table>
+<h4 id="2-3_284_29"><a href="#2-3_284_29" class="headerlink" title="2-3(4)"></a>2-3(4)</h4><p><strong>直接写出函数反函数表达式和对偶表达式</strong> </p>
+<p><strong>F=AB+¬(CD)+¬(BC)+¬(¬D+¬CE+¬(B+E))</strong></p>
+<pre><code>//反演
+¬F = (¬A+¬B)·¬(¬C+¬D)·¬(¬B+¬C)·¬(D·¬(¬C+¬E)·¬(¬B·¬E))
+
+//对偶
+F* =(A·B)·¬(C+D)·¬(B+C)·¬(¬D·¬(C+E)·¬(B·E))
+</code></pre><h4 id="2-4_282_29"><a href="#2-4_282_29" class="headerlink" title="2-4(2)"></a>2-4(2)</h4><p><strong>公式法证明等式</strong></p>
+<p><strong>¬A¬C+¬A¬B+¬A¬C¬D+BC = ¬A+BC</strong></p>
+<h4 id="2-6_283_29"><a href="#2-6_283_29" class="headerlink" title="2-6(3)"></a>2-6(3)</h4><p><strong>写出F的对偶式反演式的最小项表达式</strong></p>
+<p><strong>F = A¬BC+¬A¬CD+A¬C</strong></p>
+</span>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/基础/" rel="tag">#基础</a>
+          
+            <a href="/tags/数电逻辑/" rel="tag">#数电逻辑</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/09/19/计算机网络笔记/" rel="next" title="计算机网络笔记">
+                <i class="fa fa-chevron-left"></i> 计算机网络笔记
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+        </div>
+
+        
+
+
+        
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/09/20/数电逻辑笔记/"
+           data-title="数电逻辑笔记" data-url="http://yoursite.com/2016/09/20/数电逻辑笔记/">
+      </div>
+    
+  </div>
+
+
+      </div>
+
+      
+        
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="/images/avatar.jpg" alt="彭天浩" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">彭天浩</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description">iOS、PPT略懂，扯淡睡觉精通</p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">17</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            <a href="/categories">
+              <span class="site-state-item-count">8</span>
+              <span class="site-state-item-name">分类</span>
+              </a>
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">21</span>
+              <span class="site-state-item-name">标签</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/pthtc" target="_blank">
+                  
+                    <i class="fa fa-globe"></i> Github
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/peng-tian-hao-23" target="_blank">
+                  
+                    <i class="fa fa-globe"></i> 知乎
+                  
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#u7EEA_u8BBA"><span class="nav-number">1.</span> <span class="nav-text">绪论</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u6570_u5236_u8F6C_u6362"><span class="nav-number">1.1.</span> <span class="nav-text">数制转换</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u6574_u6570_u8F6C_u6362"><span class="nav-number">1.1.1.</span> <span class="nav-text">整数转换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u5C0F_u6570_u8F6C_u6362"><span class="nav-number">1.1.2.</span> <span class="nav-text">小数转换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u5C0F_u6570_u8F6C_u6362_u7684_u7CBE_u786E_u5EA6_u95EE_u9898"><span class="nav-number">1.1.3.</span> <span class="nav-text">小数转换的精确度问题</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BCD_u7801"><span class="nav-number">1.2.</span> <span class="nav-text">BCD码</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u6709_u6743_u7801"><span class="nav-number">1.2.1.</span> <span class="nav-text">有权码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u65E0_u6743_u7801"><span class="nav-number">1.2.2.</span> <span class="nav-text">无权码</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u7B97_u672F_u8FD0_u7B97"><span class="nav-number">1.3.</span> <span class="nav-text">算术运算</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u903B_u8F91_u51FD_u6570_u53CA_u5176_u7B80_u5316"><span class="nav-number">2.</span> <span class="nav-text">逻辑函数及其简化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u7B80_u5355_u903B_u8F91_u89E3_u91CA"><span class="nav-number">2.1.</span> <span class="nav-text">简单逻辑解释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u771F_u503C_u8868_u4E0E_u903B_u8F91_u51FD_u6570"><span class="nav-number">2.2.</span> <span class="nav-text">真值表与逻辑函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u771F_u503C_u8868"><span class="nav-number">2.2.1.</span> <span class="nav-text">真值表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u903B_u8F91_u89C4_u5219"><span class="nav-number">2.2.2.</span> <span class="nav-text">逻辑规则</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#u903B_u8F91_u8BA1_u7B97_u89C4_u5F8B"><span class="nav-number">2.2.2.1.</span> <span class="nav-text">逻辑计算规律</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#u4EE3_u5165_u89C4_u5219"><span class="nav-number">2.2.2.2.</span> <span class="nav-text">代入规则</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#u53CD_u6F14_u89C4_u5219"><span class="nav-number">2.2.2.3.</span> <span class="nav-text">反演规则</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#u5BF9_u5076_u89C4_u5219"><span class="nav-number">2.2.2.4.</span> <span class="nav-text">对偶规则</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u5E38_u7528_u516C_u5F0F"><span class="nav-number">2.2.3.</span> <span class="nav-text">常用公式</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u4F5C_u4E1A_u7B54_u6848"><span class="nav-number">3.</span> <span class="nav-text">作业答案</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u7B2C_u4E00_u6B21_u4F5C_u4E1A"><span class="nav-number">3.1.</span> <span class="nav-text">第一次作业</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1_285_29"><span class="nav-number">3.1.1.</span> <span class="nav-text">1-1(5)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2_283_29"><span class="nav-number">3.1.2.</span> <span class="nav-text">1-2(3)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4_282_29"><span class="nav-number">3.1.3.</span> <span class="nav-text">1-4(2)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-6_281_29"><span class="nav-number">3.1.4.</span> <span class="nav-text">1-6(1)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1_281_29"><span class="nav-number">3.1.5.</span> <span class="nav-text">2-1(1)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3_284_29"><span class="nav-number">3.1.6.</span> <span class="nav-text">2-3(4)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-4_282_29"><span class="nav-number">3.1.7.</span> <span class="nav-text">2-4(2)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-6_283_29"><span class="nav-number">3.1.8.</span> <span class="nav-text">2-6(3)</span></a></li></ol></li></ol></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+      
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="icon-next-heart fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">彭天浩</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+
+  
+    
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"pengtianhao"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+    
+     
+
+
+    
+  
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.2"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.2"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+<script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+<script type="text/javascript" src="/js/motion.js?v=0.4.5.2" id="motion.global"></script>
+
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.2" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    motionMiddleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+      if (CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  <script type="text/javascript" src="/js/bootstrap.js"></script>
+
+  
+  
+
+  
+  
+
+</body>
+</html>
