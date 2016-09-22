@@ -1,0 +1,1011 @@
+<!doctype html>
+<html class="theme-next   use-motion ">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="C#,Game,Unity,基础," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.2" />
+
+
+
+
+
+
+<meta name="description" content="一直觉得C#语法和Java很类似（事实上也是这样，都面向对象），但其实它的基于C/C++的。现在因为要用Unity的关系需要学一下C#。这里很多内容来自runoob.com">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C Sharp学习笔记">
+<meta property="og:url" content="http://yoursite.com/2016/09/21/C Sharp学习笔记/index.html">
+<meta property="og:site_name" content="彭天浩胡说八道的地方">
+<meta property="og:description" content="一直觉得C#语法和Java很类似（事实上也是这样，都面向对象），但其实它的基于C/C++的。现在因为要用Unity的关系需要学一下C#。这里很多内容来自runoob.com">
+<meta property="og:updated_time" content="2016-09-22T14:24:52.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="C Sharp学习笔记">
+<meta name="twitter:description" content="一直觉得C#语法和Java很类似（事实上也是这样，都面向对象），但其实它的基于C/C++的。现在因为要用Unity的关系需要学一下C#。这里很多内容来自runoob.com">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: 'post',
+    motion: true
+  };
+</script>
+
+  <title> C Sharp学习笔记 | 彭天浩胡说八道的地方 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?73e01b0dee523c22137e45cf054e9160";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">彭天浩胡说八道的地方</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu menu-left">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <form class="site-search-form">
+    <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+  </form>
+
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'gWj7XKQowsjQsmRgXg7t','2.0.0');
+</script>
+
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content">
+          
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                C Sharp学习笔记
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2016-09-21T13:43:42+08:00" content="2016-09-21">
+              2016-09-21
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分类于
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/计算机基础/" itemprop="url" rel="index">
+                    <span itemprop="name">计算机基础</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/21/C Sharp学习笔记/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/21/C Sharp学习笔记/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <span itemprop="articleBody"><blockquote>
+<p>一直觉得C#语法和Java很类似（事实上也是这样，都面向对象），但其实它的基于C/C++的。现在因为要用Unity的关系需要学一下C#。这里很多内容来自<a href="http://www.runoob.com/" target="_blank" rel="external">runoob.com</a></p>
+</blockquote>
+<a id="more"></a>
+<h2 id="u7A0B_u5E8F_u7ED3_u6784"><a href="#u7A0B_u5E8F_u7ED3_u6784" class="headerlink" title="程序结构"></a>程序结构</h2><p>这里给一个最简单的小程序：</p>
+<pre><code>//1. using 关键字用于在程序中包含 System 命名空间
+//一个程序一般有多个 using 语句
+using System;
+
+//2.一个 namespace 是一系列的类
+//First 命名空间包含了类 MainClass
+namespace First {
+
+    //类大家都差不多
+    class MainClass {
+
+        //Main 方法，是所有程序的入口点    
+
+        public static void Main (string[] args) {
+
+        //用Rectangle类初始化了一个对象
+        Rectangle myRec = new Rectangle ();
+        myRec.width = 1;
+        myRec.height = 2;
+        myRec.countArea ();
+
+        //打印
+        Console.WriteLine (&quot;Hello World!&quot;);
+        }
+    }
+
+    class Rectangle {
+        public double width;
+        public double height;
+
+        public void countArea(){
+            Console.WriteLine(&quot;area === {0}&quot;,width*height);
+        }    
+    }
+}
+</code></pre><h2 id="u547D_u540D_u7A7A_u95F4"><a href="#u547D_u540D_u7A7A_u95F4" class="headerlink" title="命名空间"></a>命名空间</h2><p>namespace是为了区分命名区间，有利于协作的机制</p>
+<p>用的时候就</p>
+<pre><code>mynamespace.myclass a = new mynamespace.myclass();
+</code></pre><p>在system里才可以不加namespace直接写</p>
+<pre><code>Console.WriteLine(&quot;Hello&quot;);
+</code></pre><p>在其他命名空间就要</p>
+<pre><code>System.Console.WriteLine(&quot;Hello&quot;);
+</code></pre><h2 id="u6570_u636E_u7C7B_u578B"><a href="#u6570_u636E_u7C7B_u578B" class="headerlink" title="数据类型"></a>数据类型</h2><h3 id="u57FA_u672C_u6570_u636E_u7C7B_u578B"><a href="#u57FA_u672C_u6570_u636E_u7C7B_u578B" class="headerlink" title="基本数据类型"></a>基本数据类型</h3><p>这里主要指的是<code>int</code>、<code>float</code>之类的，和c差不多，但是就是有一点比较关注</p>
+<p>就是有说法是变量有初始值，但事实上不赋初始值会报错。</p>
+<h3 id="u5F15_u7528_u7C7B_u578B"><a href="#u5F15_u7528_u7C7B_u578B" class="headerlink" title="引用类型"></a>引用类型</h3><h4 id="object_u5BF9_u8C61_u7C7B_u578B"><a href="#object_u5BF9_u8C61_u7C7B_u578B" class="headerlink" title="object对象类型"></a>object对象类型</h4><p>这是所有数据类型的基类，所以打印<code>123</code>可以这么做</p>
+<pre><code>object xy = &quot;123&quot;;
+Console.WriteLine (&quot;{0}&quot;,xy);
+</code></pre><p>管他什么类型都可以直接赋给xy，相当于oc的<code>id</code>或者Swift的<code>anyobject</code></p>
+<h4 id="dynamic_u7C7B_u578B"><a href="#dynamic_u7C7B_u578B" class="headerlink" title="dynamic类型"></a>dynamic类型</h4><p>其实<code>dynamic</code>和<code>object</code>挺类似的，只不过前者类型检查是在运行时发生，后者在编译时发生的。</p>
+<p>这里有个关于它们的讲解：<a href="http://www.cnblogs.com/LoveJenny/archive/2011/07/04/2097031.html" target="_blank" rel="external">浅谈Dynamic 关键字系列之一:dynamic 就是Object</a></p>
+<h4 id="string_u7C7B_u578B"><a href="#string_u7C7B_u578B" class="headerlink" title="string类型"></a>string类型</h4><p>这个类专门用来保存字符串，并且有一个很棒的关键字<code>@</code>(这里要注意此<code>@</code>和oc里的<code>@</code>不一样：C#里来用无视转义字符，所见即所得；oc里用来与c区分，比如<code>@select</code>也是差不多的意思)</p>
+<pre><code>string str = @&quot;C:\Windows&quot;;
+
+string str = &quot;C:\\Windows&quot;;    
+</code></pre><h5 id="String_u7C7B_u7684_u57FA_u7C7B"><a href="#String_u7C7B_u7684_u57FA_u7C7B" class="headerlink" title="String类的基类"></a>String类的基类</h5><p><a href="http://www.runoob.com/csharp/csharp-string.html" target="_blank" rel="external">String类的属性和方法</a></p>
+<p>String类是string的基类，提供了很多方法和属性，比如长度、比较、链接、查找甚至大小写转换</p>
+<h3 id="u53EF_u7A7A_u7C7B_u578B"><a href="#u53EF_u7A7A_u7C7B_u578B" class="headerlink" title="可空类型"></a>可空类型</h3><p>这个和swift里的自判断链接差不多，都是加<code>？</code>，不过要记得还是要赋<code>null</code>值</p>
+<pre><code>int? x = null;
+int? y = null;
+Console.WriteLine (&quot;{0} {1}&quot;,x,y);
+</code></pre><h3 id="u6307_u9488"><a href="#u6307_u9488" class="headerlink" title="指针"></a>指针</h3><p>C#里也有类似C的指针，用法一模一样</p>
+<pre><code>int *a;
+</code></pre><h3 id="u7C7B_u578B_u8F6C_u6362"><a href="#u7C7B_u578B_u8F6C_u6362" class="headerlink" title="类型转换"></a>类型转换</h3><p>有这么多类型，就有互相转换的问题，比如http通讯的时候，就经常把数字转换成字符串</p>
+<p>转换最通用的方法是用<code>Convert</code>类</p>
+<pre><code>int i = 0;
+string x = &quot;123&quot;;
+i = Convert.ToInt16 (x);    //i = 123
+</code></pre><p>当要转字符串的时候也可以用类型内置的转换方法:</p>
+<pre><code>int i = 123;
+string x = i.ToString();    //x = &quot;123&quot;
+</code></pre><h3 id="Null__u5408_u5E76_u8FD0_u7B97_u7B26"><a href="#Null__u5408_u5E76_u8FD0_u7B97_u7B26" class="headerlink" title="Null 合并运算符"></a>Null 合并运算符</h3><p>Null 合并运算符<code>??</code>出现在有符号<code>？</code>的地方，用法是如果前者为<code>null</code>，就把后者赋给变量</p>
+<pre><code>int? x = null;
+int? y = 123;
+
+int x2 = x ?? 1234;
+int y2 = y ?? 1234;
+
+Console.WriteLine (&quot;{0} {1}&quot;,x2,y2);//打印『1234 123』    
+</code></pre><h3 id="u5E38_u91CF"><a href="#u5E38_u91CF" class="headerlink" title="常量"></a>常量</h3><pre><code>const double pi = 3.14159; // 常量声明
+double s = pi*r*r;
+</code></pre><h3 id="u6570_u7EC4"><a href="#u6570_u7EC4" class="headerlink" title="数组"></a>数组</h3><h4 id="u521D_u59CB_u5316"><a href="#u521D_u59CB_u5316" class="headerlink" title="初始化"></a>初始化</h4><p>数组是一个对象，初始化有很多种形式</p>
+<pre><code>double[] array = new double[5];//元素自动赋值为0
+
+double[] balance = { 2340.0, 4523.69, 3421.0};//直接赋值
+
+int [] marks = new int[5]  { 99,  98, 92, 97, 95};//其实并不知道这个在这里有什么意义
+
+int [] marks = new int[]  { 99,  98, 92, 97, 95};//这个也一样
+</code></pre><p>除了需要初始化以外，其他和c没什么区别</p>
+<h4 id="Array_u7C7B"><a href="#Array_u7C7B" class="headerlink" title="Array类"></a>Array类</h4><p>Array是数组类的基类，里面有很多好用的方法和属性，比如<strong>清空、复制、得到长度、逆转、排序等等</strong></p>
+<h3 id="u4ECE_u63A7_u5236_u53F0_u8F93_u5165"><a href="#u4ECE_u63A7_u5236_u53F0_u8F93_u5165" class="headerlink" title="从控制台输入"></a>从控制台输入</h3><p>输入输出都用了<code>Console</code>类，<code>ReadLine</code>返回的是字符串类，所以如果想要得到一个int类型还得进行一次转换</p>
+<pre><code>Int32 xx = Convert.ToInt32(Console.ReadLine());
+</code></pre><h3 id="u6BD4_u8F83"><a href="#u6BD4_u8F83" class="headerlink" title="比较"></a>比较</h3><ul>
+<li><strong>符号<code>=</code></strong> 用于值的比较，如果是用在引用类型上(比如object之间)，那么就是比较地址，例子很简单</li>
+</ul>
+<pre><code>int i = 1;
+int x = 1;
+if (i == x){
+    Console.WriteLine (@&quot;is equal&quot;);
+}//打印『isqual』
+
+object i = 1;
+object x = 1;
+
+if (i != x) {
+    Console.WriteLine (@&quot;not equal&quot;);
+}//打印『not equal』
+</code></pre><ul>
+<li><p><strong>equal</strong> 用于比较引用类型的值</p>
+<pre><code>object i = 1;
+object x = 1;
+
+if (i.Equals(x)) {
+    Console.WriteLine (@&quot;is equal&quot;);
+}//打印『isqual』
+</code></pre></li>
+</ul>
+<h3 id="u63A7_u5236_u6761_u4EF6"><a href="#u63A7_u5236_u6761_u4EF6" class="headerlink" title="控制条件"></a>控制条件</h3><p>这个和c差不多，就写一个，可以对例如数组的对象使用<code>foreach</code>循环来遍历</p>
+<pre><code>int[] array = {1,2,3,4};
+
+foreach(int x in array) {
+    Console.WriteLine(&quot;{0}&quot;,x);
+}
+</code></pre><h2 id="u7C7B_u76F8_u5173"><a href="#u7C7B_u76F8_u5173" class="headerlink" title="类相关"></a>类相关</h2><h3 id="u6784_u9020_u51FD_u6570"><a href="#u6784_u9020_u51FD_u6570" class="headerlink" title="构造函数"></a>构造函数</h3><p>就是一个没有返回类型的函数，在初始化的时候被调用。不过其实也可以通过静态类返回test来初始化</p>
+<h3 id="u5C01_u88C5"><a href="#u5C01_u88C5" class="headerlink" title="封装"></a>封装</h3><p>如果没有指定访问修饰符，默认是<code>private</code></p>
+<ul>
+<li><strong>Public</strong> 任何人都能访问</li>
+<li><strong>Private</strong> 只有内部访问(内部消化)，实例化的对象也不行~~</li>
+<li><strong>Protected</strong> 允许子类访问它的基类的成员变量和成员函数（但还是内部消化）,实例化的对象还是访问不了</li>
+<li><strong>Internal</strong> 仅在项目类公用，其他项目引用后找不到Interal的方法</li>
+</ul>
+<p><strong>关于Internal和Puclic的不同</strong><br>，网上看到这个说法，挺有意思的：</p>
+<p>『一个是国际妓女，谁用都可以，就是PUBLIC；一个是不懂外语的，只能在国内做生意，就是INTERNAL，只能在当前所在的工程里面引用。两个工程，建立一个引用关系，被引用的里面建两个类，就能区别了。用VS的话，你根本点不出来那个不懂外语的』</p>
+<h3 id="u65B9_u6CD5"><a href="#u65B9_u6CD5" class="headerlink" title="方法"></a>方法</h3><p>大多数和java一样，但是有一个传参的关键字<code>ref</code>，用来传引用</p>
+<pre><code>public void swap(ref int x,ref int y){
+    int temp = x;
+    x = y;
+    y = temp;
+}
+
+public static void Main (string[] args) {
+    int x = 1;
+    int y = 2;
+
+    MainClass f = new MainClass ();
+    f.swap (ref x, ref y);
+
+    Console.WriteLine (&quot;{0} {1}&quot;,x,y);
+}
+</code></pre><p>结果是x，y交换了</p>
+<h3 id="u9759_u6001"><a href="#u9759_u6001" class="headerlink" title="静态"></a>静态</h3><p>静态<code>static</code>意味着一个属性被固话，无论创建多少个对象在内存中只存在一个，比如将一个int属性设为静态，那么当第二个对象修改的时候，第一个对象对应的属性也会改变</p>
+<p>如果写静态方法的话，那么就意味着即使对象没被实例化也能使用，也就意味着<strong>静态方法只能操作静态变量</strong></p>
+<p>下面给一个用静态方法初始化的例子，这里虽然操作了属性，但是其实并不是由方法本身操作的</p>
+<pre><code>class MainClass
+{
+    public static void Main (string[] args)
+    {
+        test a = test.init ();
+        Console.WriteLine (&quot;{0}&quot;,a.x);
+    }
+
+}
+
+class test{
+
+    public int x;
+
+    static public test init(){
+        test a = new test ();
+        a.x = 1;
+        return a;
+    }
+}
+</code></pre><h3 id="u7EE7_u627F"><a href="#u7EE7_u627F" class="headerlink" title="继承"></a>继承</h3><p>既然有面向对象，那么一定会有继承</p>
+<p>这里有个例子</p>
+<pre><code>//基类
+class animal{
+    protected string name;
+
+    public animal(string n){
+        name = n;
+    }
+
+    public void bark(){
+        Console.WriteLine(&quot;bark&quot;);
+    }
+
+    public void showName(){
+        Console.WriteLine(name);
+    }
+}
+
+//派生类
+class dog:animal{
+
+    //当基类写过构造函数的时候，子类的构造函数就需要这么写
+    public dog(string n):base(n){
+        name = n;
+    }
+
+    //方法的重载
+    public void bark(){
+        Console.WriteLine(&quot;wang&quot;);
+    }
+}
+</code></pre><p>这时候在<code>main</code>函数里写</p>
+<pre><code>dog ds = new dog (&quot;nnn&quot;);
+ds.showName ();
+ds.bark ();
+</code></pre><p>打印结果是</p>
+<pre><code>nnn
+wang
+</code></pre><p>这里面的<code>base</code>大概就是<code>super</code>的意思，表示基类</p>
+<h3 id="u591A_u6001"><a href="#u591A_u6001" class="headerlink" title="多态"></a>多态</h3><h4 id="u91CD_u8F7D"><a href="#u91CD_u8F7D" class="headerlink" title="重载"></a>重载</h4><p>上面有一个重载的例子，但还有一个要注意</p>
+<p><strong>能重载只有返回类型不同的函数声明</strong></p>
+<h4 id="u62BD_u8C61_u7C7B"><a href="#u62BD_u8C61_u7C7B" class="headerlink" title="抽象类"></a>抽象类</h4><p><code>abstract</code>其实可以看做是一种接口，规定了继承者要实现的方法。</p>
+<pre><code>abstract class Shape {
+  public abstract int area();
+}
+</code></pre><p>派生类就要写</p>
+<pre><code>public override int area ()
+</code></pre><p>主要是要注意这几点</p>
+<ul>
+<li>抽象类无法被实例化</li>
+<li>抽象方法无法在抽象类外部声明</li>
+<li>无法成为sealed类（封闭类，无法被继承），要是抽象类被sealed了简直搞笑~~</li>
+</ul>
+<h4 id="u865A_u65B9_u6CD5"><a href="#u865A_u65B9_u6CD5" class="headerlink" title="虚方法"></a>虚方法</h4><p>vitual类让基类可以指定子类实现的方法</p>
+<pre><code>public virtual int area()
+{
+   Console.WriteLine(&quot;父类的面积：&quot;);
+   return 0;
+}
+</code></pre><p>子类就需要实现</p>
+<pre><code>public override int area ()
+</code></pre><h3 id="u63A5_u53E3"><a href="#u63A5_u53E3" class="headerlink" title="接口"></a>接口</h3><p>接口就像是一个合同，所有继承接口的类都必须实现里面规定的方法</p>
+<pre><code>public interface creature{
+    void breath();
+}
+</code></pre><h2 id="u7ED3_u6784"><a href="#u7ED3_u6784" class="headerlink" title="结构"></a>结构</h2><p>结构和c里的结构体还是有不少区别的，可以有构造函数，但是没有析构函数</p>
+<pre><code>struct books{
+    public int number;
+    public string name;
+
+    public void init(int n,string na) {
+        number = n;
+        name = na;
+    }
+}
+</code></pre><p>结构和类的区别如果有用过别的语言的话应该知道</p>
+<ul>
+<li>类是引用类型，结构是值类型</li>
+<li>结构不支持继承</li>
+<li>结构不能声明默认的构造函数</li>
+</ul>
+<h2 id="u679A_u4E3E"><a href="#u679A_u4E3E" class="headerlink" title="枚举"></a>枚举</h2><p>枚举里面是符号，但是其实最终的值是数字</p>
+<pre><code>enum Days { Sun, Mon, tue, Wed, thu, Fri, Sat };
+
+int x = (int)Day.Sun;
+</code></pre><h2 id="u5F02_u5E38_u5904_u7406"><a href="#u5F02_u5E38_u5904_u7406" class="headerlink" title="异常处理"></a>异常处理</h2><pre><code>try {
+// 引起异常的语句
+}
+catch( ExceptionName e1 ) {
+// 错误处理代码
+}
+catch( ExceptionName e2 ) {
+// 错误处理代码
+}
+catch( ExceptionName eN ) {
+// 错误处理代码
+}
+finally {
+// 要执行的语句
+}
+</code></pre><p>具体在这里看<a href="http://www.runoob.com/csharp/csharp-exception-handling.html" target="_blank" rel="external">c#错误处理</a></p>
+</span>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/C/" rel="tag">#C#</a>
+          
+            <a href="/tags/Game/" rel="tag">#Game</a>
+          
+            <a href="/tags/Unity/" rel="tag">#Unity</a>
+          
+            <a href="/tags/基础/" rel="tag">#基础</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/09/21/操作系统笔记/" rel="next" title="操作系统笔记">
+                <i class="fa fa-chevron-left"></i> 操作系统笔记
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+        </div>
+
+        
+
+
+        
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/09/21/C Sharp学习笔记/"
+           data-title="C Sharp学习笔记" data-url="http://yoursite.com/2016/09/21/C Sharp学习笔记/">
+      </div>
+    
+  </div>
+
+
+      </div>
+
+      
+        
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="/images/avatar.jpg" alt="彭天浩" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">彭天浩</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description">iOS、PPT略懂，扯淡睡觉精通</p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">19</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            <a href="/categories">
+              <span class="site-state-item-count">8</span>
+              <span class="site-state-item-name">分类</span>
+              </a>
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">24</span>
+              <span class="site-state-item-name">标签</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/pthtc" target="_blank">
+                  
+                    <i class="fa fa-globe"></i> Github
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/peng-tian-hao-23" target="_blank">
+                  
+                    <i class="fa fa-globe"></i> 知乎
+                  
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#u7A0B_u5E8F_u7ED3_u6784"><span class="nav-number">1.</span> <span class="nav-text">程序结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u547D_u540D_u7A7A_u95F4"><span class="nav-number">2.</span> <span class="nav-text">命名空间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u6570_u636E_u7C7B_u578B"><span class="nav-number">3.</span> <span class="nav-text">数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u57FA_u672C_u6570_u636E_u7C7B_u578B"><span class="nav-number">3.1.</span> <span class="nav-text">基本数据类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u5F15_u7528_u7C7B_u578B"><span class="nav-number">3.2.</span> <span class="nav-text">引用类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#object_u5BF9_u8C61_u7C7B_u578B"><span class="nav-number">3.2.1.</span> <span class="nav-text">object对象类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#dynamic_u7C7B_u578B"><span class="nav-number">3.2.2.</span> <span class="nav-text">dynamic类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#string_u7C7B_u578B"><span class="nav-number">3.2.3.</span> <span class="nav-text">string类型</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#String_u7C7B_u7684_u57FA_u7C7B"><span class="nav-number">3.2.3.1.</span> <span class="nav-text">String类的基类</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u53EF_u7A7A_u7C7B_u578B"><span class="nav-number">3.3.</span> <span class="nav-text">可空类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u6307_u9488"><span class="nav-number">3.4.</span> <span class="nav-text">指针</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u7C7B_u578B_u8F6C_u6362"><span class="nav-number">3.5.</span> <span class="nav-text">类型转换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Null__u5408_u5E76_u8FD0_u7B97_u7B26"><span class="nav-number">3.6.</span> <span class="nav-text">Null 合并运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u5E38_u91CF"><span class="nav-number">3.7.</span> <span class="nav-text">常量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u6570_u7EC4"><span class="nav-number">3.8.</span> <span class="nav-text">数组</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u521D_u59CB_u5316"><span class="nav-number">3.8.1.</span> <span class="nav-text">初始化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Array_u7C7B"><span class="nav-number">3.8.2.</span> <span class="nav-text">Array类</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u4ECE_u63A7_u5236_u53F0_u8F93_u5165"><span class="nav-number">3.9.</span> <span class="nav-text">从控制台输入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u6BD4_u8F83"><span class="nav-number">3.10.</span> <span class="nav-text">比较</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u63A7_u5236_u6761_u4EF6"><span class="nav-number">3.11.</span> <span class="nav-text">控制条件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u7C7B_u76F8_u5173"><span class="nav-number">4.</span> <span class="nav-text">类相关</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u6784_u9020_u51FD_u6570"><span class="nav-number">4.1.</span> <span class="nav-text">构造函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u5C01_u88C5"><span class="nav-number">4.2.</span> <span class="nav-text">封装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u65B9_u6CD5"><span class="nav-number">4.3.</span> <span class="nav-text">方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u9759_u6001"><span class="nav-number">4.4.</span> <span class="nav-text">静态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u7EE7_u627F"><span class="nav-number">4.5.</span> <span class="nav-text">继承</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u591A_u6001"><span class="nav-number">4.6.</span> <span class="nav-text">多态</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u91CD_u8F7D"><span class="nav-number">4.6.1.</span> <span class="nav-text">重载</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u62BD_u8C61_u7C7B"><span class="nav-number">4.6.2.</span> <span class="nav-text">抽象类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u865A_u65B9_u6CD5"><span class="nav-number">4.6.3.</span> <span class="nav-text">虚方法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u63A5_u53E3"><span class="nav-number">4.7.</span> <span class="nav-text">接口</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u7ED3_u6784"><span class="nav-number">5.</span> <span class="nav-text">结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u679A_u4E3E"><span class="nav-number">6.</span> <span class="nav-text">枚举</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u5F02_u5E38_u5904_u7406"><span class="nav-number">7.</span> <span class="nav-text">异常处理</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+      
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="icon-next-heart fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">彭天浩</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+
+  
+    
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"pengtianhao"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+    
+     
+
+
+    
+  
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.2"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.2"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+<script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+<script type="text/javascript" src="/js/motion.js?v=0.4.5.2" id="motion.global"></script>
+
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.2" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    motionMiddleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+      if (CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  <script type="text/javascript" src="/js/bootstrap.js"></script>
+
+  
+  
+
+  
+  
+
+</body>
+</html>
