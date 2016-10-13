@@ -57,7 +57,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/09/21/C Sharp学习笔记/index.html">
 <meta property="og:site_name" content="彭天浩胡说八道的地方">
 <meta property="og:description" content="一直觉得C#语法和Java很类似（事实上也是这样，都面向对象），但其实它的基于C/C++的。现在因为要用Unity的关系需要学一下C#。这里很多内容来自runoob.com">
-<meta property="og:updated_time" content="2016-09-22T14:24:59.000Z">
+<meta property="og:updated_time" content="2016-09-26T08:02:14.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C Sharp学习笔记">
 <meta name="twitter:description" content="一直觉得C#语法和Java很类似（事实上也是这样，都面向对象），但其实它的基于C/C++的。现在因为要用Unity的关系需要学一下C#。这里很多内容来自runoob.com">
@@ -426,7 +426,58 @@ if (i.Equals(x)) {
 foreach(int x in array) {
     Console.WriteLine(&quot;{0}&quot;,x);
 }
-</code></pre><h2 id="u7C7B_u76F8_u5173"><a href="#u7C7B_u76F8_u5173" class="headerlink" title="类相关"></a>类相关</h2><h3 id="u6784_u9020_u51FD_u6570"><a href="#u6784_u9020_u51FD_u6570" class="headerlink" title="构造函数"></a>构造函数</h3><p>就是一个没有返回类型的函数，在初始化的时候被调用。不过其实也可以通过静态类返回test来初始化</p>
+</code></pre><h2 id="u7C7B_u76F8_u5173"><a href="#u7C7B_u76F8_u5173" class="headerlink" title="类相关"></a>类相关</h2><p><strong><code>this</code>表示自己</strong></p>
+<h3 id="u5C5E_u6027"><a href="#u5C5E_u6027" class="headerlink" title="属性"></a>属性</h3><p>C#里的属性和其他的语言不太一样，这一种用来规范原来字段的东西</p>
+<pre><code>属性（Property） 是类（class）、结构（structure）和接口（interface）
+的命名（named）成员。类或结构中的成员变量或方法称为 域（Field）。
+属性（Property）是域（Field）的扩展，且可使用相同的语法来访问。
+它们使用 访问器（accessors） 让私有域的值可被读写或操作。
+</code></pre><p><strong>说得通俗一点就是：</strong></p>
+<p>这是一个模子，本来我们需要调用字段的时候，要么设成public，但是不安全，要么通过set或者get，但是也有问题，没法规定属性的范围或者做一些其他操作，这个c#和swift都做到了（swift对于这块内容详见:<a href="http://pengtianhao.com/2016/08/14/Swift%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/#u5C5E_u6027" target="_blank" rel="external">Swift中的属性</a>）。c#的属性就是为此而生的</p>
+<h4 id="u5C5E_u6027_u7684_u4F8B_u5B50"><a href="#u5C5E_u6027_u7684_u4F8B_u5B50" class="headerlink" title="属性的例子"></a>属性的例子</h4><pre><code>class myClass {
+    public int a;
+    public int A
+    {
+        get {
+            return a*3;
+        }
+
+        set {
+            //value就是输入值
+            a = 2*value;
+        } s
+
+    }
+}
+</code></pre><p>通过属性赋值</p>
+<pre><code>myClass a = new myClass();
+a.A = 1;
+Console.WriteLine(&quot;{0}&quot;, a.A);
+</code></pre><p>打印结果为:<strong>6</strong></p>
+<h3 id="u7D22_u5F15_u5668"><a href="#u7D22_u5F15_u5668" class="headerlink" title="索引器"></a>索引器</h3><p>自己的理解就是索引器用来给应用一个能力，让实例能够实现</p>
+<pre><code>class myClass{
+    public int[] a = new int[10];
+    public myClass(){
+        for (int i = 0; i &lt; 10; i++)
+        {
+            a[i] = 1;
+        }
+    }
+
+    public int this[int index]
+    {
+        get
+        {
+            return a[index];
+        }
+
+        set
+        {
+            a[index] = value;
+        }
+    }
+}
+</code></pre><h3 id="u6784_u9020_u51FD_u6570"><a href="#u6784_u9020_u51FD_u6570" class="headerlink" title="构造函数"></a>构造函数</h3><p>就是一个没有返回类型的函数，在初始化的时候被调用。不过其实也可以通过静态类返回test来初始化</p>
 <h3 id="u5C01_u88C5"><a href="#u5C01_u88C5" class="headerlink" title="封装"></a>封装</h3><p>如果没有指定访问修饰符，默认是<code>private</code></p>
 <ul>
 <li><strong>Public</strong> 任何人都能访问</li>
@@ -434,7 +485,7 @@ foreach(int x in array) {
 <li><strong>Protected</strong> 允许子类访问它的基类的成员变量和成员函数（但还是内部消化）,实例化的对象还是访问不了</li>
 <li><strong>Internal</strong> 仅在项目类公用，其他项目引用后找不到Interal的方法</li>
 </ul>
-<p><strong>关于Internal和Puclic的不同</strong><br>，网上看到这个说法，挺有意思的：</p>
+<p><strong>关于Internal和Puclic的不同</strong><br>网上看到这个说法，挺有意思的：</p>
 <p>『一个是国际妓女，谁用都可以，就是PUBLIC；一个是不懂外语的，只能在国内做生意，就是INTERNAL，只能在当前所在的工程里面引用。两个工程，建立一个引用关系，被引用的里面建两个类，就能区别了。用VS的话，你根本点不出来那个不懂外语的』</p>
 <h3 id="u65B9_u6CD5"><a href="#u65B9_u6CD5" class="headerlink" title="方法"></a>方法</h3><p>大多数和java一样，但是有一个传参的关键字<code>ref</code>，用来传引用</p>
 <pre><code>public void swap(ref int x,ref int y){
@@ -578,6 +629,15 @@ finally {
 // 要执行的语句
 }
 </code></pre><p>具体在这里看<a href="http://www.runoob.com/csharp/csharp-exception-handling.html" target="_blank" rel="external">c#错误处理</a></p>
+<h2 id="u6587_u4EF6_u64CD_u4F5C"><a href="#u6587_u4EF6_u64CD_u4F5C" class="headerlink" title="文件操作"></a>文件操作</h2><p>c#里主要通过FileStream类实现文件的输入输出</p>
+<p>MSDN里有详细的信息 <a href="https://msdn.microsoft.com/zh-cn/library/system.io.filestream(v=vs.80" target="_blank" rel="external">FileStream类—MSDN</a>.aspx)</p>
+<pre><code>FileStream F = new FileStream(&quot;sample.txt&quot;, FileMode.Open, FileAccess.Read, FileShare.Read);
+</code></pre><p><strong>参数表示</strong> 都是枚举类型</p>
+<ul>
+<li><strong>FileMode</strong> 定义了打开方式，有Append、Open、OpenNew、CreateNew、Create、Truncate</li>
+<li><strong>FileAccess</strong> 定义了能够做的操作，Read、ReadWrite和Write</li>
+<li><strong>FileShare</strong> 定义了同一文件可以具有的访问类型</li>
+</ul>
 </span>
       
     </div>
@@ -743,7 +803,7 @@ finally {
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#u7A0B_u5E8F_u7ED3_u6784"><span class="nav-number">1.</span> <span class="nav-text">程序结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u547D_u540D_u7A7A_u95F4"><span class="nav-number">2.</span> <span class="nav-text">命名空间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u6570_u636E_u7C7B_u578B"><span class="nav-number">3.</span> <span class="nav-text">数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u57FA_u672C_u6570_u636E_u7C7B_u578B"><span class="nav-number">3.1.</span> <span class="nav-text">基本数据类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u5F15_u7528_u7C7B_u578B"><span class="nav-number">3.2.</span> <span class="nav-text">引用类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#object_u5BF9_u8C61_u7C7B_u578B"><span class="nav-number">3.2.1.</span> <span class="nav-text">object对象类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#dynamic_u7C7B_u578B"><span class="nav-number">3.2.2.</span> <span class="nav-text">dynamic类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#string_u7C7B_u578B"><span class="nav-number">3.2.3.</span> <span class="nav-text">string类型</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#String_u7C7B_u7684_u57FA_u7C7B"><span class="nav-number">3.2.3.1.</span> <span class="nav-text">String类的基类</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u53EF_u7A7A_u7C7B_u578B"><span class="nav-number">3.3.</span> <span class="nav-text">可空类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u6307_u9488"><span class="nav-number">3.4.</span> <span class="nav-text">指针</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u7C7B_u578B_u8F6C_u6362"><span class="nav-number">3.5.</span> <span class="nav-text">类型转换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Null__u5408_u5E76_u8FD0_u7B97_u7B26"><span class="nav-number">3.6.</span> <span class="nav-text">Null 合并运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u5E38_u91CF"><span class="nav-number">3.7.</span> <span class="nav-text">常量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u6570_u7EC4"><span class="nav-number">3.8.</span> <span class="nav-text">数组</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u521D_u59CB_u5316"><span class="nav-number">3.8.1.</span> <span class="nav-text">初始化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Array_u7C7B"><span class="nav-number">3.8.2.</span> <span class="nav-text">Array类</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u4ECE_u63A7_u5236_u53F0_u8F93_u5165"><span class="nav-number">3.9.</span> <span class="nav-text">从控制台输入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u6BD4_u8F83"><span class="nav-number">3.10.</span> <span class="nav-text">比较</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u63A7_u5236_u6761_u4EF6"><span class="nav-number">3.11.</span> <span class="nav-text">控制条件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u7C7B_u76F8_u5173"><span class="nav-number">4.</span> <span class="nav-text">类相关</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u6784_u9020_u51FD_u6570"><span class="nav-number">4.1.</span> <span class="nav-text">构造函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u5C01_u88C5"><span class="nav-number">4.2.</span> <span class="nav-text">封装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u65B9_u6CD5"><span class="nav-number">4.3.</span> <span class="nav-text">方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u9759_u6001"><span class="nav-number">4.4.</span> <span class="nav-text">静态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u7EE7_u627F"><span class="nav-number">4.5.</span> <span class="nav-text">继承</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u591A_u6001"><span class="nav-number">4.6.</span> <span class="nav-text">多态</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u91CD_u8F7D"><span class="nav-number">4.6.1.</span> <span class="nav-text">重载</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u62BD_u8C61_u7C7B"><span class="nav-number">4.6.2.</span> <span class="nav-text">抽象类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u865A_u65B9_u6CD5"><span class="nav-number">4.6.3.</span> <span class="nav-text">虚方法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u63A5_u53E3"><span class="nav-number">4.7.</span> <span class="nav-text">接口</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u7ED3_u6784"><span class="nav-number">5.</span> <span class="nav-text">结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u679A_u4E3E"><span class="nav-number">6.</span> <span class="nav-text">枚举</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u5F02_u5E38_u5904_u7406"><span class="nav-number">7.</span> <span class="nav-text">异常处理</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#u7A0B_u5E8F_u7ED3_u6784"><span class="nav-number">1.</span> <span class="nav-text">程序结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u547D_u540D_u7A7A_u95F4"><span class="nav-number">2.</span> <span class="nav-text">命名空间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u6570_u636E_u7C7B_u578B"><span class="nav-number">3.</span> <span class="nav-text">数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u57FA_u672C_u6570_u636E_u7C7B_u578B"><span class="nav-number">3.1.</span> <span class="nav-text">基本数据类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u5F15_u7528_u7C7B_u578B"><span class="nav-number">3.2.</span> <span class="nav-text">引用类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#object_u5BF9_u8C61_u7C7B_u578B"><span class="nav-number">3.2.1.</span> <span class="nav-text">object对象类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#dynamic_u7C7B_u578B"><span class="nav-number">3.2.2.</span> <span class="nav-text">dynamic类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#string_u7C7B_u578B"><span class="nav-number">3.2.3.</span> <span class="nav-text">string类型</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#String_u7C7B_u7684_u57FA_u7C7B"><span class="nav-number">3.2.3.1.</span> <span class="nav-text">String类的基类</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u53EF_u7A7A_u7C7B_u578B"><span class="nav-number">3.3.</span> <span class="nav-text">可空类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u6307_u9488"><span class="nav-number">3.4.</span> <span class="nav-text">指针</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u7C7B_u578B_u8F6C_u6362"><span class="nav-number">3.5.</span> <span class="nav-text">类型转换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Null__u5408_u5E76_u8FD0_u7B97_u7B26"><span class="nav-number">3.6.</span> <span class="nav-text">Null 合并运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u5E38_u91CF"><span class="nav-number">3.7.</span> <span class="nav-text">常量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u6570_u7EC4"><span class="nav-number">3.8.</span> <span class="nav-text">数组</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u521D_u59CB_u5316"><span class="nav-number">3.8.1.</span> <span class="nav-text">初始化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Array_u7C7B"><span class="nav-number">3.8.2.</span> <span class="nav-text">Array类</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u4ECE_u63A7_u5236_u53F0_u8F93_u5165"><span class="nav-number">3.9.</span> <span class="nav-text">从控制台输入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u6BD4_u8F83"><span class="nav-number">3.10.</span> <span class="nav-text">比较</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u63A7_u5236_u6761_u4EF6"><span class="nav-number">3.11.</span> <span class="nav-text">控制条件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u7C7B_u76F8_u5173"><span class="nav-number">4.</span> <span class="nav-text">类相关</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u5C5E_u6027"><span class="nav-number">4.1.</span> <span class="nav-text">属性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u5C5E_u6027_u7684_u4F8B_u5B50"><span class="nav-number">4.1.1.</span> <span class="nav-text">属性的例子</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u7D22_u5F15_u5668"><span class="nav-number">4.2.</span> <span class="nav-text">索引器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u6784_u9020_u51FD_u6570"><span class="nav-number">4.3.</span> <span class="nav-text">构造函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u5C01_u88C5"><span class="nav-number">4.4.</span> <span class="nav-text">封装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u65B9_u6CD5"><span class="nav-number">4.5.</span> <span class="nav-text">方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u9759_u6001"><span class="nav-number">4.6.</span> <span class="nav-text">静态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u7EE7_u627F"><span class="nav-number">4.7.</span> <span class="nav-text">继承</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u591A_u6001"><span class="nav-number">4.8.</span> <span class="nav-text">多态</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u91CD_u8F7D"><span class="nav-number">4.8.1.</span> <span class="nav-text">重载</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u62BD_u8C61_u7C7B"><span class="nav-number">4.8.2.</span> <span class="nav-text">抽象类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u865A_u65B9_u6CD5"><span class="nav-number">4.8.3.</span> <span class="nav-text">虚方法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u63A5_u53E3"><span class="nav-number">4.9.</span> <span class="nav-text">接口</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u7ED3_u6784"><span class="nav-number">5.</span> <span class="nav-text">结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u679A_u4E3E"><span class="nav-number">6.</span> <span class="nav-text">枚举</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u5F02_u5E38_u5904_u7406"><span class="nav-number">7.</span> <span class="nav-text">异常处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u6587_u4EF6_u64CD_u4F5C"><span class="nav-number">8.</span> <span class="nav-text">文件操作</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
