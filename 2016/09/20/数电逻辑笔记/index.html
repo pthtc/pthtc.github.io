@@ -60,7 +60,9 @@
 <meta property="og:image" content="https://d17oy1vhnax1f7.cloudfront.net/items/1N0s1t2t461j2H0V0E0p/QQ20160920-1@2x.png?v=c779a9cf">
 <meta property="og:image" content="https://d17oy1vhnax1f7.cloudfront.net/items/0U2E2E0o3j3d063Q2i0q/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-10-11%20%E4%B8%8B%E5%8D%886.52.23.png?v=52009a0f">
 <meta property="og:image" content="https://d17oy1vhnax1f7.cloudfront.net/items/3m00342r412C2h0G133C/Untitled%201.gif?v=716efcc5">
-<meta property="og:updated_time" content="2016-10-13T04:26:09.000Z">
+<meta property="og:image" content="https://d17oy1vhnax1f7.cloudfront.net/items/3T323P1p1a1G3R0K3X2x/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-10-18%20%E4%B8%8B%E5%8D%881.03.43.png?v=235042c1">
+<meta property="og:image" content="https://d17oy1vhnax1f7.cloudfront.net/items/2e012X2g0l1I2l2F2n0F/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-10-18%20%E4%B8%8B%E5%8D%881.01.52.png?v=ed37e486">
+<meta property="og:updated_time" content="2016-10-18T05:04:48.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数电逻辑笔记">
 <meta name="twitter:description" content="数字电路的一些总结，持续更新">
@@ -640,7 +642,7 @@ D+E+BC = (D+E+B)(D+E+C)
 0.26*2 = 0.52（0.52上面那道题碰到过，直接贴答案了）
 -&gt;0.01000010100011110101110000101
 </code></pre><p>答案为 1001001.01000010100011110101110000101</p>
-<h4 id="2-1_281_29"><a href="#2-1_281_29" class="headerlink" title="2-1(1)"></a>2-1(1)</h4><p><strong>有a、b、c三个输入信号，如果三个输入信号均为0或其中一个为1时，输出信号Y=1，其余情况下，输出Y=0</strong></p>
+<h4 id="2-1_281_29"><a href="#2-1_281_29" class="headerlink" title="2-1(1)"></a>2-1(1)</h4><p><strong>有a、b、c三个输入信号，如果三个输入信号均为0或其中一个为1时，输出信号Y=1，其余情况下，输出Y=0，写出逻辑表达式</strong></p>
 <table>
 <thead>
 <tr>
@@ -701,7 +703,8 @@ D+E+BC = (D+E+B)(D+E+C)
 </tr>
 </tbody>
 </table>
-<h4 id="2-3_284_29"><a href="#2-3_284_29" class="headerlink" title="2-3(4)"></a>2-3(4)</h4><p><strong>直接写出函数反函数表达式和对偶表达式</strong> </p>
+<pre><code>Y = ¬A¬B¬C+A¬B¬C+¬AB¬C+¬A¬BC;
+</code></pre><h4 id="2-3_284_29"><a href="#2-3_284_29" class="headerlink" title="2-3(4)"></a>2-3(4)</h4><p><strong>直接写出函数反函数表达式和对偶表达式</strong> </p>
 <p><strong>F=AB+¬(CD)+¬(BC)+¬(¬D+¬CE+¬(B+E))</strong></p>
 <pre><code>//反演
 ¬F = (¬A+¬B)·¬(¬C+¬D)·¬(¬B+¬C)·¬(D·¬(¬C+¬E)·¬(¬B·¬E))
@@ -710,8 +713,11 @@ D+E+BC = (D+E+B)(D+E+C)
 F* =(A·B)·¬(C+D)·¬(B+C)·¬(¬D·¬(C+E)·¬(B·E))
 </code></pre><h4 id="2-4_282_29"><a href="#2-4_282_29" class="headerlink" title="2-4(2)"></a>2-4(2)</h4><p><strong>公式法证明等式</strong></p>
 <p><strong>¬A¬C+¬A¬B+¬A¬C¬D+BC = ¬A+BC</strong></p>
-<h4 id="2-6_283_29"><a href="#2-6_283_29" class="headerlink" title="2-6(3)"></a>2-6(3)</h4><p><strong>写出F的对偶式反演式的最小项表达式</strong></p>
+<p><img src="https://d17oy1vhnax1f7.cloudfront.net/items/3T323P1p1a1G3R0K3X2x/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-10-18%20%E4%B8%8B%E5%8D%881.03.43.png?v=235042c1" alt=""></p>
+<h4 id="2-6_283_29"><a href="#2-6_283_29" class="headerlink" title="2-6(3)"></a>2-6(3)</h4><p><strong>公式法简化下列式子</strong></p>
 <p><strong>F = A¬BC+¬A¬CD+A¬C</strong></p>
+<p><img src="https://d17oy1vhnax1f7.cloudfront.net/items/2e012X2g0l1I2l2F2n0F/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-10-18%20%E4%B8%8B%E5%8D%881.01.52.png?v=ed37e486" alt=""></p>
+<p>这里只用了一个公式<code>A+¬AB = A+B</code></p>
 <h3 id="u7B2C_u4E8C_u6B21_u4F5C_u4E1A"><a href="#u7B2C_u4E8C_u6B21_u4F5C_u4E1A" class="headerlink" title="第二次作业"></a>第二次作业</h3><h4 id="2-8_281_29"><a href="#2-8_281_29" class="headerlink" title="2-8(1)"></a>2-8(1)</h4><p><strong>用公式法化简</strong></p>
 <h4 id="2-8_284_29"><a href="#2-8_284_29" class="headerlink" title="2-8(4)"></a>2-8(4)</h4><h4 id="2-9_282_29"><a href="#2-9_282_29" class="headerlink" title="2-9(2)"></a>2-9(2)</h4><h4 id="2-9_286_29"><a href="#2-9_286_29" class="headerlink" title="2-9(6)"></a>2-9(6)</h4><h4 id="2-9_288_29"><a href="#2-9_288_29" class="headerlink" title="2-9(8)"></a>2-9(8)</h4></span>
       
