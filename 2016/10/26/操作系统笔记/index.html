@@ -54,12 +54,12 @@
 <meta name="description" content="操作系统的一些总结，持续更新">
 <meta property="og:type" content="article">
 <meta property="og:title" content="操作系统笔记">
-<meta property="og:url" content="http://yoursite.com/2016/09/21/操作系统笔记/index.html">
+<meta property="og:url" content="http://yoursite.com/2016/10/26/操作系统笔记/index.html">
 <meta property="og:site_name" content="彭天浩胡说八道的地方">
 <meta property="og:description" content="操作系统的一些总结，持续更新">
 <meta property="og:image" content="https://i-msdn.sec.s-msft.com/dynimg/IC535109.png">
 <meta property="og:image" content="https://d17oy1vhnax1f7.cloudfront.net/items/1T1S443f3P471j0o312x/timg.jpeg?v=f8f55afc">
-<meta property="og:updated_time" content="2016-10-13T04:25:23.000Z">
+<meta property="og:updated_time" content="2016-10-26T11:59:05.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="操作系统笔记">
 <meta name="twitter:description" content="操作系统的一些总结，持续更新">
@@ -254,8 +254,8 @@
         <div class="post-meta">
           <span class="post-time">
             发表于
-            <time itemprop="dateCreated" datetime="2016-09-21T13:43:42+08:00" content="2016-09-21">
-              2016-09-21
+            <time itemprop="dateCreated" datetime="2016-10-26T19:59:42+08:00" content="2016-10-26">
+              2016-10-26
             </time>
           </span>
 
@@ -280,8 +280,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/09/21/操作系统笔记/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/21/操作系统笔记/" itemprop="commentsCount"></span>
+                <a href="/2016/10/26/操作系统笔记/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/26/操作系统笔记/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -490,8 +490,207 @@ pid = fork();//这时候子进程创建，此时父线程的pid == 子线程标�
 <li>进程是操作系统分配资源的单位，线程是cpu调度中的单位</li>
 </ol>
 <h3 id="u591A_u7EBF_u7A0B_u6A21_u578B"><a href="#u591A_u7EBF_u7A0B_u6A21_u578B" class="headerlink" title="多线程模型"></a>多线程模型</h3><p>内核线程和用户线程之间的关系</p>
-<h4 id="u591A_u5BF9_u4E00_u6A21_u578B"><a href="#u591A_u5BF9_u4E00_u6A21_u578B" class="headerlink" title="多对一模型"></a>多对一模型</h4><p>将多个用户线程映射到一个内核线程，</p>
-<h2 id="CPU_u8C03_u5EA6"><a href="#CPU_u8C03_u5EA6" class="headerlink" title="CPU调度"></a>CPU调度</h2><h2 id="u4F5C_u4E1A"><a href="#u4F5C_u4E1A" class="headerlink" title="作业"></a>作业</h2><h3 id="u7B2C_u4E00_u6B21_u4F5C_u4E1A"><a href="#u7B2C_u4E00_u6B21_u4F5C_u4E1A" class="headerlink" title="第一次作业"></a>第一次作业</h3><h4 id="1-10"><a href="#1-10" class="headerlink" title="1.10"></a>1.10</h4><p><strong>中断有何作用？陷阱和中断有什么区别？用户程序能否有意地生成陷阱？如果是，有什么目的？</strong></p>
+<h4 id="u591A_u5BF9_u4E00_u6A21_u578B"><a href="#u591A_u5BF9_u4E00_u6A21_u578B" class="headerlink" title="多对一模型"></a>多对一模型</h4><p>将多个用户线程映射到一个内核线程，任意时刻<strong>只有一个线程能访问内核</strong></p>
+<ul>
+<li><strong>优点：</strong> 效率较高</li>
+<li><strong>缺点：</strong> 一旦内核阻塞，这个进程就阻塞</li>
+</ul>
+<h4 id="u4E00_u5BF9_u4E00_u6A21_u578B"><a href="#u4E00_u5BF9_u4E00_u6A21_u578B" class="headerlink" title="一对一模型"></a>一对一模型</h4><p>每个用户线程映射一个内核线程</p>
+<ul>
+<li><strong>优点：</strong> 高并发</li>
+<li><strong>缺点：</strong> 每一个用户线程就要创建一个内核线程，创建内核线程的开销降低了应用程序性能，因此<strong>程序不能有太多线程</strong></li>
+</ul>
+<h4 id="u591A_u5BF9_u591A_u6A21_u578B"><a href="#u591A_u5BF9_u591A_u6A21_u578B" class="headerlink" title="多对多模型"></a>多对多模型</h4><p>多个用户线程映射多个内核线程</p>
+<ul>
+<li><strong>优点</strong> 兼具高并发和高效率</li>
+</ul>
+<h4 id="u7EBF_u7A0B_u5E93"><a href="#u7EBF_u7A0B_u5E93" class="headerlink" title="线程库"></a>线程库</h4><!--待续-->
+<h2 id="CPU_u8C03_u5EA6"><a href="#CPU_u8C03_u5EA6" class="headerlink" title="CPU调度"></a>CPU调度</h2><h3 id="u6982_u5FF5-1"><a href="#u6982_u5FF5-1" class="headerlink" title="概念"></a>概念</h3><ul>
+<li><p><strong>COU区间</strong>进程在CPU区间和IO区间切换，大量的短CPU区间夹杂少量长CPU区间</p>
+</li>
+<li><p><strong>短期调度程序</strong> CPU空闲的时候，从就绪队列选择进程的程序</p>
+</li>
+<li><p><strong>抢占和非抢占</strong> 当调度只在进程切换到等待或者停止时进行，是非抢占，否则是抢占</p>
+</li>
+<li><p><strong>CPU利用率</strong> 40%~90%</p>
+</li>
+<li><p><strong>吞吐量</strong> 单位时间完成的进程数量</p>
+</li>
+<li><p><strong>周转时间</strong> 从进程提交到完成的时间</p>
+</li>
+<li><p><strong>等待时间</strong> 就绪队列中等待所花费的时间</p>
+</li>
+<li><p><strong>响应时间</strong> 提交进程到第一响应的时间</p>
+</li>
+</ul>
+<h3 id="u8C03_u5EA6_u7B97_u6CD5"><a href="#u8C03_u5EA6_u7B97_u6CD5" class="headerlink" title="调度算法"></a>调度算法</h3><p><strong>画甘特图、算平均周转时间</strong></p>
+<h4 id="FCFS_28_u5148_u6765_u5148_u670D_u52A1_29"><a href="#FCFS_28_u5148_u6765_u5148_u670D_u52A1_29" class="headerlink" title="FCFS(先来先服务)"></a>FCFS(先来先服务)</h4><ul>
+<li><strong>缺点：</strong> 护航效应，小进程需等待较长时间，平均等待时间较长</li>
+<li><strong>特点：</strong> 非抢占</li>
+</ul>
+<h4 id="SJF_28_u6700_u77ED_u4F5C_u4E1A_u4F18_u5148_29"><a href="#SJF_28_u6700_u77ED_u4F5C_u4E1A_u4F18_u5148_29" class="headerlink" title="SJF(最短作业优先)"></a>SJF(最短作业优先)</h4><ul>
+<li><strong>缺点：</strong> 无法准确预测每一个作业所需要的时间，无法再短期调度层次上实现</li>
+<li><strong>优点：</strong> 最高效</li>
+<li><strong>特点：</strong> 抢占或非抢占</li>
+</ul>
+<h4 id="Priority"><a href="#Priority" class="headerlink" title="Priority"></a>Priority</h4><ul>
+<li><strong>缺点：</strong> 可能导致饥饿，低优先级进程永远无法获得CPU用控制权(解决方案:<strong>老化，过一段时间把优先级比较低的进程提高优先级</strong>)</li>
+<li><strong>优点：</strong> 应用最广，平均等待时间短</li>
+<li><strong>特点：</strong> 抢占或非抢占</li>
+</ul>
+<h4 id="u8F6E_u8F6C_u8C03_u5EA6"><a href="#u8F6E_u8F6C_u8C03_u5EA6" class="headerlink" title="轮转调度"></a>轮转调度</h4><p>每一个进程服务一个时间片，一旦超过，就排队到队尾</p>
+<ul>
+<li><strong>优点：</strong> 响应速度加快</li>
+<li><strong>特点：</strong> 抢占</li>
+</ul>
+<h4 id="Multilevel_Queue_28_u591A_u7EA7_u961F_u5217_u8C03_u5EA6_29"><a href="#Multilevel_Queue_28_u591A_u7EA7_u961F_u5217_u8C03_u5EA6_29" class="headerlink" title="Multilevel Queue(多级队列调度)"></a>Multilevel Queue(多级队列调度)</h4><ul>
+<li><strong>核心思想：</strong> 将就绪队列划分几个独立队列，根据进程属性(内存大小、进程优先级等)，<strong>永久</strong>分配到一个独立队列，应用不同的算法</li>
+</ul>
+<h4 id="u591A_u7EA7_u53CD_u9988_u961F_u5217_u8C03_u5EA6"><a href="#u591A_u7EA7_u53CD_u9988_u961F_u5217_u8C03_u5EA6" class="headerlink" title="多级反馈队列调度"></a>多级反馈队列调度</h4><ul>
+<li><strong>核心思想：</strong> 高CPU占用的进程会逐渐被移到低优先级队列</li>
+</ul>
+<h2 id="u8FDB_u7A0B_u540C_u6B65"><a href="#u8FDB_u7A0B_u540C_u6B65" class="headerlink" title="进程同步"></a>进程同步</h2><p><strong>意义</strong> 当两个进程同时调用了某个寄存器时候，有可能会出错</p>
+<p><strong>原子</strong> 不可中断的</p>
+<h3 id="u4E34_u754C_u533A_u95EE_u9898"><a href="#u4E34_u754C_u533A_u95EE_u9898" class="headerlink" title="临界区问题"></a>临界区问题</h3><ul>
+<li><strong>临界区</strong> 几个进程间有可能共同改变一个目标的代码段</li>
+<li><p><strong>目的</strong> 设计一个以便进程协作的协议</p>
+</li>
+<li><p><strong>互斥</strong> 仅有一个进程可以进入临界区</p>
+</li>
+<li><strong>前进</strong> 临界区空闲时选择进程进入</li>
+<li><strong>有限等待</strong> </li>
+</ul>
+<h4 id="u89E3_u51B3_u65B9_u6CD5"><a href="#u89E3_u51B3_u65B9_u6CD5" class="headerlink" title="解决方法"></a>解决方法</h4><ol>
+<li>抢占内核 内核中的进程可以被抢占</li>
+<li>非抢占内核 所有进程排队，等待内核中的进程完成或者退出</li>
+</ol>
+<h3 id="Peterson_u7B97_u6CD5"><a href="#Peterson_u7B97_u6CD5" class="headerlink" title="Peterson算法"></a>Peterson算法</h3><p><strong>作用</strong> 用于两个进程在临界区和剩余区间交替执行</p>
+<h4 id="u5177_u4F53_u65B9_u6CD5"><a href="#u5177_u4F53_u65B9_u6CD5" class="headerlink" title="具体方法"></a>具体方法</h4><ul>
+<li><p>进程P0，P1共享两个数据 </p>
+<pre><code>int turn; //哪个进程可进入临界区
+boolean flag[2]; //哪个进程想进入临界区
+
+void procedure0() {
+    while(true) {
+        flag[0]=true;
+        turn=1;
+        while(flag[1] == 0 &amp;&amp; turn == 1) {
+            //若flag[1]为false，P0就进入临界区
+            //若flag[1]为tureP0循环等待，只要P1退出临界区，P0即可进入
+        }
+        visit();//访问临界区
+        flag[0]=false;//访问临界区完成，procedure0释放出临界区
+    }
+}
+</code></pre></li>
+</ul>
+<h3 id="u786C_u4EF6_u540C_u6B65"><a href="#u786C_u4EF6_u540C_u6B65" class="headerlink" title="硬件同步"></a>硬件同步</h3><h4 id="TestAndSet"><a href="#TestAndSet" class="headerlink" title="TestAndSet"></a>TestAndSet</h4><ul>
+<li><p><strong>公用元素</strong> <code>boolean lock</code></p>
+</li>
+<li><p><strong>函数内容</strong></p>
+<pre><code>boolean TestAndSet(boolean *target){
+    boolean rv = *target;
+    *target = true;//上锁，阻止后面进程进入临界区
+    return rv;//返回锁的状态
+}
+</code></pre></li>
+<li><p><strong>使用方法</strong></p>
+<pre><code>while(true) {
+    while(TestAndSet(&amp;Lock))；
+    visit();//访问临界区
+    Lock = flase;
+    //访问剩余区
+}
+</code></pre></li>
+</ul>
+<h4 id="Swap"><a href="#Swap" class="headerlink" title="Swap"></a>Swap</h4><ul>
+<li><p><strong>公用元素</strong> <code>boolean lock</code> <code>boolean key</code> </p>
+</li>
+<li><p><strong>函数内容</strong> <code>Swap(boolean *a, boolean *b)</code> 交换两个值</p>
+</li>
+<li><p><strong>使用方法</strong></p>
+<pre><code>while(true) {
+    key = true；
+    while(key == true){
+        Swap(&amp;lock，&amp;key);
+        //当lock等于false的时候，将lock等于true,然后进入临界区
+    }
+    visit();//访问临界区
+    Lock = flase;
+    //访问剩余区
+}
+</code></pre></li>
+</ul>
+<h4 id="TestAndSet_u6709_u9650_u7B49_u5F85_u4E92_u65A5"><a href="#TestAndSet_u6709_u9650_u7B49_u5F85_u4E92_u65A5" class="headerlink" title="TestAndSet有限等待互斥"></a>TestAndSet有限等待互斥</h4><pre><code>while(true) {
+    waiting[i] = true;
+    key = true;
+    while(key == true &amp;&amp; waiting[i] == true){
+        key = TestAndSet(&amp;lock);
+        //当lock为false时候，key为flase，上锁并且开始访问临界区
+    }
+    waiting[i] = false;//
+
+    visit();//访问临界区
+
+    j = (i+1)%n;
+    //进程Pi处于等待获取锁的状态
+    while(j!=i &amp;&amp; waiting[j] == 0){
+        j = (j+1)%n;
+    }
+    if(j == i){
+        lock = flase;
+    }else{
+        waiting[j] = false;
+    }
+    //访问剩余区
+}
+</code></pre><h3 id="u4FE1_u53F7_u91CF"><a href="#u4FE1_u53F7_u91CF" class="headerlink" title="信号量"></a>信号量</h3><ul>
+<li><strong>基本操作(原子！)</strong> <code>wait()</code> <code>signal()</code></li>
+</ul>
+<h4 id="u4E24_u4E2A_u57FA_u672C_u64CD_u4F5C"><a href="#u4E24_u4E2A_u57FA_u672C_u64CD_u4F5C" class="headerlink" title="两个基本操作"></a>两个基本操作</h4><p><strong>普通版</strong></p>
+<pre><code>int S; 
+
+wait(S){
+    while (S &lt;= 0){
+        //如果信号量小于零，就阻塞
+    }
+    S--;
+} 
+
+signal(S) {
+    S++;
+}
+</code></pre><p> <strong>改进版</strong></p>
+<pre><code>typedef struct{
+    int value;
+    struct process *list;
+} semaphore;
+
+wait(semaphore *S){
+    S-&gt;value++;
+    if(S-&gt;value&lt;=0){
+        add P to list;//当前进程保存进list
+        block();//挂起当前进程
+    }
+} 
+
+signal(semaphore *S) {
+    S-&gt;value--;
+    if(S-&gt;value&lt;=0){
+        remove P from list;
+        wakeup(P);
+    }
+}
+</code></pre><h4 id="u6B7B_u9501_u548C_u9965_u997F"><a href="#u6B7B_u9501_u548C_u9965_u997F" class="headerlink" title="死锁和饥饿"></a>死锁和饥饿</h4><ul>
+<li><p>死锁</p>
+<p>  P: <code>wait(S); wait(Q);</code><br>  Q: <code>wait(Q); wait(S);</code></p>
+</li>
+<li><p>饥饿</p>
+<p>  无限期等待</p>
+</li>
+</ul>
+<h3 id="u7ECF_u5178_u540C_u6B65_u95EE_u9898"><a href="#u7ECF_u5178_u540C_u6B65_u95EE_u9898" class="headerlink" title="经典同步问题"></a>经典同步问题</h3><p>其实是信号量的补充</p>
+<h4 id="u6709_u9650_u7F13_u51B2_u95EE_u9898"><a href="#u6709_u9650_u7F13_u51B2_u95EE_u9898" class="headerlink" title="有限缓冲问题"></a>有限缓冲问题</h4><h4 id="u8BFB_u8005-_u5199_u8005_u95EE_u9898"><a href="#u8BFB_u8005-_u5199_u8005_u95EE_u9898" class="headerlink" title="读者-写者问题"></a>读者-写者问题</h4><h4 id="u54F2_u5B66_u5BB6_u8FDB_u9910_u95EE_u9898"><a href="#u54F2_u5B66_u5BB6_u8FDB_u9910_u95EE_u9898" class="headerlink" title="哲学家进餐问题"></a>哲学家进餐问题</h4><h2 id="u4F5C_u4E1A"><a href="#u4F5C_u4E1A" class="headerlink" title="作业"></a>作业</h2><h3 id="u7B2C_u4E00_u6B21_u4F5C_u4E1A"><a href="#u7B2C_u4E00_u6B21_u4F5C_u4E1A" class="headerlink" title="第一次作业"></a>第一次作业</h3><h4 id="1-10"><a href="#1-10" class="headerlink" title="1.10"></a>1.10</h4><p><strong>中断有何作用？陷阱和中断有什么区别？用户程序能否有意地生成陷阱？如果是，有什么目的？</strong></p>
 <pre><code>1. 完成进程间切换，从而支持CPU和设备之间的并行。
 2. 陷阱的发生时间是固定的，中断是不可预测的 
    CPU处理中断的过程中会屏蔽中断，不接受新的中断直
@@ -542,17 +741,13 @@ pid = fork();//这时候子进程创建，此时父线程的pid == 子线程标�
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/09/20/数电逻辑笔记/" rel="next" title="数电逻辑笔记">
-                <i class="fa fa-chevron-left"></i> 数电逻辑笔记
+              <a href="/2016/10/13/Google Interview University/" rel="next" title="【转】 Google Interview University 一套完整的学习手册帮助自己准备 Google 的面试">
+                <i class="fa fa-chevron-left"></i> 【转】 Google Interview University 一套完整的学习手册帮助自己准备 Google 的面试
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/09/21/C Sharp学习笔记/" rel="prev" title="C Sharp学习笔记">
-                C Sharp学习笔记 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -579,8 +774,8 @@ pid = fork();//这时候子进程创建，此时父线程的pid == 子线程标�
         
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/09/21/操作系统笔记/"
-           data-title="操作系统笔记" data-url="http://yoursite.com/2016/09/21/操作系统笔记/">
+      <div class="ds-thread" data-thread-key="2016/10/26/操作系统笔记/"
+           data-title="操作系统笔记" data-url="http://yoursite.com/2016/10/26/操作系统笔记/">
       </div>
     
   </div>
@@ -688,7 +883,7 @@ pid = fork();//这时候子进程创建，此时父线程的pid == 子线程标�
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#u5BFC_u8BBA"><span class="nav-number">1.</span> <span class="nav-text">导论</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u5185_u6838"><span class="nav-number">1.1.</span> <span class="nav-text">内核</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u4E2D_u65AD_u548C_u9677_u9631"><span class="nav-number">1.2.</span> <span class="nav-text">中断和陷阱</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u4E2D_u65AD"><span class="nav-number">1.2.1.</span> <span class="nav-text">中断</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u9677_u9631"><span class="nav-number">1.2.2.</span> <span class="nav-text">陷阱</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u5B58_u50A8_u7ED3_u6784_u548CI/O"><span class="nav-number">1.3.</span> <span class="nav-text">存储结构和I/O</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u64CD_u4F5C_u7CFB_u7EDF_u7ED3_u6784"><span class="nav-number">1.4.</span> <span class="nav-text">操作系统结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u53CC_u91CD_u6A21_u5F0F"><span class="nav-number">1.5.</span> <span class="nav-text">双重模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u7528_u6237_u6A21_u5F0F"><span class="nav-number">1.5.1.</span> <span class="nav-text">用户模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u7CFB_u7EDF_u6A21_u5F0F_uFF08_u8FDB_u7A0B_u6A21_u5F0F_u3001_u5185_u6838_u6A21_u5F0F_uFF09"><span class="nav-number">1.5.2.</span> <span class="nav-text">系统模式（进程模式、内核模式）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u64CD_u4F5C_u7CFB_u7EDF_u7ED3_u6784-1"><span class="nav-number">2.</span> <span class="nav-text">操作系统结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u64CD_u4F5C_u7CFB_u7EDF_u670D_u52A1"><span class="nav-number">2.1.</span> <span class="nav-text">操作系统服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u64CD_u4F5C_u7CFB_u7EDF_u7684_u7528_u6237_u63A5_u53E3"><span class="nav-number">2.2.</span> <span class="nav-text">操作系统的用户接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u7CFB_u7EDF_u8C03_u7528"><span class="nav-number">2.3.</span> <span class="nav-text">系统调用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u64CD_u4F5C_u7CFB_u7EDF_u7ED3_u6784-2"><span class="nav-number">2.4.</span> <span class="nav-text">操作系统结构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u7B80_u5355_u7ED3_u6784"><span class="nav-number">2.4.1.</span> <span class="nav-text">简单结构</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#MS-DOS"><span class="nav-number">2.4.1.1.</span> <span class="nav-text">MS-DOS</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Unix"><span class="nav-number">2.4.1.2.</span> <span class="nav-text">Unix</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u5206_u5C42_u7ED3_u6784"><span class="nav-number">2.4.2.</span> <span class="nav-text">分层结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u5FAE_u5185_u6838"><span class="nav-number">2.4.3.</span> <span class="nav-text">微内核</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u6A21_u5757_u5316_u5185_u6838"><span class="nav-number">2.4.4.</span> <span class="nav-text">模块化内核</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u865A_u62DF_u673A"><span class="nav-number">2.5.</span> <span class="nav-text">虚拟机</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u8FDB_u7A0B"><span class="nav-number">3.</span> <span class="nav-text">进程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u6982_u5FF5"><span class="nav-number">3.1.</span> <span class="nav-text">概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u8FDB_u7A0B_u7684_u72B6_u6001"><span class="nav-number">3.1.1.</span> <span class="nav-text">进程的状态</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u8FDB_u7A0B_u63A7_u5236_u5757_28PCB_29"><span class="nav-number">3.1.2.</span> <span class="nav-text">进程控制块(PCB)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u8FDB_u7A0B_u8C03_u5EA6"><span class="nav-number">3.2.</span> <span class="nav-text">进程调度</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u8C03_u5EA6_u961F_u5217"><span class="nav-number">3.2.1.</span> <span class="nav-text">调度队列</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u8C03_u5EA6_u7A0B_u5E8F"><span class="nav-number">3.2.2.</span> <span class="nav-text">调度程序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u4E0A_u4E0B_u6587_u5207_u6362"><span class="nav-number">3.2.3.</span> <span class="nav-text">上下文切换</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u8FDB_u7A0B_u64CD_u4F5C"><span class="nav-number">3.3.</span> <span class="nav-text">进程操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u8FDB_u7A0B_u521B_u5EFA"><span class="nav-number">3.3.1.</span> <span class="nav-text">进程创建</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u8FDB_u7A0B_u95F4_u901A_u8BAF"><span class="nav-number">3.3.2.</span> <span class="nav-text">进程间通讯</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#u6D88_u606F_u4F20_u9012_u7CFB_u7EDF"><span class="nav-number">3.3.2.1.</span> <span class="nav-text">消息传递系统</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u7EBF_u7A0B"><span class="nav-number">4.</span> <span class="nav-text">线程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u591A_u7EBF_u7A0B_u6A21_u578B"><span class="nav-number">4.1.</span> <span class="nav-text">多线程模型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u591A_u5BF9_u4E00_u6A21_u578B"><span class="nav-number">4.1.1.</span> <span class="nav-text">多对一模型</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CPU_u8C03_u5EA6"><span class="nav-number">5.</span> <span class="nav-text">CPU调度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u4F5C_u4E1A"><span class="nav-number">6.</span> <span class="nav-text">作业</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u7B2C_u4E00_u6B21_u4F5C_u4E1A"><span class="nav-number">6.1.</span> <span class="nav-text">第一次作业</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-10"><span class="nav-number">6.1.1.</span> <span class="nav-text">1.10</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-12"><span class="nav-number">6.1.2.</span> <span class="nav-text">1.12</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-13"><span class="nav-number">6.1.3.</span> <span class="nav-text">1.13</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2"><span class="nav-number">6.1.4.</span> <span class="nav-text">2.2</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3"><span class="nav-number">6.1.5.</span> <span class="nav-text">2.3</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-7"><span class="nav-number">6.1.6.</span> <span class="nav-text">2.7</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#u5BFC_u8BBA"><span class="nav-number">1.</span> <span class="nav-text">导论</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u5185_u6838"><span class="nav-number">1.1.</span> <span class="nav-text">内核</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u4E2D_u65AD_u548C_u9677_u9631"><span class="nav-number">1.2.</span> <span class="nav-text">中断和陷阱</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u4E2D_u65AD"><span class="nav-number">1.2.1.</span> <span class="nav-text">中断</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u9677_u9631"><span class="nav-number">1.2.2.</span> <span class="nav-text">陷阱</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u5B58_u50A8_u7ED3_u6784_u548CI/O"><span class="nav-number">1.3.</span> <span class="nav-text">存储结构和I/O</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u64CD_u4F5C_u7CFB_u7EDF_u7ED3_u6784"><span class="nav-number">1.4.</span> <span class="nav-text">操作系统结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u53CC_u91CD_u6A21_u5F0F"><span class="nav-number">1.5.</span> <span class="nav-text">双重模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u7528_u6237_u6A21_u5F0F"><span class="nav-number">1.5.1.</span> <span class="nav-text">用户模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u7CFB_u7EDF_u6A21_u5F0F_uFF08_u8FDB_u7A0B_u6A21_u5F0F_u3001_u5185_u6838_u6A21_u5F0F_uFF09"><span class="nav-number">1.5.2.</span> <span class="nav-text">系统模式（进程模式、内核模式）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u64CD_u4F5C_u7CFB_u7EDF_u7ED3_u6784-1"><span class="nav-number">2.</span> <span class="nav-text">操作系统结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u64CD_u4F5C_u7CFB_u7EDF_u670D_u52A1"><span class="nav-number">2.1.</span> <span class="nav-text">操作系统服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u64CD_u4F5C_u7CFB_u7EDF_u7684_u7528_u6237_u63A5_u53E3"><span class="nav-number">2.2.</span> <span class="nav-text">操作系统的用户接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u7CFB_u7EDF_u8C03_u7528"><span class="nav-number">2.3.</span> <span class="nav-text">系统调用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u64CD_u4F5C_u7CFB_u7EDF_u7ED3_u6784-2"><span class="nav-number">2.4.</span> <span class="nav-text">操作系统结构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u7B80_u5355_u7ED3_u6784"><span class="nav-number">2.4.1.</span> <span class="nav-text">简单结构</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#MS-DOS"><span class="nav-number">2.4.1.1.</span> <span class="nav-text">MS-DOS</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Unix"><span class="nav-number">2.4.1.2.</span> <span class="nav-text">Unix</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u5206_u5C42_u7ED3_u6784"><span class="nav-number">2.4.2.</span> <span class="nav-text">分层结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u5FAE_u5185_u6838"><span class="nav-number">2.4.3.</span> <span class="nav-text">微内核</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u6A21_u5757_u5316_u5185_u6838"><span class="nav-number">2.4.4.</span> <span class="nav-text">模块化内核</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u865A_u62DF_u673A"><span class="nav-number">2.5.</span> <span class="nav-text">虚拟机</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u8FDB_u7A0B"><span class="nav-number">3.</span> <span class="nav-text">进程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u6982_u5FF5"><span class="nav-number">3.1.</span> <span class="nav-text">概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u8FDB_u7A0B_u7684_u72B6_u6001"><span class="nav-number">3.1.1.</span> <span class="nav-text">进程的状态</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u8FDB_u7A0B_u63A7_u5236_u5757_28PCB_29"><span class="nav-number">3.1.2.</span> <span class="nav-text">进程控制块(PCB)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u8FDB_u7A0B_u8C03_u5EA6"><span class="nav-number">3.2.</span> <span class="nav-text">进程调度</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u8C03_u5EA6_u961F_u5217"><span class="nav-number">3.2.1.</span> <span class="nav-text">调度队列</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u8C03_u5EA6_u7A0B_u5E8F"><span class="nav-number">3.2.2.</span> <span class="nav-text">调度程序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u4E0A_u4E0B_u6587_u5207_u6362"><span class="nav-number">3.2.3.</span> <span class="nav-text">上下文切换</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u8FDB_u7A0B_u64CD_u4F5C"><span class="nav-number">3.3.</span> <span class="nav-text">进程操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u8FDB_u7A0B_u521B_u5EFA"><span class="nav-number">3.3.1.</span> <span class="nav-text">进程创建</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u8FDB_u7A0B_u95F4_u901A_u8BAF"><span class="nav-number">3.3.2.</span> <span class="nav-text">进程间通讯</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#u6D88_u606F_u4F20_u9012_u7CFB_u7EDF"><span class="nav-number">3.3.2.1.</span> <span class="nav-text">消息传递系统</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u7EBF_u7A0B"><span class="nav-number">4.</span> <span class="nav-text">线程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u591A_u7EBF_u7A0B_u6A21_u578B"><span class="nav-number">4.1.</span> <span class="nav-text">多线程模型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u591A_u5BF9_u4E00_u6A21_u578B"><span class="nav-number">4.1.1.</span> <span class="nav-text">多对一模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u4E00_u5BF9_u4E00_u6A21_u578B"><span class="nav-number">4.1.2.</span> <span class="nav-text">一对一模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u591A_u5BF9_u591A_u6A21_u578B"><span class="nav-number">4.1.3.</span> <span class="nav-text">多对多模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u7EBF_u7A0B_u5E93"><span class="nav-number">4.1.4.</span> <span class="nav-text">线程库</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CPU_u8C03_u5EA6"><span class="nav-number">5.</span> <span class="nav-text">CPU调度</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u6982_u5FF5-1"><span class="nav-number">5.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u8C03_u5EA6_u7B97_u6CD5"><span class="nav-number">5.2.</span> <span class="nav-text">调度算法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#FCFS_28_u5148_u6765_u5148_u670D_u52A1_29"><span class="nav-number">5.2.1.</span> <span class="nav-text">FCFS(先来先服务)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SJF_28_u6700_u77ED_u4F5C_u4E1A_u4F18_u5148_29"><span class="nav-number">5.2.2.</span> <span class="nav-text">SJF(最短作业优先)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Priority"><span class="nav-number">5.2.3.</span> <span class="nav-text">Priority</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u8F6E_u8F6C_u8C03_u5EA6"><span class="nav-number">5.2.4.</span> <span class="nav-text">轮转调度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Multilevel_Queue_28_u591A_u7EA7_u961F_u5217_u8C03_u5EA6_29"><span class="nav-number">5.2.5.</span> <span class="nav-text">Multilevel Queue(多级队列调度)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u591A_u7EA7_u53CD_u9988_u961F_u5217_u8C03_u5EA6"><span class="nav-number">5.2.6.</span> <span class="nav-text">多级反馈队列调度</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u8FDB_u7A0B_u540C_u6B65"><span class="nav-number">6.</span> <span class="nav-text">进程同步</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u4E34_u754C_u533A_u95EE_u9898"><span class="nav-number">6.1.</span> <span class="nav-text">临界区问题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u89E3_u51B3_u65B9_u6CD5"><span class="nav-number">6.1.1.</span> <span class="nav-text">解决方法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Peterson_u7B97_u6CD5"><span class="nav-number">6.2.</span> <span class="nav-text">Peterson算法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u5177_u4F53_u65B9_u6CD5"><span class="nav-number">6.2.1.</span> <span class="nav-text">具体方法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u786C_u4EF6_u540C_u6B65"><span class="nav-number">6.3.</span> <span class="nav-text">硬件同步</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#TestAndSet"><span class="nav-number">6.3.1.</span> <span class="nav-text">TestAndSet</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Swap"><span class="nav-number">6.3.2.</span> <span class="nav-text">Swap</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TestAndSet_u6709_u9650_u7B49_u5F85_u4E92_u65A5"><span class="nav-number">6.3.3.</span> <span class="nav-text">TestAndSet有限等待互斥</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u4FE1_u53F7_u91CF"><span class="nav-number">6.4.</span> <span class="nav-text">信号量</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u4E24_u4E2A_u57FA_u672C_u64CD_u4F5C"><span class="nav-number">6.4.1.</span> <span class="nav-text">两个基本操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u6B7B_u9501_u548C_u9965_u997F"><span class="nav-number">6.4.2.</span> <span class="nav-text">死锁和饥饿</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u7ECF_u5178_u540C_u6B65_u95EE_u9898"><span class="nav-number">6.5.</span> <span class="nav-text">经典同步问题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u6709_u9650_u7F13_u51B2_u95EE_u9898"><span class="nav-number">6.5.1.</span> <span class="nav-text">有限缓冲问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u8BFB_u8005-_u5199_u8005_u95EE_u9898"><span class="nav-number">6.5.2.</span> <span class="nav-text">读者-写者问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u54F2_u5B66_u5BB6_u8FDB_u9910_u95EE_u9898"><span class="nav-number">6.5.3.</span> <span class="nav-text">哲学家进餐问题</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u4F5C_u4E1A"><span class="nav-number">7.</span> <span class="nav-text">作业</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u7B2C_u4E00_u6B21_u4F5C_u4E1A"><span class="nav-number">7.1.</span> <span class="nav-text">第一次作业</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-10"><span class="nav-number">7.1.1.</span> <span class="nav-text">1.10</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-12"><span class="nav-number">7.1.2.</span> <span class="nav-text">1.12</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-13"><span class="nav-number">7.1.3.</span> <span class="nav-text">1.13</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2"><span class="nav-number">7.1.4.</span> <span class="nav-text">2.2</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3"><span class="nav-number">7.1.5.</span> <span class="nav-text">2.3</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-7"><span class="nav-number">7.1.6.</span> <span class="nav-text">2.7</span></a></li></ol></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
