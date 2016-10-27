@@ -59,7 +59,7 @@
 <meta property="og:description" content="操作系统的一些总结，持续更新">
 <meta property="og:image" content="https://i-msdn.sec.s-msft.com/dynimg/IC535109.png">
 <meta property="og:image" content="https://d17oy1vhnax1f7.cloudfront.net/items/1T1S443f3P471j0o312x/timg.jpeg?v=f8f55afc">
-<meta property="og:updated_time" content="2016-10-26T11:59:05.000Z">
+<meta property="og:updated_time" content="2016-10-27T10:15:41.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="操作系统笔记">
 <meta name="twitter:description" content="操作系统的一些总结，持续更新">
@@ -690,7 +690,29 @@ signal(semaphore *S) {
 </li>
 </ul>
 <h3 id="u7ECF_u5178_u540C_u6B65_u95EE_u9898"><a href="#u7ECF_u5178_u540C_u6B65_u95EE_u9898" class="headerlink" title="经典同步问题"></a>经典同步问题</h3><p>其实是信号量的补充</p>
-<h4 id="u6709_u9650_u7F13_u51B2_u95EE_u9898"><a href="#u6709_u9650_u7F13_u51B2_u95EE_u9898" class="headerlink" title="有限缓冲问题"></a>有限缓冲问题</h4><h4 id="u8BFB_u8005-_u5199_u8005_u95EE_u9898"><a href="#u8BFB_u8005-_u5199_u8005_u95EE_u9898" class="headerlink" title="读者-写者问题"></a>读者-写者问题</h4><h4 id="u54F2_u5B66_u5BB6_u8FDB_u9910_u95EE_u9898"><a href="#u54F2_u5B66_u5BB6_u8FDB_u9910_u95EE_u9898" class="headerlink" title="哲学家进餐问题"></a>哲学家进餐问题</h4><h2 id="u4F5C_u4E1A"><a href="#u4F5C_u4E1A" class="headerlink" title="作业"></a>作业</h2><h3 id="u7B2C_u4E00_u6B21_u4F5C_u4E1A"><a href="#u7B2C_u4E00_u6B21_u4F5C_u4E1A" class="headerlink" title="第一次作业"></a>第一次作业</h3><h4 id="1-10"><a href="#1-10" class="headerlink" title="1.10"></a>1.10</h4><p><strong>中断有何作用？陷阱和中断有什么区别？用户程序能否有意地生成陷阱？如果是，有什么目的？</strong></p>
+<h4 id="u6709_u9650_u7F13_u51B2_u95EE_u9898"><a href="#u6709_u9650_u7F13_u51B2_u95EE_u9898" class="headerlink" title="有限缓冲问题"></a>有限缓冲问题</h4><ul>
+<li><strong>公用元素</strong> </li>
+</ul>
+<p><code>int mutex = 1</code> 满足互斥要求</p>
+<p><code>int empty = n</code> 空缓冲项个数</p>
+<p><code>int empty = n</code> 空缓冲项个数</p>
+<ul>
+<li><p><strong>函数内容</strong> <code>Swap(boolean *a, boolean *b)</code> 交换两个值</p>
+</li>
+<li><p><strong>使用方法</strong></p>
+<pre><code>while(true) {
+    key = true；
+    while(key == true){
+        Swap(&amp;lock，&amp;key);
+        //当lock等于false的时候，将lock等于true,然后进入临界区
+    }
+    visit();//访问临界区
+    Lock = flase;
+    //访问剩余区
+}
+</code></pre></li>
+</ul>
+<h4 id="u8BFB_u8005-_u5199_u8005_u95EE_u9898"><a href="#u8BFB_u8005-_u5199_u8005_u95EE_u9898" class="headerlink" title="读者-写者问题"></a>读者-写者问题</h4><h4 id="u54F2_u5B66_u5BB6_u8FDB_u9910_u95EE_u9898"><a href="#u54F2_u5B66_u5BB6_u8FDB_u9910_u95EE_u9898" class="headerlink" title="哲学家进餐问题"></a>哲学家进餐问题</h4><h2 id="u4F5C_u4E1A"><a href="#u4F5C_u4E1A" class="headerlink" title="作业"></a>作业</h2><h3 id="u7B2C_u4E00_u6B21_u4F5C_u4E1A"><a href="#u7B2C_u4E00_u6B21_u4F5C_u4E1A" class="headerlink" title="第一次作业"></a>第一次作业</h3><h4 id="1-10"><a href="#1-10" class="headerlink" title="1.10"></a>1.10</h4><p><strong>中断有何作用？陷阱和中断有什么区别？用户程序能否有意地生成陷阱？如果是，有什么目的？</strong></p>
 <pre><code>1. 完成进程间切换，从而支持CPU和设备之间的并行。
 2. 陷阱的发生时间是固定的，中断是不可预测的 
    CPU处理中断的过程中会屏蔽中断，不接受新的中断直
@@ -748,6 +770,10 @@ signal(semaphore *S) {
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/10/27/计算机组成笔记/" rel="prev" title="计算机组成笔记">
+                计算机组成笔记 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -819,7 +845,7 @@ signal(semaphore *S) {
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">20</span>
+              <span class="site-state-item-count">21</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -833,7 +859,7 @@ signal(semaphore *S) {
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">24</span>
+              <span class="site-state-item-count">25</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>
