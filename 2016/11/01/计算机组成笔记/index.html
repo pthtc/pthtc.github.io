@@ -54,11 +54,11 @@
 <meta name="description" content="计算机组成的一些总结，持续更新">
 <meta property="og:type" content="article">
 <meta property="og:title" content="计算机组成笔记">
-<meta property="og:url" content="http://yoursite.com/2016/10/27/计算机组成笔记/index.html">
+<meta property="og:url" content="http://yoursite.com/2016/11/01/计算机组成笔记/index.html">
 <meta property="og:site_name" content="彭天浩胡说八道的地方">
 <meta property="og:description" content="计算机组成的一些总结，持续更新">
 <meta property="og:image" content="https://d17oy1vhnax1f7.cloudfront.net/items/3U2U050v1a3C0z1S012x/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-10-27%20%E4%B8%8B%E5%8D%886.45.26.png?v=4f85efc9">
-<meta property="og:updated_time" content="2016-10-27T13:00:35.000Z">
+<meta property="og:updated_time" content="2016-11-01T10:53:11.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="计算机组成笔记">
 <meta name="twitter:description" content="计算机组成的一些总结，持续更新">
@@ -253,8 +253,8 @@
         <div class="post-meta">
           <span class="post-time">
             发表于
-            <time itemprop="dateCreated" datetime="2016-10-27T18:19:16+08:00" content="2016-10-27">
-              2016-10-27
+            <time itemprop="dateCreated" datetime="2016-11-01T18:19:16+08:00" content="2016-11-01">
+              2016-11-01
             </time>
           </span>
 
@@ -279,8 +279,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/10/27/计算机组成笔记/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/27/计算机组成笔记/" itemprop="commentsCount"></span>
+                <a href="/2016/11/01/计算机组成笔记/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/01/计算机组成笔记/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -382,7 +382,27 @@
 <li><strong>下溢</strong> 规格化导致阶码小于零(其实就是数字太小导致机器读不出来)，此时尾数被强制置零，称为<strong>机器零</strong>，此时机器<strong>正常运行</strong></li>
 <li><strong>上溢</strong> 规格化导致阶码全1后又变为全0，发生<strong>溢出错误</strong>，产生中断</li>
 </ul>
-</span>
+<h4 id="u5B9A_u70B9_u6570_u7684_u8BA1_u7B97"><a href="#u5B9A_u70B9_u6570_u7684_u8BA1_u7B97" class="headerlink" title="定点数的计算"></a>定点数的计算</h4><h5 id="u903B_u8F91_u8FD0_u7B97"><a href="#u903B_u8F91_u8FD0_u7B97" class="headerlink" title="逻辑运算"></a>逻辑运算</h5><ol>
+<li>与(逻辑乘)</li>
+<li>或(逻辑加)</li>
+<li>非</li>
+<li>异或</li>
+</ol>
+<h5 id="u79FB_u4F4D_u8FD0_u7B97"><a href="#u79FB_u4F4D_u8FD0_u7B97" class="headerlink" title="移位运算"></a>移位运算</h5><p><strong>规则</strong> 在<strong><em>原码</em></strong>情况下，先丢掉符号位，其他位左右移，空位补0</p>
+<p><strong>补码的右移，反码</strong>情况下补1</p>
+<h5 id="u52A0_u51CF_u6CD5"><a href="#u52A0_u51CF_u6CD5" class="headerlink" title="加减法"></a>加减法</h5><p>加减法都需在<strong><em>补码</em></strong>下使用，注意字长</p>
+<pre><code>[X+Y]补 = [X]补+[Y]补
+[X-Y]补 = [X]补+[-Y]补
+</code></pre><ul>
+<li><strong>求<code>[-Y]</code>的方法</strong> 连同符号位逐位取反，末位加一</li>
+</ul>
+<h6 id="u53CC_u7B26_u53F7_u4F4D"><a href="#u53CC_u7B26_u53F7_u4F4D" class="headerlink" title="双符号位"></a>双符号位</h6><p>双符号位可以保存溢出状态，<strong>双符号位不同</strong>，发生溢出</p>
+<p>实际状态下，加法器还是使用单符号位，通过对进位和最高符号位进行<strong>异或</strong>(可以看作先使用双符号位，异或之后抛弃最高位)</p>
+<h5 id="u4E58_u6CD5_u8FD0_u7B97"><a href="#u4E58_u6CD5_u8FD0_u7B97" class="headerlink" title="乘法运算"></a>乘法运算</h5><p>乘数A，被乘数B，部分积 x = 0</p>
+<h6 id="u539F_u7801_u4E00_u4F4D_u4E58"><a href="#u539F_u7801_u4E00_u4F4D_u4E58" class="headerlink" title="原码一位乘"></a>原码一位乘</h6><ul>
+<li><strong>方法</strong> A乘以B的末位，加x，左移一位，得到新的部分积</li>
+</ul>
+<h6 id="u8865_u7801_u4E00_u4F4D_u4E58"><a href="#u8865_u7801_u4E00_u4F4D_u4E58" class="headerlink" title="补码一位乘"></a>补码一位乘</h6></span>
       
     </div>
 
@@ -399,8 +419,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/10/26/操作系统笔记/" rel="next" title="操作系统笔记">
-                <i class="fa fa-chevron-left"></i> 操作系统笔记
+              <a href="/2016/10/31/计算机网络笔记/" rel="next" title="计算机网络笔记">
+                <i class="fa fa-chevron-left"></i> 计算机网络笔记
               </a>
             
           </div>
@@ -432,8 +452,8 @@
         
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/10/27/计算机组成笔记/"
-           data-title="计算机组成笔记" data-url="http://yoursite.com/2016/10/27/计算机组成笔记/">
+      <div class="ds-thread" data-thread-key="2016/11/01/计算机组成笔记/"
+           data-title="计算机组成笔记" data-url="http://yoursite.com/2016/11/01/计算机组成笔记/">
       </div>
     
   </div>
@@ -541,7 +561,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#u7EEA_u8BBA"><span class="nav-number">1.</span> <span class="nav-text">绪论</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u51AF_u8BFA_u4F9D_u66FC_u6A21_u578B"><span class="nav-number">1.1.</span> <span class="nav-text">冯诺依曼模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u8BA1_u7B97_u673A_u7684_u57FA_u672C_u7ED3_u6784"><span class="nav-number">1.2.</span> <span class="nav-text">计算机的基本结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u8BA1_u7B97_u673A_u5C42_u6B21_u7ED3_u6784"><span class="nav-number">1.3.</span> <span class="nav-text">计算机层次结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u6027_u80FD_u8BC4_u4EF7_u6307_u6807"><span class="nav-number">1.4.</span> <span class="nav-text">性能评价指标</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u8BA1_u7B97_u673A_u4E2D_u4FE1_u606F_u7684_u8868_u793A_u4E0E_u8FD0_u7B97"><span class="nav-number">2.</span> <span class="nav-text">计算机中信息的表示与运算</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u6570_u636E_u7684_u8868_u793A"><span class="nav-number">2.1.</span> <span class="nav-text">数据的表示</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u5B9A_u70B9_u6570_u7684_u8868_u793A"><span class="nav-number">2.1.1.</span> <span class="nav-text">定点数的表示</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#u539F_u7801_u8868_u793A_u6CD5"><span class="nav-number">2.1.1.1.</span> <span class="nav-text">原码表示法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#u8865_u7801_u8868_u793A_u6CD5"><span class="nav-number">2.1.1.2.</span> <span class="nav-text">补码表示法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#u53CD_u7801_u8868_u793A_u6CD5"><span class="nav-number">2.1.1.3.</span> <span class="nav-text">反码表示法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#u79FB_u7801_u8868_u793A_u6CD5_28_u4EC5_u9488_u5BF9_u5B9A_u70B9_u6574_u6570_29"><span class="nav-number">2.1.1.4.</span> <span class="nav-text">移码表示法(仅针对定点整数)</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u6D6E_u70B9_u6570_u7684_u8868_u793A"><span class="nav-number">2.1.2.</span> <span class="nav-text">浮点数的表示</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#u89C4_u683C_u5316"><span class="nav-number">2.1.2.1.</span> <span class="nav-text">规格化</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#u7EEA_u8BBA"><span class="nav-number">1.</span> <span class="nav-text">绪论</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u51AF_u8BFA_u4F9D_u66FC_u6A21_u578B"><span class="nav-number">1.1.</span> <span class="nav-text">冯诺依曼模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u8BA1_u7B97_u673A_u7684_u57FA_u672C_u7ED3_u6784"><span class="nav-number">1.2.</span> <span class="nav-text">计算机的基本结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u8BA1_u7B97_u673A_u5C42_u6B21_u7ED3_u6784"><span class="nav-number">1.3.</span> <span class="nav-text">计算机层次结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u6027_u80FD_u8BC4_u4EF7_u6307_u6807"><span class="nav-number">1.4.</span> <span class="nav-text">性能评价指标</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u8BA1_u7B97_u673A_u4E2D_u4FE1_u606F_u7684_u8868_u793A_u4E0E_u8FD0_u7B97"><span class="nav-number">2.</span> <span class="nav-text">计算机中信息的表示与运算</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u6570_u636E_u7684_u8868_u793A"><span class="nav-number">2.1.</span> <span class="nav-text">数据的表示</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u5B9A_u70B9_u6570_u7684_u8868_u793A"><span class="nav-number">2.1.1.</span> <span class="nav-text">定点数的表示</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#u539F_u7801_u8868_u793A_u6CD5"><span class="nav-number">2.1.1.1.</span> <span class="nav-text">原码表示法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#u8865_u7801_u8868_u793A_u6CD5"><span class="nav-number">2.1.1.2.</span> <span class="nav-text">补码表示法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#u53CD_u7801_u8868_u793A_u6CD5"><span class="nav-number">2.1.1.3.</span> <span class="nav-text">反码表示法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#u79FB_u7801_u8868_u793A_u6CD5_28_u4EC5_u9488_u5BF9_u5B9A_u70B9_u6574_u6570_29"><span class="nav-number">2.1.1.4.</span> <span class="nav-text">移码表示法(仅针对定点整数)</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u6D6E_u70B9_u6570_u7684_u8868_u793A"><span class="nav-number">2.1.2.</span> <span class="nav-text">浮点数的表示</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#u89C4_u683C_u5316"><span class="nav-number">2.1.2.1.</span> <span class="nav-text">规格化</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u5B9A_u70B9_u6570_u7684_u8BA1_u7B97"><span class="nav-number">2.1.3.</span> <span class="nav-text">定点数的计算</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#u903B_u8F91_u8FD0_u7B97"><span class="nav-number">2.1.3.1.</span> <span class="nav-text">逻辑运算</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#u79FB_u4F4D_u8FD0_u7B97"><span class="nav-number">2.1.3.2.</span> <span class="nav-text">移位运算</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#u52A0_u51CF_u6CD5"><span class="nav-number">2.1.3.3.</span> <span class="nav-text">加减法</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#u53CC_u7B26_u53F7_u4F4D"><span class="nav-number">2.1.3.3.1.</span> <span class="nav-text">双符号位</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#u4E58_u6CD5_u8FD0_u7B97"><span class="nav-number">2.1.3.4.</span> <span class="nav-text">乘法运算</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#u539F_u7801_u4E00_u4F4D_u4E58"><span class="nav-number">2.1.3.4.1.</span> <span class="nav-text">原码一位乘</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#u8865_u7801_u4E00_u4F4D_u4E58"><span class="nav-number">2.1.3.4.2.</span> <span class="nav-text">补码一位乘</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
