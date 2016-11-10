@@ -59,7 +59,7 @@
 <meta property="og:description" content="操作系统的一些总结，持续更新">
 <meta property="og:image" content="https://i-msdn.sec.s-msft.com/dynimg/IC535109.png">
 <meta property="og:image" content="https://d17oy1vhnax1f7.cloudfront.net/items/1T1S443f3P471j0o312x/timg.jpeg?v=f8f55afc">
-<meta property="og:updated_time" content="2016-10-27T10:15:41.000Z">
+<meta property="og:updated_time" content="2016-11-09T10:39:40.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="操作系统笔记">
 <meta name="twitter:description" content="操作系统的一些总结，持续更新">
@@ -695,7 +695,6 @@ signal(semaphore *S) {
 </ul>
 <p><code>int mutex = 1</code> 满足互斥要求</p>
 <p><code>int empty = n</code> 空缓冲项个数</p>
-<p><code>int empty = n</code> 空缓冲项个数</p>
 <ul>
 <li><p><strong>函数内容</strong> <code>Swap(boolean *a, boolean *b)</code> 交换两个值</p>
 </li>
@@ -712,7 +711,65 @@ signal(semaphore *S) {
 }
 </code></pre></li>
 </ul>
-<h4 id="u8BFB_u8005-_u5199_u8005_u95EE_u9898"><a href="#u8BFB_u8005-_u5199_u8005_u95EE_u9898" class="headerlink" title="读者-写者问题"></a>读者-写者问题</h4><h4 id="u54F2_u5B66_u5BB6_u8FDB_u9910_u95EE_u9898"><a href="#u54F2_u5B66_u5BB6_u8FDB_u9910_u95EE_u9898" class="headerlink" title="哲学家进餐问题"></a>哲学家进餐问题</h4><h2 id="u4F5C_u4E1A"><a href="#u4F5C_u4E1A" class="headerlink" title="作业"></a>作业</h2><h3 id="u7B2C_u4E00_u6B21_u4F5C_u4E1A"><a href="#u7B2C_u4E00_u6B21_u4F5C_u4E1A" class="headerlink" title="第一次作业"></a>第一次作业</h3><h4 id="1-10"><a href="#1-10" class="headerlink" title="1.10"></a>1.10</h4><p><strong>中断有何作用？陷阱和中断有什么区别？用户程序能否有意地生成陷阱？如果是，有什么目的？</strong></p>
+<h4 id="u8BFB_u8005-_u5199_u8005_u95EE_u9898"><a href="#u8BFB_u8005-_u5199_u8005_u95EE_u9898" class="headerlink" title="读者-写者问题"></a>读者-写者问题</h4><ul>
+<li><p>写者要等到没有读者时才能去写文件</p>
+</li>
+<li><p>所有读者要等待写者完成写文件后才能去读文件</p>
+</li>
+<li><p><strong>公用元素</strong> </p>
+<pre><code>semaphore mutex = 1 //保证互斥
+semaphore wrt = 1 //供写者作为互斥信号量
+int readcount = 0 //统计多少进程正在读对象
+</code></pre></li>
+<li><p><strong>代码</strong></p>
+<pre><code>//写者
+while(true) {
+    wait(wrt);
+
+    write();
+
+    signal(wrt);
+}
+
+//读者
+while(true){
+    wait(mutex);
+    readcount++;
+    if(readcount == 1){
+        wait(wrt);            
+    }
+    signal(mutex);
+
+    read();
+
+    wait(mutex);
+    readcount--;
+    if(readcount == 0){
+        signal(wrt);
+    }
+    signal(mutex);
+}
+</code></pre></li>
+</ul>
+<h4 id="u54F2_u5B66_u5BB6_u8FDB_u9910_u95EE_u9898"><a href="#u54F2_u5B66_u5BB6_u8FDB_u9910_u95EE_u9898" class="headerlink" title="哲学家进餐问题"></a>哲学家进餐问题</h4><ul>
+<li><p><strong>公用元素</strong></p>
+<pre><code>semaphore chopstick[5];
+</code></pre></li>
+<li><p><strong>代码</strong></p>
+<pre><code>while(1){
+    wait(chopstick[i]);
+    wait(chopstick[i+1]%5);
+
+    //eat
+
+    signal(chopstick[i]);
+    signal(chopstick[i+1]%5);
+
+    //think
+}
+</code></pre></li>
+</ul>
+<h2 id="u4F5C_u4E1A"><a href="#u4F5C_u4E1A" class="headerlink" title="作业"></a>作业</h2><h3 id="u7B2C_u4E00_u6B21_u4F5C_u4E1A"><a href="#u7B2C_u4E00_u6B21_u4F5C_u4E1A" class="headerlink" title="第一次作业"></a>第一次作业</h3><h4 id="1-10"><a href="#1-10" class="headerlink" title="1.10"></a>1.10</h4><p><strong>中断有何作用？陷阱和中断有什么区别？用户程序能否有意地生成陷阱？如果是，有什么目的？</strong></p>
 <pre><code>1. 完成进程间切换，从而支持CPU和设备之间的并行。
 2. 陷阱的发生时间是固定的，中断是不可预测的 
    CPU处理中断的过程中会屏蔽中断，不接受新的中断直
@@ -771,8 +828,8 @@ signal(semaphore *S) {
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/10/31/计算机网络笔记/" rel="prev" title="计算机网络笔记">
-                计算机网络笔记 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/11/01/计算机组成笔记/" rel="prev" title="计算机组成笔记">
+                计算机组成笔记 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
