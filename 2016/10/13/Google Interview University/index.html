@@ -1,8 +1,14 @@
 <!doctype html>
-<html class="theme-next   use-motion ">
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
 
@@ -21,18 +27,45 @@
 
 
 
-  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
 
-  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
 
 
 
-<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
   <meta name="keywords" content="基础,干货,翻译,转载," />
@@ -44,7 +77,7 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.2" />
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
 
 
 
@@ -57,7 +90,7 @@
 译者：Aleen，Newton，bobmayuze，Jaeger，sqrthree">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【转】 Google Interview University 一套完整的学习手册帮助自己准备 Google 的面试">
-<meta property="og:url" content="http://yoursite.com/2016/10/13/Google Interview University/index.html">
+<meta property="og:url" content="http://pengtianhao.com/2016/10/13/Google Interview University/index.html">
 <meta property="og:site_name" content="彭天浩胡说八道的地方">
 <meta property="og:description" content="原文地址：Google Interview University
 原文作者：John Washam
@@ -76,28 +109,41 @@
 
 
 
-<script type="text/javascript" id="hexo.configuration">
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
   var CONFIG = {
-    scheme: 'Mist',
-    sidebar: 'post',
-    motion: true
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
   };
 </script>
+
+
+
+  <link rel="canonical" href="http://pengtianhao.com/2016/10/13/Google Interview University/"/>
+
+
+
+
 
   <title> 【转】 Google Interview University 一套完整的学习手册帮助自己准备 Google 的面试 | 彭天浩胡说八道的地方 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
-  <!--[if lte IE 8]>
-  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
-    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
-      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
-           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
-           style='margin-left:auto;margin-right:auto;display: block;'/>
-    </a>
-  </div>
-<![endif]-->
   
 
 
@@ -115,7 +161,16 @@
 
 
 
-  <div class="container one-column page-post-detail">
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -144,13 +199,13 @@
   
 
   
-    <ul id="menu" class="menu menu-left">
+    <ul id="menu" class="menu">
       
         
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首页
           </a>
@@ -160,7 +215,7 @@
         <li class="menu-item menu-item-categories">
           <a href="/categories" rel="section">
             
-              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
             分类
           </a>
@@ -170,7 +225,7 @@
         <li class="menu-item menu-item-about">
           <a href="/about" rel="section">
             
-              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
             关于
           </a>
@@ -180,7 +235,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
-              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             归档
           </a>
@@ -190,7 +245,7 @@
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
             
-              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             标签
           </a>
@@ -198,6 +253,16 @@
       
 
       
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
       
     </ul>
   
@@ -205,39 +270,32 @@
   
     <div class="site-search">
       
-  
-  <form class="site-search-form">
-    <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
-  </form>
-
-
-<script type="text/javascript">
-  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
-    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
-    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
-  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
-
-  _st('install', 'gWj7XKQowsjQsmRgXg7t','2.0.0');
-</script>
-
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
 
 
     </div>
   
 </nav>
 
+
+
  </div>
     </header>
 
     <main id="main" class="main">
       <div class="main-inner">
-        <div id="content" class="content">
-          
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
 
   <div id="posts" class="posts-expand">
     
 
-  
   
 
   
@@ -245,6 +303,20 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://pengtianhao.com/2016/10/13/Google Interview University/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="彭天浩">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="彭天浩胡说八道的地方">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="彭天浩胡说八道的地方" src="">
+    </span>
+  </span>
 
     
       <header class="post-header">
@@ -263,17 +335,34 @@
 
         <div class="post-meta">
           <span class="post-time">
-            发表于
-            <time itemprop="dateCreated" datetime="2016-10-13T14:33:13+08:00" content="2016-10-13">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time title="Дата создания записи" itemprop="dateCreated datePublished" datetime="2016-10-13T14:33:13+08:00">
               2016-10-13
             </time>
+
+            &nbsp;|&nbsp;
+
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-check-o"></i>
+            </span>
+            <time title="Дата обновления записи" itemprop="dateModified" datetime="2016-10-13T14:51:58+08:00">
+              2016-10-13
+            </time>
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/转载/" itemprop="url" rel="index">
                     <span itemprop="name">转载</span>
                   </a>
@@ -291,7 +380,7 @@
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
                 <a href="/2016/10/13/Google Interview University/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/13/Google Interview University/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/13/Google Interview University/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -299,18 +388,25 @@
 
           
 
+          
+          
+
+          
+          
+          
+
         </div>
       </header>
     
 
 
-    <div class="post-body">
+    <div class="post-body" itemprop="articleBody">
 
       
       
 
       
-        <span itemprop="articleBody"><blockquote>
+        <blockquote>
 <ul>
 <li>原文地址：<a href="https://github.com/jwasham/google-interview-university" target="_blank" rel="external">Google Interview University</a></li>
 <li>原文作者：<a href="https://github.com/jwasham" target="_blank" rel="external">John Washam</a></li>
@@ -2278,21 +2374,36 @@ Python ——  使用内建的数据类型（为了持续练习 Python），并�
 <li><a href="https://github.com/open-source-society/computer-science" target="_blank" rel="external"> 在线 CS 课程目录 </a></li>
 <li><a href="https://github.com/prakhar1989/awesome-courses" target="_blank" rel="external">CS 课程目录 (一些是在线讲座)</a></li>
 </ul>
-</span>
+
       
     </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
 
     <footer class="post-footer">
       
         <div class="post-tags">
           
-            <a href="/tags/基础/" rel="tag">#基础</a>
+            <a href="/tags/基础/" rel="tag"># 基础</a>
           
-            <a href="/tags/干货/" rel="tag">#干货</a>
+            <a href="/tags/干货/" rel="tag"># 干货</a>
           
-            <a href="/tags/翻译/" rel="tag">#翻译</a>
+            <a href="/tags/翻译/" rel="tag"># 翻译</a>
           
-            <a href="/tags/转载/" rel="tag">#转载</a>
+            <a href="/tags/转载/" rel="tag"># 转载</a>
           
         </div>
       
@@ -2306,6 +2417,8 @@ Python ——  使用内建的数据类型（为了持续练习 Python），并�
               </a>
             
           </div>
+
+          <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
@@ -2330,25 +2443,23 @@ Python ——  使用内建的数据类型（为了持续练习 Python），并�
   </div>
 
 
-        </div>
+          </div>
+          
 
-        
 
-
-        
+          
   <div class="comments" id="comments">
     
       <div class="ds-thread" data-thread-key="2016/10/13/Google Interview University/"
-           data-title="【转】 Google Interview University 一套完整的学习手册帮助自己准备 Google 的面试" data-url="http://yoursite.com/2016/10/13/Google Interview University/">
+           data-title="【转】 Google Interview University 一套完整的学习手册帮助自己准备 Google 的面试" data-url="http://pengtianhao.com/2016/10/13/Google Interview University/">
       </div>
     
   </div>
 
 
-      </div>
-
-      
+        </div>
         
+          
   
   <div class="sidebar-toggle">
     <div class="sidebar-toggle-line-wrap">
@@ -2374,12 +2485,14 @@ Python ——  使用内建的数据类型（为了持续练习 Python），并�
         </ul>
       
 
-      <section class="site-overview sidebar-panel ">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" src="/images/avatar.jpg" alt="彭天浩" itemprop="image"/>
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="彭天浩" />
           <p class="site-author-name" itemprop="name">彭天浩</p>
+          <p class="site-description motion-element" itemprop="description">iOS、PPT略懂，扯淡睡觉精通</p>
         </div>
-        <p class="site-description motion-element" itemprop="description">iOS、PPT略懂，扯淡睡觉精通</p>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
@@ -2388,19 +2501,23 @@ Python ——  使用内建的数据类型（为了持续练习 Python），并�
             </a>
           </div>
 
-          <div class="site-state-item site-state-categories">
-            <a href="/categories">
-              <span class="site-state-item-count">9</span>
-              <span class="site-state-item-name">分类</span>
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">分类</span>
               </a>
-          </div>
+            </div>
+          
 
-          <div class="site-state-item site-state-tags">
-            <a href="/tags">
-              <span class="site-state-item-count">26</span>
-              <span class="site-state-item-name">标签</span>
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">26</span>
+                <span class="site-state-item-name">标签</span>
               </a>
-          </div>
+            </div>
+          
 
         </nav>
 
@@ -2410,18 +2527,29 @@ Python ——  使用内建的数据类型（为了持续练习 Python），并�
           
             
               <span class="links-of-author-item">
-                <a href="https://github.com/pthtc" target="_blank">
+                <a href="https://github.com/pthtc" target="_blank" title="GitHub">
                   
-                    <i class="fa fa-globe"></i> Github
+                    <i class="fa fa-fw fa-github"></i>
                   
+                  GitHub
                 </a>
               </span>
             
               <span class="links-of-author-item">
-                <a href="https://www.zhihu.com/people/peng-tian-hao-23" target="_blank">
+                <a href="https://www.facebook.com/tim.peng.378" target="_blank" title="Facebook">
                   
-                    <i class="fa fa-globe"></i> 知乎
+                    <i class="fa fa-fw fa-facebook-official"></i>
                   
+                  Facebook
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/pengtianhao0408" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
                 </a>
               </span>
             
@@ -2431,36 +2559,38 @@ Python ——  使用内建的数据类型（为了持续练习 Python），并�
         
         
 
-        <div class="links-of-author motion-element">
-          
-        </div>
+        
+        
+
+        
+
 
       </section>
 
       
+      <!--noindex-->
         <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc-indicator-top post-toc-indicator">
-            <i class="fa fa-angle-double-up"></i>
-          </div>
           <div class="post-toc">
+
             
               
             
+
             
               <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#u8FD9_u662F_uFF1F"><span class="nav-number">1.</span> <span class="nav-text">这是？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u76EE_u5F55"><span class="nav-number">2.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u4E3A_u4F55_u8981_u7528_u5230_u5B83_uFF1F"><span class="nav-number">3.</span> <span class="nav-text">为何要用到它？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u5982_u4F55_u4F7F_u7528_u5B83"><span class="nav-number">4.</span> <span class="nav-text">如何使用它</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u62E5_u6709_u4E00_u540D_Googler__u7684_u5FC3_u6001"><span class="nav-number">5.</span> <span class="nav-text">拥有一名 Googler 的心态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u6211_u5F97_u5230_u4E86_u5DE5_u4F5C_u5417_uFF1F"><span class="nav-number">6.</span> <span class="nav-text">我得到了工作吗？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u8DDF_u968F_u7740_u6211"><span class="nav-number">7.</span> <span class="nav-text">跟随着我</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u4E0D_u8981_u81EA_u4EE5_u4E3A_u81EA_u5DF1_u8DB3_u591F_u806A_u660E"><span class="nav-number">8.</span> <span class="nav-text">不要自以为自己足够聪明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u5173_u4E8E_Google"><span class="nav-number">9.</span> <span class="nav-text">关于 Google</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u76F8_u5173_u89C6_u9891_u8D44_u6E90"><span class="nav-number">10.</span> <span class="nav-text">相关视频资源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u9762_u8BD5_u8FC7_u7A0B__26amp_3B__u901A_u7528_u7684_u9762_u8BD5_u51C6_u5907"><span class="nav-number">11.</span> <span class="nav-text">面试过程 & 通用的面试准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u4E3A_u4F60_u7684_u9762_u8BD5_u9009_u62E9_u4E00_u79CD_u8BED_u8A00"><span class="nav-number">12.</span> <span class="nav-text">为你的面试选择一种语言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u5728_u4F60_u5F00_u59CB_u4E4B_u524D"><span class="nav-number">13.</span> <span class="nav-text">在你开始之前</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-__u4F60_u4E0D_u53EF_u80FD_u628A_u6240_u6709_u7684_u4E1C_u897F_u90FD_u8BB0_u4F4F"><span class="nav-number">13.1.</span> <span class="nav-text">1. 你不可能把所有的东西都记住</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-__u4F7F_u7528_u62BD_u8BA4_u5361"><span class="nav-number">13.2.</span> <span class="nav-text">2. 使用抽认卡</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-__u56DE_u987E_uFF0C_u56DE_u987E_uFF0C_u56DE_u987E"><span class="nav-number">13.3.</span> <span class="nav-text">3. 回顾，回顾，回顾</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-__u4E13_u6CE8"><span class="nav-number">13.4.</span> <span class="nav-text">4. 专注</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u4F60_u6240_u770B_u4E0D_u5230_u7684"><span class="nav-number">14.</span> <span class="nav-text">你所看不到的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u65E5_u5E38_u8BA1_u5212"><span class="nav-number">15.</span> <span class="nav-text">日常计划</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u5FC5_u5907_u77E5_u8BC6"><span class="nav-number">16.</span> <span class="nav-text">必备知识</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u7B97_u6CD5_u590D_u6742_u5EA6_/_Big-O_/__u6E10_u8FDB_u5206_u6790_u6CD5"><span class="nav-number">17.</span> <span class="nav-text">算法复杂度 / Big-O / 渐进分析法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u6570_u636E_u7ED3_u6784"><span class="nav-number">18.</span> <span class="nav-text">数据结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u6570_u7EC4_uFF08Arrays_uFF09"><span class="nav-number">18.1.</span> <span class="nav-text">数组（Arrays）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u94FE_u8868_uFF08Linked_Lists_uFF09"><span class="nav-number">18.2.</span> <span class="nav-text">链表（Linked Lists）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u5806_u6808_uFF08Stack_uFF09"><span class="nav-number">18.3.</span> <span class="nav-text">堆栈（Stack）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u961F_u5217_uFF08Queue_uFF09"><span class="nav-number">18.4.</span> <span class="nav-text">队列（Queue）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u54C8_u5E0C_u8868_uFF08Hash_table_uFF09"><span class="nav-number">18.5.</span> <span class="nav-text">哈希表（Hash table）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u66F4_u591A_u7684_u77E5_u8BC6"><span class="nav-number">19.</span> <span class="nav-text">更多的知识</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u4E8C_u5206_u67E5_u627E_uFF08Binary_search_uFF09"><span class="nav-number">19.1.</span> <span class="nav-text">二分查找（Binary search）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u6309_u4F4D_u8FD0_u7B97_uFF08Bitwise_operations_uFF09"><span class="nav-number">19.2.</span> <span class="nav-text">按位运算（Bitwise operations）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u6811_uFF08Trees_uFF09"><span class="nav-number">20.</span> <span class="nav-text">树（Trees）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u6811__u2014_u2014__u7B14_u8BB0__26amp_3B__u80CC_u666F"><span class="nav-number">20.1.</span> <span class="nav-text">树 —— 笔记 & 背景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u4E8C_u53C9_u67E5_u627E_u6811_uFF08Binary_search_trees_uFF09_uFF1ABSTs"><span class="nav-number">20.2.</span> <span class="nav-text">二叉查找树（Binary search trees）：BSTs</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u5806_uFF08Heap_uFF09_/__u4F18_u5148_u7EA7_u961F_u5217_uFF08Priority_Queue_uFF09_/__u4E8C_u53C9_u5806_uFF08Binary_Heap_uFF09"><span class="nav-number">20.3.</span> <span class="nav-text">堆（Heap） / 优先级队列（Priority Queue） / 二叉堆（Binary Heap）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u5B57_u5178_u6811_uFF08Tries_uFF09"><span class="nav-number">20.4.</span> <span class="nav-text">字典树（Tries）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u5E73_u8861_u67E5_u627E_u6811_uFF08Balanced_search_trees_uFF09"><span class="nav-number">20.5.</span> <span class="nav-text">平衡查找树（Balanced search trees）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#N__u53C9_u6811_uFF08K__u53C9_u6811_u3001M__u53C9_u6811_uFF09"><span class="nav-number">20.6.</span> <span class="nav-text">N 叉树（K 叉树、M 叉树）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u6392_u5E8F_uFF08Sorting_uFF09"><span class="nav-number">21.</span> <span class="nav-text">排序（Sorting）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u56FE_uFF08Graphs_uFF09"><span class="nav-number">22.</span> <span class="nav-text">图（Graphs）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u66F4_u591A_u77E5_u8BC6"><span class="nav-number">23.</span> <span class="nav-text">更多知识</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u9012_u5F52_uFF08Recursion_uFF09"><span class="nav-number">23.1.</span> <span class="nav-text">递归（Recursion）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u52A8_u6001_u89C4_u5212_uFF08Dynamic_Programming_uFF09"><span class="nav-number">23.2.</span> <span class="nav-text">动态规划（Dynamic Programming）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u7EC4_u5408_uFF08Combinatorics_uFF09__28n__u4E2D_u9009_k__u4E2A_29__26amp_3B__u6982_u7387_uFF08Probability_uFF09"><span class="nav-number">23.3.</span> <span class="nav-text">组合（Combinatorics） (n 中选 k 个) & 概率（Probability）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NP_2C_NP-_u5B8C_u5168_u548C_u8FD1_u4F3C_u7B97_u6CD5"><span class="nav-number">23.4.</span> <span class="nav-text">NP, NP-完全和近似算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u7F13_u5B58_uFF08Cache_uFF09"><span class="nav-number">23.5.</span> <span class="nav-text">缓存（Cache）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u8FDB_u7A0B_uFF08Processe_uFF09_u548C_u7EBF_u7A0B_uFF08Thread_uFF09"><span class="nav-number">23.6.</span> <span class="nav-text">进程（Processe）和线程（Thread）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u7CFB_u7EDF_u8BBE_u8BA1_u3001_u53EF_u4F38_u7F29_u6027_u3001_u6570_u636E_u5904_u7406"><span class="nav-number">23.7.</span> <span class="nav-text">系统设计、可伸缩性、数据处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u8BBA_u6587"><span class="nav-number">23.8.</span> <span class="nav-text">论文</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u6D4B_u8BD5"><span class="nav-number">23.9.</span> <span class="nav-text">测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u8C03_u5EA6"><span class="nav-number">23.10.</span> <span class="nav-text">调度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u5B9E_u73B0_u7CFB_u7EDF_u4F8B_u7A0B"><span class="nav-number">23.11.</span> <span class="nav-text">实现系统例程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u5B57_u7B26_u4E32_u641C_u7D22_u548C_u64CD_u4F5C"><span class="nav-number">23.12.</span> <span class="nav-text">字符串搜索和操作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u7EC8_u9762"><span class="nav-number">24.</span> <span class="nav-text">终面</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u7EFC_u8FF0_3A"><span class="nav-number">24.0.1.</span> <span class="nav-text">综述:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u6392_u5E8F_3A"><span class="nav-number">24.0.2.</span> <span class="nav-text">排序:</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u4E66_u7C4D"><span class="nav-number">25.</span> <span class="nav-text">书籍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Google_Coaching__u91CC_u63D0_u5230_u7684"><span class="nav-number">25.1.</span> <span class="nav-text">Google Coaching 里提到的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u9644_u52A0_u4E66_u5355"><span class="nav-number">25.2.</span> <span class="nav-text">附加书单</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u5982_u679C_u4F60_u6709_u65F6_u95F4"><span class="nav-number">25.3.</span> <span class="nav-text">如果你有时间</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u7F16_u7801_u7EC3_u4E60_u548C_u6311_u6218"><span class="nav-number">26.</span> <span class="nav-text">编码练习和挑战</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u5F53_u4F60_u4E34_u8FD1_u9762_u8BD5_u65F6"><span class="nav-number">27.</span> <span class="nav-text">当你临近面试时</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u4F60_u7684_u7B80_u5386"><span class="nav-number">28.</span> <span class="nav-text">你的简历</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u5F53_u9762_u8BD5_u6765_u4E34_u7684_u65F6_u5019"><span class="nav-number">29.</span> <span class="nav-text">当面试来临的时候</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u95EE_u9762_u8BD5_u5B98_u7684_u95EE_u9898"><span class="nav-number">30.</span> <span class="nav-text">问面试官的问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u5F53_u4F60_u83B7_u5F97_u4E86_u68A6_u60F3_u7684_u804C_u4F4D"><span class="nav-number">31.</span> <span class="nav-text">当你获得了梦想的职位</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u9644_u52A0_u7684_u5B66_u4E60"><span class="nav-number">32.</span> <span class="nav-text">附加的学习</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Unicode"><span class="nav-number">32.1.</span> <span class="nav-text">Unicode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u5B57_u8282_u987A_u5E8F"><span class="nav-number">32.2.</span> <span class="nav-text">字节顺序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Emacs_and_vi_28m_29"><span class="nav-number">32.3.</span> <span class="nav-text">Emacs and vi(m)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Unix__u547D_u4EE4_u884C_u5DE5_u5177"><span class="nav-number">32.4.</span> <span class="nav-text">Unix 命令行工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u4FE1_u606F_u8D44_u6E90__28_u89C6_u9891_29"><span class="nav-number">32.5.</span> <span class="nav-text">信息资源 (视频)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u5947_u5076_u6821_u9A8C_u4F4D__26amp_3B__u6C49_u660E_u7801__28_u89C6_u9891_29"><span class="nav-number">32.6.</span> <span class="nav-text">奇偶校验位 & 汉明码 (视频)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u7CFB_u7EDF_u71B5_u503C_uFF08_u7CFB_u7EDF_u590D_u6742_u5EA6_uFF09"><span class="nav-number">32.7.</span> <span class="nav-text">系统熵值（系统复杂度）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u5BC6_u7801_u5B66"><span class="nav-number">32.8.</span> <span class="nav-text">密码学</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u538B_u7F29"><span class="nav-number">32.9.</span> <span class="nav-text">压缩</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u7F51_u7EDC__28_u89C6_u9891_29"><span class="nav-number">32.10.</span> <span class="nav-text">网络 (视频)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u8BA1_u7B97_u673A_u5B89_u5168"><span class="nav-number">32.11.</span> <span class="nav-text">计算机安全</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u91CA_u653E_u7F13_u5B58"><span class="nav-number">32.12.</span> <span class="nav-text">释放缓存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u5E76_u884C/_u5E76_u53D1_u7F16_u7A0B"><span class="nav-number">32.13.</span> <span class="nav-text">并行/并发编程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u8BBE_u8BA1_u6A21_u5F0F"><span class="nav-number">32.14.</span> <span class="nav-text">设计模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u4FE1_u606F_u4F20_u8F93_2C__u5E8F_u5217_u5316_2C_u548C_u961F_u5217_u5316_u7684_u7CFB_u7EDF"><span class="nav-number">32.15.</span> <span class="nav-text">信息传输, 序列化,和队列化的系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u5FEB_u901F_u5085_u91CC_u53F6_u53D8_u6362"><span class="nav-number">32.16.</span> <span class="nav-text">快速傅里叶变换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u5E03_u9686_u8FC7_u6EE4_u5668"><span class="nav-number">32.17.</span> <span class="nav-text">布隆过滤器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#van_Emde_Boas__u6811"><span class="nav-number">32.18.</span> <span class="nav-text">van Emde Boas 树</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u66F4_u6DF1_u5165_u7684_u6570_u636E_u7ED3_u6784"><span class="nav-number">32.19.</span> <span class="nav-text">更深入的数据结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u8DF3_u8868"><span class="nav-number">32.20.</span> <span class="nav-text">跳表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u7F51_u7EDC_u6D41"><span class="nav-number">32.21.</span> <span class="nav-text">网络流</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u4E0D_u76F8_u4EA4_u96C6__26amp_3B__u8054_u5408_u67E5_u627E"><span class="nav-number">32.22.</span> <span class="nav-text">不相交集 & 联合查找</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u5FEB_u901F_u5904_u7406_u6570_u5B66"><span class="nav-number">32.23.</span> <span class="nav-text">快速处理数学</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u6811_u5806__28Treap_29"><span class="nav-number">32.24.</span> <span class="nav-text">树堆 (Treap)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u7EBF_u6027_u89C4_u5212_uFF08Linear_Programming_uFF09_uFF08_u89C6_u9891_uFF09"><span class="nav-number">32.25.</span> <span class="nav-text">线性规划（Linear Programming）（视频）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u51E0_u4F55_uFF1A_u51F8_u5305_uFF08Geometry_2C_Convex_hull_uFF09_uFF08_u89C6_u9891_uFF09"><span class="nav-number">32.26.</span> <span class="nav-text">几何：凸包（Geometry, Convex hull）（视频）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u79BB_u6563_u6570_u5B66"><span class="nav-number">32.27.</span> <span class="nav-text">离散数学</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u673A_u5668_u5B66_u4E60_uFF08Machine_Learning_uFF09"><span class="nav-number">32.28.</span> <span class="nav-text">机器学习（Machine Learning）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Go__u8BED_u8A00"><span class="nav-number">32.29.</span> <span class="nav-text">Go 语言</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u4E00_u4E9B_u4E3B_u9898_u7684_u989D_u5916_u5185_u5BB9"><span class="nav-number">33.</span> <span class="nav-text">一些主题的额外内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u89C6_u9891_u7CFB_u5217"><span class="nav-number">34.</span> <span class="nav-text">视频系列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u8BA1_u7B97_u673A_u79D1_u5B66_u8BFE_u7A0B"><span class="nav-number">35.</span> <span class="nav-text">计算机科学课程</span></a></li></ol></div>
             
-          </div>
-          <div class="post-toc-indicator-bottom post-toc-indicator">
-            <i class="fa fa-angle-double-down"></i>
+
           </div>
         </section>
+      <!--/noindex-->
       
 
     </div>
   </aside>
 
 
-      
+        
+      </div>
     </main>
 
     <footer id="footer" class="footer">
@@ -2470,37 +2600,100 @@ Python ——  使用内建的数据类型（为了持续练习 Python），并�
   &copy;  2015 - 
   <span itemprop="copyrightYear">2016</span>
   <span class="with-love">
-    <i class="icon-next-heart fa fa-heart"></i>
+    <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">彭天浩</span>
 </div>
 
+
 <div class="powered-by">
-  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Mist
+    NexT.Muse
   </a>
 </div>
 
 
+        
 
+        
       </div>
     </footer>
 
-    <div class="back-to-top"></div>
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
   </div>
 
-  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
 
   
   
 
   
-    
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
 
   
     
@@ -2518,198 +2711,156 @@ Python ——  使用内建的数据类型（为了持续练习 Python），并�
       || document.getElementsByTagName('body')[0]).appendChild(ds);
     })();
   </script>
+
+  
     
-     
-
-
     
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
   
 
-  
-  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
-  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.2"></script>
 
 
-  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.2"></script>
-  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
-<script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
-
-<script type="text/javascript" src="/js/motion.js?v=0.4.5.2" id="motion.global"></script>
 
 
-  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+
 
   
   
-<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.2" id="bootstrap.scrollspy.custom"></script>
-
-
-<script type="text/javascript" id="sidebar.toc.highlight">
-  $(document).ready(function () {
-    var tocSelector = '.post-toc';
-    var $tocSelector = $(tocSelector);
-    var activeCurrentSelector = '.active-current';
-
-    $tocSelector
-      .on('activate.bs.scrollspy', function () {
-        var $currentActiveElement = $(tocSelector + ' .active').last();
-
-        removeCurrentActiveClass();
-        $currentActiveElement.addClass('active-current');
-
-        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
-      })
-      .on('clear.bs.scrollspy', function () {
-        removeCurrentActiveClass();
-      });
-
-    function removeCurrentActiveClass () {
-      $(tocSelector + ' ' + activeCurrentSelector)
-        .removeClass(activeCurrentSelector.substring(1));
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
     }
+    var path = "/" + search_path;
+    // monitor main search box;
 
-    function processTOC () {
-      getTOCMaxHeight();
-      toggleTOCOverflowIndicators();
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
     }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
 
-    function getTOCMaxHeight () {
-      var height = $('.sidebar').height() -
-                   $tocSelector.position().top -
-                   $('.post-toc-indicator-bottom').height();
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
 
-      $tocSelector.css('height', height);
-
-      return height;
-    }
-
-    function toggleTOCOverflowIndicators () {
-      tocOverflowIndicator(
-        '.post-toc-indicator-top',
-        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
-      );
-
-      tocOverflowIndicator(
-        '.post-toc-indicator-bottom',
-        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
-      )
-    }
-
-    $(document).on('sidebar.motion.complete', function () {
-      processTOC();
-    });
-
-    $('body').scrollspy({ target: tocSelector });
-    $(window).on('resize', function () {
-      if ( $('.sidebar').hasClass('sidebar-active') ) {
-        processTOC();
-      }
-    });
-
-    onScroll($tocSelector);
-
-    function onScroll (element) {
-      element.on('mousewheel DOMMouseScroll', function (event) {
-          var oe = event.originalEvent;
-          var delta = oe.wheelDelta || -oe.detail;
-
-          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
-          event.preventDefault();
-
-          toggleTOCOverflowIndicators();
-      });
-    }
-
-    function tocOverflowIndicator (indicator, action) {
-      var $indicator = $(indicator);
-      var opacity = action === 'show' ? 1 : 0;
-      $indicator.velocity ?
-        $indicator.velocity('stop').velocity({
-          opacity: opacity
-        }, { duration: 100 }) :
-        $indicator.stop().animate({
-          opacity: opacity
-        }, 100);
-    }
-
-  });
-</script>
-
-<script type="text/javascript" id="sidebar.nav">
-  $(document).ready(function () {
-    var html = $('html');
-    var TAB_ANIMATE_DURATION = 200;
-    var hasVelocity = $.isFunction(html.velocity);
-
-    $('.sidebar-nav li').on('click', function () {
-      var item = $(this);
-      var activeTabClassName = 'sidebar-nav-active';
-      var activePanelClassName = 'sidebar-panel-active';
-      if (item.hasClass(activeTabClassName)) {
-        return;
-      }
-
-      var currentTarget = $('.' + activePanelClassName);
-      var target = $('.' + item.data('target'));
-
-      hasVelocity ?
-        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
-          target
-            .velocity('stop')
-            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
-            .addClass(activePanelClassName);
-        }) :
-        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
-          currentTarget.hide();
-          target
-            .stop()
-            .css({'opacity': 0, 'display': 'block'})
-            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
-              currentTarget.removeClass(activePanelClassName);
-              target.addClass(activePanelClassName);
-            });
-        });
-
-      item.siblings().removeClass(activeTabClassName);
-      item.addClass(activeTabClassName);
-    });
-
-    $('.post-toc a').on('click', function (e) {
-      e.preventDefault();
-      var targetSelector = escapeSelector(this.getAttribute('href'));
-      var offset = $(targetSelector).offset().top;
-      hasVelocity ?
-        html.velocity('stop').velocity('scroll', {
-          offset: offset  + 'px',
-          mobileHA: false
-        }) :
-        $('html, body').stop().animate({
-          scrollTop: offset
-        }, 500);
-    });
-
-    // Expand sidebar on post detail page by default, when post has a toc.
-    motionMiddleWares.sidebar = function () {
-      var $tocContent = $('.post-toc-content');
-      if (CONFIG.sidebar === 'post') {
-        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
-          displaySidebar();
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
         }
-      }
-    };
-  });
-</script>
+      });}
 
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
 
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
 
-  <script type="text/javascript" src="/js/bootstrap.js"></script>
 
   
+
   
 
   
+
   
+
 
 </body>
 </html>

@@ -1,8 +1,14 @@
 <!doctype html>
-<html class="theme-next   use-motion ">
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
 
@@ -21,18 +27,45 @@
 
 
 
-  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
 
-  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
 
 
 
-<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
   <meta name="keywords" content="互联网,百度," />
@@ -44,7 +77,7 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.2" />
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
 
 
 
@@ -57,7 +90,7 @@
 本文提及的百度产品根据百度全家桶都包含哪些产品？中『ytytytyt』的回答列举，侵删">
 <meta property="og:type" content="article">
 <meta property="og:title" content="远离百度，我们有更好的">
-<meta property="og:url" content="http://yoursite.com/2016/01/11/远离百度，我们有更好的/index.html">
+<meta property="og:url" content="http://pengtianhao.com/2016/01/11/远离百度，我们有更好的/index.html">
 <meta property="og:site_name" content="彭天浩胡说八道的地方">
 <meta property="og:description" content="前言：俗话说得好『no zuo no die why you try』，然而作为人见人删的互联网界的阿三哥，百度最近又干出了一件丧心病狂的事情——把血友病吧卖了！好吧，既然你这么没节操，那么作为弱势群体的互联网众们，惹不起还躲不起吗？现在就奉上躲开『度三哥』的终极法宝，让百度全家桶吃*去吧！！
 
@@ -80,28 +113,41 @@
 
 
 
-<script type="text/javascript" id="hexo.configuration">
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
   var CONFIG = {
-    scheme: 'Mist',
-    sidebar: 'post',
-    motion: true
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
   };
 </script>
+
+
+
+  <link rel="canonical" href="http://pengtianhao.com/2016/01/11/远离百度，我们有更好的/"/>
+
+
+
+
 
   <title> 远离百度，我们有更好的 | 彭天浩胡说八道的地方 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
-  <!--[if lte IE 8]>
-  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
-    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
-      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
-           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
-           style='margin-left:auto;margin-right:auto;display: block;'/>
-    </a>
-  </div>
-<![endif]-->
   
 
 
@@ -119,7 +165,16 @@
 
 
 
-  <div class="container one-column page-post-detail">
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -148,13 +203,13 @@
   
 
   
-    <ul id="menu" class="menu menu-left">
+    <ul id="menu" class="menu">
       
         
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首页
           </a>
@@ -164,7 +219,7 @@
         <li class="menu-item menu-item-categories">
           <a href="/categories" rel="section">
             
-              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
             分类
           </a>
@@ -174,7 +229,7 @@
         <li class="menu-item menu-item-about">
           <a href="/about" rel="section">
             
-              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
             关于
           </a>
@@ -184,7 +239,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
-              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             归档
           </a>
@@ -194,7 +249,7 @@
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
             
-              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             标签
           </a>
@@ -202,6 +257,16 @@
       
 
       
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
       
     </ul>
   
@@ -209,39 +274,32 @@
   
     <div class="site-search">
       
-  
-  <form class="site-search-form">
-    <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
-  </form>
-
-
-<script type="text/javascript">
-  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
-    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
-    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
-  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
-
-  _st('install', 'gWj7XKQowsjQsmRgXg7t','2.0.0');
-</script>
-
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
 
 
     </div>
   
 </nav>
 
+
+
  </div>
     </header>
 
     <main id="main" class="main">
       <div class="main-inner">
-        <div id="content" class="content">
-          
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
 
   <div id="posts" class="posts-expand">
     
 
-  
   
 
   
@@ -249,6 +307,20 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://pengtianhao.com/2016/01/11/远离百度，我们有更好的/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="彭天浩">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="彭天浩胡说八道的地方">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="彭天浩胡说八道的地方" src="">
+    </span>
+  </span>
 
     
       <header class="post-header">
@@ -267,17 +339,34 @@
 
         <div class="post-meta">
           <span class="post-time">
-            发表于
-            <time itemprop="dateCreated" datetime="2016-01-11T15:33:13+08:00" content="2016-01-11">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time title="Дата создания записи" itemprop="dateCreated datePublished" datetime="2016-01-11T15:33:13+08:00">
               2016-01-11
             </time>
+
+            &nbsp;|&nbsp;
+
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-check-o"></i>
+            </span>
+            <time title="Дата обновления записи" itemprop="dateModified" datetime="2016-01-11T19:13:39+08:00">
+              2016-01-11
+            </time>
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/随感/" itemprop="url" rel="index">
                     <span itemprop="name">随感</span>
                   </a>
@@ -295,7 +384,7 @@
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
                 <a href="/2016/01/11/远离百度，我们有更好的/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/11/远离百度，我们有更好的/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/11/远离百度，我们有更好的/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -303,18 +392,25 @@
 
           
 
+          
+          
+
+          
+          
+          
+
         </div>
       </header>
     
 
 
-    <div class="post-body">
+    <div class="post-body" itemprop="articleBody">
 
       
       
 
       
-        <span itemprop="articleBody"><blockquote>
+        <blockquote>
 <p>前言：俗话说得好『no zuo no die why you try』，然而作为人见人删的互联网界的阿三哥，百度最近又干出了一件丧心病狂的事情——把血友病吧卖了！好吧，既然你这么没节操，那么作为弱势群体的互联网众们，惹不起还躲不起吗？现在就奉上躲开『度三哥』的终极法宝，让百度全家桶吃*去吧！！</p>
 </blockquote>
 <p><img src="https://s3.amazonaws.com/f.cl.ly/items/3p3X2i1h3I3w0S0Y3632/images.jpg?v=12e1e7ac" alt=""></p>
@@ -355,17 +451,32 @@
 <h2 id="u6700_u540E_u7684_u8BDD"><a href="#u6700_u540E_u7684_u8BDD" class="headerlink" title="最后的话"></a>最后的话</h2><p>互联网的精神应该是开放，共享的，然而百度作为中国目前第三大互联网公司，众多无下限的行为已经令人反感。以上虽然列举这么多，但是到目前为止百度依然会出现在大多数人的生活中。也许这小小的挣扎并不会被人所接受，然而，我们努力了，就够了。</p>
 <p>中国互联网的明天，是属于谁的呢？</p>
 <p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIsAAABFCAMAAABNJeUJAAABklBMVEX////mAAAAAADnAADwIiAfGN/tIyP2vLznCQj6pKbsIiToJSTzn5n98fHrUlL62tWVlpX4+PjmIir5w8PxkJDf3d+qqKrqREH75eLoIijzpJ7Sz9KIhogaGRrjIS0AANz2fH7v7+/sNTb8z9DxGRX93t9lY2W4uLjxjon4jpD/+PjvAACCf+3x8f33ycnyW13a2doyGNM9HM34rKxQT1DyTlGsrKw8OzwxMDENDA35+f8eIx6Miu7r6v4mHd9lY+j1s61KRui8r+nm2O92c+xvY96YlO3GwOueHXbNH0jVIkTwY2acHIcoC9VRTORhWOXZ0/bdJTXpbGzftbbsfoFaGbv2fHe5DFTfj6qHDYtvDassMuatWpy8FmNSKtKxH26mKoWnneh8IaFpGrCyQJVPAACXYGG9q6oVAACfAAB3dXdaWFozNzNFR0WLiIvokpbZmp6WNTI/AwLKHSd+AAC9kZQwRUczBwWtXl7eVl9yISHe3frjorm3puu7uvJTL8zSQmDcPEvgeJHFhribgdGQSrqy694PAAANFElEQVRogd1Zi1vb1hWXJVm2JGxj2SApGMuWZR52wBhHPBIwkNKQRIEAMclSmra067pCaLa16x6sbN3j/9455+pl3mT7vnzbIbIe9+re3z3ndx5X4bj/Fzk5PT1d/tAgmJyuWZb1cQBm+eDg5INBWU5a3WTSeh4ASyb3Dz4UljWr2012u9Yp3jy0CNijDwPlBIC0k8n25hbeWHCVhOO/aKZMIVWo36zrAU0O0p3iuBULL+DB0g3ebGSMzPVIZNe2bd0r3gTOIwIyCxBOuO1ust3FW2tl6prXjE6l5bqefA2aelbSJEVxnLTTmr4W+RKggPm7iAVxdel+60ojZQqerTiSIoqKZ1w5ekuRRFNRNEk1xbJXaFyNBeZHXbQ3AcsS2asLRnp+ebzJ1AZgBkWSTNGUVGXyytF1gCBKkkq4RX3yakv9NIs6wT/UUZdxx1q/FEnnpW1KomIqcEiSprSuGrxhi5oimqaoaGAqTdT04oWGmjpY2rgPp/1o+kdkn1kAdEmEadzJwogSrpUOAOVdicUD3CCoG9ALKEdyC+fRQCSxrDWgxZLFsMDlRnKTrttbF45spFxUiQQKp0MRy4qdugoLV4A3wJjIGRFtCme1d9ZQ22sIwdra5qae49UmhbeVTSKvtX1+1My03ILRYFhJAZ3TIYm2fA0dU2AlUAzYtCxpyBkQV74f73IftDELTLXWp7iT9U0reUDNy5CaklbyIXQ4PY27Uk3e1TXUtanAkGUR3QIUpHeugQKa8VxbKyMEsquplkE5bidmqBOfpN0zKpg6XV85WAao2LgVtGWKLq5OA0VI9E9EFmjZib71XSKZXKEz6SqiSobCIZDNXkSbDYvF+qR1YYRlHLIYUCPlITlQxWXF1FAnQAG917k6tMSlUZddNBUYFmMfKsne7dTCyXwsH1+wtuV9YA22b93n6p1dW2IcUUVfFLHVqV1rnT7JZyYlYpsKkQ/WpIE7ukWae50SD9J0/QIsP1EchviX/AkIyyhHblkmyoju6vWJ6Lw0ii1AIDI7I3kU0U7Biu5a7TalIR/L/e1Ha/vPT/0stIT5CZPk47LoSMgTJB/yBGzuVmrvAYQkAzoG4kGchLCHYUGRWinjlAWVbtJ6iJ2W74L/AD/WGFvvUuvesx0HNAL2BeMA5xRVkXYq8rkwnisUCn0Wq08WYyLHs1BmetJG2gPhkDdge8n7y2fMjzbbOPvySmCyfaqo0IJ7z56iLgiLiVhgPZBPLmDJRCKRaMWNlkrERVCz8XjYyEzaoBh0JzIYDPtq1qKotj7F9NCFaINW2z+h+y/f7FDoxlSCkMosTOmtLJMO18kGoiXSguT6NzXCIqSZJPBHSCQqfeCNSbQU5RHAowANHs92LWsd8/GBxfhB/Fmb4hr/eOI4LNsASQBHGZgCY8akyMkJQfAXLghpIVBCgelFEMInAqI5kykKHksMTN+i6GjP/nWAWtn2s6OfI/+56om+TSRNRXVCKYTzw5jpYALEkk6LjqOoKsKE5UumqabFacICCoE2EsAEWLJn7GrILlq+jPPghejYA2Dm5edQblubFpWa7a9eP0GFMCwKxhRHsd1W9k+eiWvNTjApoF4SE7WUp+vFGklP1+1aLRPwpWdkmEygbvRzjDdkG+O4qZJ7IyFanY+2wELd7SmoHdp7j5/skN9KZVMhSKaqy0am0WjkOR1YIEa6Br0k5NyqnnYmcySe4Ag5HwtoYiLsaSOf4MWBO4F06kR12SYDEAeAC47z9BNQSBdo89fXWtOBlCexooDyYLaYMlbZ+0XkgOqPt8qRXiqw5JAqYDP4STHuJhIToce5gEUD28V9y0Nb1uw0pgWsJcBS4K+O+Pke1Lq5gaeORFEafIe4oigeZpxc+H46mtdmekEsQjQB0olhgbZQL3Ukmg6KSMS4n5AKiAXwK5RTMEfh4ew8m+3pjknxDOoM5IkpOi2WSXPB24kYKJ1hKRZ7alqo1KZBall4MDCR8/kiZCeZ9DQBGrD6QxKn0ecEfJI2AAtctWotG2ygwbwaJbwdB2KqYvp1I7iA9nMQSXPwovCu16sEsgsT6cxGd7g6sEhmHT14EMW6yHQwnyAgdXOBFG3UcAVeBk22ME67TDlSmepousT6S9RM/c3rWWtpKsACo8YdoJEI9cKweHcGQN5F/VKkASIQi3Xp1X4fSomA20a9ABZcc/3TJ8ALFe1l4v4C/Bfjz5u/p2qYj6y7UwGWdB+WTIAl4WOJTCcEWDDeMMtSIBR6Z/zZhDHjWKb228/KmC81zJvIE1H7+dne5gZWN9EG/xyWRmAjwqLFvaMYYElTaEwjJoEoXYEZG7KpMpFQh4QlwbAc7L3CmoSEakbFNP8GEDZYWddNsqSNNhLUuAgxGzUycYE4FOgl0XrRWU11XnTkXVJOh8u0QkdCjKFeuEZOLjcdjfGV6glRBSd3yq/bTC8QdNhXkBxlm3guEkIbrYqJMxLmo8in8x5Cq3CTiXRI6HRgIyHhdiYdijIS8gXSDZ4RmKQ6r35hcFR5t5mRcrHM1+/TgMWmqMOeksc2C4Feolh3B10pm7JRIYznE6JvI0hbMDvGEJOKYOfp608eNx1Wx+KTbOcuFrtda+l+4EcDMSlGfrTao4Ts1urGAEVCgfYomBtjOaCHaN1JBX53fe6qpJcC5oCyX3GCA7uV+vbKyspHL3WqIsu03Sjv4ZYlwJI460ex+DKtIzntXAWhiJV86EeJl3VfOmQRryjBbzHAAmPYsi1htsF601HLr774Mtw4G188gdBL+1LTaX7+VdsvPy/3aeQuOIdORhIEZzeogykfqToTlSWPYkrC82oBpSOhGaDekCSVtpW7n3yFZcJSsD3c3/ul6+BnAcCJecHa3wixGDGpYQkQYuGYN4B9iiFaytPpsNJCKNJ0RsVKJo2OaKqiQnWdhnYQ3JSRwboFbLG2fpcEbj57LDps0wAd33wa5CPQQ0zsgLtC4p0sy8WWxHzL3cUMUQ9sRPGOEGEr5IlV8kY4gu8OJIJOHP8ItvfkuyRU0yXbj5+IWDdAV+A3fgHL9SdGVj76flTx79O6HmjB9+k+UXdf4HyrWShcHeKHBO7b3GnZQDaP+dv2c8SwCTWdtdld21rZWoMKePbZU8pLKkAX3DqmfPyjf3SRpnKX6zQhtDeb8EjblfOG7Nk6/iFnjFS/TPvubdTuwL4e9yNOWvVWp40a7mZ8wy4/XF9Z+XhlZenRxsb2yfLJ9sbByr41+/qV6YjIY9Oxi8Z04Zzgbs+Ac53uWEbPUKF50Z4lklXaVDuQTi/6BDpFcj/ax04tgwwZnuOUiV+OWzz30vtJpiY2MYbplRt+7Q3FqKgO2/qqTud9ds9nxyvoCaxpveLNv05EkurtpLHeFM1m64JvbLeS+qQHOnGau9PvgwSkUevojkifZkWv8J8gwa/Bmmi/+2akv2GkdHRUGoo/qY7EpOrfzeSp4TewGjSUY7ovuFjTzSVjNJuirn/7B/7Ht/OL/PxwOPc4z8+Pjc3zC+NR77lRnucXF0DgPDyOv/zCWBUa8PLPf8IiRzPFpv7Hr7Fp9LB6Cyg5L2H35Nr4jzxfHaqOlGBoXznDPD8II1W/g3PUf6iEj4eGhmDyYbpbIPD56jC/MFft4GcKSA2wYf3t7/j526il9tK2C+jneRiULXzB1wNCoZHyAGYuemVmFDCgjOC5esSP+oocYpB//8P3YlNTVE36/oexmyMxim7LDzghFm5ukX87A1PO80f+oqrH/Gik6qEHPhbu3jCD/B27Lc3PsDX8+hvYcFKNI96YxUYxCk0RFm6MRh/kgymZiiIsTC9VvxUw32NAH5SCzqDXes/D/wNo7t42VvVjmeH5B/nqPZ6fCRrHR/lI2z6WcT4fQiebjiyOxLCAl3e+VTFZybf28BgWjkcaj0b33MhCsHaGZY544mMBm5bw8vAt14eFq/Jf/8oV0s2diVvGrDiWRcTCn8ESejpgWTg+hj6BizwgT5pZGD6HBbUpg0uZt0tTcSyji4BlMY5lvl8vR6XS4UKIpUSTDwbdz2DhuOKu03Rvo5pzNrpKL+jhgyEW6HoPbFa6DAuXSRWb9sDNP33HsOQRS3UefoLG8cUruMvlj6HrDB+kj/NYQKDAb934q3MMC4T+w3yfT8/xfCnsGfg0zD0yGDSPHY4FyC/AUkWtym7n9liO+YUZskuwKvCZxShBDgVxl6uOzdN5BlLRYpizhoPrCMswU3Hqht6NgZ5eqA4uLtJcJX7UH3+wPyGNMh9GBY6F6zgOwc6d08vQcUS9G2EZY3aoHgbJJ/+WHx3xoXwXS3FAniOGeoE/Ch8dhu2lwLjA6QW6GONvg6VaWsQMzz+AWBFl+bFR/nh8cJ5/MBz1HD/2O0LXkEXVe37M5fKHb6m9hHEA5e09fLB4Cyz5wUDG4/XGyODh0dHh4FDfo7gEWWJu8OxAZzreAsvlIKvVWxVm/8vyb+coub4+iAXVAAAAAElFTkSuQmCC" alt=""></p>
-</span>
+
       
     </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
 
     <footer class="post-footer">
       
         <div class="post-tags">
           
-            <a href="/tags/互联网/" rel="tag">#互联网</a>
+            <a href="/tags/互联网/" rel="tag"># 互联网</a>
           
-            <a href="/tags/百度/" rel="tag">#百度</a>
+            <a href="/tags/百度/" rel="tag"># 百度</a>
           
         </div>
       
@@ -379,6 +490,8 @@
               </a>
             
           </div>
+
+          <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
@@ -403,25 +516,23 @@
   </div>
 
 
-        </div>
+          </div>
+          
 
-        
 
-
-        
+          
   <div class="comments" id="comments">
     
       <div class="ds-thread" data-thread-key="2016/01/11/远离百度，我们有更好的/"
-           data-title="远离百度，我们有更好的" data-url="http://yoursite.com/2016/01/11/远离百度，我们有更好的/">
+           data-title="远离百度，我们有更好的" data-url="http://pengtianhao.com/2016/01/11/远离百度，我们有更好的/">
       </div>
     
   </div>
 
 
-      </div>
-
-      
+        </div>
         
+          
   
   <div class="sidebar-toggle">
     <div class="sidebar-toggle-line-wrap">
@@ -447,12 +558,14 @@
         </ul>
       
 
-      <section class="site-overview sidebar-panel ">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" src="/images/avatar.jpg" alt="彭天浩" itemprop="image"/>
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="彭天浩" />
           <p class="site-author-name" itemprop="name">彭天浩</p>
+          <p class="site-description motion-element" itemprop="description">iOS、PPT略懂，扯淡睡觉精通</p>
         </div>
-        <p class="site-description motion-element" itemprop="description">iOS、PPT略懂，扯淡睡觉精通</p>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
@@ -461,19 +574,23 @@
             </a>
           </div>
 
-          <div class="site-state-item site-state-categories">
-            <a href="/categories">
-              <span class="site-state-item-count">9</span>
-              <span class="site-state-item-name">分类</span>
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">分类</span>
               </a>
-          </div>
+            </div>
+          
 
-          <div class="site-state-item site-state-tags">
-            <a href="/tags">
-              <span class="site-state-item-count">26</span>
-              <span class="site-state-item-name">标签</span>
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">26</span>
+                <span class="site-state-item-name">标签</span>
               </a>
-          </div>
+            </div>
+          
 
         </nav>
 
@@ -483,18 +600,29 @@
           
             
               <span class="links-of-author-item">
-                <a href="https://github.com/pthtc" target="_blank">
+                <a href="https://github.com/pthtc" target="_blank" title="GitHub">
                   
-                    <i class="fa fa-globe"></i> Github
+                    <i class="fa fa-fw fa-github"></i>
                   
+                  GitHub
                 </a>
               </span>
             
               <span class="links-of-author-item">
-                <a href="https://www.zhihu.com/people/peng-tian-hao-23" target="_blank">
+                <a href="https://www.facebook.com/tim.peng.378" target="_blank" title="Facebook">
                   
-                    <i class="fa fa-globe"></i> 知乎
+                    <i class="fa fa-fw fa-facebook-official"></i>
                   
+                  Facebook
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/pengtianhao0408" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
                 </a>
               </span>
             
@@ -504,36 +632,38 @@
         
         
 
-        <div class="links-of-author motion-element">
-          
-        </div>
+        
+        
+
+        
+
 
       </section>
 
       
+      <!--noindex-->
         <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc-indicator-top post-toc-indicator">
-            <i class="fa fa-angle-double-up"></i>
-          </div>
           <div class="post-toc">
+
             
               
             
+
             
               <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#u767E_u5EA6_u641C_u7D22"><span class="nav-number">1.</span> <span class="nav-text">百度搜索</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u767E_u5EA6_u536B_u58EB+_u767E_u5EA6_u6740_u6BD2"><span class="nav-number">2.</span> <span class="nav-text">百度卫士+百度杀毒</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hao123"><span class="nav-number">3.</span> <span class="nav-text">hao123</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u6A58_u5B50_u6D4F_u89C8_u5668"><span class="nav-number">4.</span> <span class="nav-text">橘子浏览器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u767E_u5EA6_u5F71_u97F3"><span class="nav-number">5.</span> <span class="nav-text">百度影音</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u6700_u540E_u7684_u8BDD"><span class="nav-number">6.</span> <span class="nav-text">最后的话</span></a></li></ol></div>
             
-          </div>
-          <div class="post-toc-indicator-bottom post-toc-indicator">
-            <i class="fa fa-angle-double-down"></i>
+
           </div>
         </section>
+      <!--/noindex-->
       
 
     </div>
   </aside>
 
 
-      
+        
+      </div>
     </main>
 
     <footer id="footer" class="footer">
@@ -543,37 +673,100 @@
   &copy;  2015 - 
   <span itemprop="copyrightYear">2016</span>
   <span class="with-love">
-    <i class="icon-next-heart fa fa-heart"></i>
+    <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">彭天浩</span>
 </div>
 
+
 <div class="powered-by">
-  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Mist
+    NexT.Muse
   </a>
 </div>
 
 
+        
 
+        
       </div>
     </footer>
 
-    <div class="back-to-top"></div>
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
   </div>
 
-  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
 
   
   
 
   
-    
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
 
   
     
@@ -591,198 +784,156 @@
       || document.getElementsByTagName('body')[0]).appendChild(ds);
     })();
   </script>
+
+  
     
-     
-
-
     
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
   
 
-  
-  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
-  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.2"></script>
 
 
-  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.2"></script>
-  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
-<script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
-
-<script type="text/javascript" src="/js/motion.js?v=0.4.5.2" id="motion.global"></script>
 
 
-  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+
 
   
   
-<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.2" id="bootstrap.scrollspy.custom"></script>
-
-
-<script type="text/javascript" id="sidebar.toc.highlight">
-  $(document).ready(function () {
-    var tocSelector = '.post-toc';
-    var $tocSelector = $(tocSelector);
-    var activeCurrentSelector = '.active-current';
-
-    $tocSelector
-      .on('activate.bs.scrollspy', function () {
-        var $currentActiveElement = $(tocSelector + ' .active').last();
-
-        removeCurrentActiveClass();
-        $currentActiveElement.addClass('active-current');
-
-        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
-      })
-      .on('clear.bs.scrollspy', function () {
-        removeCurrentActiveClass();
-      });
-
-    function removeCurrentActiveClass () {
-      $(tocSelector + ' ' + activeCurrentSelector)
-        .removeClass(activeCurrentSelector.substring(1));
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
     }
+    var path = "/" + search_path;
+    // monitor main search box;
 
-    function processTOC () {
-      getTOCMaxHeight();
-      toggleTOCOverflowIndicators();
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
     }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
 
-    function getTOCMaxHeight () {
-      var height = $('.sidebar').height() -
-                   $tocSelector.position().top -
-                   $('.post-toc-indicator-bottom').height();
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
 
-      $tocSelector.css('height', height);
-
-      return height;
-    }
-
-    function toggleTOCOverflowIndicators () {
-      tocOverflowIndicator(
-        '.post-toc-indicator-top',
-        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
-      );
-
-      tocOverflowIndicator(
-        '.post-toc-indicator-bottom',
-        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
-      )
-    }
-
-    $(document).on('sidebar.motion.complete', function () {
-      processTOC();
-    });
-
-    $('body').scrollspy({ target: tocSelector });
-    $(window).on('resize', function () {
-      if ( $('.sidebar').hasClass('sidebar-active') ) {
-        processTOC();
-      }
-    });
-
-    onScroll($tocSelector);
-
-    function onScroll (element) {
-      element.on('mousewheel DOMMouseScroll', function (event) {
-          var oe = event.originalEvent;
-          var delta = oe.wheelDelta || -oe.detail;
-
-          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
-          event.preventDefault();
-
-          toggleTOCOverflowIndicators();
-      });
-    }
-
-    function tocOverflowIndicator (indicator, action) {
-      var $indicator = $(indicator);
-      var opacity = action === 'show' ? 1 : 0;
-      $indicator.velocity ?
-        $indicator.velocity('stop').velocity({
-          opacity: opacity
-        }, { duration: 100 }) :
-        $indicator.stop().animate({
-          opacity: opacity
-        }, 100);
-    }
-
-  });
-</script>
-
-<script type="text/javascript" id="sidebar.nav">
-  $(document).ready(function () {
-    var html = $('html');
-    var TAB_ANIMATE_DURATION = 200;
-    var hasVelocity = $.isFunction(html.velocity);
-
-    $('.sidebar-nav li').on('click', function () {
-      var item = $(this);
-      var activeTabClassName = 'sidebar-nav-active';
-      var activePanelClassName = 'sidebar-panel-active';
-      if (item.hasClass(activeTabClassName)) {
-        return;
-      }
-
-      var currentTarget = $('.' + activePanelClassName);
-      var target = $('.' + item.data('target'));
-
-      hasVelocity ?
-        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
-          target
-            .velocity('stop')
-            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
-            .addClass(activePanelClassName);
-        }) :
-        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
-          currentTarget.hide();
-          target
-            .stop()
-            .css({'opacity': 0, 'display': 'block'})
-            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
-              currentTarget.removeClass(activePanelClassName);
-              target.addClass(activePanelClassName);
-            });
-        });
-
-      item.siblings().removeClass(activeTabClassName);
-      item.addClass(activeTabClassName);
-    });
-
-    $('.post-toc a').on('click', function (e) {
-      e.preventDefault();
-      var targetSelector = escapeSelector(this.getAttribute('href'));
-      var offset = $(targetSelector).offset().top;
-      hasVelocity ?
-        html.velocity('stop').velocity('scroll', {
-          offset: offset  + 'px',
-          mobileHA: false
-        }) :
-        $('html, body').stop().animate({
-          scrollTop: offset
-        }, 500);
-    });
-
-    // Expand sidebar on post detail page by default, when post has a toc.
-    motionMiddleWares.sidebar = function () {
-      var $tocContent = $('.post-toc-content');
-      if (CONFIG.sidebar === 'post') {
-        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
-          displaySidebar();
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
         }
-      }
-    };
-  });
-</script>
+      });}
 
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
 
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
 
-  <script type="text/javascript" src="/js/bootstrap.js"></script>
 
   
+
   
 
   
+
   
+
 
 </body>
 </html>
