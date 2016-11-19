@@ -125,8 +125,8 @@ the morning fog is an indication of a nice day.
 </ol>
 <h5 id="introduction"><a href="#introduction" class="headerlink" title="introduction"></a>introduction</h5><ul>
 <li>话题引入: 寻找核心词+结合核心词介绍背景</li>
-<li>他人观点: 有些人认为(<code>some claim that</code>)/引发热议(<code>thus an interesting discussion has arisen/With this phenomenon comes a heated discussion</code>)/当涉及…，通常有…几种方式(<code>when it comes to… , there are usually 3 approaches</code>)</li>
-<li>明确立场: <code>as far as I am concerned, this assertion is arbitrary and unilateral</code></li>
+<li>他人观点: 有些人认为(<code>some claim that</code> <code>A wealth of folks hold the view that...</code> <code>A majority of individuals give their priority to the view that...</code>)/引发热议(<code>thus an interesting discussion has arisen/With this phenomenon comes a heated discussion</code>)/当涉及…，通常有…几种方式(<code>when it comes to… , there are usually 3 approaches</code>)</li>
+<li>明确立场: <code>as far as I am concerned, this assertion is arbitrary and unilateral</code> <code>I cast my preference to the opinion that ...</code></li>
 <li>过渡句: 原因切入(<code>My reasons and example are given below.</code>)  场景切入(<code>I am going to present two typical cases to illustrate my point of view.</code>)</li>
 </ul>
 <h5 id="body"><a href="#body" class="headerlink" title="body"></a>body</h5><p>主题句(15)+论证(40)+论据(50)</p>
@@ -143,6 +143,8 @@ the morning fog is an indication of a nice day.
 <li>找到主题句中的要素</li>
 <li>具象化</li>
 </ol>
+<p><code>According to a recent survey/investigation conducted by...</code></p>
+<p><code>A recent research carried out by... manifests/suggests</code></p>
 <p>150-225字</p>
 <p><strong>让步段</strong></p>
 <ol>
@@ -159,7 +161,32 @@ the morning fog is an indication of a nice day.
 <p><strong>升华主题</strong></p>
 <p>名言+解读</p>
 <p><code>Just as a chinese proverb goes, only by considering the past shall we know the future.A good command of history helps us live well for the present and make full preparations for the future.</code></p>
-<h3 id="u7EFC_u5408_u5199_u4F5C"><a href="#u7EFC_u5408_u5199_u4F5C" class="headerlink" title="综合写作"></a>综合写作</h3><p>待续</p>
+<h3 id="u7EFC_u5408_u5199_u4F5C"><a href="#u7EFC_u5408_u5199_u4F5C" class="headerlink" title="综合写作"></a>综合写作</h3><ul>
+<li>考试时间：25min</li>
+<li>步骤：看(3)-&gt;听(2)-&gt;写(20)</li>
+<li>字数：300左右</li>
+</ul>
+<h4 id="u542C_u529B_u4E0E_u5199_u4F5C_u7684_u5173_u7CFB"><a href="#u542C_u529B_u4E0E_u5199_u4F5C_u7684_u5173_u7CFB" class="headerlink" title="听力与写作的关系"></a>听力与写作的关系</h4><p>阅读部分重点是<strong>三个分论点</strong><br>听力反驳分为：先扬后抑，针锋相对，你有病我有药。听力侧重<strong>细节</strong>，即论据</p>
+<h4 id="u9605_u8BFB"><a href="#u9605_u8BFB" class="headerlink" title="阅读"></a>阅读</h4><ol>
+<li>先记点再记细节</li>
+<li>总观点位于<strong>第一段段尾</strong></li>
+<li>分论点一般位于二、三、四段段首或段尾</li>
+<li>对听力进行预判</li>
+<li>专有名词</li>
+<li>对听力所反驳的细节一定要记</li>
+</ol>
+<h4 id="u542C_u529B"><a href="#u542C_u529B" class="headerlink" title="听力"></a>听力</h4><ol>
+<li>总观点与分论点与阅读一一对应</li>
+<li>开头段让步提问不记笔记</li>
+<li>序数词是段落分界线</li>
+<li>逻辑信号词</li>
+<li>论据，细节</li>
+</ol>
+<h4 id="u5199_u4F5C-1"><a href="#u5199_u4F5C-1" class="headerlink" title="写作"></a>写作</h4><ol>
+<li>一总三分四段式，不需要总结段</li>
+<li>概括转述听力，不讨照抄原文</li>
+<li>框架用一般现在时，内容时态根据文本来</li>
+</ol>
 <h1 id="u53E3_u8BED"><a href="#u53E3_u8BED" class="headerlink" title="口语"></a>口语</h1><h2 id="u7B2C_u4E00_u3001_u4E8C_u9898"><a href="#u7B2C_u4E00_u3001_u4E8C_u9898" class="headerlink" title="第一、二题"></a>第一、二题</h2><p>原因+阐释， <strong>不用管逻辑！！</strong></p>
 <pre><code>When it comes to ___.
 
@@ -3780,7 +3807,89 @@ D+E+BC = (D+E+B)(D+E+C)
 <h4 id="u964D_u7EF4_u56FE_u6CD5"><a href="#u964D_u7EF4_u56FE_u6CD5" class="headerlink" title="降维图法"></a>降维图法</h4><p><strong>场景:</strong> 当输入端小于变量的时候，需要将一个变量降维</p>
 <p>其实就是把要降唯的变量乘进去</p>
 <p><img src="https://d17oy1vhnax1f7.cloudfront.net/items/1G2h3G1n0F2q2Q0I3T0C/屏幕快照%202016-11-07%20下午12.06.05.png?v=535f2fdf" alt=""></p>
-<h2 id="VHDL"><a href="#VHDL" class="headerlink" title="VHDL"></a>VHDL</h2><figure class="highlight vhdl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ARCHITECTURE</span> A <span class="keyword">OF</span> EXAMPLE <span class="keyword">IS</span></span><br><span class="line"><span class="keyword">BEGIN</span></span><br><span class="line"><span class="keyword">PROCESS</span>(CLK,OUTOBJECT) <span class="keyword">IS</span></span><br><span class="line">   <span class="keyword">IF</span>(CLK<span class="attribute">'EVENT</span> <span class="keyword">AND</span> CLK=<span class="number">1</span>) <span class="keyword">THEN</span></span><br><span class="line">      OUTOBJECT &lt;= CLK;</span><br><span class="line">   <span class="keyword">ELSIF</span>(CLK<span class="attribute">'EVEN</span> <span class="keyword">AND</span> CLK=<span class="number">0</span>) <span class="keyword">THEN</span></span><br><span class="line">      OUTOBJECT &lt;= CLK;</span><br><span class="line">   <span class="keyword">ELSE</span> <span class="keyword">THEN</span></span><br><span class="line">      OUTOBJECT &lt;= CLK;</span><br><span class="line"><span class="keyword">END</span> <span class="keyword">PROCESS</span>;</span><br><span class="line"><span class="keyword">END</span> <span class="keyword">ARCHITECTURE</span> A;</span><br></pre></td></tr></table></figure>
+<h2 id="u65F6_u5E8F_u7535_u8DEF"><a href="#u65F6_u5E8F_u7535_u8DEF" class="headerlink" title="时序电路"></a>时序电路</h2><h3 id="u96C6_u6210_u89E6_u53D1_u5668"><a href="#u96C6_u6210_u89E6_u53D1_u5668" class="headerlink" title="集成触发器"></a>集成触发器</h3><p><strong>触发器</strong> 能保持状态的电路，时序电路的基本单位</p>
+<h4 id="u72B6_u6001_u8F6C_u79FB_u771F_u503C_u8868"><a href="#u72B6_u6001_u8F6C_u79FB_u771F_u503C_u8868" class="headerlink" title="状态转移真值表"></a>状态转移真值表</h4><p><img src="https://d17oy1vhnax1f7.cloudfront.net/items/1x0w1o0j1G0U333q341e/QQ20161116-2@2x.png?v=00693e4b" alt=""></p>
+<h4 id="u7279_u5F81_u65B9_u7A0B"><a href="#u7279_u5F81_u65B9_u7A0B" class="headerlink" title="特征方程"></a>特征方程</h4><p><img src="https://d17oy1vhnax1f7.cloudfront.net/items/0d411C0J15181M1v0409/屏幕快照%202016-11-16%20上午10.38.46.png?v=130a3fce" alt=""></p>
+<h4 id="u72B6_u6001_u8F6C_u79FB_u56FE"><a href="#u72B6_u6001_u8F6C_u79FB_u56FE" class="headerlink" title="状态转移图"></a>状态转移图</h4><p><img src="https://d17oy1vhnax1f7.cloudfront.net/items/2w2T171j3y3T382f1u1W/屏幕快照%202016-11-16%20上午10.40.50.png?v=97367f62" alt=""></p>
+<h4 id="R-S_u89E6_u53D1_u5668"><a href="#R-S_u89E6_u53D1_u5668" class="headerlink" title="R-S触发器"></a>R-S触发器</h4><p><img src="https://d17oy1vhnax1f7.cloudfront.net/items/3O1T293g3b3S0n340V0d/屏幕快照%202016-11-16%20上午8.43.35.png?v=b45e54eb" alt=""></p>
+<p><img src="https://d17oy1vhnax1f7.cloudfront.net/items/2q2k452C1o3h1E403t3D/屏幕快照%202016-11-16%20上午8.31.59.png?v=c7bebe35" alt=""></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">R</th>
+<th style="text-align:center">S</th>
+<th style="text-align:center">Q</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">不定</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">保持</td>
+</tr>
+</tbody>
+</table>
+<h4 id="u540C_u6B65R-S_u89E6_u53D1_u5668"><a href="#u540C_u6B65R-S_u89E6_u53D1_u5668" class="headerlink" title="同步R-S触发器"></a>同步R-S触发器</h4><p>CP = 0，触发器状态不变<br>CP = 1，Q = S</p>
+<p><img src="https://d17oy1vhnax1f7.cloudfront.net/items/3N3b2c0a200f2d3l3X31/屏幕快照%202016-11-16%20上午9.03.46.png?v=ee38a4ad" alt=""></p>
+<p><img src="https://d17oy1vhnax1f7.cloudfront.net/items/1p2e3N3c3X181r0o2r3K/屏幕快照%202016-11-16%20上午8.51.55.png?v=bf61e5e3" alt=""></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">R</th>
+<th style="text-align:center">S</th>
+<th style="text-align:center">Q</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">不定</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">保持</td>
+</tr>
+</tbody>
+</table>
+<h4 id="u4E3B_u4ECER-S_u89E6_u53D1_u5668"><a href="#u4E3B_u4ECER-S_u89E6_u53D1_u5668" class="headerlink" title="主从R-S触发器"></a>主从R-S触发器</h4><p><strong>下降沿触发</strong></p>
+<ul>
+<li><strong>CP=1时:</strong> 主触发器打开,RS信号输入到主触发器; 从触发器被封锁,保持原来状态。</li>
+<li><strong>CP=由1变0时:</strong> 从触发器打开,<br>主触发器的状态写入从触发器。 主触发器被封锁, 此后, 输入R、 S不管如何变化, 主触发器的状态不变。</li>
+<li><strong>CP=0时:</strong> 从触发器继续打开,主触发器继续封锁。</li>
+</ul>
+<p><img src="https://d17oy1vhnax1f7.cloudfront.net/items/3N3b2c0a200f2d3l3X31/屏幕快照%202016-11-16%20上午9.03.46.png?v=ee38a4ad" alt=""></p>
+<p><img src="https://d17oy1vhnax1f7.cloudfront.net/items/2g240h2N3A0u1918123D/0654D670-1611-4CCB-9D62-F8DF29F241D9.png?v=84c927d3" alt=""></p>
+<h4 id="D_u89E6_u53D1_u5668"><a href="#D_u89E6_u53D1_u5668" class="headerlink" title="D触发器"></a>D触发器</h4><p><img src="https://d17oy1vhnax1f7.cloudfront.net/items/0v0g2J3z0v3K2J2U0U1J/QQ20161116-0@2x.png?v=9b4e3584" alt=""></p>
+<h4 id="JK_u89E6_u53D1_u5668"><a href="#JK_u89E6_u53D1_u5668" class="headerlink" title="JK触发器"></a>JK触发器</h4><p><img src="https://d17oy1vhnax1f7.cloudfront.net/items/1k2B3C3B3O0h3b0M2i07/QQ20161116-1@2x.png?v=438f479c" alt=""></p>
+<h4 id="T_u89E6_u53D1_u5668"><a href="#T_u89E6_u53D1_u5668" class="headerlink" title="T触发器"></a>T触发器</h4><p><img src="https://d17oy1vhnax1f7.cloudfront.net/items/3C0D18360M3J2v312T3i/屏幕快照%202016-11-16%20上午10.29.57.png?v=319cdb1c" alt=""></p>
+<h4 id="u963B_u585E"><a href="#u963B_u585E" class="headerlink" title="阻塞"></a>阻塞</h4><h2 id="VHDL"><a href="#VHDL" class="headerlink" title="VHDL"></a>VHDL</h2><figure class="highlight vhdl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">LIBRARY</span> IEEE;</span><br><span class="line"><span class="keyword">USE</span> IEEE.STD_LOGIC_1164.<span class="keyword">ALL</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">ENTITY</span> EXAMPLE <span class="keyword">IS</span></span><br><span class="line"><span class="keyword">PORT</span>(CLK: <span class="keyword">IN</span> <span class="typename">STD_LOGIC</span>;</span><br><span class="line">	OUTOBJECT: <span class="keyword">OUT</span> <span class="typename">STD_LOGIC</span>);</span><br><span class="line"><span class="keyword">END</span> EXAMPLE;</span><br><span class="line"></span><br><span class="line"><span class="keyword">ARCHITECTURE</span> A <span class="keyword">OF</span> EXAMPLE <span class="keyword">IS</span></span><br><span class="line"><span class="keyword">BEGIN</span></span><br><span class="line"><span class="keyword">PROCESS</span>(CLK,OUTOBJECT) <span class="keyword">IS</span></span><br><span class="line">   <span class="keyword">IF</span>(CLK<span class="attribute">'EVENT</span> <span class="keyword">AND</span> CLK=<span class="number">1</span>) <span class="keyword">THEN</span></span><br><span class="line">      OUTOBJECT &lt;= CLK;</span><br><span class="line">   <span class="keyword">ELSIF</span>(CLK<span class="attribute">'EVEN</span> <span class="keyword">AND</span> CLK=<span class="number">0</span>) <span class="keyword">THEN</span></span><br><span class="line">      OUTOBJECT &lt;= CLK;</span><br><span class="line">   <span class="keyword">ELSE</span> <span class="keyword">THEN</span></span><br><span class="line">      OUTOBJECT &lt;= CLK;</span><br><span class="line"><span class="keyword">END</span> <span class="keyword">PROCESS</span>;</span><br><span class="line"><span class="keyword">END</span> <span class="keyword">ARCHITECTURE</span> A;</span><br></pre></td></tr></table></figure>
 <h2 id="u4F5C_u4E1A_u7B54_u6848"><a href="#u4F5C_u4E1A_u7B54_u6848" class="headerlink" title="作业答案"></a>作业答案</h2><h3 id="u7B2C_u4E00_u6B21_u4F5C_u4E1A"><a href="#u7B2C_u4E00_u6B21_u4F5C_u4E1A" class="headerlink" title="第一次作业"></a>第一次作业</h3><h4 id="1-1_285_29"><a href="#1-1_285_29" class="headerlink" title="1-1(5)"></a>1-1(5)</h4><p><strong>二进制转换十进制</strong> 101001.10010</p>
 <p><img src="https://d17oy1vhnax1f7.cloudfront.net/items/3m00342r412C2h0G133C/Untitled%201.gif?v=716efcc5" alt=""></p>
 <p>答案为 41.5625</p>
