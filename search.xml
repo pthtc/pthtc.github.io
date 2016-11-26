@@ -227,7 +227,7 @@ There are N ways to solve it./There are pros and cons about it.
 
 Personally speaking,apprently,it&apos;s an effective way for ____ to do sth.By doing this,it allows ___ to ___ ,which means ____.
 
-Additionally/However, there is no doubt that ___ ,which is significantly beneficial/harmful.
+Additionally/However, there is no doubt that ___ ,which is significantly beneficial/harmful.In that case, ___
 
 Based on what I said, that&apos;s why I feel this way.
 </code></pre><h2 id="u7B2C_u4E09_u9898"><a href="#u7B2C_u4E09_u9898" class="headerlink" title="第三题"></a>第三题</h2><h3 id="B_u73ED_u53E5_u5F0F"><a href="#B_u73ED_u53E5_u5F0F" class="headerlink" title="B班句式"></a>B班句式</h3><p>肯定分为两种原因，支持+反对，表达结果是<strong>全盘复述正反方观点</strong></p>
@@ -1193,6 +1193,18 @@ while(true){
     //think
 }
 </code></pre></li>
+</ul>
+<h3 id="u7BA1_u7A0B"><a href="#u7BA1_u7A0B" class="headerlink" title="管程"></a>管程</h3><p>一种类，这个类在实现功能的前提下保证了互斥</p>
+<h4 id="u54F2_u5B66_u5BB6_u8FDB_u9910_u4F8B_u5B50"><a href="#u54F2_u5B66_u5BB6_u8FDB_u9910_u4F8B_u5B50" class="headerlink" title="哲学家进餐例子"></a>哲学家进餐例子</h4><ul>
+<li><strong>dp</strong> 管程</li>
+<li><strong>i</strong> 哲学家编号<figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">dp.pickup(i)<span class="comment">;</span></span><br><span class="line"></span><br><span class="line">//eat</span><br><span class="line"></span><br><span class="line">dp.putdown(i)<span class="comment">;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="u6587_u4EF6"><a href="#u6587_u4EF6" class="headerlink" title="文件"></a>文件</h2><h3 id="u6982_u5FF5-2"><a href="#u6982_u5FF5-2" class="headerlink" title="概念"></a>概念</h3><ul>
+<li><p>信息存储的统一逻辑接口</p>
+</li>
+<li><p>逻辑外存的最小分配单元</p>
+</li>
 </ul>
 <h2 id="u4F5C_u4E1A"><a href="#u4F5C_u4E1A" class="headerlink" title="作业"></a>作业</h2><h3 id="u7B2C_u4E00_u6B21_u4F5C_u4E1A"><a href="#u7B2C_u4E00_u6B21_u4F5C_u4E1A" class="headerlink" title="第一次作业"></a>第一次作业</h3><h4 id="1-10"><a href="#1-10" class="headerlink" title="1.10"></a>1.10</h4><p><strong>中断有何作用？陷阱和中断有什么区别？用户程序能否有意地生成陷阱？如果是，有什么目的？</strong></p>
 <pre><code>1. 完成进程间切换，从而支持CPU和设备之间的并行。
