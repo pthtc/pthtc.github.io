@@ -405,10 +405,8 @@ As a result, it turned out that 1. 2. 3. Because ___
 <li><strong>调频FM</strong> 频率</li>
 <li><strong>调相</strong> 初始相位</li>
 <li><strong>码间串扰</strong> 码元传输速率太高导致接收到的信号失去了清晰的界限</li>
-<li><p><strong>信噪比（S/N）</strong> 信号平均功率和噪声平均功率之比，单位是分贝</p>
-<p>  <code>信噪比(db) = 10*lg(S/N)</code> </p>
-</li>
-<li><strong>极限传输速率</strong> <code>C = Wlog2(1+S/N)</code></li>
+<li><strong>信噪比（S/N）</strong> 信号平均功率和噪声平均功率之比，单位是分贝<br>  <code>信噪比(db) = 10*lg(S/N)</code> </li>
+<li><strong>极限传输速率(香浓定力)</strong> <code>C = Wlog2(1+S/N)</code> W-频率</li>
 </ul>
 <h4 id="u4F20_u8F93_u5A92_u4F53"><a href="#u4F20_u8F93_u5A92_u4F53" class="headerlink" title="传输媒体"></a>传输媒体</h4><h5 id="u5F15_u5BFC_u578B"><a href="#u5F15_u5BFC_u578B" class="headerlink" title="引导型"></a>引导型</h5><ul>
 <li><strong>双绞线</strong></li>
