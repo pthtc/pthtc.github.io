@@ -1,474 +1,437 @@
-<!doctype html>
+<!DOCTYPE html>
+<html>
+    <head>
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.2.6 -->
 
-
-
-  
-
-
-<html class="theme-next muse use-motion" lang="zh-Hans">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-  
-  
-  
-  
-
-  
+    <!-- Title -->
     
-    
-  
+    <title>
+        
+            数电逻辑笔记 | 
+        
+        彭天浩的博客
+    </title>
 
-  
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+    <link rel="icon" sizes="192x192" href="/img/favicon.png">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
 
-  
+    <!-- Meta & Info -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0097A7">
+    <meta name="author" content="彭天浩">
+    <meta name="description" content="手持两把锟斤拷,口中高呼烫烫烫">
+    <meta name="keywords" content="“彭天浩”">
 
-  
+    <!--iOS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-title" content="Title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
 
-  
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
 
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="彭天浩的博客">
 
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://pengtianhao.com">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="数电逻辑笔记 | 彭天浩的博客">
+    <meta property="og:description" content="手持两把锟斤拷,口中高呼烫烫烫">
 
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
 
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
 
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="基础,数电逻辑," />
-
-
-
-
-
-
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
-
-
-
-
-
-
-<meta name="description" content="数字电路的一些总结，持续更新">
-<meta property="og:type" content="article">
-<meta property="og:title" content="数电逻辑笔记">
-<meta property="og:url" content="http://pengtianhao.com/2016/09/20/数电逻辑笔记/index.html">
-<meta property="og:site_name" content="彭天浩胡说八道的地方">
-<meta property="og:description" content="数字电路的一些总结，持续更新">
-<meta property="og:image" content="https://d17oy1vhnax1f7.cloudfront.net/items/1y2u282c3R1M0c1O2a0I/7c1ed21b0ef41bd597ac45ce52da81cb39db3d08.png?v=fb6979cf">
-<meta property="og:image" content="https://d17oy1vhnax1f7.cloudfront.net/items/1N0s1t2t461j2H0V0E0p/QQ20160920-1@2x.png?v=c779a9cf">
-<meta property="og:image" content="https://d17oy1vhnax1f7.cloudfront.net/items/0U2E2E0o3j3d063Q2i0q/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-10-11%20%E4%B8%8B%E5%8D%886.52.23.png?v=52009a0f">
-<meta property="og:image" content="https://d17oy1vhnax1f7.cloudfront.net/items/3o2N32240j3H1s181N2b/屏幕快照%202016-11-07%20上午11.38.18.png?v=15310754">
-<meta property="og:image" content="https://d17oy1vhnax1f7.cloudfront.net/items/3r3g0J3J1h0D2z3M0C30/屏幕快照%202016-11-07%20上午9.31.00.png?v=b7b7dc40">
-<meta property="og:image" content="https://d17oy1vhnax1f7.cloudfront.net/items/001V2w1h3Y1o1j0k041i/屏幕快照%202016-11-07%20上午10.04.52.png?v=894ea218">
-<meta property="og:image" content="https://d17oy1vhnax1f7.cloudfront.net/items/1G2h3G1n0F2q2Q0I3T0C/屏幕快照%202016-11-07%20下午12.06.05.png?v=535f2fdf">
-<meta property="og:image" content="https://d17oy1vhnax1f7.cloudfront.net/items/1x0w1o0j1G0U333q341e/QQ20161116-2@2x.png?v=00693e4b">
-<meta property="og:image" content="https://d17oy1vhnax1f7.cloudfront.net/items/0d411C0J15181M1v0409/屏幕快照%202016-11-16%20上午10.38.46.png?v=130a3fce">
-<meta property="og:image" content="https://d17oy1vhnax1f7.cloudfront.net/items/2w2T171j3y3T382f1u1W/屏幕快照%202016-11-16%20上午10.40.50.png?v=97367f62">
-<meta property="og:image" content="https://d17oy1vhnax1f7.cloudfront.net/items/3O1T293g3b3S0n340V0d/屏幕快照%202016-11-16%20上午8.43.35.png?v=b45e54eb">
-<meta property="og:image" content="https://d17oy1vhnax1f7.cloudfront.net/items/2q2k452C1o3h1E403t3D/屏幕快照%202016-11-16%20上午8.31.59.png?v=c7bebe35">
-<meta property="og:image" content="https://d17oy1vhnax1f7.cloudfront.net/items/3N3b2c0a200f2d3l3X31/屏幕快照%202016-11-16%20上午9.03.46.png?v=ee38a4ad">
-<meta property="og:image" content="https://d17oy1vhnax1f7.cloudfront.net/items/1p2e3N3c3X181r0o2r3K/屏幕快照%202016-11-16%20上午8.51.55.png?v=bf61e5e3">
-<meta property="og:image" content="https://d17oy1vhnax1f7.cloudfront.net/items/3N3b2c0a200f2d3l3X31/屏幕快照%202016-11-16%20上午9.03.46.png?v=ee38a4ad">
-<meta property="og:image" content="https://d17oy1vhnax1f7.cloudfront.net/items/2g240h2N3A0u1918123D/0654D670-1611-4CCB-9D62-F8DF29F241D9.png?v=84c927d3">
-<meta property="og:image" content="https://d17oy1vhnax1f7.cloudfront.net/items/0v0g2J3z0v3K2J2U0U1J/QQ20161116-0@2x.png?v=9b4e3584">
-<meta property="og:image" content="https://d17oy1vhnax1f7.cloudfront.net/items/1k2B3C3B3O0h3b0M2i07/QQ20161116-1@2x.png?v=438f479c">
-<meta property="og:image" content="https://d17oy1vhnax1f7.cloudfront.net/items/3C0D18360M3J2v312T3i/屏幕快照%202016-11-16%20上午10.29.57.png?v=319cdb1c">
-<meta property="og:image" content="https://d17oy1vhnax1f7.cloudfront.net/items/3m00342r412C2h0G133C/Untitled%201.gif?v=716efcc5">
-<meta property="og:image" content="https://d17oy1vhnax1f7.cloudfront.net/items/3T323P1p1a1G3R0K3X2x/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-10-18%20%E4%B8%8B%E5%8D%881.03.43.png?v=235042c1">
-<meta property="og:image" content="https://d17oy1vhnax1f7.cloudfront.net/items/2e012X2g0l1I2l2F2n0F/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-10-18%20%E4%B8%8B%E5%8D%881.01.52.png?v=ed37e486">
-<meta property="og:image" content="https://d17oy1vhnax1f7.cloudfront.net/items/2e012X2g0l1I2l2F2n0F/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-10-18%20%E4%B8%8B%E5%8D%881.01.52.png?v=ed37e486">
-<meta property="og:updated_time" content="2016-12-24T12:37:51.000Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="数电逻辑笔记">
-<meta name="twitter:description" content="数字电路的一些总结，持续更新">
+    <!-- Import CSS -->
+    <link rel="stylesheet" href="/css/material.min.css">
+    <link rel="stylesheet" href="/css/style.min.css">
+    <!-- Config CSS -->
 
 
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Muse',
-    sidebar: {"position":"left","display":"post"},
-    fancybox: true,
-    motion: true,
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+<!-- Other Styles -->
+<style>
+    body, html {
+        font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
     }
-  };
-</script>
+
+    a {
+        color: #00838F;
+    }
+
+    .mdl-card__media,
+    #search-label,
+    #search-form-label:after,
+    #scheme-Paradox .hot_tags-count,
+    #scheme-Paradox .sidebar_archives-count,
+    #scheme-Paradox .sidebar-colored .sidebar-header,
+    #scheme-Paradox .sidebar-colored .sidebar-badge{
+        background-color: #0097A7 !important;
+    }
+
+    /* Sidebar User Drop Down Menu Text Color */
+    #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+    #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+        color: #0097A7 !important;
+    }
+
+    #post_entry-right-info,
+    .sidebar-colored .sidebar-nav li:hover > a,
+    .sidebar-colored .sidebar-nav li:hover > a i,
+    .sidebar-colored .sidebar-nav li > a:hover,
+    .sidebar-colored .sidebar-nav li > a:hover i,
+    .sidebar-colored .sidebar-nav li > a:focus i,
+    .sidebar-colored .sidebar-nav > .open > a,
+    .sidebar-colored .sidebar-nav > .open > a:hover,
+    .sidebar-colored .sidebar-nav > .open > a:focus,
+    #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+        color: #0097A7 !important;
+    }
+
+    .toTop {
+        background: #757575 !important;
+    }
+
+    .material-layout .material-post>.material-nav,
+    .material-layout .material-index>.material-nav,
+    .material-nav a {
+        color: #757575;
+    }
+
+    #scheme-Paradox .MD-burger-layer {
+        background-color: #757575;
+    }
+
+    #scheme-Paradox #post-toc-trigger-btn {
+        color: #757575;
+    }
+
+    .post-toc a:hover {
+        color: #00838F;
+        text-decoration: underline;
+    }
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+        body{
+            background-color: #F5F5F5;
+        }
+
+        /* blog_info bottom background */
+        #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+            background-color: #fff;
+        }
+    </style>
 
 
 
-  <link rel="canonical" href="http://pengtianhao.com/2016/09/20/数电逻辑笔记/"/>
+
+<!-- Fade Effect -->
+
+    <style>
+        .fade {
+            transition: all 800ms linear;
+            -webkit-transform: translate3d(0,0,0);
+            -moz-transform: translate3d(0,0,0);
+            -ms-transform: translate3d(0,0,0);
+            -o-transform: translate3d(0,0,0);
+            transform: translate3d(0,0,0);
+            opacity: 1;
+        }
+
+        .fade.out{
+            opacity: 0;
+        }
+    </style>
 
 
+    <script src="/js/jquery.min.js"></script>
 
+    <link rel="stylesheet" href="/css/highlight/solarized-white.css">
 
+    <!-- UC Browser Compatible-->
+    <script>
+        var agent = navigator.userAgent.toLowerCase();
+        if(agent.indexOf('ucbrowser')>0) {
+            document.write('<link rel="stylesheet" href="/css/uc.css">');
+            alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+        }
+    </script>
 
-  <title> 数电逻辑笔记 | 彭天浩胡说八道的地方 </title>
+    <!-- Custom Head -->
+    
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
-  
-
-
-
-  <script type="text/javascript">
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "//hm.baidu.com/hm.js?73e01b0dee523c22137e45cf054e9160";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    })();
-  </script>
-
-
-
-  <script type="text/javascript">
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "//tajs.qq.com/stats?sId=59468870";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    })();
-  </script>
-
-
-
-
-
-
-  
-  
     
-  
+        <body id="scheme-Paradox">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
 
-  <div class="container one-collumn sidebar-position-left page-post-detail ">
-    <div class="headband"></div>
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-meta ">
-  
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
 
-  <div class="custom-logo-site-title">
-    <a href="/"  class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <span class="site-title">彭天浩胡说八道的地方</span>
-      <span class="logo-line-after"><i></i></span>
-    </a>
-  </div>
-  <p class="site-subtitle"></p>
-</div>
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
 
-<div class="site-nav-toggle">
-  <button>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-  </button>
-</div>
+                    <!-- Post TOC -->
 
-<nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
-        
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            首页
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            分类
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-about">
-          <a href="/about" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
-            
-            关于
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            归档
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            标签
-          </a>
-        </li>
-      
-
-      
-        <li class="menu-item menu-item-search">
-          
-            <a href="javascript:;" class="popup-trigger">
-          
-            
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
-            
-            搜索
-          </a>
-        </li>
-      
-    </ul>
-  
-
-  
-    <div class="site-search">
-      
-  <div class="popup">
- <span class="search-icon fa fa-search"></span>
- <input type="text" id="local-search-input">
- <div id="local-search-result"></div>
- <span class="popup-btn-close">close</span>
-</div>
-
-
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
     </div>
-  
-</nav>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#绪论"><span class="post-toc-number">1.</span> <span class="post-toc-text">绪论</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#门电路符号"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">门电路符号</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#数制转换"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">数制转换</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#整数转换"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">整数转换</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#小数转换"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">小数转换</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#小数转换的精确度问题"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">小数转换的精确度问题</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#BCD码"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">BCD码</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#有权码"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">有权码</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#无权码"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text">无权码</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#算术运算"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">算术运算</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#逻辑函数及其简化"><span class="post-toc-number">2.</span> <span class="post-toc-text">逻辑函数及其简化</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#简单逻辑解释"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">简单逻辑解释</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#真值表与逻辑函数"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">真值表与逻辑函数</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#真值表"><span class="post-toc-number">2.2.1.</span> <span class="post-toc-text">真值表</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#逻辑规则"><span class="post-toc-number">2.2.2.</span> <span class="post-toc-text">逻辑规则</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#逻辑计算规律"><span class="post-toc-number">2.2.2.1.</span> <span class="post-toc-text">逻辑计算规律</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#代入规则"><span class="post-toc-number">2.2.2.2.</span> <span class="post-toc-text">代入规则</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#反演规则"><span class="post-toc-number">2.2.2.3.</span> <span class="post-toc-text">反演规则</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#对偶规则"><span class="post-toc-number">2.2.2.4.</span> <span class="post-toc-text">对偶规则</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#常用公式"><span class="post-toc-number">2.2.3.</span> <span class="post-toc-text">常用公式</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#逻辑函数的标准形式"><span class="post-toc-number">2.2.4.</span> <span class="post-toc-text">逻辑函数的标准形式</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#五种等价形式"><span class="post-toc-number">2.2.5.</span> <span class="post-toc-text">五种等价形式</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#最小项、最大项表达式"><span class="post-toc-number">2.2.6.</span> <span class="post-toc-text">最小项、最大项表达式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#最小项表达式"><span class="post-toc-number">2.2.6.1.</span> <span class="post-toc-text">最小项表达式</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#最大项表达式"><span class="post-toc-number">2.2.6.2.</span> <span class="post-toc-text">最大项表达式</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#最大项表达式与最小项表达式关系"><span class="post-toc-number">2.2.6.3.</span> <span class="post-toc-text">最大项表达式与最小项表达式关系</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#函数化简"><span class="post-toc-number">2.2.7.</span> <span class="post-toc-text">函数化简</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#公式法"><span class="post-toc-number">2.2.7.1.</span> <span class="post-toc-text">公式法</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#卡诺图"><span class="post-toc-number">2.2.7.2.</span> <span class="post-toc-text">卡诺图</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#列表法"><span class="post-toc-number">2.2.7.3.</span> <span class="post-toc-text">列表法</span></a></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#逻辑电路"><span class="post-toc-number">3.</span> <span class="post-toc-text">逻辑电路</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#组合电路分析"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">组合电路分析</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#全加器"><span class="post-toc-number">3.1.1.</span> <span class="post-toc-text">全加器</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#编码器"><span class="post-toc-number">3.1.2.</span> <span class="post-toc-text">编码器</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#8-3编码器"><span class="post-toc-number">3.1.2.1.</span> <span class="post-toc-text">8-3编码器</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#译码器"><span class="post-toc-number">3.1.3.</span> <span class="post-toc-text">译码器</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#数据选择器"><span class="post-toc-number">3.1.4.</span> <span class="post-toc-text">数据选择器</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#组合逻辑电路设计"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">组合逻辑电路设计</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#根据真值表写逻辑函数表达式"><span class="post-toc-number">3.2.1.</span> <span class="post-toc-text">根据真值表写逻辑函数表达式</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#逻辑表达式变换-变化和化简通用"><span class="post-toc-number">3.2.2.</span> <span class="post-toc-text">逻辑表达式变换(变化和化简通用)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#降维图法"><span class="post-toc-number">3.2.3.</span> <span class="post-toc-text">降维图法</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#时序电路"><span class="post-toc-number">4.</span> <span class="post-toc-text">时序电路</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#集成触发器"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">集成触发器</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#状态转移真值表"><span class="post-toc-number">4.1.1.</span> <span class="post-toc-text">状态转移真值表</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#特征方程"><span class="post-toc-number">4.1.2.</span> <span class="post-toc-text">特征方程</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#状态转移图"><span class="post-toc-number">4.1.3.</span> <span class="post-toc-text">状态转移图</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#R-S触发器"><span class="post-toc-number">4.1.4.</span> <span class="post-toc-text">R-S触发器</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#同步R-S触发器"><span class="post-toc-number">4.1.5.</span> <span class="post-toc-text">同步R-S触发器</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#主从R-S触发器"><span class="post-toc-number">4.1.6.</span> <span class="post-toc-text">主从R-S触发器</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#D触发器"><span class="post-toc-number">4.1.7.</span> <span class="post-toc-text">D触发器</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#JK触发器"><span class="post-toc-number">4.1.8.</span> <span class="post-toc-text">JK触发器</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#T触发器"><span class="post-toc-number">4.1.9.</span> <span class="post-toc-text">T触发器</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#主从J-K触发器"><span class="post-toc-number">4.1.10.</span> <span class="post-toc-text">主从J-K触发器</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#维持阻塞RS触发器"><span class="post-toc-number">4.1.11.</span> <span class="post-toc-text">维持阻塞RS触发器</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#阻塞"><span class="post-toc-number">4.1.12.</span> <span class="post-toc-text">阻塞</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#VHDL"><span class="post-toc-number">5.</span> <span class="post-toc-text">VHDL</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#基本语法"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">基本语法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#重要的顺序语句"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">重要的顺序语句</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#传统和现代设计方法的比较"><span class="post-toc-number">5.3.</span> <span class="post-toc-text">传统和现代设计方法的比较</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#传统方法"><span class="post-toc-number">5.3.1.</span> <span class="post-toc-text">传统方法</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#作业答案"><span class="post-toc-number">6.</span> <span class="post-toc-text">作业答案</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#第一次作业"><span class="post-toc-number">6.1.</span> <span class="post-toc-text">第一次作业</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-1-5"><span class="post-toc-number">6.1.1.</span> <span class="post-toc-text">1-1(5)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-2-3"><span class="post-toc-number">6.1.2.</span> <span class="post-toc-text">1-2(3)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-4-2"><span class="post-toc-number">6.1.3.</span> <span class="post-toc-text">1-4(2)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-6-1"><span class="post-toc-number">6.1.4.</span> <span class="post-toc-text">1-6(1)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-1-1"><span class="post-toc-number">6.1.5.</span> <span class="post-toc-text">2-1(1)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-3-4"><span class="post-toc-number">6.1.6.</span> <span class="post-toc-text">2-3(4)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-4-2"><span class="post-toc-number">6.1.7.</span> <span class="post-toc-text">2-4(2)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-6-3"><span class="post-toc-number">6.1.8.</span> <span class="post-toc-text">2-6(3)</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#第二次作业"><span class="post-toc-number">6.2.</span> <span class="post-toc-text">第二次作业</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-8-1"><span class="post-toc-number">6.2.1.</span> <span class="post-toc-text">2-8(1)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-8-4"><span class="post-toc-number">6.2.2.</span> <span class="post-toc-text">2-8(4)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-9-2"><span class="post-toc-number">6.2.3.</span> <span class="post-toc-text">2-9(2)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-9-6"><span class="post-toc-number">6.2.4.</span> <span class="post-toc-text">2-9(6)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-9-8"><span class="post-toc-number">6.2.5.</span> <span class="post-toc-text">2-9(8)</span></a></li></ol></li></ol></li></ol>
+
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
 
 
 
- </div>
-    </header>
 
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
+<!-- Layouts -->
 
-  <div id="posts" class="posts-expand">
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script>
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://pengtianhao.com/2016/09/20/数电逻辑笔记/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="彭天浩">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/avatar.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="彭天浩胡说八道的地方">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="彭天浩胡说八道的地方" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
+    $('.post_thumbnail-random').css('background-image', 'url(' + '/img/random/material-' + randomNum + '.png' + ')');
+</script>
 
         
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
+    
+            <p class="article-headline-p">
                 数电逻辑笔记
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time title="Дата создания записи" itemprop="dateCreated datePublished" datetime="2016-09-20T16:43:42+08:00">
-              2016-09-20
-            </time>
-
-            &nbsp;|&nbsp;
-
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-check-o"></i>
-            </span>
-            <time title="Дата обновления записи" itemprop="dateModified" datetime="2016-12-24T20:37:51+08:00">
-              2016-12-24
-            </time>
-            
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/计算机基础/" itemprop="url" rel="index">
-                    <span itemprop="name">计算机基础</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/09/20/数电逻辑笔记/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/20/数电逻辑笔记/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-          
-          
-
+            </p>
         </div>
-      </header>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/head.jpg" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>彭天浩</strong>
+        <span>9月 20, 2016</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
     
 
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/基础/">基础</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/数电逻辑/">数电逻辑</a>
+    </ul>
+    
 
-    <div class="post-body" itemprop="articleBody">
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
 
-      
-      
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
+        
+    
 
-      
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=数电逻辑笔记&url=http://pengtianhao.com//2016/09/20/数电逻辑笔记/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=数电逻辑笔记&url=http://pengtianhao.com//2016/09/20/数电逻辑笔记/index.html&via=彭天浩" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://pengtianhao.com//2016/09/20/数电逻辑笔记/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://pengtianhao.com//2016/09/20/数电逻辑笔记/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=彭天浩的博客&title=数电逻辑笔记&summary=手持两把锟斤拷,口中高呼烫烫烫&pics=http://pengtianhao.com/img/favicon.png&url=http://pengtianhao.com/2016/09/20/数电逻辑笔记/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="markdown-Plain mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
         <blockquote>
 <p>数字电路的一些总结，持续更新</p>
 </blockquote>
 <a id="more"></a>
-<h2 id="u7EEA_u8BBA"><a href="#u7EEA_u8BBA" class="headerlink" title="绪论"></a>绪论</h2><h3 id="u95E8_u7535_u8DEF_u7B26_u53F7"><a href="#u95E8_u7535_u8DEF_u7B26_u53F7" class="headerlink" title="门电路符号"></a>门电路符号</h3><p><img src="https://d17oy1vhnax1f7.cloudfront.net/items/1y2u282c3R1M0c1O2a0I/7c1ed21b0ef41bd597ac45ce52da81cb39db3d08.png?v=fb6979cf" alt=""></p>
-<h3 id="u6570_u5236_u8F6C_u6362"><a href="#u6570_u5236_u8F6C_u6362" class="headerlink" title="数制转换"></a>数制转换</h3><p>最好通过<strong>二进制</strong>做转点</p>
+<h2 id="绪论"><a href="#绪论" class="headerlink" title="绪论"></a>绪论</h2><h3 id="门电路符号"><a href="#门电路符号" class="headerlink" title="门电路符号"></a>门电路符号</h3><p><img src="https://d17oy1vhnax1f7.cloudfront.net/items/1y2u282c3R1M0c1O2a0I/7c1ed21b0ef41bd597ac45ce52da81cb39db3d08.png?v=fb6979cf" alt=""></p>
+<h3 id="数制转换"><a href="#数制转换" class="headerlink" title="数制转换"></a>数制转换</h3><p>最好通过<strong>二进制</strong>做转点</p>
 <p>16-2 每四位对应<br>8-2 每三位对应</p>
 <p>数字拆分：<code>431.21（10） = 1*10^2+3*10^1+1*10^0+2*10^(-1)+1*10^(-2)</code></p>
 <p><strong><em>下面的R都指进制</em></strong></p>
-<h4 id="u6574_u6570_u8F6C_u6362"><a href="#u6574_u6570_u8F6C_u6362" class="headerlink" title="整数转换"></a>整数转换</h4><p><strong>以10转2为例</strong></p>
+<h4 id="整数转换"><a href="#整数转换" class="headerlink" title="整数转换"></a>整数转换</h4><p><strong>以10转2为例</strong></p>
 <p>数值逐次除R（这里是2），除一次就得到一个低位位，一直到结果为0为止</p>
 <pre><code>//括号里为余数
 53/2 = 26(1)/2 = 13(0)/2 = 6(1)/2 = 3(0)/2 = 1(1)/2 = 0(1)
 </code></pre><p>结果为 <strong>110101</strong></p>
-<h4 id="u5C0F_u6570_u8F6C_u6362"><a href="#u5C0F_u6570_u8F6C_u6362" class="headerlink" title="小数转换"></a>小数转换</h4><p><strong>以10转2为例</strong></p>
+<h4 id="小数转换"><a href="#小数转换" class="headerlink" title="小数转换"></a>小数转换</h4><p><strong>以10转2为例</strong></p>
 <p>每次乘R（这里是2），保存整数位结果作为高位，然后去掉高位，直到乘积为0或者一定精度就停止</p>
 <pre><code>//括号里是整数位
 0.375*2 = 0.750（0）*2 = 0.5（1）*2 = 0（1）
 </code></pre><p>结果为 <strong>0.11</strong></p>
-<h4 id="u5C0F_u6570_u8F6C_u6362_u7684_u7CBE_u786E_u5EA6_u95EE_u9898"><a href="#u5C0F_u6570_u8F6C_u6362_u7684_u7CBE_u786E_u5EA6_u95EE_u9898" class="headerlink" title="小数转换的精确度问题"></a>小数转换的精确度问题</h4><p>比如0.1%的精度，其实就是问<code>0.001*R^n &gt;=1</code>,n就是要求的位数</p>
+<h4 id="小数转换的精确度问题"><a href="#小数转换的精确度问题" class="headerlink" title="小数转换的精确度问题"></a>小数转换的精确度问题</h4><p>比如0.1%的精度，其实就是问<code>0.001*R^n &gt;=1</code>,n就是要求的位数</p>
 <p><strong>以8进制为例</strong></p>
 <pre><code>0.001*8^3 = 0.512 &lt;1
 0.001*8^4 = 4.069 &gt;1
 </code></pre><p>精度要求0.001时候，8进制小数转换需要4位</p>
-<h3 id="BCD_u7801"><a href="#BCD_u7801" class="headerlink" title="BCD码"></a>BCD码</h3><p>其实就是<strong><em>二进制（B，binary）-十进制（D，decimal）码（code）</em></strong>，用2进制表示10进制，但是坑爹的是BCD码并不一定要<code>0000</code>对应<code>0</code>，<code>0101</code>对应<code>5</code>，它可以乱来，所以把这个code记成密码理解起来简单一点。</p>
+<h3 id="BCD码"><a href="#BCD码" class="headerlink" title="BCD码"></a>BCD码</h3><p>其实就是<strong><em>二进制（B，binary）-十进制（D，decimal）码（code）</em></strong>，用2进制表示10进制，但是坑爹的是BCD码并不一定要<code>0000</code>对应<code>0</code>，<code>0101</code>对应<code>5</code>，它可以乱来，所以把这个code记成密码理解起来简单一点。</p>
 <p>因为10进制一位数有0~9，一共10种变化，所以需要二进制里用4（<code>2^4 = 16 &gt;10</code>）来对应</p>
-<h4 id="u6709_u6743_u7801"><a href="#u6709_u6743_u7801" class="headerlink" title="有权码"></a>有权码</h4><p>有权码的意思是四位2进制码每一位都有特定的权值，蛮简单的，计算方法就是按权值计算，然后加起来</p>
+<h4 id="有权码"><a href="#有权码" class="headerlink" title="有权码"></a>有权码</h4><p>有权码的意思是四位2进制码每一位都有特定的权值，蛮简单的，计算方法就是按权值计算，然后加起来</p>
 <ul>
 <li><strong>8421码</strong>    也就是普通的二进制，1001的计算方法是 <code>1001（2）= 1*8+0*4+0*2+1*1 = 9</code></li>
 <li><strong>2421码</strong>    这个的好处是可以直观判断<code>1111</code>就是<code>9</code>，1001的计算方法是 <code>1001（2）= 1*2+0*4+0*2+1*1 = 3</code></li>
 </ul>
-<h4 id="u65E0_u6743_u7801"><a href="#u65E0_u6743_u7801" class="headerlink" title="无权码"></a>无权码</h4><p>无权码不能通过加权计算，但是其实也不难</p>
+<h4 id="无权码"><a href="#无权码" class="headerlink" title="无权码"></a>无权码</h4><p>无权码不能通过加权计算，但是其实也不难</p>
 <ul>
 <li><strong>余3码</strong> 本质是每个8421码+3（0011）得到，比如<code>0 = 0000（8421） = 0011（余3码）</code></li>
 </ul>
-<h3 id="u7B97_u672F_u8FD0_u7B97"><a href="#u7B97_u672F_u8FD0_u7B97" class="headerlink" title="算术运算"></a>算术运算</h3><p>本质上来说和之前的运算没有任何区别</p>
+<h3 id="算术运算"><a href="#算术运算" class="headerlink" title="算术运算"></a>算术运算</h3><p>本质上来说和之前的运算没有任何区别</p>
 <ul>
 <li><strong>二进制加法</strong> <code>1001+0110 = 1111</code></li>
 <li><strong>二进制减法</strong> <code>1001-0110 = 0011</code></li>
 <li><strong>二进制乘法</strong> <code>1001*0110 = 0000+10010+100100+0000000 = 110110</code> </li>
 <li><strong>二进制除法</strong> <code>1001/0110 -&gt; 0110（1）-&gt;0(0.1) = 1.1</code> 箭头后为相减后余数移位的数值，括号中为产生的一位结果。</li>
 </ul>
-<h2 id="u903B_u8F91_u51FD_u6570_u53CA_u5176_u7B80_u5316"><a href="#u903B_u8F91_u51FD_u6570_u53CA_u5176_u7B80_u5316" class="headerlink" title="逻辑函数及其简化"></a>逻辑函数及其简化</h2><h3 id="u7B80_u5355_u903B_u8F91_u89E3_u91CA"><a href="#u7B80_u5355_u903B_u8F91_u89E3_u91CA" class="headerlink" title="简单逻辑解释"></a>简单逻辑解释</h3><ul>
+<h2 id="逻辑函数及其简化"><a href="#逻辑函数及其简化" class="headerlink" title="逻辑函数及其简化"></a>逻辑函数及其简化</h2><h3 id="简单逻辑解释"><a href="#简单逻辑解释" class="headerlink" title="简单逻辑解释"></a>简单逻辑解释</h3><ul>
 <li><strong>与</strong> P = A·B</li>
 <li><strong>或</strong> P = A+B</li>
 <li><strong>非</strong> P = ¬A</li>
@@ -477,7 +440,7 @@
 <li><strong>同或⊙</strong> P = ¬A·¬B+A·B(相同为真)</li>
 <li><strong>异或⊕</strong> P = ¬A·B+A·¬B(相异为真)</li>
 </ul>
-<h3 id="u771F_u503C_u8868_u4E0E_u903B_u8F91_u51FD_u6570"><a href="#u771F_u503C_u8868_u4E0E_u903B_u8F91_u51FD_u6570" class="headerlink" title="真值表与逻辑函数"></a>真值表与逻辑函数</h3><h4 id="u771F_u503C_u8868"><a href="#u771F_u503C_u8868" class="headerlink" title="真值表"></a>真值表</h4><p>大概就是这个玩意</p>
+<h3 id="真值表与逻辑函数"><a href="#真值表与逻辑函数" class="headerlink" title="真值表与逻辑函数"></a>真值表与逻辑函数</h3><h4 id="真值表"><a href="#真值表" class="headerlink" title="真值表"></a>真值表</h4><p>大概就是这个玩意</p>
 <table>
 <thead>
 <tr>
@@ -512,7 +475,7 @@
 <ul>
 <li>可以用<strong>真值表</strong>来证明逻辑函数相等</li>
 </ul>
-<h4 id="u903B_u8F91_u89C4_u5219"><a href="#u903B_u8F91_u89C4_u5219" class="headerlink" title="逻辑规则"></a>逻辑规则</h4><h5 id="u903B_u8F91_u8BA1_u7B97_u89C4_u5F8B"><a href="#u903B_u8F91_u8BA1_u7B97_u89C4_u5F8B" class="headerlink" title="逻辑计算规律"></a>逻辑计算规律</h5><p>普通规律</p>
+<h4 id="逻辑规则"><a href="#逻辑规则" class="headerlink" title="逻辑规则"></a>逻辑规则</h4><h5 id="逻辑计算规律"><a href="#逻辑计算规律" class="headerlink" title="逻辑计算规律"></a>逻辑计算规律</h5><p>普通规律</p>
 <ul>
 <li><strong>分配律</strong> 特别注意的是 <code>A+BC = (A+B)(A+C)</code></li>
 <li><strong>结合律</strong> 每种都支持</li>
@@ -524,12 +487,12 @@
 <li><strong>反演律1</strong> <code>¬(A+B)=¬A·¬B</code></li>
 <li><strong>反演律2</strong> <code>¬(AB)=¬A+¬B</code></li>
 </ul>
-<h5 id="u4EE3_u5165_u89C4_u5219"><a href="#u4EE3_u5165_u89C4_u5219" class="headerlink" title="代入规则"></a>代入规则</h5><p>讲逻辑等式中任何一种(比如全部的A)替换成任意一种逻辑函数，等式依然成立</p>
+<h5 id="代入规则"><a href="#代入规则" class="headerlink" title="代入规则"></a>代入规则</h5><p>讲逻辑等式中任何一种(比如全部的A)替换成任意一种逻辑函数，等式依然成立</p>
 <pre><code>A+BC = (A+B)(A+C)
 
 //A替换为(D+E)
 D+E+BC = (D+E+B)(D+E+C)
-</code></pre><h5 id="u53CD_u6F14_u89C4_u5219"><a href="#u53CD_u6F14_u89C4_u5219" class="headerlink" title="反演规则"></a>反演规则</h5><p>将逻辑函数中所有的<code>·</code>替换为<code>+</code>，所有的<code>+</code>替换为<code>·</code>;所有的<code>0</code>替换为<code>1</code>，所有的<code>1</code>替换为<code>2</code>;所有的<code>原变量</code>替换为<code>反变量</code>，所有的<code>反变量</code>替换为<code>原变量</code></p>
+</code></pre><h5 id="反演规则"><a href="#反演规则" class="headerlink" title="反演规则"></a>反演规则</h5><p>将逻辑函数中所有的<code>·</code>替换为<code>+</code>，所有的<code>+</code>替换为<code>·</code>;所有的<code>0</code>替换为<code>1</code>，所有的<code>1</code>替换为<code>2</code>;所有的<code>原变量</code>替换为<code>反变量</code>，所有的<code>反变量</code>替换为<code>原变量</code></p>
 <p>要注意的是</p>
 <ol>
 <li><strong>原来的变量计算先后顺序关系不变</strong></li>
@@ -538,22 +501,22 @@ D+E+BC = (D+E+B)(D+E+C)
 <p> //例子2，这个解释了两个注意点，最好在反演之前把所有先后顺序都用括号打起来<br> F = ¬(A+B)<br> ¬F = ¬(¬A·¬B)</p>
 </li>
 </ol>
-<h5 id="u5BF9_u5076_u89C4_u5219"><a href="#u5BF9_u5076_u89C4_u5219" class="headerlink" title="对偶规则"></a>对偶规则</h5><p>这就比反演规则少以一条，变量不用取反，但是还是要小心</p>
-<h4 id="u5E38_u7528_u516C_u5F0F"><a href="#u5E38_u7528_u516C_u5F0F" class="headerlink" title="常用公式"></a>常用公式</h4><ol>
+<h5 id="对偶规则"><a href="#对偶规则" class="headerlink" title="对偶规则"></a>对偶规则</h5><p>这就比反演规则少以一条，变量不用取反，但是还是要小心</p>
+<h4 id="常用公式"><a href="#常用公式" class="headerlink" title="常用公式"></a>常用公式</h4><ol>
 <li><code>AB+A¬B = A</code> </li>
 <li><code>A+AB = A</code></li>
 <li><code>A+¬AB = A+B</code> -&gt; <code>(A+¬A)(A+B)</code> -&gt;<code>1·(A+B)</code></li>
 <li><code>AB+¬AC+BC = AB+¬AC</code></li>
 <li><code>AB+¬AC = (A+C)(¬A+B)</code></li>
 </ol>
-<h4 id="u903B_u8F91_u51FD_u6570_u7684_u6807_u51C6_u5F62_u5F0F"><a href="#u903B_u8F91_u51FD_u6570_u7684_u6807_u51C6_u5F62_u5F0F" class="headerlink" title="逻辑函数的标准形式"></a>逻辑函数的标准形式</h4><h4 id="u4E94_u79CD_u7B49_u4EF7_u5F62_u5F0F"><a href="#u4E94_u79CD_u7B49_u4EF7_u5F62_u5F0F" class="headerlink" title="五种等价形式"></a>五种等价形式</h4><ol>
+<h4 id="逻辑函数的标准形式"><a href="#逻辑函数的标准形式" class="headerlink" title="逻辑函数的标准形式"></a>逻辑函数的标准形式</h4><h4 id="五种等价形式"><a href="#五种等价形式" class="headerlink" title="五种等价形式"></a>五种等价形式</h4><ol>
 <li>与或表达式</li>
 <li>由(1)对偶两次</li>
 <li>由(1)两次取反</li>
 <li>由(2)两次反演</li>
 <li>由(4)反演</li>
 </ol>
-<h4 id="u6700_u5C0F_u9879_u3001_u6700_u5927_u9879_u8868_u8FBE_u5F0F"><a href="#u6700_u5C0F_u9879_u3001_u6700_u5927_u9879_u8868_u8FBE_u5F0F" class="headerlink" title="最小项、最大项表达式"></a>最小项、最大项表达式</h4><h5 id="u6700_u5C0F_u9879_u8868_u8FBE_u5F0F"><a href="#u6700_u5C0F_u9879_u8868_u8FBE_u5F0F" class="headerlink" title="最小项表达式"></a>最小项表达式</h5><ul>
+<h4 id="最小项、最大项表达式"><a href="#最小项、最大项表达式" class="headerlink" title="最小项、最大项表达式"></a>最小项、最大项表达式</h4><h5 id="最小项表达式"><a href="#最小项表达式" class="headerlink" title="最小项表达式"></a>最小项表达式</h5><ul>
 <li><p><strong>符号</strong> ∑m(1,2,3,4)</p>
 </li>
 <li><p><strong>编号意义</strong> 最小项为1时候的取值</p>
@@ -571,7 +534,7 @@ D+E+BC = (D+E+B)(D+E+C)
 <li>一扩二，比如<code>AB</code>差个<code>C</code>，那么就是变成<code>ABC+AB¬C</code></li>
 <li>合并相同项</li>
 </ol>
-<h5 id="u6700_u5927_u9879_u8868_u8FBE_u5F0F"><a href="#u6700_u5927_u9879_u8868_u8FBE_u5F0F" class="headerlink" title="最大项表达式"></a>最大项表达式</h5><ul>
+<h5 id="最大项表达式"><a href="#最大项表达式" class="headerlink" title="最大项表达式"></a>最大项表达式</h5><ul>
 <li><p><strong>符号</strong> ∏m(1,2,3,4)</p>
 </li>
 <li><p><strong>编号意义</strong> 最大项为0时候的取值</p>
@@ -588,16 +551,16 @@ D+E+BC = (D+E+B)(D+E+C)
 <li>一扩二，比如<code>A+C</code>差个<code>B</code>，那么就是变成<code>(A+B¬B+C)</code></li>
 <li>？</li>
 </ol>
-<h5 id="u6700_u5927_u9879_u8868_u8FBE_u5F0F_u4E0E_u6700_u5C0F_u9879_u8868_u8FBE_u5F0F_u5173_u7CFB"><a href="#u6700_u5927_u9879_u8868_u8FBE_u5F0F_u4E0E_u6700_u5C0F_u9879_u8868_u8FBE_u5F0F_u5173_u7CFB" class="headerlink" title="最大项表达式与最小项表达式关系"></a>最大项表达式与最小项表达式关系</h5><p>F(A,B,C) = ∑m(1,2,3,4) = ∏M(5,6,7,8) 互补</p>
-<h4 id="u51FD_u6570_u5316_u7B80"><a href="#u51FD_u6570_u5316_u7B80" class="headerlink" title="函数化简"></a>函数化简</h4><p><strong>几个函数关系转换</strong></p>
+<h5 id="最大项表达式与最小项表达式关系"><a href="#最大项表达式与最小项表达式关系" class="headerlink" title="最大项表达式与最小项表达式关系"></a>最大项表达式与最小项表达式关系</h5><p>F(A,B,C) = ∑m(1,2,3,4) = ∏M(5,6,7,8) 互补</p>
+<h4 id="函数化简"><a href="#函数化简" class="headerlink" title="函数化简"></a>函数化简</h4><p><strong>几个函数关系转换</strong></p>
 <p>F = ∑m(1,3,6,9,10,14)</p>
 <p>//取F得空<br>¬F = ∑m(0,2,4,5,7,8,10,11,12,13,15)</p>
 <p>//¬F每一位被最高位减<br>F* = ∑m(15,13,11,10,8,7,5,4,3,2,0)</p>
-<h5 id="u516C_u5F0F_u6CD5"><a href="#u516C_u5F0F_u6CD5" class="headerlink" title="公式法"></a>公式法</h5><p>合并项法<code>AB+A¬B = A</code></p>
+<h5 id="公式法"><a href="#公式法" class="headerlink" title="公式法"></a>公式法</h5><p>合并项法<code>AB+A¬B = A</code></p>
 <p>吸收法 1. <code>A+AB=A</code> 2. <code>AB+¬AC+BC=AB+¬AC</code></p>
 <p>消去法<code>A+¬AB=A+B</code></p>
 <p>配项法 1. 乘以<code>(A+¬A)</code>然后展开 2. 利用<code>AB+¬AC=AB+¬AC+BC</code>增加BC</p>
-<h5 id="u5361_u8BFA_u56FE"><a href="#u5361_u8BFA_u56FE" class="headerlink" title="卡诺图"></a>卡诺图</h5><table>
+<h5 id="卡诺图"><a href="#卡诺图" class="headerlink" title="卡诺图"></a>卡诺图</h5><table>
 <thead>
 <tr>
 <th style="text-align:center"></th>
@@ -648,7 +611,7 @@ D+E+BC = (D+E+B)(D+E+C)
 <p><img src="https://d17oy1vhnax1f7.cloudfront.net/items/1N0s1t2t461j2H0V0E0p/QQ20160920-1@2x.png?v=c779a9cf" alt=""></p>
 <p><strong>约束条件∑d(2,4)就是在对应位置画X，X可以看1或者0</strong></p>
 <p><strong>如果是最大限表达式的话，就圈0</strong></p>
-<h5 id="u5217_u8868_u6CD5"><a href="#u5217_u8868_u6CD5" class="headerlink" title="列表法"></a>列表法</h5><p>这个很简单，就是拿一张表，将变量所有的组合方式产生的结果填入表中，然后按照最小项表达式写出来就ok了，这个一般用来验证对错。</p>
+<h5 id="列表法"><a href="#列表法" class="headerlink" title="列表法"></a>列表法</h5><p>这个很简单，就是拿一张表，将变量所有的组合方式产生的结果填入表中，然后按照最小项表达式写出来就ok了，这个一般用来验证对错。</p>
 <p>例子:</p>
 <p>求<code>P = (A+¬B)(A+¬BC)</code>的化简</p>
 <table>
@@ -711,7 +674,7 @@ D+E+BC = (D+E+B)(D+E+C)
 </tr>
 </tbody>
 </table>
-<h2 id="u903B_u8F91_u7535_u8DEF"><a href="#u903B_u8F91_u7535_u8DEF" class="headerlink" title="逻辑电路"></a>逻辑电路</h2><h3 id="u7EC4_u5408_u7535_u8DEF_u5206_u6790"><a href="#u7EC4_u5408_u7535_u8DEF_u5206_u6790" class="headerlink" title="组合电路分析"></a>组合电路分析</h3><ul>
+<h2 id="逻辑电路"><a href="#逻辑电路" class="headerlink" title="逻辑电路"></a>逻辑电路</h2><h3 id="组合电路分析"><a href="#组合电路分析" class="headerlink" title="组合电路分析"></a>组合电路分析</h3><ul>
 <li><strong>组合电路:</strong> 输出之和输入有关</li>
 <li><strong>时序电路:</strong> 输出和原状态+输入有关，有记忆功能</li>
 </ul>
@@ -721,10 +684,10 @@ D+E+BC = (D+E+B)(D+E+C)
 <li>写出真值表</li>
 <li>分析真值表或者逻辑表达式，概括功能</li>
 </ol>
-<h4 id="u5168_u52A0_u5668"><a href="#u5168_u52A0_u5668" class="headerlink" title="全加器"></a>全加器</h4><p>作用就是两个二进制数相加并求出和</p>
+<h4 id="全加器"><a href="#全加器" class="headerlink" title="全加器"></a>全加器</h4><p>作用就是两个二进制数相加并求出和</p>
 <p><img src="https://d17oy1vhnax1f7.cloudfront.net/items/0U2E2E0o3j3d063Q2i0q/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-10-11%20%E4%B8%8B%E5%8D%886.52.23.png?v=52009a0f" alt=""></p>
-<h4 id="u7F16_u7801_u5668"><a href="#u7F16_u7801_u5668" class="headerlink" title="编码器"></a>编码器</h4><p>普通编码器：只允许输入一个有效信号<br>优先编码器：可输入多个，只对优先级最高的编码</p>
-<h5 id="8-3_u7F16_u7801_u5668"><a href="#8-3_u7F16_u7801_u5668" class="headerlink" title="8-3编码器"></a>8-3编码器</h5><p>ST位有效的情况下，输入某位为0，输出就应该是这个数二进制的反</p>
+<h4 id="编码器"><a href="#编码器" class="headerlink" title="编码器"></a>编码器</h4><p>普通编码器：只允许输入一个有效信号<br>优先编码器：可输入多个，只对优先级最高的编码</p>
+<h5 id="8-3编码器"><a href="#8-3编码器" class="headerlink" title="8-3编码器"></a>8-3编码器</h5><p>ST位有效的情况下，输入某位为0，输出就应该是这个数二进制的反</p>
 <p>例如</p>
 <ol>
 <li>想要输入<code>6(xxxxxx01)</code></li>
@@ -732,11 +695,11 @@ D+E+BC = (D+E+B)(D+E+C)
 </ol>
 <p><strong>输入有圆圈或三角表示以低电平为有效</strong></p>
 <p>0为有效，1无效</p>
-<h4 id="u8BD1_u7801_u5668"><a href="#u8BD1_u7801_u5668" class="headerlink" title="译码器"></a>译码器</h4><p>编码的逆过程</p>
+<h4 id="译码器"><a href="#译码器" class="headerlink" title="译码器"></a>译码器</h4><p>编码的逆过程</p>
 <p>输入5，输出位Y5为0，其他为1</p>
-<h4 id="u6570_u636E_u9009_u62E9_u5668"><a href="#u6570_u636E_u9009_u62E9_u5668" class="headerlink" title="数据选择器"></a>数据选择器</h4><p>Y信号是源信号，A为控制信号，D为输出信号</p>
+<h4 id="数据选择器"><a href="#数据选择器" class="headerlink" title="数据选择器"></a>数据选择器</h4><p>Y信号是源信号，A为控制信号，D为输出信号</p>
 <p><img src="https://d17oy1vhnax1f7.cloudfront.net/items/3o2N32240j3H1s181N2b/屏幕快照%202016-11-07%20上午11.38.18.png?v=15310754" alt=""></p>
-<h3 id="u7EC4_u5408_u903B_u8F91_u7535_u8DEF_u8BBE_u8BA1"><a href="#u7EC4_u5408_u903B_u8F91_u7535_u8DEF_u8BBE_u8BA1" class="headerlink" title="组合逻辑电路设计"></a>组合逻辑电路设计</h3><p>分析的逆过程</p>
+<h3 id="组合逻辑电路设计"><a href="#组合逻辑电路设计" class="headerlink" title="组合逻辑电路设计"></a>组合逻辑电路设计</h3><p>分析的逆过程</p>
 <ol>
 <li>概括功能</li>
 <li>写出真值表、卡诺图</li>
@@ -745,23 +708,23 @@ D+E+BC = (D+E+B)(D+E+C)
 <li>优化变换</li>
 <li>逻辑图</li>
 </ol>
-<h4 id="u6839_u636E_u771F_u503C_u8868_u5199_u903B_u8F91_u51FD_u6570_u8868_u8FBE_u5F0F"><a href="#u6839_u636E_u771F_u503C_u8868_u5199_u903B_u8F91_u51FD_u6570_u8868_u8FBE_u5F0F" class="headerlink" title="根据真值表写逻辑函数表达式"></a>根据真值表写逻辑函数表达式</h4><p>寻找所有最终值等于1的行</p>
+<h4 id="根据真值表写逻辑函数表达式"><a href="#根据真值表写逻辑函数表达式" class="headerlink" title="根据真值表写逻辑函数表达式"></a>根据真值表写逻辑函数表达式</h4><p>寻找所有最终值等于1的行</p>
 <p><img src="https://d17oy1vhnax1f7.cloudfront.net/items/3r3g0J3J1h0D2z3M0C30/屏幕快照%202016-11-07%20上午9.31.00.png?v=b7b7dc40" alt=""></p>
-<h4 id="u903B_u8F91_u8868_u8FBE_u5F0F_u53D8_u6362_28_u53D8_u5316_u548C_u5316_u7B80_u901A_u7528_29"><a href="#u903B_u8F91_u8868_u8FBE_u5F0F_u53D8_u6362_28_u53D8_u5316_u548C_u5316_u7B80_u901A_u7528_29" class="headerlink" title="逻辑表达式变换(变化和化简通用)"></a>逻辑表达式变换(变化和化简通用)</h4><ol>
+<h4 id="逻辑表达式变换-变化和化简通用"><a href="#逻辑表达式变换-变化和化简通用" class="headerlink" title="逻辑表达式变换(变化和化简通用)"></a>逻辑表达式变换(变化和化简通用)</h4><ol>
 <li>原式两次取反</li>
 <li>将每个模块看成单独变量</li>
 <li>每个单独变量间+变·，·变+</li>
 <li>第二条取反线按照+或·位置打断</li>
 </ol>
 <p><strong>示例</strong><img src="https://d17oy1vhnax1f7.cloudfront.net/items/001V2w1h3Y1o1j0k041i/屏幕快照%202016-11-07%20上午10.04.52.png?v=894ea218" alt=""></p>
-<h4 id="u964D_u7EF4_u56FE_u6CD5"><a href="#u964D_u7EF4_u56FE_u6CD5" class="headerlink" title="降维图法"></a>降维图法</h4><p><strong>场景:</strong> 当输入端小于变量的时候，需要将一个变量降维</p>
+<h4 id="降维图法"><a href="#降维图法" class="headerlink" title="降维图法"></a>降维图法</h4><p><strong>场景:</strong> 当输入端小于变量的时候，需要将一个变量降维</p>
 <p>其实就是把要降唯的变量乘进去</p>
 <p><img src="https://d17oy1vhnax1f7.cloudfront.net/items/1G2h3G1n0F2q2Q0I3T0C/屏幕快照%202016-11-07%20下午12.06.05.png?v=535f2fdf" alt=""></p>
-<h2 id="u65F6_u5E8F_u7535_u8DEF"><a href="#u65F6_u5E8F_u7535_u8DEF" class="headerlink" title="时序电路"></a>时序电路</h2><h3 id="u96C6_u6210_u89E6_u53D1_u5668"><a href="#u96C6_u6210_u89E6_u53D1_u5668" class="headerlink" title="集成触发器"></a>集成触发器</h3><p><strong>触发器</strong> 能保持状态的电路，时序电路的基本单位</p>
-<h4 id="u72B6_u6001_u8F6C_u79FB_u771F_u503C_u8868"><a href="#u72B6_u6001_u8F6C_u79FB_u771F_u503C_u8868" class="headerlink" title="状态转移真值表"></a>状态转移真值表</h4><p><img src="https://d17oy1vhnax1f7.cloudfront.net/items/1x0w1o0j1G0U333q341e/QQ20161116-2@2x.png?v=00693e4b" alt=""></p>
-<h4 id="u7279_u5F81_u65B9_u7A0B"><a href="#u7279_u5F81_u65B9_u7A0B" class="headerlink" title="特征方程"></a>特征方程</h4><p><img src="https://d17oy1vhnax1f7.cloudfront.net/items/0d411C0J15181M1v0409/屏幕快照%202016-11-16%20上午10.38.46.png?v=130a3fce" alt=""></p>
-<h4 id="u72B6_u6001_u8F6C_u79FB_u56FE"><a href="#u72B6_u6001_u8F6C_u79FB_u56FE" class="headerlink" title="状态转移图"></a>状态转移图</h4><p><img src="https://d17oy1vhnax1f7.cloudfront.net/items/2w2T171j3y3T382f1u1W/屏幕快照%202016-11-16%20上午10.40.50.png?v=97367f62" alt=""></p>
-<h4 id="R-S_u89E6_u53D1_u5668"><a href="#R-S_u89E6_u53D1_u5668" class="headerlink" title="R-S触发器"></a>R-S触发器</h4><p><img src="https://d17oy1vhnax1f7.cloudfront.net/items/3O1T293g3b3S0n340V0d/屏幕快照%202016-11-16%20上午8.43.35.png?v=b45e54eb" alt=""></p>
+<h2 id="时序电路"><a href="#时序电路" class="headerlink" title="时序电路"></a>时序电路</h2><h3 id="集成触发器"><a href="#集成触发器" class="headerlink" title="集成触发器"></a>集成触发器</h3><p><strong>触发器</strong> 能保持状态的电路，时序电路的基本单位</p>
+<h4 id="状态转移真值表"><a href="#状态转移真值表" class="headerlink" title="状态转移真值表"></a>状态转移真值表</h4><p><img src="https://d17oy1vhnax1f7.cloudfront.net/items/1x0w1o0j1G0U333q341e/QQ20161116-2@2x.png?v=00693e4b" alt=""></p>
+<h4 id="特征方程"><a href="#特征方程" class="headerlink" title="特征方程"></a>特征方程</h4><p><img src="https://d17oy1vhnax1f7.cloudfront.net/items/0d411C0J15181M1v0409/屏幕快照%202016-11-16%20上午10.38.46.png?v=130a3fce" alt=""></p>
+<h4 id="状态转移图"><a href="#状态转移图" class="headerlink" title="状态转移图"></a>状态转移图</h4><p><img src="https://d17oy1vhnax1f7.cloudfront.net/items/2w2T171j3y3T382f1u1W/屏幕快照%202016-11-16%20上午10.40.50.png?v=97367f62" alt=""></p>
+<h4 id="R-S触发器"><a href="#R-S触发器" class="headerlink" title="R-S触发器"></a>R-S触发器</h4><p><img src="https://d17oy1vhnax1f7.cloudfront.net/items/3O1T293g3b3S0n340V0d/屏幕快照%202016-11-16%20上午8.43.35.png?v=b45e54eb" alt=""></p>
 <p><img src="https://d17oy1vhnax1f7.cloudfront.net/items/2q2k452C1o3h1E403t3D/屏幕快照%202016-11-16%20上午8.31.59.png?v=c7bebe35" alt=""></p>
 <table>
 <thead>
@@ -794,7 +757,7 @@ D+E+BC = (D+E+B)(D+E+C)
 </tr>
 </tbody>
 </table>
-<h4 id="u540C_u6B65R-S_u89E6_u53D1_u5668"><a href="#u540C_u6B65R-S_u89E6_u53D1_u5668" class="headerlink" title="同步R-S触发器"></a>同步R-S触发器</h4><p>CP = 0，触发器状态不变<br>CP = 1，Q = S</p>
+<h4 id="同步R-S触发器"><a href="#同步R-S触发器" class="headerlink" title="同步R-S触发器"></a>同步R-S触发器</h4><p>CP = 0，触发器状态不变<br>CP = 1，Q = S</p>
 <p><img src="https://d17oy1vhnax1f7.cloudfront.net/items/3N3b2c0a200f2d3l3X31/屏幕快照%202016-11-16%20上午9.03.46.png?v=ee38a4ad" alt=""></p>
 <p><img src="https://d17oy1vhnax1f7.cloudfront.net/items/1p2e3N3c3X181r0o2r3K/屏幕快照%202016-11-16%20上午8.51.55.png?v=bf61e5e3" alt=""></p>
 <table>
@@ -828,7 +791,7 @@ D+E+BC = (D+E+B)(D+E+C)
 </tr>
 </tbody>
 </table>
-<h4 id="u4E3B_u4ECER-S_u89E6_u53D1_u5668"><a href="#u4E3B_u4ECER-S_u89E6_u53D1_u5668" class="headerlink" title="主从R-S触发器"></a>主从R-S触发器</h4><p><strong>下降沿触发</strong></p>
+<h4 id="主从R-S触发器"><a href="#主从R-S触发器" class="headerlink" title="主从R-S触发器"></a>主从R-S触发器</h4><p><strong>下降沿触发</strong></p>
 <ul>
 <li><strong>CP=1时:</strong> 主触发器打开,RS信号输入到主触发器; 从触发器被封锁,保持原来状态。</li>
 <li><strong>CP=由1变0时:</strong> 从触发器打开,<br>主触发器的状态写入从触发器。 主触发器被封锁, 此后, 输入R、 S不管如何变化, 主触发器的状态不变。</li>
@@ -836,23 +799,23 @@ D+E+BC = (D+E+B)(D+E+C)
 </ul>
 <p><img src="https://d17oy1vhnax1f7.cloudfront.net/items/3N3b2c0a200f2d3l3X31/屏幕快照%202016-11-16%20上午9.03.46.png?v=ee38a4ad" alt=""></p>
 <p><img src="https://d17oy1vhnax1f7.cloudfront.net/items/2g240h2N3A0u1918123D/0654D670-1611-4CCB-9D62-F8DF29F241D9.png?v=84c927d3" alt=""></p>
-<h4 id="D_u89E6_u53D1_u5668"><a href="#D_u89E6_u53D1_u5668" class="headerlink" title="D触发器"></a>D触发器</h4><p><img src="https://d17oy1vhnax1f7.cloudfront.net/items/0v0g2J3z0v3K2J2U0U1J/QQ20161116-0@2x.png?v=9b4e3584" alt=""></p>
-<h4 id="JK_u89E6_u53D1_u5668"><a href="#JK_u89E6_u53D1_u5668" class="headerlink" title="JK触发器"></a>JK触发器</h4><p><img src="https://d17oy1vhnax1f7.cloudfront.net/items/1k2B3C3B3O0h3b0M2i07/QQ20161116-1@2x.png?v=438f479c" alt=""></p>
-<h4 id="T_u89E6_u53D1_u5668"><a href="#T_u89E6_u53D1_u5668" class="headerlink" title="T触发器"></a>T触发器</h4><p><img src="https://d17oy1vhnax1f7.cloudfront.net/items/3C0D18360M3J2v312T3i/屏幕快照%202016-11-16%20上午10.29.57.png?v=319cdb1c" alt=""></p>
-<h4 id="u4E3B_u4ECEJ-K_u89E6_u53D1_u5668"><a href="#u4E3B_u4ECEJ-K_u89E6_u53D1_u5668" class="headerlink" title="主从J-K触发器"></a>主从J-K触发器</h4><h4 id="u7EF4_u6301_u963B_u585ERS_u89E6_u53D1_u5668"><a href="#u7EF4_u6301_u963B_u585ERS_u89E6_u53D1_u5668" class="headerlink" title="维持阻塞RS触发器"></a>维持阻塞RS触发器</h4><p>0-&gt;1 时发生状态转移，其他时候保持不变</p>
-<h4 id="u963B_u585E"><a href="#u963B_u585E" class="headerlink" title="阻塞"></a>阻塞</h4><h2 id="VHDL"><a href="#VHDL" class="headerlink" title="VHDL"></a>VHDL</h2><h3 id="u57FA_u672C_u8BED_u6CD5"><a href="#u57FA_u672C_u8BED_u6CD5" class="headerlink" title="基本语法"></a>基本语法</h3><figure class="highlight vhdl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">LIBRARY</span> IEEE;</span><br><span class="line"><span class="keyword">USE</span> IEEE.STD_LOGIC_1164.<span class="keyword">ALL</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">ENTITY</span> EXAMPLE <span class="keyword">IS</span></span><br><span class="line"><span class="keyword">PORT</span>(CLK: <span class="keyword">IN</span> <span class="typename">STD_LOGIC</span>;</span><br><span class="line">	OUTOBJECT: <span class="keyword">OUT</span> <span class="typename">STD_LOGIC</span>);</span><br><span class="line"><span class="keyword">END</span> EXAMPLE;</span><br><span class="line"></span><br><span class="line"><span class="keyword">ARCHITECTURE</span> A <span class="keyword">OF</span> EXAMPLE <span class="keyword">IS</span></span><br><span class="line"><span class="keyword">BEGIN</span></span><br><span class="line"><span class="keyword">PROCESS</span>(CLK,OUTOBJECT) <span class="keyword">IS</span></span><br><span class="line">   <span class="keyword">IF</span>(CLK<span class="attribute">'EVENT</span> <span class="keyword">AND</span> CLK=<span class="number">1</span>) <span class="keyword">THEN</span></span><br><span class="line">      OUTOBJECT &lt;= CLK;</span><br><span class="line">   <span class="keyword">ELSIF</span>(CLK<span class="attribute">'EVEN</span> <span class="keyword">AND</span> CLK=<span class="number">0</span>) <span class="keyword">THEN</span></span><br><span class="line">      OUTOBJECT &lt;= CLK;</span><br><span class="line">   <span class="keyword">ELSE</span> <span class="keyword">THEN</span></span><br><span class="line">      OUTOBJECT &lt;= CLK;</span><br><span class="line"><span class="keyword">END</span> <span class="keyword">PROCESS</span>;</span><br><span class="line"><span class="keyword">END</span> <span class="keyword">ARCHITECTURE</span> A;</span><br></pre></td></tr></table></figure>
-<h3 id="u91CD_u8981_u7684_u987A_u5E8F_u8BED_u53E5"><a href="#u91CD_u8981_u7684_u987A_u5E8F_u8BED_u53E5" class="headerlink" title="重要的顺序语句"></a>重要的顺序语句</h3><figure class="highlight vhdl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">IF</span> <span class="keyword">THEN</span></span><br><span class="line"><span class="keyword">ELSIF</span> <span class="keyword">THEN</span></span><br><span class="line"><span class="keyword">ELSE</span></span><br><span class="line"><span class="keyword">END</span> <span class="keyword">IF</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">CASE</span>(STH) <span class="keyword">IS</span></span><br><span class="line"><span class="keyword">WHEN</span> <span class="string">"00"</span> =&gt;</span><br><span class="line"><span class="keyword">END</span> <span class="keyword">CASE</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">FOR</span> I <span class="keyword">IN</span> <span class="number">8</span> <span class="keyword">DOWNTO</span> <span class="number">0</span> <span class="keyword">LOOP</span></span><br><span class="line">TEMP:=TEMP <span class="keyword">XOR</span> <span class="typename">STRING</span>(I);</span><br><span class="line"><span class="keyword">END</span> <span class="keyword">LOOP</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">VARIABLE</span> STH:<span class="typename">STD_LOGIC_VECTOR</span>(<span class="number">3</span> DOWN <span class="keyword">TO</span> <span class="number">0</span>);</span><br><span class="line">STH:=<span class="string">"0000"</span>;</span><br></pre></td></tr></table></figure>
-<h3 id="u4F20_u7EDF_u548C_u73B0_u4EE3_u8BBE_u8BA1_u65B9_u6CD5_u7684_u6BD4_u8F83"><a href="#u4F20_u7EDF_u548C_u73B0_u4EE3_u8BBE_u8BA1_u65B9_u6CD5_u7684_u6BD4_u8F83" class="headerlink" title="传统和现代设计方法的比较"></a>传统和现代设计方法的比较</h3><p>以全加器为例</p>
-<h4 id="u4F20_u7EDF_u65B9_u6CD5"><a href="#u4F20_u7EDF_u65B9_u6CD5" class="headerlink" title="传统方法"></a>传统方法</h4><ul>
+<h4 id="D触发器"><a href="#D触发器" class="headerlink" title="D触发器"></a>D触发器</h4><p><img src="https://d17oy1vhnax1f7.cloudfront.net/items/0v0g2J3z0v3K2J2U0U1J/QQ20161116-0@2x.png?v=9b4e3584" alt=""></p>
+<h4 id="JK触发器"><a href="#JK触发器" class="headerlink" title="JK触发器"></a>JK触发器</h4><p><img src="https://d17oy1vhnax1f7.cloudfront.net/items/1k2B3C3B3O0h3b0M2i07/QQ20161116-1@2x.png?v=438f479c" alt=""></p>
+<h4 id="T触发器"><a href="#T触发器" class="headerlink" title="T触发器"></a>T触发器</h4><p><img src="https://d17oy1vhnax1f7.cloudfront.net/items/3C0D18360M3J2v312T3i/屏幕快照%202016-11-16%20上午10.29.57.png?v=319cdb1c" alt=""></p>
+<h4 id="主从J-K触发器"><a href="#主从J-K触发器" class="headerlink" title="主从J-K触发器"></a>主从J-K触发器</h4><h4 id="维持阻塞RS触发器"><a href="#维持阻塞RS触发器" class="headerlink" title="维持阻塞RS触发器"></a>维持阻塞RS触发器</h4><p>0-&gt;1 时发生状态转移，其他时候保持不变</p>
+<h4 id="阻塞"><a href="#阻塞" class="headerlink" title="阻塞"></a>阻塞</h4><h2 id="VHDL"><a href="#VHDL" class="headerlink" title="VHDL"></a>VHDL</h2><h3 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h3><figure class="highlight vhdl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">LIBRARY</span> IEEE;</div><div class="line"><span class="keyword">USE</span> IEEE.STD_LOGIC_1164.<span class="keyword">ALL</span></div><div class="line"></div><div class="line"><span class="keyword">ENTITY</span> EXAMPLE <span class="keyword">IS</span></div><div class="line"><span class="keyword">PORT</span>(CLK: <span class="keyword">IN</span> <span class="built_in">STD_LOGIC</span>;</div><div class="line">	OUTOBJECT: <span class="keyword">OUT</span> <span class="built_in">STD_LOGIC</span>);</div><div class="line"><span class="keyword">END</span> EXAMPLE;</div><div class="line"></div><div class="line"><span class="keyword">ARCHITECTURE</span> A <span class="keyword">OF</span> EXAMPLE <span class="keyword">IS</span></div><div class="line"><span class="keyword">BEGIN</span></div><div class="line"><span class="keyword">PROCESS</span>(CLK,OUTOBJECT) <span class="keyword">IS</span></div><div class="line">   <span class="keyword">IF</span>(CLK<span class="symbol">'EVENT</span> <span class="keyword">AND</span> CLK=<span class="number">1</span>) <span class="keyword">THEN</span></div><div class="line">      OUTOBJECT &lt;= CLK;</div><div class="line">   <span class="keyword">ELSIF</span>(CLK<span class="symbol">'EVEN</span> <span class="keyword">AND</span> CLK=<span class="number">0</span>) <span class="keyword">THEN</span></div><div class="line">      OUTOBJECT &lt;= CLK;</div><div class="line">   <span class="keyword">ELSE</span> <span class="keyword">THEN</span></div><div class="line">      OUTOBJECT &lt;= CLK;</div><div class="line"><span class="keyword">END</span> <span class="keyword">PROCESS</span>;</div><div class="line"><span class="keyword">END</span> <span class="keyword">ARCHITECTURE</span> A;</div></pre></td></tr></table></figure>
+<h3 id="重要的顺序语句"><a href="#重要的顺序语句" class="headerlink" title="重要的顺序语句"></a>重要的顺序语句</h3><figure class="highlight vhdl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">IF</span> <span class="keyword">THEN</span></div><div class="line"><span class="keyword">ELSIF</span> <span class="keyword">THEN</span></div><div class="line"><span class="keyword">ELSE</span></div><div class="line"><span class="keyword">END</span> <span class="keyword">IF</span>;</div><div class="line"></div><div class="line"><span class="keyword">CASE</span>(STH) <span class="keyword">IS</span></div><div class="line"><span class="keyword">WHEN</span> <span class="string">"00"</span> =&gt;</div><div class="line"><span class="keyword">END</span> <span class="keyword">CASE</span>;</div><div class="line"></div><div class="line"><span class="keyword">FOR</span> I <span class="keyword">IN</span> <span class="number">8</span> <span class="keyword">DOWNTO</span> <span class="number">0</span> <span class="keyword">LOOP</span></div><div class="line">TEMP:=TEMP <span class="keyword">XOR</span> <span class="built_in">STRING</span>(I);</div><div class="line"><span class="keyword">END</span> <span class="keyword">LOOP</span>;</div><div class="line"></div><div class="line"><span class="keyword">VARIABLE</span> STH:<span class="built_in">STD_LOGIC_VECTOR</span>(<span class="number">3</span> DOWN <span class="keyword">TO</span> <span class="number">0</span>);</div><div class="line">STH:=<span class="string">"0000"</span>;</div></pre></td></tr></table></figure>
+<h3 id="传统和现代设计方法的比较"><a href="#传统和现代设计方法的比较" class="headerlink" title="传统和现代设计方法的比较"></a>传统和现代设计方法的比较</h3><p>以全加器为例</p>
+<h4 id="传统方法"><a href="#传统方法" class="headerlink" title="传统方法"></a>传统方法</h4><ul>
 <li>写真值表</li>
 <li>画出卡诺图</li>
 <li>写函数表达式</li>
 <li>逻辑电路</li>
 </ul>
-<h2 id="u4F5C_u4E1A_u7B54_u6848"><a href="#u4F5C_u4E1A_u7B54_u6848" class="headerlink" title="作业答案"></a>作业答案</h2><h3 id="u7B2C_u4E00_u6B21_u4F5C_u4E1A"><a href="#u7B2C_u4E00_u6B21_u4F5C_u4E1A" class="headerlink" title="第一次作业"></a>第一次作业</h3><h4 id="1-1_285_29"><a href="#1-1_285_29" class="headerlink" title="1-1(5)"></a>1-1(5)</h4><p><strong>二进制转换十进制</strong> 101001.10010</p>
+<h2 id="作业答案"><a href="#作业答案" class="headerlink" title="作业答案"></a>作业答案</h2><h3 id="第一次作业"><a href="#第一次作业" class="headerlink" title="第一次作业"></a>第一次作业</h3><h4 id="1-1-5"><a href="#1-1-5" class="headerlink" title="1-1(5)"></a>1-1(5)</h4><p><strong>二进制转换十进制</strong> 101001.10010</p>
 <p><img src="https://d17oy1vhnax1f7.cloudfront.net/items/3m00342r412C2h0G133C/Untitled%201.gif?v=716efcc5" alt=""></p>
 <p>答案为 41.5625</p>
-<h4 id="1-2_283_29"><a href="#1-2_283_29" class="headerlink" title="1-2(3)"></a>1-2(3)</h4><p><strong>十进制转二进制</strong> 12.34<br>101001.1001</p>
+<h4 id="1-2-3"><a href="#1-2-3" class="headerlink" title="1-2(3)"></a>1-2(3)</h4><p><strong>十进制转二进制</strong> 12.34<br>101001.1001</p>
 <p>这个要拆分成两部分</p>
 <pre><code>12/2 = 6(0)/2 = 3(0)/2 = 1(1)/2 = 0(1) -&gt;1100
 
@@ -861,7 +824,7 @@ D+E+BC = (D+E+B)(D+E+C)
 = 0.44(1)*2 = 0.88(0)*2 = 0.76(1)*2 = 0.52(1)*2 = 0.04(1)//……不算了
 -&gt;0.01010111
 </code></pre><p>结果为: 1100.010101110000101000111101011100001010001111010111</p>
-<h4 id="1-4_282_29"><a href="#1-4_282_29" class="headerlink" title="1-4(2)"></a>1-4(2)</h4><p><strong>完成数制转换</strong> 432.B7（16进制）</p>
+<h4 id="1-4-2"><a href="#1-4-2" class="headerlink" title="1-4(2)"></a>1-4(2)</h4><p><strong>完成数制转换</strong> 432.B7（16进制）</p>
 <pre><code>//转2进制，注意这里的『432』是16进制的！！！！
 432/2 = 219(0)/2 = 10C(1)/2 = 86(0)/2 = 43(0)/2 
 = 21(1)/2 = 10(1)/2 =  8(0)/2 = 4(0)/2 = 2(0)/2 = 1(0)/2 = 0(1) -&gt; 10000110010
@@ -874,14 +837,14 @@ D+E+BC = (D+E+B)(D+E+C)
 
 0.B7*8 = 0.B8(5)*8 = 0.C(5)*8 = 0(6) 0-&gt;0.556
 </code></pre><p>答案为 2062.556</p>
-<h4 id="1-6_281_29"><a href="#1-6_281_29" class="headerlink" title="1-6(1)"></a>1-6(1)</h4><p><strong>完成数制转换</strong> 73.26（10进制）= ?(8421码)</p>
+<h4 id="1-6-1"><a href="#1-6-1" class="headerlink" title="1-6(1)"></a>1-6(1)</h4><p><strong>完成数制转换</strong> 73.26（10进制）= ?(8421码)</p>
 <pre><code>73/2 = 36(1)/2 = 18(0)/2 = 9(0)/2 = 4(1)/2 
 = 2(0)/2 = 1(0)/2 = 0(1)  -&gt;1001001
 
 0.26*2 = 0.52（0.52上面那道题碰到过，直接贴答案了）
 -&gt;0.01000010100011110101110000101
 </code></pre><p>答案为 1001001.01000010100011110101110000101</p>
-<h4 id="2-1_281_29"><a href="#2-1_281_29" class="headerlink" title="2-1(1)"></a>2-1(1)</h4><p><strong>有a、b、c三个输入信号，如果三个输入信号均为0或其中一个为1时，输出信号Y=1，其余情况下，输出Y=0，写出逻辑表达式</strong></p>
+<h4 id="2-1-1"><a href="#2-1-1" class="headerlink" title="2-1(1)"></a>2-1(1)</h4><p><strong>有a、b、c三个输入信号，如果三个输入信号均为0或其中一个为1时，输出信号Y=1，其余情况下，输出Y=0，写出逻辑表达式</strong></p>
 <table>
 <thead>
 <tr>
@@ -943,505 +906,564 @@ D+E+BC = (D+E+B)(D+E+C)
 </tbody>
 </table>
 <pre><code>Y = ¬A¬B¬C+A¬B¬C+¬AB¬C+¬A¬BC;
-</code></pre><h4 id="2-3_284_29"><a href="#2-3_284_29" class="headerlink" title="2-3(4)"></a>2-3(4)</h4><p><strong>直接写出函数反函数表达式和对偶表达式</strong> </p>
+</code></pre><h4 id="2-3-4"><a href="#2-3-4" class="headerlink" title="2-3(4)"></a>2-3(4)</h4><p><strong>直接写出函数反函数表达式和对偶表达式</strong> </p>
 <p><strong>F=AB+¬(CD)+¬(BC)+¬(¬D+¬CE+¬(B+E))</strong></p>
 <pre><code>//反演
 ¬F = (¬A+¬B)·¬(¬C+¬D)·¬(¬B+¬C)·¬(D·¬(¬C+¬E)·¬(¬B·¬E))
 
 //对偶
 F* =(A·B)·¬(C+D)·¬(B+C)·¬(¬D·¬(C+E)·¬(B·E))
-</code></pre><h4 id="2-4_282_29"><a href="#2-4_282_29" class="headerlink" title="2-4(2)"></a>2-4(2)</h4><p><strong>公式法证明等式</strong></p>
+</code></pre><h4 id="2-4-2"><a href="#2-4-2" class="headerlink" title="2-4(2)"></a>2-4(2)</h4><p><strong>公式法证明等式</strong></p>
 <p><strong>¬A¬C+¬A¬B+¬A¬C¬D+BC = ¬A+BC</strong></p>
 <p><img src="https://d17oy1vhnax1f7.cloudfront.net/items/3T323P1p1a1G3R0K3X2x/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-10-18%20%E4%B8%8B%E5%8D%881.03.43.png?v=235042c1" alt=""></p>
-<h4 id="2-6_283_29"><a href="#2-6_283_29" class="headerlink" title="2-6(3)"></a>2-6(3)</h4><p><strong>公式法简化下列式子</strong></p>
+<h4 id="2-6-3"><a href="#2-6-3" class="headerlink" title="2-6(3)"></a>2-6(3)</h4><p><strong>公式法简化下列式子</strong></p>
 <p><strong>F = A¬BC+¬A¬CD+A¬C</strong></p>
 <p><img src="https://d17oy1vhnax1f7.cloudfront.net/items/2e012X2g0l1I2l2F2n0F/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-10-18%20%E4%B8%8B%E5%8D%881.01.52.png?v=ed37e486" alt=""></p>
 <p>这里只用了一个公式<code>A+¬AB = A+B</code></p>
-<h3 id="u7B2C_u4E8C_u6B21_u4F5C_u4E1A"><a href="#u7B2C_u4E8C_u6B21_u4F5C_u4E1A" class="headerlink" title="第二次作业"></a>第二次作业</h3><h4 id="2-8_281_29"><a href="#2-8_281_29" class="headerlink" title="2-8(1)"></a>2-8(1)</h4><p><strong>用公式法化简</strong><br><strong>F = A¬BC+¬A¬CD+A¬C</strong></p>
+<h3 id="第二次作业"><a href="#第二次作业" class="headerlink" title="第二次作业"></a>第二次作业</h3><h4 id="2-8-1"><a href="#2-8-1" class="headerlink" title="2-8(1)"></a>2-8(1)</h4><p><strong>用公式法化简</strong><br><strong>F = A¬BC+¬A¬CD+A¬C</strong></p>
 <p><img src="https://d17oy1vhnax1f7.cloudfront.net/items/2e012X2g0l1I2l2F2n0F/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-10-18%20%E4%B8%8B%E5%8D%881.01.52.png?v=ed37e486" alt=""></p>
-<h4 id="2-8_284_29"><a href="#2-8_284_29" class="headerlink" title="2-8(4)"></a>2-8(4)</h4><h4 id="2-9_282_29"><a href="#2-9_282_29" class="headerlink" title="2-9(2)"></a>2-9(2)</h4><h4 id="2-9_286_29"><a href="#2-9_286_29" class="headerlink" title="2-9(6)"></a>2-9(6)</h4><h4 id="2-9_288_29"><a href="#2-9_288_29" class="headerlink" title="2-9(8)"></a>2-9(8)</h4>
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/基础/" rel="tag"># 基础</a>
-          
-            <a href="/tags/数电逻辑/" rel="tag"># 数电逻辑</a>
-          
-        </div>
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2016/09/13/【翻译】Unity, Source 2,Unreal Engine 4或者CryENGINE我应该挑选哪种游戏引擎/" rel="next" title="【翻译】Unity，Source 2，Unreal Engine4或者CryENGINE，我应该挑选哪种游戏引擎">
-                <i class="fa fa-chevron-left"></i> 【翻译】Unity，Source 2，Unreal Engine4或者CryENGINE，我应该挑选哪种游戏引擎
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/09/21/C Sharp学习笔记/" rel="prev" title="C Sharp学习笔记">
-                C Sharp学习笔记 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </article>
-
-
-
-    <div class="post-spread">
-      
-    </div>
-  </div>
-
-
-          </div>
-          
-
-
-          
-  <div class="comments" id="comments">
+<h4 id="2-8-4"><a href="#2-8-4" class="headerlink" title="2-8(4)"></a>2-8(4)</h4><h4 id="2-9-2"><a href="#2-9-2" class="headerlink" title="2-9(2)"></a>2-9(2)</h4><h4 id="2-9-6"><a href="#2-9-6" class="headerlink" title="2-9(6)"></a>2-9(6)</h4><h4 id="2-9-8"><a href="#2-9-8" class="headerlink" title="2-9(8)"></a>2-9(8)</h4>
     
-      <div class="ds-thread" data-thread-key="2016/09/20/数电逻辑笔记/"
-           data-title="数电逻辑笔记" data-url="http://pengtianhao.com/2016/09/20/数电逻辑笔记/">
-      </div>
-    
-  </div>
 
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用多说评论 -->
+    <link rel="stylesheet" href="/css/duoshuo.min.css">
+<style>
+    #ds-thread #ds-reset .ds-post-button{
+        background-color: #0097A7 !important;
+    }
+    #ds-wrapper #ds-reset .ds-icons-32{
+        background-color: #0097A7 !important;
+    }
+    #ds-reset .ds-highlight {
+        color: #0097A7 !important;
+    }
+</style>
+<div id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread"
+        data-thread-key=""
+        data-url="http://pengtianhao.com/2016/09/20/数电逻辑笔记/"
+        data-title="数电逻辑笔记">
+    </div>
+    <!-- 多说评论框 end -->
+</div>
+
+
+
+
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2016/09/21/C Sharp学习笔记/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2016/09/13/【翻译】Unity, Source 2,Unreal Engine 4或者CryENGINE我应该挑选哪种游戏引擎/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
 
         </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
     </div>
-  </div>
 
-  <aside id="sidebar" class="sidebar">
-    <div class="sidebar-inner">
 
-      
 
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/head.jpg" alt="彭天浩's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        pengtianhao48@gmail.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="mailto:pengtianhao48@gmail.com" target="_blank" title="Email Me">
+                        <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        Email Me
+                    </a>
+                </li>
+            
         </ul>
-      
+    </li>
 
-      <section class="site-overview sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/avatar.jpg"
-               alt="彭天浩" />
-          <p class="site-author-name" itemprop="name">彭天浩</p>
-          <p class="site-description motion-element" itemprop="description">iOS、PPT略懂，扯淡睡觉精通</p>
-        </div>
-        <nav class="site-state motion-element">
-          <div class="site-state-item site-state-posts">
-            <a href="/archives">
-              <span class="site-state-item-count">23</span>
-              <span class="site-state-item-name">日志</span>
+    <!-- Homepage -->
+    <li id="sidebar-first-li">
+        <a href="/" target="_self">
+            <i class="material-icons sidebar-material-icons">home</i>
+            主页
+        </a>
+    </li>
+
+    <!-- I'm Feeling Lucky -->
+    <!--
+    <li class="dropdown">
+        <a href="" target="_self">
+            <i class="material-icons sidebar-material-icons">explore</i>
+             sidebar.imlucky
+        </a>
+    </li>
+    -->
+
+    <!-- Archives  -->
+    <li class="dropdown">
+        <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+            <i class="material-icons sidebar-material-icons">inbox</i>
+             归档
+            <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu">
+            <li>
+            <a class="sidebar_archives-link" href="/archives/2017/01/">一月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/11/">十一月 2016<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/10/">十月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/09/">九月 2016<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/08/">八月 2016<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/06/">六月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/04/">四月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/03/">三月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/01/">一月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/12/">十二月 2015<span class="sidebar_archives-count">2</span></a>
+        </ul>
+    </li>
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                分类
+                <b class="caret"></b>
             </a>
-          </div>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/MacOS/">MacOS<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/iOS/">iOS<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/创业/">创业<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/杂烩/">杂烩<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/科技文章/">科技文章<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/英语/">英语<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/计算机基础/">计算机基础<span class="sidebar_archives-count">10</span></a></li><li><a class="sidebar_archives-link" href="/categories/转载/">转载<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/随感/">随感<span class="sidebar_archives-count">1</span></a>
+            </ul>
+        </li>
+    
 
-          
-            <div class="site-state-item site-state-categories">
-              <a href="/categories">
-                <span class="site-state-item-count">9</span>
-                <span class="site-state-item-name">分类</span>
-              </a>
-            </div>
-          
+    <!-- Divider -->
+    <li class="divider"></li>
 
-          
-            <div class="site-state-item site-state-tags">
-              <a href="/tags">
-                <span class="site-state-item-count">29</span>
-                <span class="site-state-item-name">标签</span>
-              </a>
-            </div>
-          
 
-        </nav>
+    <!-- Pages  -->
+  	
+        <li>
+            <a href="/about" title="关于">
+                
+                    <i class="material-icons sidebar-material-icons">person</i>
+                
+                关于
+            </a>
+        </li>
+  	
 
-        
+    <!-- Article Numebr  -->
+    <li>
+        <a href="/archives">
+            文章总数
+            <span class="sidebar-badge">24</span>
+        </a>
+    </li>
+</ul>
 
-        <div class="links-of-author motion-element">
-          
-            
-              <span class="links-of-author-item">
-                <a href="https://github.com/pthtc" target="_blank" title="GitHub">
-                  
-                    <i class="fa fa-fw fa-github"></i>
-                  
-                  GitHub
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://www.facebook.com/tim.peng.378" target="_blank" title="Facebook">
-                  
-                    <i class="fa fa-fw fa-facebook-official"></i>
-                  
-                  Facebook
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://twitter.com/pengtianhao0408" target="_blank" title="Twitter">
-                  
-                    <i class="fa fa-fw fa-twitter"></i>
-                  
-                  Twitter
-                </a>
-              </span>
-            
-          
+
+        <!-- Sidebar Divider -->
+        <div class="sidebar-divider"></div>
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Theme Material -->
+<a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+        主题 - Material
+        <span class="sidebar-badge badge-circle">i</span>
+    </div>
+</a>
+
+<!-- Help & Support -->
+<!--
+<a href="mailto:hiviosey@gmail.com" class="sidebar-footer-text-a">
+    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+    sidebar.help
+    <span class="mdl-button__ripple-container">
+      <span class="mdl-ripple"></span>
+    </span>
+  </div>
+</a>
+-->
+
+<!-- Feedback -->
+<!--
+<a href="https://github.com/viosey/hexo-theme-material/issues" target="_blank" class="sidebar-footer-text-a">
+    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+         sidebar.feedback
+                    <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></div>
+</a>
+-->
+
+<!-- Abount Theme -->
+<!--
+<a href="https://blog.viosey.com/index.php/Material.html" target="_blank" class="sidebar-footer-text-a">
+    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+         sidebar.about_theme
+        <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></div>
+</a>-->
+
+    </div>
+
+    <!-- Sidebar Sponsor -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+        <a href="https://twitter.com/twitter" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-twitter.png);">
+                <span class="visuallyhidden">Twitter</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Facebook -->
+    
+        <a href="https://www.facebook.com/tim.peng.378" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-facebook.png);">
+                <span class="visuallyhidden">Facebook</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/pthtc" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-github.png);">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+        <a href="https://www.zhihu.com/people/peng-tian-hao-23/activities" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-zhihu.png);">
+                <span class="visuallyhidden">Zhihu</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;
+            <script type="text/javascript">
+                var fd = new Date();
+                document.write(fd.getFullYear());
+            </script>
+            &nbsp;彭天浩的博客
         </div>
 
-        
-        
+        <!-- Paradox Footer Right Section -->
 
-        
-        
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
 
-        
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
 
-
-      </section>
-
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#u7EEA_u8BBA"><span class="nav-number">1.</span> <span class="nav-text">绪论</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u95E8_u7535_u8DEF_u7B26_u53F7"><span class="nav-number">1.1.</span> <span class="nav-text">门电路符号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u6570_u5236_u8F6C_u6362"><span class="nav-number">1.2.</span> <span class="nav-text">数制转换</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u6574_u6570_u8F6C_u6362"><span class="nav-number">1.2.1.</span> <span class="nav-text">整数转换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u5C0F_u6570_u8F6C_u6362"><span class="nav-number">1.2.2.</span> <span class="nav-text">小数转换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u5C0F_u6570_u8F6C_u6362_u7684_u7CBE_u786E_u5EA6_u95EE_u9898"><span class="nav-number">1.2.3.</span> <span class="nav-text">小数转换的精确度问题</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BCD_u7801"><span class="nav-number">1.3.</span> <span class="nav-text">BCD码</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u6709_u6743_u7801"><span class="nav-number">1.3.1.</span> <span class="nav-text">有权码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u65E0_u6743_u7801"><span class="nav-number">1.3.2.</span> <span class="nav-text">无权码</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u7B97_u672F_u8FD0_u7B97"><span class="nav-number">1.4.</span> <span class="nav-text">算术运算</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u903B_u8F91_u51FD_u6570_u53CA_u5176_u7B80_u5316"><span class="nav-number">2.</span> <span class="nav-text">逻辑函数及其简化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u7B80_u5355_u903B_u8F91_u89E3_u91CA"><span class="nav-number">2.1.</span> <span class="nav-text">简单逻辑解释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u771F_u503C_u8868_u4E0E_u903B_u8F91_u51FD_u6570"><span class="nav-number">2.2.</span> <span class="nav-text">真值表与逻辑函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u771F_u503C_u8868"><span class="nav-number">2.2.1.</span> <span class="nav-text">真值表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u903B_u8F91_u89C4_u5219"><span class="nav-number">2.2.2.</span> <span class="nav-text">逻辑规则</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#u903B_u8F91_u8BA1_u7B97_u89C4_u5F8B"><span class="nav-number">2.2.2.1.</span> <span class="nav-text">逻辑计算规律</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#u4EE3_u5165_u89C4_u5219"><span class="nav-number">2.2.2.2.</span> <span class="nav-text">代入规则</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#u53CD_u6F14_u89C4_u5219"><span class="nav-number">2.2.2.3.</span> <span class="nav-text">反演规则</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#u5BF9_u5076_u89C4_u5219"><span class="nav-number">2.2.2.4.</span> <span class="nav-text">对偶规则</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u5E38_u7528_u516C_u5F0F"><span class="nav-number">2.2.3.</span> <span class="nav-text">常用公式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u903B_u8F91_u51FD_u6570_u7684_u6807_u51C6_u5F62_u5F0F"><span class="nav-number">2.2.4.</span> <span class="nav-text">逻辑函数的标准形式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u4E94_u79CD_u7B49_u4EF7_u5F62_u5F0F"><span class="nav-number">2.2.5.</span> <span class="nav-text">五种等价形式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u6700_u5C0F_u9879_u3001_u6700_u5927_u9879_u8868_u8FBE_u5F0F"><span class="nav-number">2.2.6.</span> <span class="nav-text">最小项、最大项表达式</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#u6700_u5C0F_u9879_u8868_u8FBE_u5F0F"><span class="nav-number">2.2.6.1.</span> <span class="nav-text">最小项表达式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#u6700_u5927_u9879_u8868_u8FBE_u5F0F"><span class="nav-number">2.2.6.2.</span> <span class="nav-text">最大项表达式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#u6700_u5927_u9879_u8868_u8FBE_u5F0F_u4E0E_u6700_u5C0F_u9879_u8868_u8FBE_u5F0F_u5173_u7CFB"><span class="nav-number">2.2.6.3.</span> <span class="nav-text">最大项表达式与最小项表达式关系</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u51FD_u6570_u5316_u7B80"><span class="nav-number">2.2.7.</span> <span class="nav-text">函数化简</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#u516C_u5F0F_u6CD5"><span class="nav-number">2.2.7.1.</span> <span class="nav-text">公式法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#u5361_u8BFA_u56FE"><span class="nav-number">2.2.7.2.</span> <span class="nav-text">卡诺图</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#u5217_u8868_u6CD5"><span class="nav-number">2.2.7.3.</span> <span class="nav-text">列表法</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u903B_u8F91_u7535_u8DEF"><span class="nav-number">3.</span> <span class="nav-text">逻辑电路</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u7EC4_u5408_u7535_u8DEF_u5206_u6790"><span class="nav-number">3.1.</span> <span class="nav-text">组合电路分析</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u5168_u52A0_u5668"><span class="nav-number">3.1.1.</span> <span class="nav-text">全加器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u7F16_u7801_u5668"><span class="nav-number">3.1.2.</span> <span class="nav-text">编码器</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#8-3_u7F16_u7801_u5668"><span class="nav-number">3.1.2.1.</span> <span class="nav-text">8-3编码器</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u8BD1_u7801_u5668"><span class="nav-number">3.1.3.</span> <span class="nav-text">译码器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u6570_u636E_u9009_u62E9_u5668"><span class="nav-number">3.1.4.</span> <span class="nav-text">数据选择器</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u7EC4_u5408_u903B_u8F91_u7535_u8DEF_u8BBE_u8BA1"><span class="nav-number">3.2.</span> <span class="nav-text">组合逻辑电路设计</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u6839_u636E_u771F_u503C_u8868_u5199_u903B_u8F91_u51FD_u6570_u8868_u8FBE_u5F0F"><span class="nav-number">3.2.1.</span> <span class="nav-text">根据真值表写逻辑函数表达式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u903B_u8F91_u8868_u8FBE_u5F0F_u53D8_u6362_28_u53D8_u5316_u548C_u5316_u7B80_u901A_u7528_29"><span class="nav-number">3.2.2.</span> <span class="nav-text">逻辑表达式变换(变化和化简通用)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u964D_u7EF4_u56FE_u6CD5"><span class="nav-number">3.2.3.</span> <span class="nav-text">降维图法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u65F6_u5E8F_u7535_u8DEF"><span class="nav-number">4.</span> <span class="nav-text">时序电路</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u96C6_u6210_u89E6_u53D1_u5668"><span class="nav-number">4.1.</span> <span class="nav-text">集成触发器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u72B6_u6001_u8F6C_u79FB_u771F_u503C_u8868"><span class="nav-number">4.1.1.</span> <span class="nav-text">状态转移真值表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u7279_u5F81_u65B9_u7A0B"><span class="nav-number">4.1.2.</span> <span class="nav-text">特征方程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u72B6_u6001_u8F6C_u79FB_u56FE"><span class="nav-number">4.1.3.</span> <span class="nav-text">状态转移图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#R-S_u89E6_u53D1_u5668"><span class="nav-number">4.1.4.</span> <span class="nav-text">R-S触发器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u540C_u6B65R-S_u89E6_u53D1_u5668"><span class="nav-number">4.1.5.</span> <span class="nav-text">同步R-S触发器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u4E3B_u4ECER-S_u89E6_u53D1_u5668"><span class="nav-number">4.1.6.</span> <span class="nav-text">主从R-S触发器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#D_u89E6_u53D1_u5668"><span class="nav-number">4.1.7.</span> <span class="nav-text">D触发器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JK_u89E6_u53D1_u5668"><span class="nav-number">4.1.8.</span> <span class="nav-text">JK触发器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#T_u89E6_u53D1_u5668"><span class="nav-number">4.1.9.</span> <span class="nav-text">T触发器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u4E3B_u4ECEJ-K_u89E6_u53D1_u5668"><span class="nav-number">4.1.10.</span> <span class="nav-text">主从J-K触发器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u7EF4_u6301_u963B_u585ERS_u89E6_u53D1_u5668"><span class="nav-number">4.1.11.</span> <span class="nav-text">维持阻塞RS触发器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u963B_u585E"><span class="nav-number">4.1.12.</span> <span class="nav-text">阻塞</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#VHDL"><span class="nav-number">5.</span> <span class="nav-text">VHDL</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u57FA_u672C_u8BED_u6CD5"><span class="nav-number">5.1.</span> <span class="nav-text">基本语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u91CD_u8981_u7684_u987A_u5E8F_u8BED_u53E5"><span class="nav-number">5.2.</span> <span class="nav-text">重要的顺序语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u4F20_u7EDF_u548C_u73B0_u4EE3_u8BBE_u8BA1_u65B9_u6CD5_u7684_u6BD4_u8F83"><span class="nav-number">5.3.</span> <span class="nav-text">传统和现代设计方法的比较</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u4F20_u7EDF_u65B9_u6CD5"><span class="nav-number">5.3.1.</span> <span class="nav-text">传统方法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u4F5C_u4E1A_u7B54_u6848"><span class="nav-number">6.</span> <span class="nav-text">作业答案</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u7B2C_u4E00_u6B21_u4F5C_u4E1A"><span class="nav-number">6.1.</span> <span class="nav-text">第一次作业</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1_285_29"><span class="nav-number">6.1.1.</span> <span class="nav-text">1-1(5)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2_283_29"><span class="nav-number">6.1.2.</span> <span class="nav-text">1-2(3)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4_282_29"><span class="nav-number">6.1.3.</span> <span class="nav-text">1-4(2)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-6_281_29"><span class="nav-number">6.1.4.</span> <span class="nav-text">1-6(1)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1_281_29"><span class="nav-number">6.1.5.</span> <span class="nav-text">2-1(1)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3_284_29"><span class="nav-number">6.1.6.</span> <span class="nav-text">2-3(4)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-4_282_29"><span class="nav-number">6.1.7.</span> <span class="nav-text">2-4(2)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-6_283_29"><span class="nav-number">6.1.8.</span> <span class="nav-text">2-6(3)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u7B2C_u4E8C_u6B21_u4F5C_u4E1A"><span class="nav-number">6.2.</span> <span class="nav-text">第二次作业</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-8_281_29"><span class="nav-number">6.2.1.</span> <span class="nav-text">2-8(1)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-8_284_29"><span class="nav-number">6.2.2.</span> <span class="nav-text">2-8(4)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-9_282_29"><span class="nav-number">6.2.3.</span> <span class="nav-text">2-9(2)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-9_286_29"><span class="nav-number">6.2.4.</span> <span class="nav-text">2-9(6)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-9_288_29"><span class="nav-number">6.2.5.</span> <span class="nav-text">2-9(8)</span></a></li></ol></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
-      
-
-    </div>
-  </aside>
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
 
 
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright" >
-  
-  &copy;  2015 - 
-  <span itemprop="copyrightYear">2016</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">彭天浩</span>
-</div>
-
-
-<div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
-</div>
-
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Muse
-  </a>
-</div>
-
-
-        
-
-        
-      </div>
-    </footer>
-
-    <div class="back-to-top">
-      <i class="fa fa-arrow-up"></i>
-    </div>
-  </div>
-
-  
+                    <!-- Import File -->
+<script src="/js/highlight.min.js"></script>
+<script src="/js/js.min.js"></script>
+<script src="/js/nprogress.js"></script>
 
 <script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+
+    $('#nprogress .bar').css({
+        'background': '#FF4081'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #FF4081, 0 0 15px #FF4081'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#FF4081',
+        'border-left-color': '#FF4081'
+    });
+
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
 </script>
 
 
 
+    <script src="/js/smoothscroll.js"></script>
 
 
 
 
 
-
-  
-
-
-
-  
-  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+    <!-- Busuanzi -->
+    <script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 
 
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
-
-
-
-  
-
-  
-    
-  
-
-  <script type="text/javascript">
-    var duoshuoQuery = {short_name:"pengtianhao"};
-    (function() {
-      var ds = document.createElement('script');
-      ds.type = 'text/javascript';ds.async = true;
-      ds.id = 'duoshuo-script';
-      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-      ds.charset = 'UTF-8';
-      (document.getElementsByTagName('head')[0]
-      || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-  </script>
-
-  
-    
-    
-    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
-    <script src="/js/src/hook-duoshuo.js"></script>
-  
+    <!-- 多说公共 js 代码 start -->
+    <script type="text/javascript">
+        var duoshuoQuery = {
+            short_name: 'pengtianhao'
+        };
+        (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';
+            ds.async = true;
+            ds.src = 'https://static.duoshuo.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0]
+             || document.getElementsByTagName('body')[0]).appendChild(ds);
+        })();
+    </script>
+    <!-- 多说公共 js 代码 end -->
 
 
 
 
 
+<!-- Swiftye -->
 
 
+<!-- Local Search-->
 
-  
-  
-  <script type="text/javascript">
-    // Popup Window;
-    var isfetched = false;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length == 0) {
-      search_path = "search.xml";
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
-
-    function proceedsearch() {
-      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
-      $('.popup').toggle();
-    }
-    // search function;
+    <script>
     var searchFunc = function(path, search_id, content_id) {
-      'use strict';
-      $.ajax({
-        url: path,
-        dataType: "xml",
-        async: true,
-        success: function( xmlResponse ) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = $( "entry", xmlResponse ).map(function() {
-            return {
-              title: $( "title", this ).text(),
-              content: $("content",this).text(),
-              url: $( "url" , this).text()
-            };
-          }).get();
-          var $input = document.getElementById(search_id);
-          var $resultContent = document.getElementById(content_id);
-          $input.addEventListener('input', function(){
-            var matchcounts = 0;
-            var str='<ul class=\"search-result-list\">';
-            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
-            $resultContent.innerHTML = "";
-            if (this.value.trim().length > 1) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var content_index = [];
-                var data_title = data.title.trim().toLowerCase();
-                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
-                var data_url = decodeURIComponent(data.url);
-                var index_title = -1;
-                var index_content = -1;
-                var first_occur = -1;
-                // only match artiles with not empty titles and contents
-                if(data_title != '') {
-                  keywords.forEach(function(keyword, i) {
-                    index_title = data_title.indexOf(keyword);
-                    index_content = data_content.indexOf(keyword);
-                    if( index_title >= 0 || index_content >= 0 ){
-                      isMatch = true;
-                      if (i == 0) {
-                        first_occur = index_content;
-                      }
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: 'xml',
+            success: function( xmlResponse ) {
+                // get the contents from search data
+                var datas = $( 'entry', xmlResponse ).map(function() {
+                    return {
+                        title: $( 'title', this ).text(),
+                        content: $('content',this).text(),
+                        url: $( 'url' , this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function() {
+                    var str='<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
                     }
-
-                  });
-                }
-                // show search results
-                if (isMatch) {
-                  matchcounts += 1;
-                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
-                  var content = data.content.trim().replace(/<[^>]+>/g,"");
-                  if (first_occur >= 0) {
-                    // cut out 100 characters
-                    var start = first_occur - 20;
-                    var end = first_occur + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if(start == 0){
-                      end = 50;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    var match_content = content.substring(start, end);
-                    // highlight all keywords
-                    keywords.forEach(function(keyword){
-                      var regS = new RegExp(keyword, "gi");
-                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    // perform local searching
+                    datas.forEach(function(data) {
+                        var isMatch = true;
+                        var content_index = [];
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                        var data_url = data.url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if(data_title != '' && data_content != '') {
+                            keywords.forEach(function(keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if( index_title < 0 && index_content < 0 ) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += '<li><a href="'+ data_url +'" class="search-result-title" target="_blank">'+ data_title;
+                            var content = data.content.trim().replace(/<[^>]+>/g, '');
+                            if (first_occur >= 0) {
+                                // cut out characters
+                                var start = first_occur - 6;
+                                var end = first_occur + 6;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 10;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function(keyword) {
+                                    var regS = new RegExp(keyword, 'gi');
+                                    match_content = match_content.replace(regS, '<em class="search-keyword">'+keyword+'</em>');
+                                })
+                                str += '<p class="search-result">' + match_content +'...</p>' +'</a>';
+                            }
+                        }
                     });
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    }
+</script>
 
-                    str += "<p class=\"search-result\">" + match_content +"...</p>"
-                  }
-                  str += "</li>";
-                }
-              })};
-            str += "</ul>";
-            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
-            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
-            $resultContent.innerHTML = str;
-          });
-          proceedsearch();
+
+    <script>
+        var inputArea = document.querySelector('#search');
+        var getSearchFile = function() {
+            var path = 'search.xml';
+            searchFunc(path, 'search', 'local-search-result');
         }
-      });}
 
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched == false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
+        if(inputArea) {
+            inputArea.onfocus = function() {
+                getSearchFile();
+            }
+        }
+    </script>
+
+
+<!-- Window Load-->
+<script>
+    $(window).load(function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
     });
+</script>
 
-    $('.popup-btn-close').click(function(e){
-      $('.popup').hide();
-      $(".popoverlay").remove();
-      $('body').css('overflow', '');
-    });
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-  </script>
+<!-- MathJax Load-->
 
 
-  
-
-  
-
-  
-
-  
-
-
-</body>
+                </main>
+            </div>
+        </body>
+    
 </html>

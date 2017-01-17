@@ -1,476 +1,447 @@
-<!doctype html>
+<!DOCTYPE html>
+<html>
+    <head>
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.2.6 -->
 
-
-
-  
-
-
-<html class="theme-next muse use-motion" lang="zh-Hans">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-  
-  
-  
-  
-
-  
+    <!-- Title -->
     
-    
-  
+    <title>
+        
+            汇编小总结 | 
+        
+        彭天浩的博客
+    </title>
 
-  
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+    <link rel="icon" sizes="192x192" href="/img/favicon.png">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
 
-  
+    <!-- Meta & Info -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0097A7">
+    <meta name="author" content="彭天浩">
+    <meta name="description" content="手持两把锟斤拷,口中高呼烫烫烫">
+    <meta name="keywords" content="“彭天浩”">
 
-  
+    <!--iOS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-title" content="Title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
 
-  
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
 
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="彭天浩的博客">
 
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://pengtianhao.com">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="汇编小总结 | 彭天浩的博客">
+    <meta property="og:description" content="手持两把锟斤拷,口中高呼烫烫烫">
 
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
 
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
 
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="汇编语言," />
-
-
-
-
-
-
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
-
-
-
-
-
-
-<meta name="description" content="转自沈逸云的博客
-
-寄存器8086寄存器分为8个通用寄存器，4个段寄存器，1个标志寄存器，1个指令寄存器, 均为16位 2字节AX累加器BX基址寄存器CX计数器DX数据寄存器SI源地址寄存器DI目的地址寄存器BP基址指针SP堆栈指针
-CS代码段寄存器SS堆栈段寄存器DS数据段寄存器ES附加段寄存器
-FLAGS标志寄存器IP指令指针  专用寄存器，具有自增功能
-SP和BP均可于SS联用，SP自增自减">
-<meta property="og:type" content="article">
-<meta property="og:title" content="汇编小总结">
-<meta property="og:url" content="http://pengtianhao.com/2016/06/23/汇编小总结/index.html">
-<meta property="og:site_name" content="彭天浩胡说八道的地方">
-<meta property="og:description" content="转自沈逸云的博客
-
-寄存器8086寄存器分为8个通用寄存器，4个段寄存器，1个标志寄存器，1个指令寄存器, 均为16位 2字节AX累加器BX基址寄存器CX计数器DX数据寄存器SI源地址寄存器DI目的地址寄存器BP基址指针SP堆栈指针
-CS代码段寄存器SS堆栈段寄存器DS数据段寄存器ES附加段寄存器
-FLAGS标志寄存器IP指令指针  专用寄存器，具有自增功能
-SP和BP均可于SS联用，SP自增自减">
-<meta property="og:updated_time" content="2016-09-19T08:04:46.000Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="汇编小总结">
-<meta name="twitter:description" content="转自沈逸云的博客
-
-寄存器8086寄存器分为8个通用寄存器，4个段寄存器，1个标志寄存器，1个指令寄存器, 均为16位 2字节AX累加器BX基址寄存器CX计数器DX数据寄存器SI源地址寄存器DI目的地址寄存器BP基址指针SP堆栈指针
-CS代码段寄存器SS堆栈段寄存器DS数据段寄存器ES附加段寄存器
-FLAGS标志寄存器IP指令指针  专用寄存器，具有自增功能
-SP和BP均可于SS联用，SP自增自减">
+    <!-- Import CSS -->
+    <link rel="stylesheet" href="/css/material.min.css">
+    <link rel="stylesheet" href="/css/style.min.css">
+    <!-- Config CSS -->
 
 
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Muse',
-    sidebar: {"position":"left","display":"post"},
-    fancybox: true,
-    motion: true,
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+<!-- Other Styles -->
+<style>
+    body, html {
+        font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
     }
-  };
-</script>
+
+    a {
+        color: #00838F;
+    }
+
+    .mdl-card__media,
+    #search-label,
+    #search-form-label:after,
+    #scheme-Paradox .hot_tags-count,
+    #scheme-Paradox .sidebar_archives-count,
+    #scheme-Paradox .sidebar-colored .sidebar-header,
+    #scheme-Paradox .sidebar-colored .sidebar-badge{
+        background-color: #0097A7 !important;
+    }
+
+    /* Sidebar User Drop Down Menu Text Color */
+    #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+    #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+        color: #0097A7 !important;
+    }
+
+    #post_entry-right-info,
+    .sidebar-colored .sidebar-nav li:hover > a,
+    .sidebar-colored .sidebar-nav li:hover > a i,
+    .sidebar-colored .sidebar-nav li > a:hover,
+    .sidebar-colored .sidebar-nav li > a:hover i,
+    .sidebar-colored .sidebar-nav li > a:focus i,
+    .sidebar-colored .sidebar-nav > .open > a,
+    .sidebar-colored .sidebar-nav > .open > a:hover,
+    .sidebar-colored .sidebar-nav > .open > a:focus,
+    #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+        color: #0097A7 !important;
+    }
+
+    .toTop {
+        background: #757575 !important;
+    }
+
+    .material-layout .material-post>.material-nav,
+    .material-layout .material-index>.material-nav,
+    .material-nav a {
+        color: #757575;
+    }
+
+    #scheme-Paradox .MD-burger-layer {
+        background-color: #757575;
+    }
+
+    #scheme-Paradox #post-toc-trigger-btn {
+        color: #757575;
+    }
+
+    .post-toc a:hover {
+        color: #00838F;
+        text-decoration: underline;
+    }
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+        body{
+            background-color: #F5F5F5;
+        }
+
+        /* blog_info bottom background */
+        #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+            background-color: #fff;
+        }
+    </style>
 
 
 
-  <link rel="canonical" href="http://pengtianhao.com/2016/06/23/汇编小总结/"/>
+
+<!-- Fade Effect -->
+
+    <style>
+        .fade {
+            transition: all 800ms linear;
+            -webkit-transform: translate3d(0,0,0);
+            -moz-transform: translate3d(0,0,0);
+            -ms-transform: translate3d(0,0,0);
+            -o-transform: translate3d(0,0,0);
+            transform: translate3d(0,0,0);
+            opacity: 1;
+        }
+
+        .fade.out{
+            opacity: 0;
+        }
+    </style>
 
 
+    <script src="/js/jquery.min.js"></script>
 
+    <link rel="stylesheet" href="/css/highlight/solarized-white.css">
 
+    <!-- UC Browser Compatible-->
+    <script>
+        var agent = navigator.userAgent.toLowerCase();
+        if(agent.indexOf('ucbrowser')>0) {
+            document.write('<link rel="stylesheet" href="/css/uc.css">');
+            alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+        }
+    </script>
 
-  <title> 汇编小总结 | 彭天浩胡说八道的地方 </title>
+    <!-- Custom Head -->
+    
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
-  
-
-
-
-  <script type="text/javascript">
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "//hm.baidu.com/hm.js?73e01b0dee523c22137e45cf054e9160";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    })();
-  </script>
-
-
-
-  <script type="text/javascript">
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "//tajs.qq.com/stats?sId=59468870";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    })();
-  </script>
-
-
-
-
-
-
-  
-  
     
-  
+        <body id="scheme-Paradox">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
 
-  <div class="container one-collumn sidebar-position-left page-post-detail ">
-    <div class="headband"></div>
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-meta ">
-  
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
 
-  <div class="custom-logo-site-title">
-    <a href="/"  class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <span class="site-title">彭天浩胡说八道的地方</span>
-      <span class="logo-line-after"><i></i></span>
-    </a>
-  </div>
-  <p class="site-subtitle"></p>
-</div>
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
 
-<div class="site-nav-toggle">
-  <button>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-  </button>
-</div>
+                    <!-- Post TOC -->
 
-<nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
-        
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            首页
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            分类
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-about">
-          <a href="/about" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
-            
-            关于
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            归档
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            标签
-          </a>
-        </li>
-      
-
-      
-        <li class="menu-item menu-item-search">
-          
-            <a href="javascript:;" class="popup-trigger">
-          
-            
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
-            
-            搜索
-          </a>
-        </li>
-      
-    </ul>
-  
-
-  
-    <div class="site-search">
-      
-  <div class="popup">
- <span class="search-icon fa fa-search"></span>
- <input type="text" id="local-search-input">
- <div id="local-search-result"></div>
- <span class="popup-btn-close">close</span>
-</div>
-
-
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
     </div>
-  
-</nav>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#寄存器"><span class="post-toc-number">1.</span> <span class="post-toc-text">寄存器</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#标志寄存器"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">标志寄存器</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#存储器"><span class="post-toc-number">2.</span> <span class="post-toc-text">存储器</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#数据存储格式"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">数据存储格式</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#存储方式"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">存储方式</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#存储器的分段管理"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">存储器的分段管理</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#段寄存器"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">段寄存器</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#8086寻址方式"><span class="post-toc-number">3.</span> <span class="post-toc-text">8086寻址方式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#立即数寻址方式"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">立即数寻址方式</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#寄存器寻址方式"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">寄存器寻址方式</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#存储器寻址方式"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">存储器寻址方式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#直接寻址方式"><span class="post-toc-number">3.3.1.</span> <span class="post-toc-text">直接寻址方式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#寄存器间接寻址方式"><span class="post-toc-number">3.3.2.</span> <span class="post-toc-text">寄存器间接寻址方式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#寄存器相对寻址方式"><span class="post-toc-number">3.3.3.</span> <span class="post-toc-text">寄存器相对寻址方式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#基址变址寻址方式"><span class="post-toc-number">3.3.4.</span> <span class="post-toc-text">基址变址寻址方式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#相对基址变址寻址方式"><span class="post-toc-number">3.3.5.</span> <span class="post-toc-text">相对基址变址寻址方式</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#指令系统"><span class="post-toc-number">4.</span> <span class="post-toc-text">指令系统</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#数据传送类"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">数据传送类</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#mov"><span class="post-toc-number">4.1.1.</span> <span class="post-toc-text">mov</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#xchg"><span class="post-toc-number">4.1.2.</span> <span class="post-toc-text">xchg</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#xalt"><span class="post-toc-number">4.1.3.</span> <span class="post-toc-text">xalt</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#push"><span class="post-toc-number">4.1.4.</span> <span class="post-toc-text">push</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#pop"><span class="post-toc-number">4.1.5.</span> <span class="post-toc-text">pop</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#lea"><span class="post-toc-number">4.1.6.</span> <span class="post-toc-text">lea</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#算数运算类指令"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">算数运算类指令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#加减乘除"><span class="post-toc-number">4.2.1.</span> <span class="post-toc-text">加减乘除</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#add"><span class="post-toc-number">4.2.1.1.</span> <span class="post-toc-text">add</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#adc"><span class="post-toc-number">4.2.1.2.</span> <span class="post-toc-text">adc</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#inc"><span class="post-toc-number">4.2.1.3.</span> <span class="post-toc-text">inc</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#sub"><span class="post-toc-number">4.2.1.4.</span> <span class="post-toc-text">sub</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#sbb"><span class="post-toc-number">4.2.1.5.</span> <span class="post-toc-text">sbb</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#inc-1"><span class="post-toc-number">4.2.1.6.</span> <span class="post-toc-text">inc</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#neg"><span class="post-toc-number">4.2.1.7.</span> <span class="post-toc-text">neg</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#cmp"><span class="post-toc-number">4.2.1.8.</span> <span class="post-toc-text">cmp</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#mul-amp-amp-imul"><span class="post-toc-number">4.2.1.9.</span> <span class="post-toc-text">mul && imul</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#div-amp-amp-idiv"><span class="post-toc-number">4.2.1.10.</span> <span class="post-toc-text">div && idiv</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#符号扩展指令"><span class="post-toc-number">4.2.2.</span> <span class="post-toc-text">符号扩展指令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#cbw"><span class="post-toc-number">4.2.2.1.</span> <span class="post-toc-text">cbw</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#cwd"><span class="post-toc-number">4.2.2.2.</span> <span class="post-toc-text">cwd</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#十进制调整指令"><span class="post-toc-number">4.2.3.</span> <span class="post-toc-text">十进制调整指令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#daa"><span class="post-toc-number">4.2.3.1.</span> <span class="post-toc-text">daa</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#das"><span class="post-toc-number">4.2.3.2.</span> <span class="post-toc-text">das</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#aaa"><span class="post-toc-number">4.2.3.3.</span> <span class="post-toc-text">aaa</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#aas"><span class="post-toc-number">4.2.3.4.</span> <span class="post-toc-text">aas</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#aam"><span class="post-toc-number">4.2.3.5.</span> <span class="post-toc-text">aam</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#aad"><span class="post-toc-number">4.2.3.6.</span> <span class="post-toc-text">aad</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#位操作指令"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">位操作指令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#逻辑运算"><span class="post-toc-number">4.3.1.</span> <span class="post-toc-text">逻辑运算</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#and"><span class="post-toc-number">4.3.1.1.</span> <span class="post-toc-text">and</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#or"><span class="post-toc-number">4.3.1.2.</span> <span class="post-toc-text">or</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#xor"><span class="post-toc-number">4.3.1.3.</span> <span class="post-toc-text">xor</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#not"><span class="post-toc-number">4.3.1.4.</span> <span class="post-toc-text">not</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#test"><span class="post-toc-number">4.3.1.5.</span> <span class="post-toc-text">test</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#移位"><span class="post-toc-number">4.3.2.</span> <span class="post-toc-text">移位</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#shl"><span class="post-toc-number">4.3.2.1.</span> <span class="post-toc-text">shl</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#shr"><span class="post-toc-number">4.3.2.2.</span> <span class="post-toc-text">shr</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#sal"><span class="post-toc-number">4.3.2.3.</span> <span class="post-toc-text">sal</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#sar"><span class="post-toc-number">4.3.2.4.</span> <span class="post-toc-text">sar</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#rol"><span class="post-toc-number">4.3.2.5.</span> <span class="post-toc-text">rol</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#ror"><span class="post-toc-number">4.3.2.6.</span> <span class="post-toc-text">ror</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#rcl"><span class="post-toc-number">4.3.2.7.</span> <span class="post-toc-text">rcl</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#rcr"><span class="post-toc-number">4.3.2.8.</span> <span class="post-toc-text">rcr</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#控制转移类指令"><span class="post-toc-number">4.4.</span> <span class="post-toc-text">控制转移类指令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#无条件转移指令"><span class="post-toc-number">4.4.1.</span> <span class="post-toc-text">无条件转移指令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#段内转移，相对寻址"><span class="post-toc-number">4.4.1.1.</span> <span class="post-toc-text">段内转移，相对寻址</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#段内转移，间接寻址"><span class="post-toc-number">4.4.1.2.</span> <span class="post-toc-text">段内转移，间接寻址</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#段间转移，直接寻址"><span class="post-toc-number">4.4.1.3.</span> <span class="post-toc-text">段间转移，直接寻址</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#段间转移，间接寻址"><span class="post-toc-number">4.4.1.4.</span> <span class="post-toc-text">段间转移，间接寻址</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#条件转移指令"><span class="post-toc-number">4.4.2.</span> <span class="post-toc-text">条件转移指令</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#循环指令"><span class="post-toc-number">4.4.3.</span> <span class="post-toc-text">循环指令</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#子程序指令"><span class="post-toc-number">4.4.4.</span> <span class="post-toc-text">子程序指令</span></a></li></ol></li></ol></li></ol>
+
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
 
 
 
- </div>
-    </header>
 
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
+<!-- Layouts -->
 
-  <div id="posts" class="posts-expand">
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script>
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://pengtianhao.com/2016/06/23/汇编小总结/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="彭天浩">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/avatar.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="彭天浩胡说八道的地方">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="彭天浩胡说八道的地方" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
+    $('.post_thumbnail-random').css('background-image', 'url(' + '/img/random/material-' + randomNum + '.png' + ')');
+</script>
 
         
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
+    
+            <p class="article-headline-p">
                 汇编小总结
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time title="Дата создания записи" itemprop="dateCreated datePublished" datetime="2016-06-23T15:49:13+08:00">
-              2016-06-23
-            </time>
-
-            &nbsp;|&nbsp;
-
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-check-o"></i>
-            </span>
-            <time title="Дата обновления записи" itemprop="dateModified" datetime="2016-09-19T16:04:46+08:00">
-              2016-09-19
-            </time>
-            
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/计算机基础/" itemprop="url" rel="index">
-                    <span itemprop="name">计算机基础</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/06/23/汇编小总结/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/23/汇编小总结/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-          
-          
-
+            </p>
         </div>
-      </header>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/head.jpg" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>彭天浩</strong>
+        <span>6月 23, 2016</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
     
 
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/汇编语言/">汇编语言</a>
+    </ul>
+    
 
-    <div class="post-body" itemprop="articleBody">
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
 
-      
-      
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
+        
+    
 
-      
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=汇编小总结&url=http://pengtianhao.com//2016/06/23/汇编小总结/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=汇编小总结&url=http://pengtianhao.com//2016/06/23/汇编小总结/index.html&via=彭天浩" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://pengtianhao.com//2016/06/23/汇编小总结/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://pengtianhao.com//2016/06/23/汇编小总结/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=彭天浩的博客&title=汇编小总结&summary=手持两把锟斤拷,口中高呼烫烫烫&pics=http://pengtianhao.com/img/favicon.png&url=http://pengtianhao.com/2016/06/23/汇编小总结/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="markdown-Plain mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
         <blockquote>
 <p>转自沈逸云的博客</p>
 </blockquote>
-<h1 id="u5BC4_u5B58_u5668"><a href="#u5BC4_u5B58_u5668" class="headerlink" title="寄存器"></a>寄存器</h1><p>8086寄存器分为8个通用寄存器，4个段寄存器，1个标志寄存器，1个指令寄存器, 均为16位 2字节<br>AX累加器<br>BX基址寄存器<br>CX计数器<br>DX数据寄存器<br>SI源地址寄存器<br>DI目的地址寄存器<br>BP基址指针<br>SP堆栈指针</p>
+<h1 id="寄存器"><a href="#寄存器" class="headerlink" title="寄存器"></a>寄存器</h1><p>8086寄存器分为8个通用寄存器，4个段寄存器，1个标志寄存器，1个指令寄存器, 均为16位 2字节<br>AX累加器<br>BX基址寄存器<br>CX计数器<br>DX数据寄存器<br>SI源地址寄存器<br>DI目的地址寄存器<br>BP基址指针<br>SP堆栈指针</p>
 <p>CS代码段寄存器<br>SS堆栈段寄存器<br>DS数据段寄存器<br>ES附加段寄存器</p>
 <p>FLAGS标志寄存器<br>IP指令指针  专用寄存器，具有自增功能</p>
 <p>SP和BP均可于SS联用，SP自增自减不应用于其它功能</p>
 <a id="more"></a>
-<h2 id="u6807_u5FD7_u5BC4_u5B58_u5668"><a href="#u6807_u5FD7_u5BC4_u5B58_u5668" class="headerlink" title="标志寄存器"></a>标志寄存器</h2><pre><code>CF(Carry Flag) CF = 1,表示本次运算中最高位(第7或第15位)有进位或借位，一般用于判断无符号数
+<h2 id="标志寄存器"><a href="#标志寄存器" class="headerlink" title="标志寄存器"></a>标志寄存器</h2><pre><code>CF(Carry Flag) CF = 1,表示本次运算中最高位(第7或第15位)有进位或借位，一般用于判断无符号数
 OF(Overflow Flag) OF = 1,表示算数运算结果产生溢出，一般用于判断有符号数，两个操作数符号相同而结果却相反就取1
 PF(Parity Flag) PF = 1, 表示本次运算结果的低八位中有偶数个1
 AF(Auxiliary Carry Flag) AF = 1,表示8位运算中低四位像高四位有进位或借位，常用于BCD数运算
 ZF(Zero Flag) ZF = 1,表示本次运算结果为0
 SF(Sign Flag) SF = 1, 表示本次运算的最高位(第7或第15位)为1
-</code></pre><h1 id="u5B58_u50A8_u5668"><a href="#u5B58_u50A8_u5668" class="headerlink" title="存储器"></a>存储器</h1><h2 id="u6570_u636E_u5B58_u50A8_u683C_u5F0F"><a href="#u6570_u636E_u5B58_u50A8_u683C_u5F0F" class="headerlink" title="数据存储格式"></a>数据存储格式</h2><p>位(bit):可以存放一位二进制数 0 或 1</p>
+</code></pre><h1 id="存储器"><a href="#存储器" class="headerlink" title="存储器"></a>存储器</h1><h2 id="数据存储格式"><a href="#数据存储格式" class="headerlink" title="数据存储格式"></a>数据存储格式</h2><p>位(bit):可以存放一位二进制数 0 或 1</p>
 <p>字节(byte):8 个二进制位</p>
 <p>字(word):在 8086 和 80286 中字由 2 个字节组成，16 位，位编号从右自左为$D_7 \sim D_0$。最低位称为最低有效位LSB(Least Significant Bit),即 $D_0$ 位;最高位称为最高有效位MSB(Most Significant Bit),字节为$D<em>7$位，字为$D</em>{15}$位。</p>
-<h2 id="u5B58_u50A8_u65B9_u5F0F"><a href="#u5B58_u50A8_u65B9_u5F0F" class="headerlink" title="存储方式"></a>存储方式</h2><p>一个存储单元内容是1字节。存放时低字节存入低地址，高字节存入高地址。8086这种”低对低高对高”的存储方式称为”小端对齐(Little endian)”。</p>
+<h2 id="存储方式"><a href="#存储方式" class="headerlink" title="存储方式"></a>存储方式</h2><p>一个存储单元内容是1字节。存放时低字节存入低地址，高字节存入高地址。8086这种”低对低高对高”的存储方式称为”小端对齐(Little endian)”。</p>
 <p>一个地址既可以看作字节单元地址也可以看作字单元地址。字节单元地址既可以是偶数也可以是奇数，字单元地址偶地址，双字模4地址</p>
 <p>如[0002H] = 34H, [0003H] = 12H, 则2号字单元的内容为 [0002H] = 1234H, 12为高字节存在高地址，34为低字节存在低地址</p>
-<h2 id="u5B58_u50A8_u5668_u7684_u5206_u6BB5_u7BA1_u7406"><a href="#u5B58_u50A8_u5668_u7684_u5206_u6BB5_u7BA1_u7406" class="headerlink" title="存储器的分段管理"></a>存储器的分段管理</h2><p>16位8086CPU可以方便表达$0000H \sim FFFFH$的16位存储器地址，即$2^{16} = 64KB$容量，但8086CPU的地址线是20位，所以最大寻址空间为$00000H \sim FFFFFH,2^{20}=1MB$</p>
+<h2 id="存储器的分段管理"><a href="#存储器的分段管理" class="headerlink" title="存储器的分段管理"></a>存储器的分段管理</h2><p>16位8086CPU可以方便表达$0000H \sim FFFFH$的16位存储器地址，即$2^{16} = 64KB$容量，但8086CPU的地址线是20位，所以最大寻址空间为$00000H \sim FFFFFH,2^{20}=1MB$</p>
 <p>将1MB存储器空间分为很多逻辑段(Segment),每段最大限制为64KB，即16位<br>段基地址:段内偏移地址</p>
 <p>段基地址:逻辑段在主存中的起始位置，模16地址,即$xxxx0H$,省略低4位0<br>段偏移地址:偏移量,由于每段不超过64KB，所以偏移地址可以用16位数据表示</p>
 <p>每一个存储器单元都有一个唯一的20位地址，称为该单元的物理地址和绝对地址；而编程时使用的 “段地址:偏移地址” 称为逻辑地址</p>
-<h2 id="u6BB5_u5BC4_u5B58_u5668"><a href="#u6BB5_u5BC4_u5B58_u5668" class="headerlink" title="段寄存器"></a>段寄存器</h2><pre><code>8086的段寄存器保存对应逻辑段的段基地址，每种段均有各自的用途
+<h2 id="段寄存器"><a href="#段寄存器" class="headerlink" title="段寄存器"></a>段寄存器</h2><pre><code>8086的段寄存器保存对应逻辑段的段基地址，每种段均有各自的用途
 CS 代码段(Code Segment)
 SS 堆栈段(Stack Segment)
 DS 数据段(Data Segment)
 ES 附加段(Extra Segment)
 每段之间并不要求必须是64KB，各段之间可以重叠，所以同一个物理地址可以有多个逻辑地址
-</code></pre><h1 id="8086_u5BFB_u5740_u65B9_u5F0F"><a href="#8086_u5BFB_u5740_u65B9_u5F0F" class="headerlink" title="8086寻址方式"></a>8086寻址方式</h1><h2 id="u7ACB_u5373_u6570_u5BFB_u5740_u65B9_u5F0F"><a href="#u7ACB_u5373_u6570_u5BFB_u5740_u65B9_u5F0F" class="headerlink" title="立即数寻址方式"></a>立即数寻址方式</h2><pre><code>操作数作为指令的一部分存放在操作码之后的主存单元中。立即数寻址方式常用于给寄存器和存储单元赋值
+</code></pre><h1 id="8086寻址方式"><a href="#8086寻址方式" class="headerlink" title="8086寻址方式"></a>8086寻址方式</h1><h2 id="立即数寻址方式"><a href="#立即数寻址方式" class="headerlink" title="立即数寻址方式"></a>立即数寻址方式</h2><pre><code>操作数作为指令的一部分存放在操作码之后的主存单元中。立即数寻址方式常用于给寄存器和存储单元赋值
 mov ax, 0102h ; 高字节01H存放于高地址ah中，02H放在低地址al中
-</code></pre><h2 id="u5BC4_u5B58_u5668_u5BFB_u5740_u65B9_u5F0F"><a href="#u5BC4_u5B58_u5668_u5BFB_u5740_u65B9_u5F0F" class="headerlink" title="寄存器寻址方式"></a>寄存器寻址方式</h2><pre><code>寄存器寻址方式的操作数存放于CPU的某个内部寄存器中，不需要访问存储器，因而执行速度块
+</code></pre><h2 id="寄存器寻址方式"><a href="#寄存器寻址方式" class="headerlink" title="寄存器寻址方式"></a>寄存器寻址方式</h2><pre><code>寄存器寻址方式的操作数存放于CPU的某个内部寄存器中，不需要访问存储器，因而执行速度块
 mov bx, ax
-</code></pre><h2 id="u5B58_u50A8_u5668_u5BFB_u5740_u65B9_u5F0F"><a href="#u5B58_u50A8_u5668_u5BFB_u5740_u65B9_u5F0F" class="headerlink" title="存储器寻址方式"></a>存储器寻址方式</h2><pre><code>寄存器寻址虽然快，但CPU中寄存器数目有限，多数情况下操作数还是存储在主存中。
+</code></pre><h2 id="存储器寻址方式"><a href="#存储器寻址方式" class="headerlink" title="存储器寻址方式"></a>存储器寻址方式</h2><pre><code>寄存器寻址虽然快，但CPU中寄存器数目有限，多数情况下操作数还是存储在主存中。
 指令中给出的是主存地址信息，由于8086存储器是分段管理的，所以给出的只是偏移地址(称为有效地址EA)，而段地址在默认的和用超越前缀指定的段寄存器中
 在汇编语言中用方括号[]表示存储段单元的内容
-</code></pre><h3 id="u76F4_u63A5_u5BFB_u5740_u65B9_u5F0F"><a href="#u76F4_u63A5_u5BFB_u5740_u65B9_u5F0F" class="headerlink" title="直接寻址方式"></a>直接寻址方式</h3><pre><code>指令中直接包含有有效地址。默认有效地址与数据段寄存器DS一起构成存储单元的物理地址，也可以段超越
+</code></pre><h3 id="直接寻址方式"><a href="#直接寻址方式" class="headerlink" title="直接寻址方式"></a>直接寻址方式</h3><pre><code>指令中直接包含有有效地址。默认有效地址与数据段寄存器DS一起构成存储单元的物理地址，也可以段超越
 mov ax, [2000h]  ; ax &lt;- ds:[2000h]
 mov ax, es:[2000h]  ; ax &lt;- es:[2000h]
-</code></pre><h3 id="u5BC4_u5B58_u5668_u95F4_u63A5_u5BFB_u5740_u65B9_u5F0F"><a href="#u5BC4_u5B58_u5668_u95F4_u63A5_u5BFB_u5740_u65B9_u5F0F" class="headerlink" title="寄存器间接寻址方式"></a>寄存器间接寻址方式</h3><pre><code>有效地址存放在基址寄存器BX和变址寄存器SI、DI中。默认的段地址在DS中，可以段超越
+</code></pre><h3 id="寄存器间接寻址方式"><a href="#寄存器间接寻址方式" class="headerlink" title="寄存器间接寻址方式"></a>寄存器间接寻址方式</h3><pre><code>有效地址存放在基址寄存器BX和变址寄存器SI、DI中。默认的段地址在DS中，可以段超越
 mov ax, [si]  ; ax &lt;- ds:[si]
-</code></pre><h3 id="u5BC4_u5B58_u5668_u76F8_u5BF9_u5BFB_u5740_u65B9_u5F0F"><a href="#u5BC4_u5B58_u5668_u76F8_u5BF9_u5BFB_u5740_u65B9_u5F0F" class="headerlink" title="寄存器相对寻址方式"></a>寄存器相对寻址方式</h3><pre><code>有效地址是寄存器内容与有符号8位和16位位移量之和。寄存器可以是BX，SI，DI或BP。BX，SI，DI寄存器默认数据段DS，BP默认堆栈段SS
+</code></pre><h3 id="寄存器相对寻址方式"><a href="#寄存器相对寻址方式" class="headerlink" title="寄存器相对寻址方式"></a>寄存器相对寻址方式</h3><pre><code>有效地址是寄存器内容与有符号8位和16位位移量之和。寄存器可以是BX，SI，DI或BP。BX，SI，DI寄存器默认数据段DS，BP默认堆栈段SS
 mov ax, [di + 06h] ; ax &lt;- ds:[di + 06h]
 mov ax, [bp + 06h] ; ax &lt;- ss:[bp + 06h]
 有效地址超过FFFFH取64K的模
-</code></pre><h3 id="u57FA_u5740_u53D8_u5740_u5BFB_u5740_u65B9_u5F0F"><a href="#u57FA_u5740_u53D8_u5740_u5BFB_u5740_u65B9_u5F0F" class="headerlink" title="基址变址寻址方式"></a>基址变址寻址方式</h3><pre><code>一个基址寄存器(BX或BP)的内容加上变址寄存器(SI或DI)的内容构成有效地址EA。若基址寄存器使用BX默认段位数据段DS，若基址寄存器为BP，默认段为SS
+</code></pre><h3 id="基址变址寻址方式"><a href="#基址变址寻址方式" class="headerlink" title="基址变址寻址方式"></a>基址变址寻址方式</h3><pre><code>一个基址寄存器(BX或BP)的内容加上变址寄存器(SI或DI)的内容构成有效地址EA。若基址寄存器使用BX默认段位数据段DS，若基址寄存器为BP，默认段为SS
 mov ax, [bx + si] ; ax &lt;- ds:[bx + si]
 mov ax, [bp + di] ; ax &lt;- ss:[bp + si]
 有效地址超过FFFFH取64K的模
-</code></pre><h3 id="u76F8_u5BF9_u57FA_u5740_u53D8_u5740_u5BFB_u5740_u65B9_u5F0F"><a href="#u76F8_u5BF9_u57FA_u5740_u53D8_u5740_u5BFB_u5740_u65B9_u5F0F" class="headerlink" title="相对基址变址寻址方式"></a>相对基址变址寻址方式</h3><pre><code>即在基址变址的基础上在指令中还指定一个8位或16位的位移量
+</code></pre><h3 id="相对基址变址寻址方式"><a href="#相对基址变址寻址方式" class="headerlink" title="相对基址变址寻址方式"></a>相对基址变址寻址方式</h3><pre><code>即在基址变址的基础上在指令中还指定一个8位或16位的位移量
 有效地址超过FFFFH取64K的模
-</code></pre><h1 id="u6307_u4EE4_u7CFB_u7EDF"><a href="#u6307_u4EE4_u7CFB_u7EDF" class="headerlink" title="指令系统"></a>指令系统</h1><h2 id="u6570_u636E_u4F20_u9001_u7C7B"><a href="#u6570_u636E_u4F20_u9001_u7C7B" class="headerlink" title="数据传送类"></a>数据传送类</h2><h3 id="mov"><a href="#mov" class="headerlink" title="mov"></a>mov</h3><pre><code>传送指令将1字节和字的操作数从源地址src传送至目的地址dest
+</code></pre><h1 id="指令系统"><a href="#指令系统" class="headerlink" title="指令系统"></a>指令系统</h1><h2 id="数据传送类"><a href="#数据传送类" class="headerlink" title="数据传送类"></a>数据传送类</h2><h3 id="mov"><a href="#mov" class="headerlink" title="mov"></a>mov</h3><pre><code>传送指令将1字节和字的操作数从源地址src传送至目的地址dest
 mov reg/mem, imm  ; 8086不允许立即数传送至段寄存器
 mov reg/mem/seg, reg
 mov reg/sesg, mem
@@ -492,7 +463,7 @@ pop r16/m16/seg ; r16/m16/seg &lt;- SS:[SP], SP &lt;- SP + 2
 </code></pre><h3 id="lea"><a href="#lea" class="headerlink" title="lea"></a>lea</h3><pre><code>有效地址传送指令将存储器操作数的有效地址传送至指定寄存器
 
 lea bx, [bx + si + 0f62h] ; bx &lt;- bx + si + 0f62h, 这里bx得到的是主存单元的有效地址，不是物理地址，也不是该单元的内容
-</code></pre><h2 id="u7B97_u6570_u8FD0_u7B97_u7C7B_u6307_u4EE4"><a href="#u7B97_u6570_u8FD0_u7B97_u7C7B_u6307_u4EE4" class="headerlink" title="算数运算类指令"></a>算数运算类指令</h2><h3 id="u52A0_u51CF_u4E58_u9664"><a href="#u52A0_u51CF_u4E58_u9664" class="headerlink" title="加减乘除"></a>加减乘除</h3><h4 id="add"><a href="#add" class="headerlink" title="add"></a>add</h4><pre><code>add reg, imm/reg/mem ; reg &lt;- reg + imm/reg/mem
+</code></pre><h2 id="算数运算类指令"><a href="#算数运算类指令" class="headerlink" title="算数运算类指令"></a>算数运算类指令</h2><h3 id="加减乘除"><a href="#加减乘除" class="headerlink" title="加减乘除"></a>加减乘除</h3><h4 id="add"><a href="#add" class="headerlink" title="add"></a>add</h4><pre><code>add reg, imm/reg/mem ; reg &lt;- reg + imm/reg/mem
 add mem, imm/reg ; mem &lt;- mem + imm/reg
 </code></pre><h4 id="adc"><a href="#adc" class="headerlink" title="adc"></a>adc</h4><pre><code>adc reg, imm/reg/mem ; reg &lt;- reg + imm/reg/mem + CF
 adc mem, imm/reg ; mem &lt;- mem + imm/reg + CF
@@ -506,24 +477,24 @@ sbb mem, imm/reg ; mem &lt;- mem - imm/reg - CF
 </code></pre><h4 id="cmp"><a href="#cmp" class="headerlink" title="cmp"></a>cmp</h4><pre><code>与sub执行同样的操作，同样影响标志(ZF和CF等)，只是不改变目的操作数
 cmp reg, imm/reg/mem ; reg - imm/reg/mem
 cmp mem, imm/reg ; mem - imm/reg
-</code></pre><h4 id="mul__26amp_3B_26amp_3B_imul"><a href="#mul__26amp_3B_26amp_3B_imul" class="headerlink" title="mul &amp;&amp; imul"></a>mul &amp;&amp; imul</h4><pre><code>mul src
+</code></pre><h4 id="mul-amp-amp-imul"><a href="#mul-amp-amp-imul" class="headerlink" title="mul &amp;&amp; imul"></a>mul &amp;&amp; imul</h4><pre><code>mul src
 imul src
 mul无符号数乘法, imul有符号数相乘，src不能为立即数
 隐含操作数AX和DX，若字节相乘，得到16位的字存入AX；若字相乘，得到双字，高字存入DX，低字存入AX
 只对OF，CF有影响，当相乘结果中高一半有有效数值，则OF＝CF＝1
-</code></pre><h4 id="div__26amp_3B_26amp_3B_idiv"><a href="#div__26amp_3B_26amp_3B_idiv" class="headerlink" title="div &amp;&amp; idiv"></a>div &amp;&amp; idiv</h4><pre><code>div src
+</code></pre><h4 id="div-amp-amp-idiv"><a href="#div-amp-amp-idiv" class="headerlink" title="div &amp;&amp; idiv"></a>div &amp;&amp; idiv</h4><pre><code>div src
 idiv src
 div无符号数除法, idiv有符号数除法,src不能为立即数
 隐含操作数AX和DX，若字节相除，8位商存入AL，8位余数存入AH；若字相乘，得到双字，16位商存入AX，16位余数存入DX
 对所有条件标志均无定义
-</code></pre><h3 id="u7B26_u53F7_u6269_u5C55_u6307_u4EE4"><a href="#u7B26_u53F7_u6269_u5C55_u6307_u4EE4" class="headerlink" title="符号扩展指令"></a>符号扩展指令</h3><pre><code>大多数指令要求两个操作数位数一致，但实际数据不一定满足要求，所以需要扩展。对有符号数使用符号扩展；无符号数使用零位扩展,直接将高位清零即可
+</code></pre><h3 id="符号扩展指令"><a href="#符号扩展指令" class="headerlink" title="符号扩展指令"></a>符号扩展指令</h3><pre><code>大多数指令要求两个操作数位数一致，但实际数据不一定满足要求，所以需要扩展。对有符号数使用符号扩展；无符号数使用零位扩展,直接将高位清零即可
 </code></pre><h4 id="cbw"><a href="#cbw" class="headerlink" title="cbw"></a>cbw</h4><pre><code>将al符号扩展成ax
 mov al, 80h
 cbw  ;; ax = ff80h
 </code></pre><h4 id="cwd"><a href="#cwd" class="headerlink" title="cwd"></a>cwd</h4><pre><code>将ax的内容符号扩展成dx，若ax最高位为0则dx＝0000h，若ax最高位为1,则dx＝ffffh
 mov ax, z
 cwd  ;; z -&gt; (dx, ax)
-</code></pre><h3 id="u5341_u8FDB_u5236_u8C03_u6574_u6307_u4EE4"><a href="#u5341_u8FDB_u5236_u8C03_u6574_u6307_u4EE4" class="headerlink" title="十进制调整指令"></a>十进制调整指令</h3><h4 id="daa"><a href="#daa" class="headerlink" title="daa"></a>daa</h4><pre><code>压缩BCD码是通常的8421码，用4个二进制位表示一个十进制位，1字节可以表示2个十进制位00~99
+</code></pre><h3 id="十进制调整指令"><a href="#十进制调整指令" class="headerlink" title="十进制调整指令"></a>十进制调整指令</h3><h4 id="daa"><a href="#daa" class="headerlink" title="daa"></a>daa</h4><pre><code>压缩BCD码是通常的8421码，用4个二进制位表示一个十进制位，1字节可以表示2个十进制位00~99
 使用daa或das指令之前，应先执行加法或减法指令
 daa跟在以al为目的操作数的的add或adc之后，对al的二进制数结果进行十进制调整
 
@@ -557,8 +528,8 @@ mov bl, 09h
 mul bl        ;; ax = 0048h
 aam           ;; ax = 0702h
 </code></pre><h4 id="aad"><a href="#aad" class="headerlink" title="aad"></a>aad</h4><pre><code>除法的非压缩BCD码调整指令
-</code></pre><h2 id="u4F4D_u64CD_u4F5C_u6307_u4EE4"><a href="#u4F4D_u64CD_u4F5C_u6307_u4EE4" class="headerlink" title="位操作指令"></a>位操作指令</h2><pre><code>位操作指令对二进制数的各位进行操作，包括逻辑运算指令和移位指令
-</code></pre><h3 id="u903B_u8F91_u8FD0_u7B97"><a href="#u903B_u8F91_u8FD0_u7B97" class="headerlink" title="逻辑运算"></a>逻辑运算</h3><pre><code>所有双操作数的逻辑指令均置CF＝OF＝0,根据结果置SF，ZF，PF状态，对AF未定义，所以一般用xor来清零，因为它同时可以清CF和OF
+</code></pre><h2 id="位操作指令"><a href="#位操作指令" class="headerlink" title="位操作指令"></a>位操作指令</h2><pre><code>位操作指令对二进制数的各位进行操作，包括逻辑运算指令和移位指令
+</code></pre><h3 id="逻辑运算"><a href="#逻辑运算" class="headerlink" title="逻辑运算"></a>逻辑运算</h3><pre><code>所有双操作数的逻辑指令均置CF＝OF＝0,根据结果置SF，ZF，PF状态，对AF未定义，所以一般用xor来清零，因为它同时可以清CF和OF
 </code></pre><h4 id="and"><a href="#and" class="headerlink" title="and"></a>and</h4><pre><code>and reg, imm/reg/mem
 and mem, imm/reg
 </code></pre><h4 id="or"><a href="#or" class="headerlink" title="or"></a>or</h4><h4 id="xor"><a href="#xor" class="headerlink" title="xor"></a>xor</h4><pre><code>xor可用于求反某些位
@@ -568,7 +539,7 @@ not对操作数按位取反，操作数不能为立即数。not不是双操作�
 
 test al, 01h
 jnz there     ;; ZF＝0,即D0=1,则程序转移到there
-</code></pre><h3 id="u79FB_u4F4D"><a href="#u79FB_u4F4D" class="headerlink" title="移位"></a>移位</h3><h4 id="shl"><a href="#shl" class="headerlink" title="shl"></a>shl</h4><pre><code>逻辑左移，最高位进入CF
+</code></pre><h3 id="移位"><a href="#移位" class="headerlink" title="移位"></a>移位</h3><h4 id="shl"><a href="#shl" class="headerlink" title="shl"></a>shl</h4><pre><code>逻辑左移，最高位进入CF
 </code></pre><h4 id="shr"><a href="#shr" class="headerlink" title="shr"></a>shr</h4><pre><code>逻辑右移，最低位进入CF
 </code></pre><h4 id="sal"><a href="#sal" class="headerlink" title="sal"></a>sal</h4><pre><code>算数左移，和逻辑左移一样，根据最高位是否变化设置OF
 </code></pre><h4 id="sar"><a href="#sar" class="headerlink" title="sar"></a>sar</h4><pre><code>算数右移，最高位保持不变
@@ -576,20 +547,20 @@ jnz there     ;; ZF＝0,即D0=1,则程序转移到there
 </code></pre><h4 id="ror"><a href="#ror" class="headerlink" title="ror"></a>ror</h4><pre><code>不带进位循环右移
 </code></pre><h4 id="rcl"><a href="#rcl" class="headerlink" title="rcl"></a>rcl</h4><pre><code>带进位循环左移
 </code></pre><h4 id="rcr"><a href="#rcr" class="headerlink" title="rcr"></a>rcr</h4><pre><code>带进位循环右移
-</code></pre><h2 id="u63A7_u5236_u8F6C_u79FB_u7C7B_u6307_u4EE4"><a href="#u63A7_u5236_u8F6C_u79FB_u7C7B_u6307_u4EE4" class="headerlink" title="控制转移类指令"></a>控制转移类指令</h2><h3 id="u65E0_u6761_u4EF6_u8F6C_u79FB_u6307_u4EE4"><a href="#u65E0_u6761_u4EF6_u8F6C_u79FB_u6307_u4EE4" class="headerlink" title="无条件转移指令"></a>无条件转移指令</h3><h4 id="u6BB5_u5185_u8F6C_u79FB_uFF0C_u76F8_u5BF9_u5BFB_u5740"><a href="#u6BB5_u5185_u8F6C_u79FB_uFF0C_u76F8_u5BF9_u5BFB_u5740" class="headerlink" title="段内转移，相对寻址"></a>段内转移，相对寻址</h4><pre><code>jmp label  ;; IP &lt;- IP + 位移量
+</code></pre><h2 id="控制转移类指令"><a href="#控制转移类指令" class="headerlink" title="控制转移类指令"></a>控制转移类指令</h2><h3 id="无条件转移指令"><a href="#无条件转移指令" class="headerlink" title="无条件转移指令"></a>无条件转移指令</h3><h4 id="段内转移，相对寻址"><a href="#段内转移，相对寻址" class="headerlink" title="段内转移，相对寻址"></a>段内转移，相对寻址</h4><pre><code>jmp label  ;; IP &lt;- IP + 位移量
 位移量是紧接着JMP后的那条指令的偏移地址到目标指令(label)的偏移地址的地址位移。汇编器会自动根据label做加减法，并根据位移量的大小自动形成短转移和近转移
-</code></pre><h4 id="u6BB5_u5185_u8F6C_u79FB_uFF0C_u95F4_u63A5_u5BFB_u5740"><a href="#u6BB5_u5185_u8F6C_u79FB_uFF0C_u95F4_u63A5_u5BFB_u5740" class="headerlink" title="段内转移，间接寻址"></a>段内转移，间接寻址</h4><pre><code>jmp word ptr [2000h]  ;; IP &lt;- [2000h]
-</code></pre><h4 id="u6BB5_u95F4_u8F6C_u79FB_uFF0C_u76F4_u63A5_u5BFB_u5740"><a href="#u6BB5_u95F4_u8F6C_u79FB_uFF0C_u76F4_u63A5_u5BFB_u5740" class="headerlink" title="段间转移，直接寻址"></a>段间转移，直接寻址</h4><pre><code>jmp far ptr label  ;; IP &lt;- label的偏移地址,CS &lt;- label的段地址
-</code></pre><h4 id="u6BB5_u95F4_u8F6C_u79FB_uFF0C_u95F4_u63A5_u5BFB_u5740"><a href="#u6BB5_u95F4_u8F6C_u79FB_uFF0C_u95F4_u63A5_u5BFB_u5740" class="headerlink" title="段间转移，间接寻址"></a>段间转移，间接寻址</h4><pre><code>jmp far ptr mem  ;; IP &lt;- [mem], CS &lt;- [mem + 2]
+</code></pre><h4 id="段内转移，间接寻址"><a href="#段内转移，间接寻址" class="headerlink" title="段内转移，间接寻址"></a>段内转移，间接寻址</h4><pre><code>jmp word ptr [2000h]  ;; IP &lt;- [2000h]
+</code></pre><h4 id="段间转移，直接寻址"><a href="#段间转移，直接寻址" class="headerlink" title="段间转移，直接寻址"></a>段间转移，直接寻址</h4><pre><code>jmp far ptr label  ;; IP &lt;- label的偏移地址,CS &lt;- label的段地址
+</code></pre><h4 id="段间转移，间接寻址"><a href="#段间转移，间接寻址" class="headerlink" title="段间转移，间接寻址"></a>段间转移，间接寻址</h4><pre><code>jmp far ptr mem  ;; IP &lt;- [mem], CS &lt;- [mem + 2]
 
 mov word ptr [bx], 0
 mov word ptr [bx + 2], 1500h
 jmp far ptr [bx]
-</code></pre><h3 id="u6761_u4EF6_u8F6C_u79FB_u6307_u4EE4"><a href="#u6761_u4EF6_u8F6C_u79FB_u6307_u4EE4" class="headerlink" title="条件转移指令"></a>条件转移指令</h3><h3 id="u5FAA_u73AF_u6307_u4EE4"><a href="#u5FAA_u73AF_u6307_u4EE4" class="headerlink" title="循环指令"></a>循环指令</h3><pre><code>cx存放循环次数，只能使用段内相对寻址的8位位移量
+</code></pre><h3 id="条件转移指令"><a href="#条件转移指令" class="headerlink" title="条件转移指令"></a>条件转移指令</h3><h3 id="循环指令"><a href="#循环指令" class="headerlink" title="循环指令"></a>循环指令</h3><pre><code>cx存放循环次数，只能使用段内相对寻址的8位位移量
 loop label  ;; cx &lt;- cx + 1; 若cx != 0,循环: IP &lt;- IP + 位移量
 loopz label  ;; cx &lt;- cx + 1; 若cx != 0且ZF ＝ 1,循环: IP &lt;- IP + 位移量
 loopnz label  ;; cx &lt;- cx + 1; 若cx != 0且 ZF ！＝ 1,循环: IP &lt;- IP + 位移量
-</code></pre><h3 id="u5B50_u7A0B_u5E8F_u6307_u4EE4"><a href="#u5B50_u7A0B_u5E8F_u6307_u4EE4" class="headerlink" title="子程序指令"></a>子程序指令</h3><pre><code>栈顶是IP
+</code></pre><h3 id="子程序指令"><a href="#子程序指令" class="headerlink" title="子程序指令"></a>子程序指令</h3><pre><code>栈顶是IP
 call label    ;; 段内调用，相对寻址: SP &lt;- SP - 2, SS:[SP] &lt;- IP
               ;; IP &lt;- IP + 16位位移量
 call r16/m16  ;; 段内调用，间接寻址: SP &lt;- SP - 2, SS:[SP] &lt;- IP
@@ -601,486 +572,547 @@ call far ptr mem     ;; 段间调用，间接寻址:SP &lt;- SP - 2, SS:[SP] &lt
                      ;; SP &lt;- SP - 2, SS:[Sp] &lt;- IP
                      ;; IP &lt;- [mem],CS &lt;- [mem + 2]
 </code></pre>
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/汇编语言/" rel="tag"># 汇编语言</a>
-          
-        </div>
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2016/06/23/C++小总结/" rel="next" title="C++小总结">
-                <i class="fa fa-chevron-left"></i> C++小总结
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/08/14/Swift学习笔记/" rel="prev" title="Swift学习笔记">
-                Swift学习笔记 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </article>
-
-
-
-    <div class="post-spread">
-      
-    </div>
-  </div>
-
-
-          </div>
-          
-
-
-          
-  <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/06/23/汇编小总结/"
-           data-title="汇编小总结" data-url="http://pengtianhao.com/2016/06/23/汇编小总结/">
-      </div>
-    
-  </div>
 
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用多说评论 -->
+    <link rel="stylesheet" href="/css/duoshuo.min.css">
+<style>
+    #ds-thread #ds-reset .ds-post-button{
+        background-color: #0097A7 !important;
+    }
+    #ds-wrapper #ds-reset .ds-icons-32{
+        background-color: #0097A7 !important;
+    }
+    #ds-reset .ds-highlight {
+        color: #0097A7 !important;
+    }
+</style>
+<div id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread"
+        data-thread-key=""
+        data-url="http://pengtianhao.com/2016/06/23/汇编小总结/"
+        data-title="汇编小总结">
+    </div>
+    <!-- 多说评论框 end -->
+</div>
+
+
+
+
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2016/08/14/Swift学习笔记/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2016/06/23/C++小总结/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
 
         </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
     </div>
-  </div>
 
-  <aside id="sidebar" class="sidebar">
-    <div class="sidebar-inner">
 
-      
 
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/head.jpg" alt="彭天浩's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        pengtianhao48@gmail.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="mailto:pengtianhao48@gmail.com" target="_blank" title="Email Me">
+                        <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        Email Me
+                    </a>
+                </li>
+            
         </ul>
-      
+    </li>
 
-      <section class="site-overview sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/avatar.jpg"
-               alt="彭天浩" />
-          <p class="site-author-name" itemprop="name">彭天浩</p>
-          <p class="site-description motion-element" itemprop="description">iOS、PPT略懂，扯淡睡觉精通</p>
-        </div>
-        <nav class="site-state motion-element">
-          <div class="site-state-item site-state-posts">
-            <a href="/archives">
-              <span class="site-state-item-count">23</span>
-              <span class="site-state-item-name">日志</span>
+    <!-- Homepage -->
+    <li id="sidebar-first-li">
+        <a href="/" target="_self">
+            <i class="material-icons sidebar-material-icons">home</i>
+            主页
+        </a>
+    </li>
+
+    <!-- I'm Feeling Lucky -->
+    <!--
+    <li class="dropdown">
+        <a href="" target="_self">
+            <i class="material-icons sidebar-material-icons">explore</i>
+             sidebar.imlucky
+        </a>
+    </li>
+    -->
+
+    <!-- Archives  -->
+    <li class="dropdown">
+        <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+            <i class="material-icons sidebar-material-icons">inbox</i>
+             归档
+            <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu">
+            <li>
+            <a class="sidebar_archives-link" href="/archives/2017/01/">一月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/11/">十一月 2016<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/10/">十月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/09/">九月 2016<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/08/">八月 2016<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/06/">六月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/04/">四月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/03/">三月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/01/">一月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/12/">十二月 2015<span class="sidebar_archives-count">2</span></a>
+        </ul>
+    </li>
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                分类
+                <b class="caret"></b>
             </a>
-          </div>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/MacOS/">MacOS<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/iOS/">iOS<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/创业/">创业<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/杂烩/">杂烩<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/科技文章/">科技文章<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/英语/">英语<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/计算机基础/">计算机基础<span class="sidebar_archives-count">10</span></a></li><li><a class="sidebar_archives-link" href="/categories/转载/">转载<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/随感/">随感<span class="sidebar_archives-count">1</span></a>
+            </ul>
+        </li>
+    
 
-          
-            <div class="site-state-item site-state-categories">
-              <a href="/categories">
-                <span class="site-state-item-count">9</span>
-                <span class="site-state-item-name">分类</span>
-              </a>
-            </div>
-          
+    <!-- Divider -->
+    <li class="divider"></li>
 
-          
-            <div class="site-state-item site-state-tags">
-              <a href="/tags">
-                <span class="site-state-item-count">29</span>
-                <span class="site-state-item-name">标签</span>
-              </a>
-            </div>
-          
 
-        </nav>
+    <!-- Pages  -->
+  	
+        <li>
+            <a href="/about" title="关于">
+                
+                    <i class="material-icons sidebar-material-icons">person</i>
+                
+                关于
+            </a>
+        </li>
+  	
 
-        
+    <!-- Article Numebr  -->
+    <li>
+        <a href="/archives">
+            文章总数
+            <span class="sidebar-badge">24</span>
+        </a>
+    </li>
+</ul>
 
-        <div class="links-of-author motion-element">
-          
-            
-              <span class="links-of-author-item">
-                <a href="https://github.com/pthtc" target="_blank" title="GitHub">
-                  
-                    <i class="fa fa-fw fa-github"></i>
-                  
-                  GitHub
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://www.facebook.com/tim.peng.378" target="_blank" title="Facebook">
-                  
-                    <i class="fa fa-fw fa-facebook-official"></i>
-                  
-                  Facebook
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://twitter.com/pengtianhao0408" target="_blank" title="Twitter">
-                  
-                    <i class="fa fa-fw fa-twitter"></i>
-                  
-                  Twitter
-                </a>
-              </span>
-            
-          
+
+        <!-- Sidebar Divider -->
+        <div class="sidebar-divider"></div>
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Theme Material -->
+<a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+        主题 - Material
+        <span class="sidebar-badge badge-circle">i</span>
+    </div>
+</a>
+
+<!-- Help & Support -->
+<!--
+<a href="mailto:hiviosey@gmail.com" class="sidebar-footer-text-a">
+    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+    sidebar.help
+    <span class="mdl-button__ripple-container">
+      <span class="mdl-ripple"></span>
+    </span>
+  </div>
+</a>
+-->
+
+<!-- Feedback -->
+<!--
+<a href="https://github.com/viosey/hexo-theme-material/issues" target="_blank" class="sidebar-footer-text-a">
+    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+         sidebar.feedback
+                    <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></div>
+</a>
+-->
+
+<!-- Abount Theme -->
+<!--
+<a href="https://blog.viosey.com/index.php/Material.html" target="_blank" class="sidebar-footer-text-a">
+    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+         sidebar.about_theme
+        <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></div>
+</a>-->
+
+    </div>
+
+    <!-- Sidebar Sponsor -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+        <a href="https://twitter.com/twitter" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-twitter.png);">
+                <span class="visuallyhidden">Twitter</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Facebook -->
+    
+        <a href="https://www.facebook.com/tim.peng.378" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-facebook.png);">
+                <span class="visuallyhidden">Facebook</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/pthtc" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-github.png);">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+        <a href="https://www.zhihu.com/people/peng-tian-hao-23/activities" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-zhihu.png);">
+                <span class="visuallyhidden">Zhihu</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;
+            <script type="text/javascript">
+                var fd = new Date();
+                document.write(fd.getFullYear());
+            </script>
+            &nbsp;彭天浩的博客
         </div>
 
-        
-        
+        <!-- Paradox Footer Right Section -->
 
-        
-        
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
 
-        
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
 
-
-      </section>
-
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#u5BC4_u5B58_u5668"><span class="nav-number">1.</span> <span class="nav-text">寄存器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#u6807_u5FD7_u5BC4_u5B58_u5668"><span class="nav-number">1.1.</span> <span class="nav-text">标志寄存器</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#u5B58_u50A8_u5668"><span class="nav-number">2.</span> <span class="nav-text">存储器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#u6570_u636E_u5B58_u50A8_u683C_u5F0F"><span class="nav-number">2.1.</span> <span class="nav-text">数据存储格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u5B58_u50A8_u65B9_u5F0F"><span class="nav-number">2.2.</span> <span class="nav-text">存储方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u5B58_u50A8_u5668_u7684_u5206_u6BB5_u7BA1_u7406"><span class="nav-number">2.3.</span> <span class="nav-text">存储器的分段管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u6BB5_u5BC4_u5B58_u5668"><span class="nav-number">2.4.</span> <span class="nav-text">段寄存器</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#8086_u5BFB_u5740_u65B9_u5F0F"><span class="nav-number">3.</span> <span class="nav-text">8086寻址方式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#u7ACB_u5373_u6570_u5BFB_u5740_u65B9_u5F0F"><span class="nav-number">3.1.</span> <span class="nav-text">立即数寻址方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u5BC4_u5B58_u5668_u5BFB_u5740_u65B9_u5F0F"><span class="nav-number">3.2.</span> <span class="nav-text">寄存器寻址方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u5B58_u50A8_u5668_u5BFB_u5740_u65B9_u5F0F"><span class="nav-number">3.3.</span> <span class="nav-text">存储器寻址方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u76F4_u63A5_u5BFB_u5740_u65B9_u5F0F"><span class="nav-number">3.3.1.</span> <span class="nav-text">直接寻址方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u5BC4_u5B58_u5668_u95F4_u63A5_u5BFB_u5740_u65B9_u5F0F"><span class="nav-number">3.3.2.</span> <span class="nav-text">寄存器间接寻址方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u5BC4_u5B58_u5668_u76F8_u5BF9_u5BFB_u5740_u65B9_u5F0F"><span class="nav-number">3.3.3.</span> <span class="nav-text">寄存器相对寻址方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u57FA_u5740_u53D8_u5740_u5BFB_u5740_u65B9_u5F0F"><span class="nav-number">3.3.4.</span> <span class="nav-text">基址变址寻址方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u76F8_u5BF9_u57FA_u5740_u53D8_u5740_u5BFB_u5740_u65B9_u5F0F"><span class="nav-number">3.3.5.</span> <span class="nav-text">相对基址变址寻址方式</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#u6307_u4EE4_u7CFB_u7EDF"><span class="nav-number">4.</span> <span class="nav-text">指令系统</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#u6570_u636E_u4F20_u9001_u7C7B"><span class="nav-number">4.1.</span> <span class="nav-text">数据传送类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#mov"><span class="nav-number">4.1.1.</span> <span class="nav-text">mov</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#xchg"><span class="nav-number">4.1.2.</span> <span class="nav-text">xchg</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#xalt"><span class="nav-number">4.1.3.</span> <span class="nav-text">xalt</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#push"><span class="nav-number">4.1.4.</span> <span class="nav-text">push</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pop"><span class="nav-number">4.1.5.</span> <span class="nav-text">pop</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lea"><span class="nav-number">4.1.6.</span> <span class="nav-text">lea</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u7B97_u6570_u8FD0_u7B97_u7C7B_u6307_u4EE4"><span class="nav-number">4.2.</span> <span class="nav-text">算数运算类指令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u52A0_u51CF_u4E58_u9664"><span class="nav-number">4.2.1.</span> <span class="nav-text">加减乘除</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#add"><span class="nav-number">4.2.1.1.</span> <span class="nav-text">add</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#adc"><span class="nav-number">4.2.1.2.</span> <span class="nav-text">adc</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#inc"><span class="nav-number">4.2.1.3.</span> <span class="nav-text">inc</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sub"><span class="nav-number">4.2.1.4.</span> <span class="nav-text">sub</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sbb"><span class="nav-number">4.2.1.5.</span> <span class="nav-text">sbb</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#inc-1"><span class="nav-number">4.2.1.6.</span> <span class="nav-text">inc</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#neg"><span class="nav-number">4.2.1.7.</span> <span class="nav-text">neg</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cmp"><span class="nav-number">4.2.1.8.</span> <span class="nav-text">cmp</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#mul__26amp_3B_26amp_3B_imul"><span class="nav-number">4.2.1.9.</span> <span class="nav-text">mul && imul</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#div__26amp_3B_26amp_3B_idiv"><span class="nav-number">4.2.1.10.</span> <span class="nav-text">div && idiv</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u7B26_u53F7_u6269_u5C55_u6307_u4EE4"><span class="nav-number">4.2.2.</span> <span class="nav-text">符号扩展指令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#cbw"><span class="nav-number">4.2.2.1.</span> <span class="nav-text">cbw</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cwd"><span class="nav-number">4.2.2.2.</span> <span class="nav-text">cwd</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u5341_u8FDB_u5236_u8C03_u6574_u6307_u4EE4"><span class="nav-number">4.2.3.</span> <span class="nav-text">十进制调整指令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#daa"><span class="nav-number">4.2.3.1.</span> <span class="nav-text">daa</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#das"><span class="nav-number">4.2.3.2.</span> <span class="nav-text">das</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#aaa"><span class="nav-number">4.2.3.3.</span> <span class="nav-text">aaa</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#aas"><span class="nav-number">4.2.3.4.</span> <span class="nav-text">aas</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#aam"><span class="nav-number">4.2.3.5.</span> <span class="nav-text">aam</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#aad"><span class="nav-number">4.2.3.6.</span> <span class="nav-text">aad</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u4F4D_u64CD_u4F5C_u6307_u4EE4"><span class="nav-number">4.3.</span> <span class="nav-text">位操作指令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u903B_u8F91_u8FD0_u7B97"><span class="nav-number">4.3.1.</span> <span class="nav-text">逻辑运算</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#and"><span class="nav-number">4.3.1.1.</span> <span class="nav-text">and</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#or"><span class="nav-number">4.3.1.2.</span> <span class="nav-text">or</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#xor"><span class="nav-number">4.3.1.3.</span> <span class="nav-text">xor</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#not"><span class="nav-number">4.3.1.4.</span> <span class="nav-text">not</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#test"><span class="nav-number">4.3.1.5.</span> <span class="nav-text">test</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u79FB_u4F4D"><span class="nav-number">4.3.2.</span> <span class="nav-text">移位</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#shl"><span class="nav-number">4.3.2.1.</span> <span class="nav-text">shl</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#shr"><span class="nav-number">4.3.2.2.</span> <span class="nav-text">shr</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sal"><span class="nav-number">4.3.2.3.</span> <span class="nav-text">sal</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sar"><span class="nav-number">4.3.2.4.</span> <span class="nav-text">sar</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#rol"><span class="nav-number">4.3.2.5.</span> <span class="nav-text">rol</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ror"><span class="nav-number">4.3.2.6.</span> <span class="nav-text">ror</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#rcl"><span class="nav-number">4.3.2.7.</span> <span class="nav-text">rcl</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#rcr"><span class="nav-number">4.3.2.8.</span> <span class="nav-text">rcr</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u63A7_u5236_u8F6C_u79FB_u7C7B_u6307_u4EE4"><span class="nav-number">4.4.</span> <span class="nav-text">控制转移类指令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u65E0_u6761_u4EF6_u8F6C_u79FB_u6307_u4EE4"><span class="nav-number">4.4.1.</span> <span class="nav-text">无条件转移指令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u6BB5_u5185_u8F6C_u79FB_uFF0C_u76F8_u5BF9_u5BFB_u5740"><span class="nav-number">4.4.1.1.</span> <span class="nav-text">段内转移，相对寻址</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u6BB5_u5185_u8F6C_u79FB_uFF0C_u95F4_u63A5_u5BFB_u5740"><span class="nav-number">4.4.1.2.</span> <span class="nav-text">段内转移，间接寻址</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u6BB5_u95F4_u8F6C_u79FB_uFF0C_u76F4_u63A5_u5BFB_u5740"><span class="nav-number">4.4.1.3.</span> <span class="nav-text">段间转移，直接寻址</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u6BB5_u95F4_u8F6C_u79FB_uFF0C_u95F4_u63A5_u5BFB_u5740"><span class="nav-number">4.4.1.4.</span> <span class="nav-text">段间转移，间接寻址</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u6761_u4EF6_u8F6C_u79FB_u6307_u4EE4"><span class="nav-number">4.4.2.</span> <span class="nav-text">条件转移指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u5FAA_u73AF_u6307_u4EE4"><span class="nav-number">4.4.3.</span> <span class="nav-text">循环指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u5B50_u7A0B_u5E8F_u6307_u4EE4"><span class="nav-number">4.4.4.</span> <span class="nav-text">子程序指令</span></a></li></ol></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
-      
-
-    </div>
-  </aside>
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
 
 
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright" >
-  
-  &copy;  2015 - 
-  <span itemprop="copyrightYear">2016</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">彭天浩</span>
-</div>
-
-
-<div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
-</div>
-
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Muse
-  </a>
-</div>
-
-
-        
-
-        
-      </div>
-    </footer>
-
-    <div class="back-to-top">
-      <i class="fa fa-arrow-up"></i>
-    </div>
-  </div>
-
-  
+                    <!-- Import File -->
+<script src="/js/highlight.min.js"></script>
+<script src="/js/js.min.js"></script>
+<script src="/js/nprogress.js"></script>
 
 <script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+
+    $('#nprogress .bar').css({
+        'background': '#FF4081'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #FF4081, 0 0 15px #FF4081'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#FF4081',
+        'border-left-color': '#FF4081'
+    });
+
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
 </script>
 
 
 
+    <script src="/js/smoothscroll.js"></script>
 
 
 
 
 
-
-  
-
-
-
-  
-  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+    <!-- Busuanzi -->
+    <script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 
 
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
-
-
-
-  
-
-  
-    
-  
-
-  <script type="text/javascript">
-    var duoshuoQuery = {short_name:"pengtianhao"};
-    (function() {
-      var ds = document.createElement('script');
-      ds.type = 'text/javascript';ds.async = true;
-      ds.id = 'duoshuo-script';
-      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-      ds.charset = 'UTF-8';
-      (document.getElementsByTagName('head')[0]
-      || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-  </script>
-
-  
-    
-    
-    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
-    <script src="/js/src/hook-duoshuo.js"></script>
-  
+    <!-- 多说公共 js 代码 start -->
+    <script type="text/javascript">
+        var duoshuoQuery = {
+            short_name: 'pengtianhao'
+        };
+        (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';
+            ds.async = true;
+            ds.src = 'https://static.duoshuo.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0]
+             || document.getElementsByTagName('body')[0]).appendChild(ds);
+        })();
+    </script>
+    <!-- 多说公共 js 代码 end -->
 
 
 
 
 
+<!-- Swiftye -->
 
 
+<!-- Local Search-->
 
-  
-  
-  <script type="text/javascript">
-    // Popup Window;
-    var isfetched = false;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length == 0) {
-      search_path = "search.xml";
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
-
-    function proceedsearch() {
-      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
-      $('.popup').toggle();
-    }
-    // search function;
+    <script>
     var searchFunc = function(path, search_id, content_id) {
-      'use strict';
-      $.ajax({
-        url: path,
-        dataType: "xml",
-        async: true,
-        success: function( xmlResponse ) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = $( "entry", xmlResponse ).map(function() {
-            return {
-              title: $( "title", this ).text(),
-              content: $("content",this).text(),
-              url: $( "url" , this).text()
-            };
-          }).get();
-          var $input = document.getElementById(search_id);
-          var $resultContent = document.getElementById(content_id);
-          $input.addEventListener('input', function(){
-            var matchcounts = 0;
-            var str='<ul class=\"search-result-list\">';
-            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
-            $resultContent.innerHTML = "";
-            if (this.value.trim().length > 1) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var content_index = [];
-                var data_title = data.title.trim().toLowerCase();
-                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
-                var data_url = decodeURIComponent(data.url);
-                var index_title = -1;
-                var index_content = -1;
-                var first_occur = -1;
-                // only match artiles with not empty titles and contents
-                if(data_title != '') {
-                  keywords.forEach(function(keyword, i) {
-                    index_title = data_title.indexOf(keyword);
-                    index_content = data_content.indexOf(keyword);
-                    if( index_title >= 0 || index_content >= 0 ){
-                      isMatch = true;
-                      if (i == 0) {
-                        first_occur = index_content;
-                      }
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: 'xml',
+            success: function( xmlResponse ) {
+                // get the contents from search data
+                var datas = $( 'entry', xmlResponse ).map(function() {
+                    return {
+                        title: $( 'title', this ).text(),
+                        content: $('content',this).text(),
+                        url: $( 'url' , this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function() {
+                    var str='<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
                     }
-
-                  });
-                }
-                // show search results
-                if (isMatch) {
-                  matchcounts += 1;
-                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
-                  var content = data.content.trim().replace(/<[^>]+>/g,"");
-                  if (first_occur >= 0) {
-                    // cut out 100 characters
-                    var start = first_occur - 20;
-                    var end = first_occur + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if(start == 0){
-                      end = 50;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    var match_content = content.substring(start, end);
-                    // highlight all keywords
-                    keywords.forEach(function(keyword){
-                      var regS = new RegExp(keyword, "gi");
-                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    // perform local searching
+                    datas.forEach(function(data) {
+                        var isMatch = true;
+                        var content_index = [];
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                        var data_url = data.url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if(data_title != '' && data_content != '') {
+                            keywords.forEach(function(keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if( index_title < 0 && index_content < 0 ) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += '<li><a href="'+ data_url +'" class="search-result-title" target="_blank">'+ data_title;
+                            var content = data.content.trim().replace(/<[^>]+>/g, '');
+                            if (first_occur >= 0) {
+                                // cut out characters
+                                var start = first_occur - 6;
+                                var end = first_occur + 6;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 10;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function(keyword) {
+                                    var regS = new RegExp(keyword, 'gi');
+                                    match_content = match_content.replace(regS, '<em class="search-keyword">'+keyword+'</em>');
+                                })
+                                str += '<p class="search-result">' + match_content +'...</p>' +'</a>';
+                            }
+                        }
                     });
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    }
+</script>
 
-                    str += "<p class=\"search-result\">" + match_content +"...</p>"
-                  }
-                  str += "</li>";
-                }
-              })};
-            str += "</ul>";
-            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
-            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
-            $resultContent.innerHTML = str;
-          });
-          proceedsearch();
+
+    <script>
+        var inputArea = document.querySelector('#search');
+        var getSearchFile = function() {
+            var path = 'search.xml';
+            searchFunc(path, 'search', 'local-search-result');
         }
-      });}
 
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched == false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
+        if(inputArea) {
+            inputArea.onfocus = function() {
+                getSearchFile();
+            }
+        }
+    </script>
+
+
+<!-- Window Load-->
+<script>
+    $(window).load(function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
     });
+</script>
 
-    $('.popup-btn-close').click(function(e){
-      $('.popup').hide();
-      $(".popoverlay").remove();
-      $('body').css('overflow', '');
-    });
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-  </script>
+<!-- MathJax Load-->
 
 
-  
-
-  
-
-  
-
-  
-
-
-</body>
+                </main>
+            </div>
+        </body>
+    
 </html>

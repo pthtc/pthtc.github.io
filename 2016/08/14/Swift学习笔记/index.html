@@ -1,417 +1,403 @@
-<!doctype html>
+<!DOCTYPE html>
+<html>
+    <head>
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.2.6 -->
 
-
-
-  
-
-
-<html class="theme-next muse use-motion" lang="zh-Hans">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-  
-  
-  
-  
-
-  
+    <!-- Title -->
     
-    
-  
+    <title>
+        
+            Swift学习笔记 | 
+        
+        彭天浩的博客
+    </title>
 
-  
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+    <link rel="icon" sizes="192x192" href="/img/favicon.png">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
 
-  
+    <!-- Meta & Info -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0097A7">
+    <meta name="author" content="彭天浩">
+    <meta name="description" content="手持两把锟斤拷,口中高呼烫烫烫">
+    <meta name="keywords" content="“彭天浩”">
 
-  
+    <!--iOS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-title" content="Title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
 
-  
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
 
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="彭天浩的博客">
 
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://pengtianhao.com">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="Swift学习笔记 | 彭天浩的博客">
+    <meta property="og:description" content="手持两把锟斤拷,口中高呼烫烫烫">
 
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
 
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
 
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="Swift,iOS," />
-
-
-
-
-
-
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
-
-
-
-
-
-
-<meta name="description" content="趁着这段时间有空，准备学习Swift替换oc用于iOS开发，没想到遇到了不少坑，这边记录一下">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Swift学习笔记">
-<meta property="og:url" content="http://pengtianhao.com/2016/08/14/Swift学习笔记/index.html">
-<meta property="og:site_name" content="彭天浩胡说八道的地方">
-<meta property="og:description" content="趁着这段时间有空，准备学习Swift替换oc用于iOS开发，没想到遇到了不少坑，这边记录一下">
-<meta property="og:updated_time" content="2016-09-22T14:27:16.000Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Swift学习笔记">
-<meta name="twitter:description" content="趁着这段时间有空，准备学习Swift替换oc用于iOS开发，没想到遇到了不少坑，这边记录一下">
+    <!-- Import CSS -->
+    <link rel="stylesheet" href="/css/material.min.css">
+    <link rel="stylesheet" href="/css/style.min.css">
+    <!-- Config CSS -->
 
 
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Muse',
-    sidebar: {"position":"left","display":"post"},
-    fancybox: true,
-    motion: true,
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+<!-- Other Styles -->
+<style>
+    body, html {
+        font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
     }
-  };
-</script>
+
+    a {
+        color: #00838F;
+    }
+
+    .mdl-card__media,
+    #search-label,
+    #search-form-label:after,
+    #scheme-Paradox .hot_tags-count,
+    #scheme-Paradox .sidebar_archives-count,
+    #scheme-Paradox .sidebar-colored .sidebar-header,
+    #scheme-Paradox .sidebar-colored .sidebar-badge{
+        background-color: #0097A7 !important;
+    }
+
+    /* Sidebar User Drop Down Menu Text Color */
+    #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+    #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+        color: #0097A7 !important;
+    }
+
+    #post_entry-right-info,
+    .sidebar-colored .sidebar-nav li:hover > a,
+    .sidebar-colored .sidebar-nav li:hover > a i,
+    .sidebar-colored .sidebar-nav li > a:hover,
+    .sidebar-colored .sidebar-nav li > a:hover i,
+    .sidebar-colored .sidebar-nav li > a:focus i,
+    .sidebar-colored .sidebar-nav > .open > a,
+    .sidebar-colored .sidebar-nav > .open > a:hover,
+    .sidebar-colored .sidebar-nav > .open > a:focus,
+    #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+        color: #0097A7 !important;
+    }
+
+    .toTop {
+        background: #757575 !important;
+    }
+
+    .material-layout .material-post>.material-nav,
+    .material-layout .material-index>.material-nav,
+    .material-nav a {
+        color: #757575;
+    }
+
+    #scheme-Paradox .MD-burger-layer {
+        background-color: #757575;
+    }
+
+    #scheme-Paradox #post-toc-trigger-btn {
+        color: #757575;
+    }
+
+    .post-toc a:hover {
+        color: #00838F;
+        text-decoration: underline;
+    }
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+        body{
+            background-color: #F5F5F5;
+        }
+
+        /* blog_info bottom background */
+        #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+            background-color: #fff;
+        }
+    </style>
 
 
 
-  <link rel="canonical" href="http://pengtianhao.com/2016/08/14/Swift学习笔记/"/>
+
+<!-- Fade Effect -->
+
+    <style>
+        .fade {
+            transition: all 800ms linear;
+            -webkit-transform: translate3d(0,0,0);
+            -moz-transform: translate3d(0,0,0);
+            -ms-transform: translate3d(0,0,0);
+            -o-transform: translate3d(0,0,0);
+            transform: translate3d(0,0,0);
+            opacity: 1;
+        }
+
+        .fade.out{
+            opacity: 0;
+        }
+    </style>
 
 
+    <script src="/js/jquery.min.js"></script>
 
+    <link rel="stylesheet" href="/css/highlight/solarized-white.css">
 
+    <!-- UC Browser Compatible-->
+    <script>
+        var agent = navigator.userAgent.toLowerCase();
+        if(agent.indexOf('ucbrowser')>0) {
+            document.write('<link rel="stylesheet" href="/css/uc.css">');
+            alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+        }
+    </script>
 
-  <title> Swift学习笔记 | 彭天浩胡说八道的地方 </title>
+    <!-- Custom Head -->
+    
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
-  
-
-
-
-  <script type="text/javascript">
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "//hm.baidu.com/hm.js?73e01b0dee523c22137e45cf054e9160";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    })();
-  </script>
-
-
-
-  <script type="text/javascript">
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "//tajs.qq.com/stats?sId=59468870";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    })();
-  </script>
-
-
-
-
-
-
-  
-  
     
-  
+        <body id="scheme-Paradox">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
 
-  <div class="container one-collumn sidebar-position-left page-post-detail ">
-    <div class="headband"></div>
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-meta ">
-  
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
 
-  <div class="custom-logo-site-title">
-    <a href="/"  class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <span class="site-title">彭天浩胡说八道的地方</span>
-      <span class="logo-line-after"><i></i></span>
-    </a>
-  </div>
-  <p class="site-subtitle"></p>
-</div>
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
 
-<div class="site-nav-toggle">
-  <button>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-  </button>
-</div>
+                    <!-- Post TOC -->
 
-<nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
-        
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            首页
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            分类
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-about">
-          <a href="/about" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
-            
-            关于
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            归档
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            标签
-          </a>
-        </li>
-      
-
-      
-        <li class="menu-item menu-item-search">
-          
-            <a href="javascript:;" class="popup-trigger">
-          
-            
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
-            
-            搜索
-          </a>
-        </li>
-      
-    </ul>
-  
-
-  
-    <div class="site-search">
-      
-  <div class="popup">
- <span class="search-icon fa fa-search"></span>
- <input type="text" id="local-search-input">
- <div id="local-search-result"></div>
- <span class="popup-btn-close">close</span>
-</div>
-
-
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
     </div>
-  
-</nav>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#sorted函数"><span class="post-toc-number">1.</span> <span class="post-toc-text">sorted函数</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#for循环"><span class="post-toc-number">2.</span> <span class="post-toc-text">for循环</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#enumerate方法"><span class="post-toc-number">3.</span> <span class="post-toc-text">enumerate方法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#print方法"><span class="post-toc-number">4.</span> <span class="post-toc-text">print方法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#数组"><span class="post-toc-number">5.</span> <span class="post-toc-text">数组</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#函数"><span class="post-toc-number">6.</span> <span class="post-toc-text">函数</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#内外参数问题"><span class="post-toc-number">6.1.</span> <span class="post-toc-text">内外参数问题</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#inout参数"><span class="post-toc-number">6.2.</span> <span class="post-toc-text">inout参数</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#闭包"><span class="post-toc-number">6.3.</span> <span class="post-toc-text">闭包</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#关于in"><span class="post-toc-number">6.3.1.</span> <span class="post-toc-text">关于in</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#关于闭包存在性"><span class="post-toc-number">6.3.2.</span> <span class="post-toc-text">关于闭包存在性</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#比较符号"><span class="post-toc-number">7.</span> <span class="post-toc-text">比较符号</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#类和结构体"><span class="post-toc-number">8.</span> <span class="post-toc-text">类和结构体</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#属性"><span class="post-toc-number">8.1.</span> <span class="post-toc-text">属性</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#get和set"><span class="post-toc-number">8.1.1.</span> <span class="post-toc-text">get和set</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#willSet和didSet"><span class="post-toc-number">8.1.2.</span> <span class="post-toc-text">willSet和didSet</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#方法"><span class="post-toc-number">8.2.</span> <span class="post-toc-text">方法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#struct修改属性"><span class="post-toc-number">8.2.1.</span> <span class="post-toc-text">struct修改属性</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#继承"><span class="post-toc-number">8.3.</span> <span class="post-toc-text">继承</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#初始化init"><span class="post-toc-number">8.3.1.</span> <span class="post-toc-text">初始化init</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#自判断链接"><span class="post-toc-number">9.</span> <span class="post-toc-text">自判断链接</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#类型转换"><span class="post-toc-number">10.</span> <span class="post-toc-text">类型转换</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#is"><span class="post-toc-number">10.1.</span> <span class="post-toc-text">is</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#as-和-as"><span class="post-toc-number">10.2.</span> <span class="post-toc-text">as 和 as?</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Swift与oc的关系"><span class="post-toc-number">11.</span> <span class="post-toc-text">Swift与oc的关系</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#初始化"><span class="post-toc-number">11.1.</span> <span class="post-toc-text">初始化</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#宏定义"><span class="post-toc-number">11.2.</span> <span class="post-toc-text">宏定义</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#调用oc方法"><span class="post-toc-number">11.3.</span> <span class="post-toc-text">调用oc方法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#未知对象的处理方法"><span class="post-toc-number">11.4.</span> <span class="post-toc-text">未知对象的处理方法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#oc中的block和swift中的闭包"><span class="post-toc-number">11.5.</span> <span class="post-toc-text">oc中的block和swift中的闭包</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#比较符号-1"><span class="post-toc-number">11.6.</span> <span class="post-toc-text">比较符号</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#oc中的-selector和swift中的Selector类型"><span class="post-toc-number">11.7.</span> <span class="post-toc-text">oc中的@selector和swift中的Selector类型</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#cocoa"><span class="post-toc-number">11.8.</span> <span class="post-toc-text">cocoa</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#NSString"><span class="post-toc-number">11.8.1.</span> <span class="post-toc-text">NSString</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#NSLog"><span class="post-toc-number">11.8.2.</span> <span class="post-toc-text">NSLog</span></a></li></ol></li></ol></li></ol>
+
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
 
 
 
- </div>
-    </header>
 
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
+<!-- Layouts -->
 
-  <div id="posts" class="posts-expand">
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script>
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://pengtianhao.com/2016/08/14/Swift学习笔记/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="彭天浩">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/avatar.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="彭天浩胡说八道的地方">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="彭天浩胡说八道的地方" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
+    $('.post_thumbnail-random').css('background-image', 'url(' + '/img/random/material-' + randomNum + '.png' + ')');
+</script>
 
         
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
+    
+            <p class="article-headline-p">
                 Swift学习笔记
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time title="Дата создания записи" itemprop="dateCreated datePublished" datetime="2016-08-14T14:20:16+08:00">
-              2016-08-14
-            </time>
-
-            &nbsp;|&nbsp;
-
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-check-o"></i>
-            </span>
-            <time title="Дата обновления записи" itemprop="dateModified" datetime="2016-09-22T22:27:16+08:00">
-              2016-09-22
-            </time>
-            
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/iOS/" itemprop="url" rel="index">
-                    <span itemprop="name">iOS</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/08/14/Swift学习笔记/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/14/Swift学习笔记/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-          
-          
-
+            </p>
         </div>
-      </header>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/head.jpg" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>彭天浩</strong>
+        <span>8月 14, 2016</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
     
 
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/Swift/">Swift</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/iOS/">iOS</a>
+    </ul>
+    
 
-    <div class="post-body" itemprop="articleBody">
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
 
-      
-      
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
+        
+    
 
-      
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Swift学习笔记&url=http://pengtianhao.com//2016/08/14/Swift学习笔记/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Swift学习笔记&url=http://pengtianhao.com//2016/08/14/Swift学习笔记/index.html&via=彭天浩" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://pengtianhao.com//2016/08/14/Swift学习笔记/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://pengtianhao.com//2016/08/14/Swift学习笔记/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=彭天浩的博客&title=Swift学习笔记&summary=手持两把锟斤拷,口中高呼烫烫烫&pics=http://pengtianhao.com/img/favicon.png&url=http://pengtianhao.com/2016/08/14/Swift学习笔记/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="markdown-Plain mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
         <blockquote>
 <p>趁着这段时间有空，准备学习Swift替换oc用于iOS开发，没想到遇到了不少坑，这边记录一下</p>
 </blockquote>
 <a id="more"></a>
-<h2 id="sorted_u51FD_u6570"><a href="#sorted_u51FD_u6570" class="headerlink" title="sorted函数"></a>sorted函数</h2><p>Swift2.0以后，<code>sorted</code>好像从</p>
+<h2 id="sorted函数"><a href="#sorted函数" class="headerlink" title="sorted函数"></a>sorted函数</h2><p>Swift2.0以后，<code>sorted</code>好像从</p>
 <pre><code>sorted(array,{$1&gt;$2}）
 </code></pre><p>变成了</p>
-<pre><code>var arraySorted = array.sort(false)
-</code></pre><h2 id="for_u5FAA_u73AF"><a href="#for_u5FAA_u73AF" class="headerlink" title="for循环"></a>for循环</h2><p>这里遇到一个很奇怪的错误，当我写</p>
+<pre><code>var arraySorted = array.sort({{$1>$2}})
+</code></pre><h2 id="for循环"><a href="#for循环" class="headerlink" title="for循环"></a>for循环</h2><p>这里遇到一个很奇怪的错误，当我写</p>
 <pre><code>for var i = 0;i&lt;=3;i++{
     print(&quot;Hello world&quot;)
 }
@@ -424,7 +410,7 @@
     print(&quot;Hello world&quot;)
 }
 </code></pre><p>才正确</p>
-<h2 id="enumerate_u65B9_u6CD5"><a href="#enumerate_u65B9_u6CD5" class="headerlink" title="enumerate方法"></a>enumerate方法</h2><p>enumerate方法以前用</p>
+<h2 id="enumerate方法"><a href="#enumerate方法" class="headerlink" title="enumerate方法"></a>enumerate方法</h2><p>enumerate方法以前用</p>
 <pre><code>for (index, value) in enumerate(numbers) {
     print(&quot;Item \(index + 1): \(value)&quot;)
 }
@@ -432,17 +418,17 @@
 <pre><code>for (index, value) in numbers.enumerate() {
     print(&quot;Item \(index + 1): \(value)&quot;)
 }
-</code></pre><h2 id="print_u65B9_u6CD5"><a href="#print_u65B9_u6CD5" class="headerlink" title="print方法"></a>print方法</h2><p>以前打印方法有两种，<code>print</code>和<code>println</code>，现在只有<code>print</code>，默认换行，如果要不换行的话要这么写</p>
+</code></pre><h2 id="print方法"><a href="#print方法" class="headerlink" title="print方法"></a>print方法</h2><p>以前打印方法有两种，<code>print</code>和<code>println</code>，现在只有<code>print</code>，默认换行，如果要不换行的话要这么写</p>
 <pre><code>print(&quot;这样就&quot;,terminator: &quot;&quot;);
 print(&quot;不换行了&quot;)
 </code></pre><p>结果为</p>
 <pre><code>&quot;这样就&quot;
 &quot;不换行了\n&quot;
-</code></pre><h2 id="u6570_u7EC4"><a href="#u6570_u7EC4" class="headerlink" title="数组"></a>数组</h2><p>数组空白初始化时候，原来用</p>
+</code></pre><h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><p>数组空白初始化时候，原来用</p>
 <pre><code>var array = Int[]()
 </code></pre><p>现在用</p>
 <pre><code>var array = [Int]()
-</code></pre><h2 id="u51FD_u6570"><a href="#u51FD_u6570" class="headerlink" title="函数"></a>函数</h2><h3 id="u5185_u5916_u53C2_u6570_u95EE_u9898"><a href="#u5185_u5916_u53C2_u6570_u95EE_u9898" class="headerlink" title="内外参数问题"></a>内外参数问题</h3><p>碰到一个很奇怪的问题，当我调用函数：</p>
+</code></pre><h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><h3 id="内外参数问题"><a href="#内外参数问题" class="headerlink" title="内外参数问题"></a>内外参数问题</h3><p>碰到一个很奇怪的问题，当我调用函数：</p>
 <pre><code>func f4(firstValue: Int, secondValue: Int) -&gt;Int{
     return firstValue + secondValue
 }
@@ -454,7 +440,7 @@ print(&quot;不换行了&quot;)
 }
 
 f6(firstValue: 1, secondValue: 2)
-</code></pre><h3 id="inout_u53C2_u6570"><a href="#inout_u53C2_u6570" class="headerlink" title="inout参数"></a>inout参数</h3><p>以前写c/c++的时候，要用函数交换函数要用到地址</p>
+</code></pre><h3 id="inout参数"><a href="#inout参数" class="headerlink" title="inout参数"></a>inout参数</h3><p>以前写c/c++的时候，要用函数交换函数要用到地址</p>
 <pre><code>void swapTwoValues(int &amp;x, int &amp;y){
     int temp = x;
     x = y;
@@ -466,8 +452,8 @@ f6(firstValue: 1, secondValue: 2)
     x = y
     y = temp
 }
-</code></pre><h3 id="u95ED_u5305"><a href="#u95ED_u5305" class="headerlink" title="闭包"></a>闭包</h3><p>闭包其实就是一种没有函数名的函数，哪里都能用</p>
-<h4 id="u5173_u4E8Ein"><a href="#u5173_u4E8Ein" class="headerlink" title="关于in"></a>关于in</h4><p>闭包里<code>in</code>之前的东西相当于函数的输入和返回</p>
+</code></pre><h3 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h3><p>闭包其实就是一种没有函数名的函数，哪里都能用</p>
+<h4 id="关于in"><a href="#关于in" class="headerlink" title="关于in"></a>关于in</h4><p>闭包里<code>in</code>之前的东西相当于函数的输入和返回</p>
 <pre><code>let numberWord = number.map{
     (var s1)-&gt;Int in
     let output = 123
@@ -480,7 +466,7 @@ f6(firstValue: 1, secondValue: 2)
 }
 
 let numberWord = number.map(myFunc)
-</code></pre><h4 id="u5173_u4E8E_u95ED_u5305_u5B58_u5728_u6027"><a href="#u5173_u4E8E_u95ED_u5305_u5B58_u5728_u6027" class="headerlink" title="关于闭包存在性"></a>关于闭包存在性</h4><pre><code>func makeIncrementor(forIncrement amount: Int) -&gt; () -&gt; Int {
+</code></pre><h4 id="关于闭包存在性"><a href="#关于闭包存在性" class="headerlink" title="关于闭包存在性"></a>关于闭包存在性</h4><pre><code>func makeIncrementor(forIncrement amount: Int) -&gt; () -&gt; Int {
     var runningTotal = 0
     func incrementor() -&gt; Int {
         runningTotal += amount
@@ -500,9 +486,9 @@ let anotherIncrement = incrementByTen
 
 //30,赋值以后也指向同一闭包
 anotherIncrement()
-</code></pre><h2 id="u6BD4_u8F83_u7B26_u53F7"><a href="#u6BD4_u8F83_u7B26_u53F7" class="headerlink" title="比较符号"></a>比较符号</h2><p>他们返回的是布尔值</p>
-<h2 id="u7C7B_u548C_u7ED3_u6784_u4F53"><a href="#u7C7B_u548C_u7ED3_u6784_u4F53" class="headerlink" title="类和结构体"></a>类和结构体</h2><p>因为在Swift里看起来差不多，就记一起了</p>
-<h3 id="u5C5E_u6027"><a href="#u5C5E_u6027" class="headerlink" title="属性"></a>属性</h3><h4 id="get_u548Cset"><a href="#get_u548Cset" class="headerlink" title="get和set"></a>get和set</h4><p><code>get</code>和<code>set</code>使得属性之间能够自动关联</p>
+</code></pre><h2 id="比较符号"><a href="#比较符号" class="headerlink" title="比较符号"></a>比较符号</h2><p>他们返回的是布尔值</p>
+<h2 id="类和结构体"><a href="#类和结构体" class="headerlink" title="类和结构体"></a>类和结构体</h2><p>因为在Swift里看起来差不多，就记一起了</p>
+<h3 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h3><h4 id="get和set"><a href="#get和set" class="headerlink" title="get和set"></a>get和set</h4><p><code>get</code>和<code>set</code>使得属性之间能够自动关联</p>
 <pre><code>class myCLass {
     var varies1: Int = 1
     var varies2 :Int {
@@ -530,7 +516,7 @@ myclasses.varies1
 
 //varies2 = 3
 myclasses.varies2
-</code></pre><h4 id="willSet_u548CdidSet"><a href="#willSet_u548CdidSet" class="headerlink" title="willSet和didSet"></a>willSet和didSet</h4><p>接着刚刚的类，<code>willSet</code>和<code>didSet</code>两个属性监视器每次被设置的时候就会调用,尝试过发现<strong>即使是被<code>get</code>修改，也会触发</strong></p>
+</code></pre><h4 id="willSet和didSet"><a href="#willSet和didSet" class="headerlink" title="willSet和didSet"></a>willSet和didSet</h4><p>接着刚刚的类，<code>willSet</code>和<code>didSet</code>两个属性监视器每次被设置的时候就会调用,尝试过发现<strong>即使是被<code>get</code>修改，也会触发</strong></p>
 <pre><code>class myCLass {
     var varies1: Int = 1{
         willSet {
@@ -546,7 +532,7 @@ myclasses.varies2
         }
     }
 }
-</code></pre><h3 id="u65B9_u6CD5"><a href="#u65B9_u6CD5" class="headerlink" title="方法"></a>方法</h3><h4 id="struct_u4FEE_u6539_u5C5E_u6027"><a href="#struct_u4FEE_u6539_u5C5E_u6027" class="headerlink" title="struct修改属性"></a>struct修改属性</h4><p><code>struct</code>在修改属性的时候需要在<code>func</code>前加<code>mutating</code>，代表突变</p>
+</code></pre><h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><h4 id="struct修改属性"><a href="#struct修改属性" class="headerlink" title="struct修改属性"></a>struct修改属性</h4><p><code>struct</code>在修改属性的时候需要在<code>func</code>前加<code>mutating</code>，代表突变</p>
 <pre><code>struct Point1 {
     var x = 0.0, y = 0.0
     mutating func moveByX(deltaX: Double, y deltaY: Double){
@@ -554,14 +540,14 @@ myclasses.varies2
         y += deltaY
     }
 }
-</code></pre><h3 id="u7EE7_u627F"><a href="#u7EE7_u627F" class="headerlink" title="继承"></a>继承</h3><h4 id="u521D_u59CB_u5316init"><a href="#u521D_u59CB_u5316init" class="headerlink" title="初始化init"></a>初始化init</h4><p>继承的时候初始化要加上<code>override</code>，这和之前只需要<code>init</code>不一样</p>
+</code></pre><h3 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h3><h4 id="初始化init"><a href="#初始化init" class="headerlink" title="初始化init"></a>初始化init</h4><p>继承的时候初始化要加上<code>override</code>，这和之前只需要<code>init</code>不一样</p>
 <pre><code>class Bicycle: Vehicle {
     override init() {
         super.init()
         numberOfWheels = 2
     }
 }
-</code></pre><h2 id="u81EA_u5224_u65AD_u94FE_u63A5"><a href="#u81EA_u5224_u65AD_u94FE_u63A5" class="headerlink" title="自判断链接"></a>自判断链接</h2><p>一般情况下一个值必须不空，如果要可以为｀nil｀的话，一定要</p>
+</code></pre><h2 id="自判断链接"><a href="#自判断链接" class="headerlink" title="自判断链接"></a>自判断链接</h2><p>一般情况下一个值必须不空，如果要可以为｀nil｀的话，一定要</p>
 <pre><code>var num : Int?
 </code></pre><p>然后拆包的时候</p>
 <pre><code>num!
@@ -584,7 +570,7 @@ if let classTemp = myClass?.varies {
 }else {
     print(&quot;is nill&quot;)
 }
-</code></pre><h2 id="u7C7B_u578B_u8F6C_u6362"><a href="#u7C7B_u578B_u8F6C_u6362" class="headerlink" title="类型转换"></a>类型转换</h2><h3 id="is"><a href="#is" class="headerlink" title="is"></a>is</h3><p>用来对比两者的类型，要这么用:</p>
+</code></pre><h2 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h2><h3 id="is"><a href="#is" class="headerlink" title="is"></a>is</h3><p>用来对比两者的类型，要这么用:</p>
 <pre><code>var myDic = [123,&quot;this is a string&quot;]
 
 for item in myDic{
@@ -592,7 +578,7 @@ for item in myDic{
         print(&quot;\(item) is a string!&quot;)
     }
 }
-</code></pre><h3 id="as__u548C_as_3F"><a href="#as__u548C_as_3F" class="headerlink" title="as 和 as?"></a>as 和 as?</h3><p><code>as?</code>与<code>as</code>最大的区别是是否强制转换，<code>as</code>有可能出现错误，<code>as?</code>可以返回<code>nil</code>，下面是<code>as?</code>的用法</p>
+</code></pre><h3 id="as-和-as"><a href="#as-和-as" class="headerlink" title="as 和 as?"></a>as 和 as?</h3><p><code>as?</code>与<code>as</code>最大的区别是是否强制转换，<code>as</code>有可能出现错误，<code>as?</code>可以返回<code>nil</code>，下面是<code>as?</code>的用法</p>
 <pre><code>for item in myDic {
     if let theString = item as? String {
         print(&quot;the item \&quot;\(theString)\&quot; is a string&quot;)
@@ -600,12 +586,12 @@ for item in myDic{
         print(&quot;the item \&quot;\(theInt)\&quot; is a interger&quot;)
     }
 }
-</code></pre><h2 id="Swift_u4E0Eoc_u7684_u5173_u7CFB"><a href="#Swift_u4E0Eoc_u7684_u5173_u7CFB" class="headerlink" title="Swift与oc的关系"></a>Swift与oc的关系</h2><p>oc切换到swift也不能算完全无缝，也碰到了不少问题</p>
-<h3 id="u521D_u59CB_u5316"><a href="#u521D_u59CB_u5316" class="headerlink" title="初始化"></a>初始化</h3><p>oc初始化的时候一般是这么写的</p>
+</code></pre><h2 id="Swift与oc的关系"><a href="#Swift与oc的关系" class="headerlink" title="Swift与oc的关系"></a>Swift与oc的关系</h2><p>oc切换到swift也不能算完全无缝，也碰到了不少问题</p>
+<h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><p>oc初始化的时候一般是这么写的</p>
 <pre><code>UILabel *label= [[UILabel alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
 </code></pre><p>但是swift里<code>alloc</code>不用写了，变成了</p>
 <pre><code>var label = UILabel(frame: CGRectMake(100, 100, 100, 100))
-</code></pre><h3 id="u5B8F_u5B9A_u4E49"><a href="#u5B8F_u5B9A_u4E49" class="headerlink" title="宏定义"></a>宏定义</h3><p>swift里取消了oc延续自c的宏定义，oc里要确定系统版本要这么写</p>
+</code></pre><h3 id="宏定义"><a href="#宏定义" class="headerlink" title="宏定义"></a>宏定义</h3><p>swift里取消了oc延续自c的宏定义，oc里要确定系统版本要这么写</p>
 <pre><code>#define IOS9 ([[[UIDevice currentDevice] systemVersion] floatValue]&gt;=9.0) &amp;&amp; ([[[UIDevice currentDevice] systemVersion] floatValue] &lt;10.0)
 </code></pre><p>现在只能用<code>let</code>代替</p>
 <pre><code>let IOS9 = (UIDevice.currentDevice().systemVersion as NSString).floatValue&gt;=9.0 &amp;&amp; (UIDevice.currentDevice().systemVersion as NSString).floatValue&lt;10.0
@@ -615,7 +601,7 @@ for item in myDic{
 <pre><code>func RGB (r:CGFloat, g:CGFloat, b:CGFloat)-&gt;UIColor{
     return UIColor(red: r/255.0, green: g/255.0, blue: b/255.0, alpha: 1)
 }
-</code></pre><h3 id="u8C03_u7528oc_u65B9_u6CD5"><a href="#u8C03_u7528oc_u65B9_u6CD5" class="headerlink" title="调用oc方法"></a>调用oc方法</h3><p>oc里一般是这么写方法的</p>
+</code></pre><h3 id="调用oc方法"><a href="#调用oc方法" class="headerlink" title="调用oc方法"></a>调用oc方法</h3><p>oc里一般是这么写方法的</p>
 <pre><code>-(NSInteger)addTwoNumbers:(NSInteger)num1 and:(NSInteger)num2{
     return num1+num2;
 }
@@ -623,20 +609,20 @@ for item in myDic{
 <pre><code>[self addTwoNumbers:1 and:2];
 </code></pre><p>那么swift里用的时候就药这么调用</p>
 <pre><code>addTwoNumbers(1, num2: 2)
-</code></pre><h3 id="u672A_u77E5_u5BF9_u8C61_u7684_u5904_u7406_u65B9_u6CD5"><a href="#u672A_u77E5_u5BF9_u8C61_u7684_u5904_u7406_u65B9_u6CD5" class="headerlink" title="未知对象的处理方法"></a>未知对象的处理方法</h3><p>oc里有id类型来存任意对象，那么在swift里有anyObject，以我们最常用的从服务器取json串存为字典再提取的场景为例</p>
+</code></pre><h3 id="未知对象的处理方法"><a href="#未知对象的处理方法" class="headerlink" title="未知对象的处理方法"></a>未知对象的处理方法</h3><p>oc里有id类型来存任意对象，那么在swift里有anyObject，以我们最常用的从服务器取json串存为字典再提取的场景为例</p>
 <pre><code>let lastRefreshDate: AnyObject? = userDefaults.objectForKey(&quot;LastRefreshDate&quot;)
 </code></pre><p>这时候不一定会取到内容，而且转换也不一定会成功，这时候当我们要用的时候，就得类型转换</p>
 <pre><code>if let date = lastRefreshDate as? NSDate {
     print(&quot;\(date.timeIntervalSinceReferenceDate)&quot;)
 }
-</code></pre><h3 id="oc_u4E2D_u7684block_u548Cswift_u4E2D_u7684_u95ED_u5305"><a href="#oc_u4E2D_u7684block_u548Cswift_u4E2D_u7684_u95ED_u5305" class="headerlink" title="oc中的block和swift中的闭包"></a>oc中的<code>block</code>和swift中的闭包</h3><p>oc中的block</p>
+</code></pre><h3 id="oc中的block和swift中的闭包"><a href="#oc中的block和swift中的闭包" class="headerlink" title="oc中的block和swift中的闭包"></a>oc中的<code>block</code>和swift中的闭包</h3><p>oc中的block</p>
 <pre><code>void (^completionBlock)(NSData *, NSError *) = ^(NSData *data, NSError *error) {/* ... */};
 </code></pre><p>swift里的闭包</p>
 <pre><code>let completionBlock: (NSData, NSError) -&gt; Void = {data, error in /* ... */} 
 </code></pre><p>他们是一摸一样的</p>
-<h3 id="u6BD4_u8F83_u7B26_u53F7-1"><a href="#u6BD4_u8F83_u7B26_u53F7-1" class="headerlink" title="比较符号"></a>比较符号</h3><p>在比较值的时候，oc用<code>[object isEqual:object]</code>，swift则用<code>==</code></p>
+<h3 id="比较符号-1"><a href="#比较符号-1" class="headerlink" title="比较符号"></a>比较符号</h3><p>在比较值的时候，oc用<code>[object isEqual:object]</code>，swift则用<code>==</code></p>
 <p>在比较对象地址（是否是同一个实例）的是偶户，oc用<code>==</code>,swift用<code>===</code></p>
-<h3 id="oc_u4E2D_u7684@selector_u548Cswift_u4E2D_u7684Selector_u7C7B_u578B"><a href="#oc_u4E2D_u7684@selector_u548Cswift_u4E2D_u7684Selector_u7C7B_u578B" class="headerlink" title="oc中的@selector和swift中的Selector类型"></a>oc中的<code>@selector</code>和swift中的<code>Selector</code>类型</h3><p>在为一个按钮添加点按动作时候，oc里是这么写的</p>
+<h3 id="oc中的-selector和swift中的Selector类型"><a href="#oc中的-selector和swift中的Selector类型" class="headerlink" title="oc中的@selector和swift中的Selector类型"></a>oc中的<code>@selector</code>和swift中的<code>Selector</code>类型</h3><p>在为一个按钮添加点按动作时候，oc里是这么写的</p>
 <pre><code>[myButton addTarget:self action:@selector(tappedButton:) forControlEvents:UIControlEventTouchUpInside];
 </code></pre><p>而在swift里可以把字符串转换为选择器类型</p>
 <pre><code>myButton.addTarget(self, action: &quot;tappedButton:&quot;, forControlEvents: UIControlEvents.TouchUpInside)
@@ -647,488 +633,547 @@ for item in myDic{
 </code></pre><h4 id="NSLog"><a href="#NSLog" class="headerlink" title="NSLog"></a>NSLog</h4><p><code>NSLog</code>同样可用，形式为</p>
 <pre><code>NSLog(&quot;%@&quot;,myString)
 </code></pre>
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/Swift/" rel="tag"># Swift</a>
-          
-            <a href="/tags/iOS/" rel="tag"># iOS</a>
-          
-        </div>
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2016/06/23/汇编小总结/" rel="next" title="汇编小总结">
-                <i class="fa fa-chevron-left"></i> 汇编小总结
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/08/25/cocoa框架学习笔记/" rel="prev" title="Cocoa学习笔记">
-                Cocoa学习笔记 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </article>
-
-
-
-    <div class="post-spread">
-      
-    </div>
-  </div>
-
-
-          </div>
-          
-
-
-          
-  <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/08/14/Swift学习笔记/"
-           data-title="Swift学习笔记" data-url="http://pengtianhao.com/2016/08/14/Swift学习笔记/">
-      </div>
-    
-  </div>
 
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用多说评论 -->
+    <link rel="stylesheet" href="/css/duoshuo.min.css">
+<style>
+    #ds-thread #ds-reset .ds-post-button{
+        background-color: #0097A7 !important;
+    }
+    #ds-wrapper #ds-reset .ds-icons-32{
+        background-color: #0097A7 !important;
+    }
+    #ds-reset .ds-highlight {
+        color: #0097A7 !important;
+    }
+</style>
+<div id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread"
+        data-thread-key=""
+        data-url="http://pengtianhao.com/2016/08/14/Swift学习笔记/"
+        data-title="Swift学习笔记">
+    </div>
+    <!-- 多说评论框 end -->
+</div>
+
+
+
+
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2016/08/25/cocoa框架学习笔记/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2016/06/23/汇编小总结/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
 
         </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
     </div>
-  </div>
 
-  <aside id="sidebar" class="sidebar">
-    <div class="sidebar-inner">
 
-      
 
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/head.jpg" alt="彭天浩's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        pengtianhao48@gmail.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="mailto:pengtianhao48@gmail.com" target="_blank" title="Email Me">
+                        <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        Email Me
+                    </a>
+                </li>
+            
         </ul>
-      
+    </li>
 
-      <section class="site-overview sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/avatar.jpg"
-               alt="彭天浩" />
-          <p class="site-author-name" itemprop="name">彭天浩</p>
-          <p class="site-description motion-element" itemprop="description">iOS、PPT略懂，扯淡睡觉精通</p>
-        </div>
-        <nav class="site-state motion-element">
-          <div class="site-state-item site-state-posts">
-            <a href="/archives">
-              <span class="site-state-item-count">23</span>
-              <span class="site-state-item-name">日志</span>
+    <!-- Homepage -->
+    <li id="sidebar-first-li">
+        <a href="/" target="_self">
+            <i class="material-icons sidebar-material-icons">home</i>
+            主页
+        </a>
+    </li>
+
+    <!-- I'm Feeling Lucky -->
+    <!--
+    <li class="dropdown">
+        <a href="" target="_self">
+            <i class="material-icons sidebar-material-icons">explore</i>
+             sidebar.imlucky
+        </a>
+    </li>
+    -->
+
+    <!-- Archives  -->
+    <li class="dropdown">
+        <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+            <i class="material-icons sidebar-material-icons">inbox</i>
+             归档
+            <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu">
+            <li>
+            <a class="sidebar_archives-link" href="/archives/2017/01/">一月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/11/">十一月 2016<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/10/">十月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/09/">九月 2016<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/08/">八月 2016<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/06/">六月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/04/">四月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/03/">三月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/01/">一月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/12/">十二月 2015<span class="sidebar_archives-count">2</span></a>
+        </ul>
+    </li>
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                分类
+                <b class="caret"></b>
             </a>
-          </div>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/MacOS/">MacOS<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/iOS/">iOS<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/创业/">创业<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/杂烩/">杂烩<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/科技文章/">科技文章<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/英语/">英语<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/计算机基础/">计算机基础<span class="sidebar_archives-count">10</span></a></li><li><a class="sidebar_archives-link" href="/categories/转载/">转载<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/随感/">随感<span class="sidebar_archives-count">1</span></a>
+            </ul>
+        </li>
+    
 
-          
-            <div class="site-state-item site-state-categories">
-              <a href="/categories">
-                <span class="site-state-item-count">9</span>
-                <span class="site-state-item-name">分类</span>
-              </a>
-            </div>
-          
+    <!-- Divider -->
+    <li class="divider"></li>
 
-          
-            <div class="site-state-item site-state-tags">
-              <a href="/tags">
-                <span class="site-state-item-count">29</span>
-                <span class="site-state-item-name">标签</span>
-              </a>
-            </div>
-          
 
-        </nav>
+    <!-- Pages  -->
+  	
+        <li>
+            <a href="/about" title="关于">
+                
+                    <i class="material-icons sidebar-material-icons">person</i>
+                
+                关于
+            </a>
+        </li>
+  	
 
-        
+    <!-- Article Numebr  -->
+    <li>
+        <a href="/archives">
+            文章总数
+            <span class="sidebar-badge">24</span>
+        </a>
+    </li>
+</ul>
 
-        <div class="links-of-author motion-element">
-          
-            
-              <span class="links-of-author-item">
-                <a href="https://github.com/pthtc" target="_blank" title="GitHub">
-                  
-                    <i class="fa fa-fw fa-github"></i>
-                  
-                  GitHub
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://www.facebook.com/tim.peng.378" target="_blank" title="Facebook">
-                  
-                    <i class="fa fa-fw fa-facebook-official"></i>
-                  
-                  Facebook
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://twitter.com/pengtianhao0408" target="_blank" title="Twitter">
-                  
-                    <i class="fa fa-fw fa-twitter"></i>
-                  
-                  Twitter
-                </a>
-              </span>
-            
-          
+
+        <!-- Sidebar Divider -->
+        <div class="sidebar-divider"></div>
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Theme Material -->
+<a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+        主题 - Material
+        <span class="sidebar-badge badge-circle">i</span>
+    </div>
+</a>
+
+<!-- Help & Support -->
+<!--
+<a href="mailto:hiviosey@gmail.com" class="sidebar-footer-text-a">
+    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+    sidebar.help
+    <span class="mdl-button__ripple-container">
+      <span class="mdl-ripple"></span>
+    </span>
+  </div>
+</a>
+-->
+
+<!-- Feedback -->
+<!--
+<a href="https://github.com/viosey/hexo-theme-material/issues" target="_blank" class="sidebar-footer-text-a">
+    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+         sidebar.feedback
+                    <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></div>
+</a>
+-->
+
+<!-- Abount Theme -->
+<!--
+<a href="https://blog.viosey.com/index.php/Material.html" target="_blank" class="sidebar-footer-text-a">
+    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+         sidebar.about_theme
+        <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></div>
+</a>-->
+
+    </div>
+
+    <!-- Sidebar Sponsor -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+        <a href="https://twitter.com/twitter" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-twitter.png);">
+                <span class="visuallyhidden">Twitter</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Facebook -->
+    
+        <a href="https://www.facebook.com/tim.peng.378" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-facebook.png);">
+                <span class="visuallyhidden">Facebook</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/pthtc" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-github.png);">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+        <a href="https://www.zhihu.com/people/peng-tian-hao-23/activities" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-zhihu.png);">
+                <span class="visuallyhidden">Zhihu</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;
+            <script type="text/javascript">
+                var fd = new Date();
+                document.write(fd.getFullYear());
+            </script>
+            &nbsp;彭天浩的博客
         </div>
 
-        
-        
+        <!-- Paradox Footer Right Section -->
 
-        
-        
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
 
-        
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
 
-
-      </section>
-
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#sorted_u51FD_u6570"><span class="nav-number">1.</span> <span class="nav-text">sorted函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#for_u5FAA_u73AF"><span class="nav-number">2.</span> <span class="nav-text">for循环</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#enumerate_u65B9_u6CD5"><span class="nav-number">3.</span> <span class="nav-text">enumerate方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#print_u65B9_u6CD5"><span class="nav-number">4.</span> <span class="nav-text">print方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u6570_u7EC4"><span class="nav-number">5.</span> <span class="nav-text">数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u51FD_u6570"><span class="nav-number">6.</span> <span class="nav-text">函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u5185_u5916_u53C2_u6570_u95EE_u9898"><span class="nav-number">6.1.</span> <span class="nav-text">内外参数问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#inout_u53C2_u6570"><span class="nav-number">6.2.</span> <span class="nav-text">inout参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u95ED_u5305"><span class="nav-number">6.3.</span> <span class="nav-text">闭包</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u5173_u4E8Ein"><span class="nav-number">6.3.1.</span> <span class="nav-text">关于in</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u5173_u4E8E_u95ED_u5305_u5B58_u5728_u6027"><span class="nav-number">6.3.2.</span> <span class="nav-text">关于闭包存在性</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u6BD4_u8F83_u7B26_u53F7"><span class="nav-number">7.</span> <span class="nav-text">比较符号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u7C7B_u548C_u7ED3_u6784_u4F53"><span class="nav-number">8.</span> <span class="nav-text">类和结构体</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u5C5E_u6027"><span class="nav-number">8.1.</span> <span class="nav-text">属性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#get_u548Cset"><span class="nav-number">8.1.1.</span> <span class="nav-text">get和set</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#willSet_u548CdidSet"><span class="nav-number">8.1.2.</span> <span class="nav-text">willSet和didSet</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u65B9_u6CD5"><span class="nav-number">8.2.</span> <span class="nav-text">方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#struct_u4FEE_u6539_u5C5E_u6027"><span class="nav-number">8.2.1.</span> <span class="nav-text">struct修改属性</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u7EE7_u627F"><span class="nav-number">8.3.</span> <span class="nav-text">继承</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u521D_u59CB_u5316init"><span class="nav-number">8.3.1.</span> <span class="nav-text">初始化init</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u81EA_u5224_u65AD_u94FE_u63A5"><span class="nav-number">9.</span> <span class="nav-text">自判断链接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u7C7B_u578B_u8F6C_u6362"><span class="nav-number">10.</span> <span class="nav-text">类型转换</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#is"><span class="nav-number">10.1.</span> <span class="nav-text">is</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#as__u548C_as_3F"><span class="nav-number">10.2.</span> <span class="nav-text">as 和 as?</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Swift_u4E0Eoc_u7684_u5173_u7CFB"><span class="nav-number">11.</span> <span class="nav-text">Swift与oc的关系</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u521D_u59CB_u5316"><span class="nav-number">11.1.</span> <span class="nav-text">初始化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u5B8F_u5B9A_u4E49"><span class="nav-number">11.2.</span> <span class="nav-text">宏定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u8C03_u7528oc_u65B9_u6CD5"><span class="nav-number">11.3.</span> <span class="nav-text">调用oc方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u672A_u77E5_u5BF9_u8C61_u7684_u5904_u7406_u65B9_u6CD5"><span class="nav-number">11.4.</span> <span class="nav-text">未知对象的处理方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#oc_u4E2D_u7684block_u548Cswift_u4E2D_u7684_u95ED_u5305"><span class="nav-number">11.5.</span> <span class="nav-text">oc中的block和swift中的闭包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u6BD4_u8F83_u7B26_u53F7-1"><span class="nav-number">11.6.</span> <span class="nav-text">比较符号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#oc_u4E2D_u7684@selector_u548Cswift_u4E2D_u7684Selector_u7C7B_u578B"><span class="nav-number">11.7.</span> <span class="nav-text">oc中的@selector和swift中的Selector类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cocoa"><span class="nav-number">11.8.</span> <span class="nav-text">cocoa</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#NSString"><span class="nav-number">11.8.1.</span> <span class="nav-text">NSString</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#NSLog"><span class="nav-number">11.8.2.</span> <span class="nav-text">NSLog</span></a></li></ol></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
-      
-
-    </div>
-  </aside>
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
 
 
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright" >
-  
-  &copy;  2015 - 
-  <span itemprop="copyrightYear">2016</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">彭天浩</span>
-</div>
-
-
-<div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
-</div>
-
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Muse
-  </a>
-</div>
-
-
-        
-
-        
-      </div>
-    </footer>
-
-    <div class="back-to-top">
-      <i class="fa fa-arrow-up"></i>
-    </div>
-  </div>
-
-  
+                    <!-- Import File -->
+<script src="/js/highlight.min.js"></script>
+<script src="/js/js.min.js"></script>
+<script src="/js/nprogress.js"></script>
 
 <script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+
+    $('#nprogress .bar').css({
+        'background': '#FF4081'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #FF4081, 0 0 15px #FF4081'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#FF4081',
+        'border-left-color': '#FF4081'
+    });
+
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
 </script>
 
 
 
+    <script src="/js/smoothscroll.js"></script>
 
 
 
 
 
-
-  
-
-
-
-  
-  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+    <!-- Busuanzi -->
+    <script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 
 
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
-
-
-
-  
-
-  
-    
-  
-
-  <script type="text/javascript">
-    var duoshuoQuery = {short_name:"pengtianhao"};
-    (function() {
-      var ds = document.createElement('script');
-      ds.type = 'text/javascript';ds.async = true;
-      ds.id = 'duoshuo-script';
-      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-      ds.charset = 'UTF-8';
-      (document.getElementsByTagName('head')[0]
-      || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-  </script>
-
-  
-    
-    
-    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
-    <script src="/js/src/hook-duoshuo.js"></script>
-  
+    <!-- 多说公共 js 代码 start -->
+    <script type="text/javascript">
+        var duoshuoQuery = {
+            short_name: 'pengtianhao'
+        };
+        (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';
+            ds.async = true;
+            ds.src = 'https://static.duoshuo.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0]
+             || document.getElementsByTagName('body')[0]).appendChild(ds);
+        })();
+    </script>
+    <!-- 多说公共 js 代码 end -->
 
 
 
 
 
+<!-- Swiftye -->
 
 
+<!-- Local Search-->
 
-  
-  
-  <script type="text/javascript">
-    // Popup Window;
-    var isfetched = false;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length == 0) {
-      search_path = "search.xml";
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
-
-    function proceedsearch() {
-      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
-      $('.popup').toggle();
-    }
-    // search function;
+    <script>
     var searchFunc = function(path, search_id, content_id) {
-      'use strict';
-      $.ajax({
-        url: path,
-        dataType: "xml",
-        async: true,
-        success: function( xmlResponse ) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = $( "entry", xmlResponse ).map(function() {
-            return {
-              title: $( "title", this ).text(),
-              content: $("content",this).text(),
-              url: $( "url" , this).text()
-            };
-          }).get();
-          var $input = document.getElementById(search_id);
-          var $resultContent = document.getElementById(content_id);
-          $input.addEventListener('input', function(){
-            var matchcounts = 0;
-            var str='<ul class=\"search-result-list\">';
-            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
-            $resultContent.innerHTML = "";
-            if (this.value.trim().length > 1) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var content_index = [];
-                var data_title = data.title.trim().toLowerCase();
-                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
-                var data_url = decodeURIComponent(data.url);
-                var index_title = -1;
-                var index_content = -1;
-                var first_occur = -1;
-                // only match artiles with not empty titles and contents
-                if(data_title != '') {
-                  keywords.forEach(function(keyword, i) {
-                    index_title = data_title.indexOf(keyword);
-                    index_content = data_content.indexOf(keyword);
-                    if( index_title >= 0 || index_content >= 0 ){
-                      isMatch = true;
-                      if (i == 0) {
-                        first_occur = index_content;
-                      }
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: 'xml',
+            success: function( xmlResponse ) {
+                // get the contents from search data
+                var datas = $( 'entry', xmlResponse ).map(function() {
+                    return {
+                        title: $( 'title', this ).text(),
+                        content: $('content',this).text(),
+                        url: $( 'url' , this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function() {
+                    var str='<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
                     }
-
-                  });
-                }
-                // show search results
-                if (isMatch) {
-                  matchcounts += 1;
-                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
-                  var content = data.content.trim().replace(/<[^>]+>/g,"");
-                  if (first_occur >= 0) {
-                    // cut out 100 characters
-                    var start = first_occur - 20;
-                    var end = first_occur + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if(start == 0){
-                      end = 50;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    var match_content = content.substring(start, end);
-                    // highlight all keywords
-                    keywords.forEach(function(keyword){
-                      var regS = new RegExp(keyword, "gi");
-                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    // perform local searching
+                    datas.forEach(function(data) {
+                        var isMatch = true;
+                        var content_index = [];
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                        var data_url = data.url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if(data_title != '' && data_content != '') {
+                            keywords.forEach(function(keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if( index_title < 0 && index_content < 0 ) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += '<li><a href="'+ data_url +'" class="search-result-title" target="_blank">'+ data_title;
+                            var content = data.content.trim().replace(/<[^>]+>/g, '');
+                            if (first_occur >= 0) {
+                                // cut out characters
+                                var start = first_occur - 6;
+                                var end = first_occur + 6;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 10;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function(keyword) {
+                                    var regS = new RegExp(keyword, 'gi');
+                                    match_content = match_content.replace(regS, '<em class="search-keyword">'+keyword+'</em>');
+                                })
+                                str += '<p class="search-result">' + match_content +'...</p>' +'</a>';
+                            }
+                        }
                     });
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    }
+</script>
 
-                    str += "<p class=\"search-result\">" + match_content +"...</p>"
-                  }
-                  str += "</li>";
-                }
-              })};
-            str += "</ul>";
-            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
-            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
-            $resultContent.innerHTML = str;
-          });
-          proceedsearch();
+
+    <script>
+        var inputArea = document.querySelector('#search');
+        var getSearchFile = function() {
+            var path = 'search.xml';
+            searchFunc(path, 'search', 'local-search-result');
         }
-      });}
 
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched == false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
+        if(inputArea) {
+            inputArea.onfocus = function() {
+                getSearchFile();
+            }
+        }
+    </script>
+
+
+<!-- Window Load-->
+<script>
+    $(window).load(function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
     });
+</script>
 
-    $('.popup-btn-close').click(function(e){
-      $('.popup').hide();
-      $(".popoverlay").remove();
-      $('body').css('overflow', '');
-    });
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-  </script>
+<!-- MathJax Load-->
 
 
-  
-
-  
-
-  
-
-  
-
-
-</body>
+                </main>
+            </div>
+        </body>
+    
 </html>
