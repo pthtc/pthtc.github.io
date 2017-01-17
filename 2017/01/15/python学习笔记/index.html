@@ -226,7 +226,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#切片"><span class="post-toc-number">1.</span> <span class="post-toc-text">切片</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#迭代"><span class="post-toc-number">2.</span> <span class="post-toc-text">迭代</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#列表生成器"><span class="post-toc-number">3.</span> <span class="post-toc-text">列表生成器</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#generator"><span class="post-toc-number">4.</span> <span class="post-toc-text">generator</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#函数式编程"><span class="post-toc-number">5.</span> <span class="post-toc-text">函数式编程</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#map和reduce"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">map和reduce</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#filter"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">filter</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#sorted"><span class="post-toc-number">5.3.</span> <span class="post-toc-text">sorted</span></a></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#切片"><span class="post-toc-number">1.</span> <span class="post-toc-text">切片</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#迭代"><span class="post-toc-number">2.</span> <span class="post-toc-text">迭代</span></a></li></ol>
 
         <!--
         <li class="mdl-menu__item">
@@ -394,96 +394,46 @@
 </blockquote>
 <a id="more"></a>
 <h1 id="切片"><a href="#切片" class="headerlink" title="切片"></a>切片</h1><p>切片是其他语言没有的一个特性，list和tuple都可以用，语法是</p>
-<pre><code>a = [1,2,3,4,5,6]
-L[0:3] //1,2,3,4
-</code></pre><p>事实上，这个<code>0:3</code>指代的是<code>[0，3)</code></p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">a</span> = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]</div><div class="line">L[<span class="number">0</span>:<span class="number">3</span>] <span class="comment">//1,2,3,4</span></div></pre></td></tr></table></figure>
+<p>事实上，这个<code>0:3</code>指代的是<code>[0，3)</code></p>
 <p>切片不仅可以从前往后切，而且可以切末尾几位</p>
-<pre><code>a[-3:-2] //4
-</code></pre><p>字符串也可以看做的切片</p>
-<pre><code>&apos;ABCDEFG&apos;[0:3] //ABC
-</code></pre><p>如果要从第一位开始切，可以省略<code>0</code></p>
-<pre><code>&apos;ABCDEFG&apos;[:3] //ABC
-</code></pre><p>如果要每2个取一个</p>
-<pre><code>a[0:5:2] //0-5位中，每两位取一个
-a[::2] //全部位中，每两位取一个
-</code></pre><h1 id="迭代"><a href="#迭代" class="headerlink" title="迭代"></a>迭代</h1><p>迭代这个特性好多语言都有，用来遍历对象</p>
-<pre><code>d = {&apos;a&apos;: 1, &apos;b&apos;: 2, &apos;c&apos;: 3}
-
-//打印key，等价于d.keys()
-for x in d:
-    print(x,d[x])
-
-//打印value
-for x in d.values():
-    print(x)
-
-//打印所有
-for x,y d.items():
-    print(x,y)
-</code></pre><p>判断是否可以迭代，用的是</p>
-<pre><code>from collections import Iterable //引入collections模块的Iterable类型
-
-print(isinstance(&apos;abc&apos;, Iterable))
-</code></pre><h1 id="列表生成器"><a href="#列表生成器" class="headerlink" title="列表生成器"></a>列表生成器</h1><p>感觉这就是一个迭代的变种</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">a</span>[-<span class="number">3</span>:-<span class="number">2</span>] <span class="comment">//4</span></div></pre></td></tr></table></figure>
+<p>字符串也可以看做的切片</p>
+<figure class="highlight scheme"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">'ABCDEFG</span>'[<span class="name">0:3</span>] //ABC</div></pre></td></tr></table></figure>
+<p>如果要从第一位开始切，可以省略<code>0</code></p>
+<figure class="highlight scheme"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">'ABCDEFG</span>'[<span class="name">:3</span>] //ABC</div></pre></td></tr></table></figure>
+<p>如果要每2个取一个</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">a</span>[<span class="number">0</span>:<span class="number">5</span>:<span class="number">2</span>] <span class="comment">//0-5位中，每两位取一个</span></div><div class="line"><span class="selector-tag">a</span>[::<span class="number">2</span>] <span class="comment">//全部位中，每两位取一个</span></div></pre></td></tr></table></figure>
+<h1 id="迭代"><a href="#迭代" class="headerlink" title="迭代"></a>迭代</h1><p>迭代这个特性好多语言都有，用来遍历对象</p>
+<figure class="highlight mel"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">d = &#123;<span class="string">'a'</span>: <span class="number">1</span>, <span class="string">'b'</span>: <span class="number">2</span>, <span class="string">'c'</span>: <span class="number">3</span>&#125;</div><div class="line">	</div><div class="line"><span class="comment">//打印key，等价于d.keys()</span></div><div class="line"><span class="keyword">for</span> x <span class="keyword">in</span> d:</div><div class="line">	<span class="keyword">print</span>(x,d[x])</div><div class="line">	</div><div class="line"><span class="comment">//打印value</span></div><div class="line"><span class="keyword">for</span> x <span class="keyword">in</span> d.values():</div><div class="line">	<span class="keyword">print</span>(x)</div><div class="line">	</div><div class="line"><span class="comment">//打印所有</span></div><div class="line"><span class="keyword">for</span> x,y d.items():</div><div class="line">	<span class="keyword">print</span>(x,y)</div><div class="line">	</div><div class="line"><span class="string">``</span><span class="string">`	</span></div><div class="line">判断是否可以迭代，用的是</div></pre></td></tr></table></figure>
+<p>from collections import Iterable //引入collections模块的Iterable类型</p>
+<p>print(isinstance(‘abc’, Iterable))<br><figure class="highlight vala"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="meta"># 列表生成器</span></div><div class="line"></div><div class="line">感觉这就是一个迭代的变种</div></pre></td></tr></table></figure></p>
 <pre><code>a = [x for x in range(10)] //1-10
 a = [x*x for x in range(10)] 
 a = [x * x for x in range(1, 11) if x % 2 == 0]
-</code></pre><h1 id="generator"><a href="#generator" class="headerlink" title="generator"></a>generator</h1><p>这是一个很有意思的东西，感觉只有python才有，有迹可循的list，可以直接保存它的生成函数，而不是一次性创建，节省空间</p>
-<p>最简单的创建方法就是把列表生成器的<code>[]</code>改成<code>()</code></p>
-<p>另外一种就是在函数里加<code>yield</code>,这里的yield相当于return，但是又有一点不一样。<code>yield</code>一个值，函数并不会结束，当使用<code>next()</code>再次调用的时候，代码会从yield下一行再次执行。</p>
-<pre><code>def odd():
-    print(&apos;step 1&apos;)
-    yield 1
-    print(&apos;step 2&apos;)
-    yield 3
-    print(&apos;step 3&apos;)
-    yield 5
+</code></pre><figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"># generator</div><div class="line"></div><div class="line">这是一个很有意思的东西，感觉只有python才有，有迹可循的list，可以直接保存它的生成函数，而不是一次性创建，节省空间</div><div class="line"></div><div class="line">最简单的创建方法就是把列表生成器的`[]`改成`()`</div><div class="line"></div><div class="line">另外一种就是在函数里加`yield`,这里的yield相当于<span class="keyword">return</span>，但是又有一点不一样。`yield`一个值，函数并不会结束，当使用`next()`再次调用的时候，代码会从yield下一行再次执行。</div></pre></td></tr></table></figure>
+<p>def odd():<br>    print(‘step 1’)<br>    yield 1<br>    print(‘step 2’)<br>    yield 3<br>    print(‘step 3’)<br>    yield 5</p>
+<p>o = odd()<br>next(o) //step 1<br>next(o) //step 2</p>
+<figure class="highlight autoit"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">当然也可以不用<span class="keyword">next</span></div></pre></td></tr></table></figure>
+<p>for o in odd():<br>    pass<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="section"># 函数式编程</span></div><div class="line"></div><div class="line">这个是我第一次接触函数式编程，本质就是<span class="strong">**函数本身也是一个变量！！！**</span>，这意味着其他的函数可以接受另一个函数作为参数</div></pre></td></tr></table></figure></p>
+<p>def addFunc(x,y):<br>    return x+y;</p>
+<p>def varFunc(x,y,z):<br>    return z(x,y)</p>
+<p>print(varFunc(1,2,addFunc)) //3<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">## <span class="built_in">map</span>和<span class="built_in">reduce</span></div><div class="line"></div><div class="line">**<span class="built_in">map</span>**做的事情就是将一个列表里的<span class="type">N</span>个数值代入一个函数并且返回一个内含<span class="type">N</span>个结果的<span class="built_in">map</span>对象</div></pre></td></tr></table></figure></p>
+<p>def f(x):<br>       return x * x</p>
+<p>r = map(f, [1, 2, 3, 4, 5, 6, 7, 8, 9])</p>
+<p>print(list(r)) //[1, 4, 9, 16, 25, 36, 49, 64, 81]</p>
+<figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">*<span class="strong">*reduce*</span><span class="strong">*做的事情是将每次的结果再次代入函数</span></div></pre></td></tr></table></figure>
+<p>def h(x,y):<br>    return x+y</p>
+<p>print(reduce(h,[1, 2, 3, 4, 5, 6, 7, 8, 9])) //45</p>
+<figure class="highlight clean"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">要注意的是，reduce已经被从全局环境里删除了，使用前要`<span class="keyword">from</span> functools <span class="keyword">import</span> reduce`</div><div class="line"></div><div class="line">## filter</div><div class="line"></div><div class="line">过滤器的也是接收一个函数和list，然后按照函数的返回判断是否保留</div></pre></td></tr></table></figure>
+<p>def check(x):<br>    return x%2 == 0</p>
+<p>print(list(filter(check,[1,2,3,4,5,6]))) //[2, 4, 6]<br><figure class="highlight clean"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">	</div><div class="line">## sorted</div><div class="line"></div><div class="line">sorted可以向其它语言那样直接使用，也可以添加key来引导</div></pre></td></tr></table></figure></p>
+<p>sorted([36, 5, -12, 9, -21]) //从小到大</p>
+<p>sorted([36, 5, -12, 9, -21],reverse = True) //反向</p>
+<figure class="highlight clean"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">廖雪峰教程里面有一道练习题，很有启发，把L按成绩从小到大排序，这个在其他语言挺麻烦，在oc里也用一种类似的方法，但是python显然更简单</div><div class="line"></div><div class="line">```	</div><div class="line">L = [(<span class="string">'Bob'</span>, <span class="number">75</span>), (<span class="string">'Adam'</span>, <span class="number">92</span>), (<span class="string">'Bart'</span>, <span class="number">66</span>), (<span class="string">'Lisa'</span>, <span class="number">88</span>)]</div><div class="line"></div><div class="line">print(sorted(L,key = itemgetter(<span class="number">1</span>)))</div></pre></td></tr></table></figure>
+<p>看到这里想起之前很多操作的都是字典，那么要根据字典的某个键值对排序呢？</p>
+<figure class="highlight llvm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">x</span> = &#123;<span class="string">"pth"</span>:<span class="number">993</span>,<span class="string">"zlk"</span>:<span class="number">345</span>,<span class="string">"skjkd"</span>:<span class="number">789</span>&#125;</div><div class="line"></div><div class="line">print(sorted(<span class="keyword">x</span>.items(),key = lambda <span class="keyword">x</span>:<span class="keyword">x</span>[<span class="number">1</span>])) //根据数字排序</div></pre></td></tr></table></figure>
 
-o = odd()
-next(o) //step 1
-next(o) //step 2
-</code></pre><p>当然也可以不用next</p>
-<pre><code>for o in odd():
-    pass
-</code></pre><h1 id="函数式编程"><a href="#函数式编程" class="headerlink" title="函数式编程"></a>函数式编程</h1><p>这个是我第一次接触函数式编程，本质就是<strong>函数本身也是一个变量！！！</strong>，这意味着其他的函数可以接受另一个函数作为参数</p>
-<pre><code>def addFunc(x,y):
-    return x+y;
-
-def varFunc(x,y,z):
-    return z(x,y)
-
-print(varFunc(1,2,addFunc)) //3
-</code></pre><h2 id="map和reduce"><a href="#map和reduce" class="headerlink" title="map和reduce"></a>map和reduce</h2><p><strong>map</strong>做的事情就是将一个列表里的N个数值代入一个函数并且返回一个内含N个结果的map对象</p>
-<pre><code>def f(x):
-    return x * x
-
-r = map(f, [1, 2, 3, 4, 5, 6, 7, 8, 9])
-
-print(list(r)) //[1, 4, 9, 16, 25, 36, 49, 64, 81]
-</code></pre><p><strong>reduce</strong>做的事情是将每次的结果再次代入函数</p>
-<pre><code>def h(x,y):
-    return x+y
-
-print(reduce(h,[1, 2, 3, 4, 5, 6, 7, 8, 9])) //45
-</code></pre><p>要注意的是，reduce已经被从全局环境里删除了，使用前要<code>from functools import reduce</code></p>
-<h2 id="filter"><a href="#filter" class="headerlink" title="filter"></a>filter</h2><p>过滤器的也是接收一个函数和list，然后按照函数的返回判断是否保留</p>
-<pre><code>def check(x):
-    return x%2 == 0
-
-print(list(filter(check,[1,2,3,4,5,6]))) //[2, 4, 6]
-</code></pre><h2 id="sorted"><a href="#sorted" class="headerlink" title="sorted"></a>sorted</h2><p>sorted可以向其它语言那样直接使用，也可以添加key来引导</p>
-<pre><code>sorted([36, 5, -12, 9, -21]) //从小到大
-
-sorted([36, 5, -12, 9, -21],reverse = True) //反向
-</code></pre><p>廖雪峰教程里面有一道练习题，很有启发，把L按成绩从小到大排序，这个在其他语言挺麻烦，在oc里也用一种类似的方法，但是python显然更简单</p>
-<pre><code>L = [(&apos;Bob&apos;, 75), (&apos;Adam&apos;, 92), (&apos;Bart&apos;, 66), (&apos;Lisa&apos;, 88)]
-
-print(sorted(L,key = itemgetter(1)))
-</code></pre><p>看到这里想起之前很多操作的都是字典，那么要根据字典的某个键值对排序呢？</p>
-<pre><code>x = {&quot;pth&quot;:993,&quot;zlk&quot;:345,&quot;skjkd&quot;:789}
-
-print(sorted(x.items(),key = lambda x:x[1])) //根据数字排序
-</code></pre>
     
 
     
