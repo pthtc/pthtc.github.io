@@ -10,7 +10,7 @@
     
     <title>
         
-            包子行走隐私政策 | 
+            python抓取教务网成绩 | 
         
         彭天浩的博客
     </title>
@@ -48,7 +48,7 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://pengtianhao.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="包子行走隐私政策 | 彭天浩的博客">
+    <meta property="og:title" content="python抓取教务网成绩 | 彭天浩的博客">
     <meta property="og:description" content="手持两把锟斤拷,口中高呼烫烫烫">
 
     <!--[if lte IE 9]>
@@ -226,7 +226,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-适用范围"><span class="post-toc-number">1.</span> <span class="post-toc-text">1. 适用范围</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-信息使用"><span class="post-toc-number">2.</span> <span class="post-toc-text">2. 信息使用</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-信息披露"><span class="post-toc-number">3.</span> <span class="post-toc-text">3. 信息披露</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-信息存储和交换"><span class="post-toc-number">4.</span> <span class="post-toc-text">4. 信息存储和交换</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#5-Cookie的使用"><span class="post-toc-number">5.</span> <span class="post-toc-text">5. Cookie的使用</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#6-信息安全"><span class="post-toc-number">6.</span> <span class="post-toc-text">6. 信息安全</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#前置条件"><span class="post-toc-number">1.</span> <span class="post-toc-text">前置条件</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#实现步骤"><span class="post-toc-number">2.</span> <span class="post-toc-text">实现步骤</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#发起请求并获取信息"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">发起请求并获取信息</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#分析请求"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">分析请求</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#第一步-——-登录"><span class="post-toc-number">2.2.1.</span> <span class="post-toc-text">第一步 —— 登录</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#第二步-——-通知页面"><span class="post-toc-number">2.2.2.</span> <span class="post-toc-text">第二步 —— 通知页面</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#第三步-——-主页面"><span class="post-toc-number">2.2.3.</span> <span class="post-toc-text">第三步 —— 主页面</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#第四步-——-请求成绩"><span class="post-toc-number">2.2.4.</span> <span class="post-toc-text">第四步 —— 请求成绩</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#获取成绩"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">获取成绩</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#登录"><span class="post-toc-number">2.3.1.</span> <span class="post-toc-text">登录</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#通知页面"><span class="post-toc-number">2.3.2.</span> <span class="post-toc-text">通知页面</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#主页面"><span class="post-toc-number">2.3.3.</span> <span class="post-toc-text">主页面</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#成绩查询页"><span class="post-toc-number">2.3.4.</span> <span class="post-toc-text">成绩查询页</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#解析"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">解析</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#命令行参数"><span class="post-toc-number">3.</span> <span class="post-toc-text">命令行参数</span></a></li></ol>
 
         <!--
         <li class="mdl-menu__item">
@@ -262,7 +262,7 @@
         
     
             <p class="article-headline-p">
-                包子行走隐私政策
+                python抓取教务网成绩
             </p>
         </div>
 
@@ -281,7 +281,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>彭天浩</strong>
-        <span>4月 14, 2016</span>
+        <span>1月 31, 2017</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -305,7 +305,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/包子行走/">包子行走</a>
+        <a class="post_tag-link" href="/tags/爬虫/">爬虫</a>
     </ul>
     
 
@@ -332,7 +332,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=包子行走隐私政策&url=http://pengtianhao.com//2016/04/14/包子行走隐私政策/index.html&pic=&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=python抓取教务网成绩&url=http://pengtianhao.com//2017/01/31/python抓取教务网成绩/index.html&pic=&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -341,7 +341,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=包子行走隐私政策&url=http://pengtianhao.com//2016/04/14/包子行走隐私政策/index.html&via=彭天浩" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=python抓取教务网成绩&url=http://pengtianhao.com//2017/01/31/python抓取教务网成绩/index.html&via=彭天浩" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -350,7 +350,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://pengtianhao.com//2016/04/14/包子行走隐私政策/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://pengtianhao.com//2017/01/31/python抓取教务网成绩/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -359,7 +359,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://pengtianhao.com//2016/04/14/包子行走隐私政策/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://pengtianhao.com//2017/01/31/python抓取教务网成绩/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -371,7 +371,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=彭天浩的博客&title=包子行走隐私政策&summary=手持两把锟斤拷,口中高呼烫烫烫&pics=http://pengtianhao.com/img/head.jpg&url=http://pengtianhao.com/2016/04/14/包子行走隐私政策/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=彭天浩的博客&title=python抓取教务网成绩&summary=手持两把锟斤拷,口中高呼烫烫烫&pics=http://pengtianhao.com/img/head.jpg&url=http://pengtianhao.com/2017/01/31/python抓取教务网成绩/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 QQ
             </li>
@@ -389,35 +389,47 @@
                 <!-- Post Content -->
                 <div id="post-content" class="markdown-Github mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>APP Store搜索:包子行走</p>
-<a id="more"></a>
-<blockquote>
-<p>包子行走尊重并保护所有使用服务用户的个人隐私权。为了给您提供更准确、更有个性化的服务， 包子行走会按照本隐私权政策的规定使用和披露您的个人信息。但 包子行走将以高度的勤勉、审慎义务对待这些信息。除本隐私权政策另有规定外，在未征得您事先许可的情况下， 包子行走不会将这些信息对外披露或向第三方提供。 包子行走会不时更新本隐私权政策。 您在同意 包子行走服务使用协议之时，即视为您已经同意本隐私权政策全部内容。本隐私权政策属于 包子行走服务使用协议不可分割的一部分。 </p>
+        <blockquote>
+<p>最近想抓取一下教务网成绩，刚好学习了python，就用它来实现</p>
 </blockquote>
-<h2 id="1-适用范围"><a href="#1-适用范围" class="headerlink" title="1. 适用范围"></a>1. 适用范围</h2><p>a) 在您注册 包子行走帐号时，您根据 包子行走要求提供的个人注册信息； </p>
-<p>b) 在您使用 包子行走网络服务， 包子行走自动接收并记录的您的手机上的信息，包括但不限于您的IP地址、浏览器的类型、使用的语言、访问日期和时间、软硬件特征信息及您需求的网页记录等数据； </p>
-<p>c)  包子行走通过合法途径从商业伙伴处取得的用户个人数据。 </p>
-<p><strong>您了解并同意，以下信息不适用本隐私权政策：</strong></p>
-<p>a) 您在使用 包子行走平台提供的搜索服务时输入的关键字信息； </p>
-<p>b)  包子行走收集到的您在 包子行走发布的有关信息数据，包括但不限于参与活动、成交信息及评价详情； </p>
-<p>c) 违反法律规定或违反 包子行走规则行为及 包子行走已对您采取的措施。 </p>
-<h2 id="2-信息使用"><a href="#2-信息使用" class="headerlink" title="2. 信息使用"></a>2. 信息使用</h2><p>a)  包子行走不会向任何无关第三方提供、出售、出租、分享或交易您的个人信息，除非事先得到您的许可，或该第三方和 包子行走（含 包子行走关联公司）单独或共同为您提供服务，且在该服务结束后，其将被禁止访问包括其以前能够访问的所有这些资料。 </p>
-<p>b)  包子行走亦不允许任何第三方以任何手段收集、编辑、出售或者无偿传播您的个人信息。任何 包子行走平台用户如从事上述活动，一经发现， 包子行走有权立即终止与该用户的服务协议。 </p>
-<p>c) 为服务用户的目的， 包子行走可能通过使用您的个人信息，向您提供您感兴趣的信息，包括但不限于向您发出产品和服务信息，或者与 包子行走合作伙伴共享信息以便他们向您发送有关其产品和服务的信息（后者需要您的事先同意）。 </p>
-<h2 id="3-信息披露"><a href="#3-信息披露" class="headerlink" title="3. 信息披露"></a>3. 信息披露</h2><p><strong>在如下情况下， 包子行走将依据您的个人意愿或法律的规定全部或部分的披露您的个人信息： </strong></p>
-<p>a) 经您事先同意，向第三方披露； </p>
-<p>b) 为提供您所要求的产品和服务，而必须和第三方分享您的个人信息； </p>
-<p>c) 根据法律的有关规定，或者行政或司法机构的要求，向第三方或者行政、司法机构披露；</p>
-<p>d) 如您出现违反中国有关法律、法规或者 包子行走服务协议或相关规则的情况，需要向第三方披露；  </p>
-<p>e) 如您是适格的知识产权投诉人并已提起投诉，应被投诉人要求，向被投诉人披露，以便双方处理可能的权利纠纷；</p>
-<p>f) 在 包子行走平台上创建的某一交易中，如交易任何一方履行或部分履行了交易义务并提出信息披露请求的， 包子行走有权决定向该用户提供其交易对方的联络方式等必要信息，以促成交易的完成或纠纷的解决。  </p>
-<p>g) 其它 包子行走根据法律、法规或者网站政策认为合适的披露。  </p>
-<h2 id="4-信息存储和交换"><a href="#4-信息存储和交换" class="headerlink" title="4. 信息存储和交换"></a>4. 信息存储和交换</h2><p> 包子行走收集的有关您的信息和资料将保存在 包子行走及（或）其关联公司的服务器上，这些信息和资料可能传送至您所在国家、地区或 包子行走收集信息和资料所在地的境外并在境外被访问、存储和展示。 </p>
-<h2 id="5-Cookie的使用"><a href="#5-Cookie的使用" class="headerlink" title="5. Cookie的使用"></a>5. Cookie的使用</h2><p>a) 在您未拒绝接受cookies的情况下， 包子行走会在您的计算机上设定或取用cookies<br>，以便您能登录或使用依赖于cookies的 包子行走平台服务或功能。 包子行走使用cookies可为您提供更加周到的个性化服务，包括推广服务。  </p>
-<p>b) 您有权选择接受或拒绝接受cookies。您可以通过修改浏览器设置的方式拒绝接受cookies。但如果您选择拒绝接受cookies，则您可能无法登录或使用依赖于cookies的 包子行走网络服务或功能。 </p>
-<p>c) 通过 包子行走所设cookies所取得的有关信息，将适用本政策。 </p>
-<h2 id="6-信息安全"><a href="#6-信息安全" class="headerlink" title="6. 信息安全"></a>6. 信息安全</h2><p>a)  包子行走帐号均有安全保护功能，请妥善保管您的用户名及密码信息。 包子行走将通过对用户密码进行加密等安全措施确保您的信息不丢失，不被滥用和变造。尽管有前述安全措施，但同时也请您注意在信息网络上不存在“完善的安全措施”。  </p>
-<p>b) 在使用 包子行走网络服务进行网上交易时，您不可避免的要向交易对方或潜在的交易对方披露自己的个人信息，如联络方式或者邮政地址。请您妥善保护自己的个人信息，仅在必要的情形下向他人提供。如您发现自己的个人信息泄密，尤其是 包子行走用户名及密码发生泄露，请您立即联络 包子行走客服，以便 包子行走采取相应措施。</p>
+<a id="more"></a>
+<h1 id="前置条件"><a href="#前置条件" class="headerlink" title="前置条件"></a>前置条件</h1><ol>
+<li>基本的JavaScript、html知识，用于分析网站和网络请求</li>
+<li>python</li>
+<li>chrome 或者其他浏览器的开发者工具</li>
+<li>浙江工商大学学生账号密码</li>
+</ol>
+<h1 id="实现步骤"><a href="#实现步骤" class="headerlink" title="实现步骤"></a>实现步骤</h1><h2 id="发起请求并获取信息"><a href="#发起请求并获取信息" class="headerlink" title="发起请求并获取信息"></a>发起请求并获取信息</h2><p>最后打印的html就是网页的源代码或是接口返回的信息</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">import urllib</div><div class="line">import urllib2</div><div class="line">import cookielib</div><div class="line">import re</div><div class="line">import sys</div><div class="line">import zlib</div><div class="line"></div><div class="line">self<span class="selector-class">.loginUrl</span> = <span class="string">'http://124.160.64.163/jwglxt/xtgl/login_login.html'</span></div><div class="line">self<span class="selector-class">.cookies</span> = cookielib.CookieJar()</div><div class="line">self<span class="selector-class">.postdata</span> = urllib.urlencode(&#123;</div><div class="line">    <span class="string">'yhm'</span>:self<span class="selector-class">.username</span>,</div><div class="line">    <span class="string">'mm'</span>:self<span class="selector-class">.mypassword</span>,</div><div class="line">    <span class="string">'yzm'</span>:<span class="string">''</span></div><div class="line">&#125;)</div><div class="line">self<span class="selector-class">.opener</span> = urllib2.build_opener(urllib2.HTTPCookieProcessor(self.cookies))</div><div class="line">request  = urllib2.Request(</div><div class="line">    url = self<span class="selector-class">.loginUrl</span>,</div><div class="line">    data = self.postdata)</div><div class="line">request.add_header(<span class="string">'Accept-encoding'</span>, <span class="string">'gzip'</span>)</div><div class="line">response = self<span class="selector-class">.opener</span><span class="selector-class">.open</span>(request)</div><div class="line"><span class="selector-tag">html</span> = response.read()</div><div class="line">print html</div></pre></td></tr></table></figure>
+<h2 id="分析请求"><a href="#分析请求" class="headerlink" title="分析请求"></a>分析请求</h2><h3 id="第一步-——-登录"><a href="#第一步-——-登录" class="headerlink" title="第一步 —— 登录"></a>第一步 —— 登录</h3><p>教务网的入口网址是</p>
+<p><code>http://124.160.64.163/jwglxt/xtgl/login_login.html</code></p>
+<ul>
+<li><p>打开chorme的<code>developer tools</code></p>
+</li>
+<li><p>在登录页面输入账号密码，点击登录<img src="https://cl.ly/2e3Q1b362I2K" alt=""></p>
+</li>
+<li><p>此时查看developer tools里面的<code>network</code>选项,<code>hearder</code>里的<code>form data</code>告诉我们登录请求的参数是<code>yhm/mm/yzm</code>,其中yzm传空<img src="https://d17oy1vhnax1f7.cloudfront.net/items/25421L3U051j2W0c2702/A4E301AF-3684-4547-8BB9-94319AD78C6A.png?v=405cebbf" alt=""></p>
+</li>
+</ul>
+<h3 id="第二步-——-通知页面"><a href="#第二步-——-通知页面" class="headerlink" title="第二步 —— 通知页面"></a>第二步 —— 通知页面</h3><p>成功登录以后就要跳转到通知页面，这时候我们需要知道点击『已阅读』按钮以后发生了什么，那就继续观察，发现请求网址是<code>http://124.160.64.163/jwglxt/xtgl/login_loginIndex.html</code>，没有参数，这时候点击『知道了』按钮，跳转到主页。这时候地址栏显示为<code>http://124.160.64.163/jwglxt/xtgl/index_initMenu.html?t=</code>，但是事实上如果通过这个网址发送参数也会失败，再次分析请求，发现实际上点击按钮之后，登录的是<code>http://124.160.64.163/jwglxt/xtgl/login_loginIndex.html</code>,没有参数。通过这个地址，我们就可以得到主页面的内容。</p>
+<h3 id="第三步-——-主页面"><a href="#第三步-——-主页面" class="headerlink" title="第三步 —— 主页面"></a>第三步 —— 主页面</h3><p>加载到主页面以后，就开始比较复杂了，这时候我们需要跳转到成绩查询页面，因为新开了一个页面，所以看似是直接跳转新页面的网址<code>http://124.160.64.163/jwglxt/xtgl/init_cxGnPage.html</code>就可以，但是实际操作发现，会报<code>HTTP请求参数gnmkdm不能为空!</code>的错误。因此我们需要分析主页的源代码, 发现了这么一段<code>，于是发现这其实是需要向接口发送特定参数来获得不同的页面。这时候我的请求其实是</code>, 这个操作可以写死。</p>
+<h3 id="第四步-——-请求成绩"><a href="#第四步-——-请求成绩" class="headerlink" title="第四步 —— 请求成绩"></a>第四步 —— 请求成绩</h3><p>加载好成绩页面之后，我们就需要告诉服务器我们需要的请求的学年和学期，那么至少有两个参数<code>学期</code>和<code>学年</code>，但是通过分析发现，除了这些还需要的参数包括每一页显示几张，当前多少页已经一些排序相关的参数，这些对我们不重要，只需要依样画葫芦就可以了。这其中有一个叫做<code>nd</code>的参数让我非常头疼，不过好在后来发现直接抄录也没有问题，惊险过关。</p>
+<h2 id="获取成绩"><a href="#获取成绩" class="headerlink" title="获取成绩"></a>获取成绩</h2><p>这时候已经分析完毕，只欠代码实现了，但是首先我们需要知道，学校服务器是通过cookie来记录登录状态的，所以我们只需要保存一份cookie就可以保持登录。</p>
+<h3 id="登录"><a href="#登录" class="headerlink" title="登录"></a>登录</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">self<span class="selector-class">.username</span> = username</div><div class="line">self<span class="selector-class">.mypassword</span> = password</div><div class="line">self<span class="selector-class">.loginUrl</span> = <span class="string">'http://124.160.64.163/jwglxt/xtgl/login_login.html'</span></div><div class="line">self<span class="selector-class">.cookies</span> = cookielib.CookieJar()</div><div class="line">self<span class="selector-class">.postdata</span> = urllib.urlencode(&#123;</div><div class="line"><span class="string">'yhm'</span>:self<span class="selector-class">.username</span>,</div><div class="line"><span class="string">'mm'</span>:self<span class="selector-class">.mypassword</span>,</div><div class="line"><span class="string">'yzm'</span>:<span class="string">''</span></div><div class="line">&#125;)</div><div class="line">self<span class="selector-class">.opener</span> = urllib2.build_opener(urllib2.HTTPCookieProcessor(self.cookies))</div><div class="line">request  = urllib2.Request(</div><div class="line">url = self<span class="selector-class">.loginUrl</span>,</div><div class="line">data = self.postdata)</div><div class="line">request.add_header(<span class="string">'Accept-encoding'</span>, <span class="string">'gzip'</span>)</div><div class="line">response = self<span class="selector-class">.opener</span><span class="selector-class">.open</span>(request)</div></pre></td></tr></table></figure>
+<p>只有在登录这一步的时候需要新建一个cookie，其他步骤直接调用就可以了</p>
+<h3 id="通知页面"><a href="#通知页面" class="headerlink" title="通知页面"></a>通知页面</h3><p>从这里开始直接写url和参数</p>
+<p><code>http://124.160.64.163/jwglxt/xtgl/login_loginIndex.html</code></p>
+<figure class="highlight lasso"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">self</span>.postdata = <span class="literal">None</span></div></pre></td></tr></table></figure>
+<h3 id="主页面"><a href="#主页面" class="headerlink" title="主页面"></a>主页面</h3><p><code>http://124.160.64.163/jwglxt/xtgl/init_cxGnPage.html</code></p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">mkName = <span class="string">'学生成绩查询'</span></div><div class="line"><span class="keyword">self</span>.postdata = urllib.urlencode(&#123;</div><div class="line">    <span class="string">'gnmkdm'</span><span class="symbol">:<span class="string">'N305005'</span></span>,</div><div class="line">    <span class="string">'dyym'</span><span class="symbol">:<span class="string">'/cjcx/cjcx_cxDgXscj.html'</span></span>,</div><div class="line">    <span class="string">'gnmkmc'</span><span class="symbol">:urllib2</span>.<span class="keyword">quote</span>(mkName.encode(<span class="string">"utf-8"</span>)),</div><div class="line">    <span class="string">'sfgnym'</span><span class="symbol">:<span class="string">'null'</span></span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h3 id="成绩查询页"><a href="#成绩查询页" class="headerlink" title="成绩查询页"></a>成绩查询页</h3><p><code>http://124.160.64.163/jwglxt/cjcx/cjcx_cxDgXscj.html?doType=query&amp;gnmkdmKey=N305005&amp;sessionUserKey=&#39;+self.username</code></p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> semester == <span class="string">'1'</span>:</div><div class="line">    semester = <span class="string">'3'</span></div><div class="line">elif semester == <span class="string">'2'</span>:</div><div class="line">    semester = <span class="string">'12'</span></div><div class="line"><span class="keyword">self</span>.postdata = urllib.urlencode(&#123;</div><div class="line">    <span class="string">'xnm'</span><span class="symbol">:year</span>,</div><div class="line">    <span class="string">'xqm'</span><span class="symbol">:semester</span>,</div><div class="line">    <span class="string">'nd'</span><span class="symbol">:<span class="string">'1485587502806'</span></span>,</div><div class="line">    <span class="string">'queryModel.showCount'</span><span class="symbol">:<span class="string">'1000'</span></span>,</div><div class="line">    <span class="string">'queryModel.currentPage'</span><span class="symbol">:<span class="string">'1'</span></span>,</div><div class="line">    <span class="string">'queryModel.sortName'</span><span class="symbol">:<span class="string">''</span></span>,</div><div class="line">    <span class="string">'queryModel.sortOrder'</span><span class="symbol">:<span class="string">'asc'</span></span>,</div><div class="line">    <span class="string">'time'</span><span class="symbol">:<span class="string">'1'</span></span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>由此就拿到了成绩的json串</p>
+<h2 id="解析"><a href="#解析" class="headerlink" title="解析"></a>解析</h2><p>拿到json串之后就需要解析并且处理显示想要的结果,非常简单，只是考虑到学生有重修的情况，需要记得相同科目取最大值列入计算。</p>
+<figure class="highlight zephir"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">data = json.loads(html)</div><div class="line">countAll = <span class="number">0</span></div><div class="line">countGpaAll = <span class="number">0</span></div><div class="line">countAllDefualt = <span class="number">0</span></div><div class="line">mydic = &#123;&#125;</div><div class="line"></div><div class="line"><span class="keyword">if</span> len(data[<span class="string">'items'</span>]) == <span class="number">0</span>:</div><div class="line"><span class="keyword">print</span> <span class="string">'No data'</span></div><div class="line"><span class="keyword">exit</span>(<span class="number">0</span>)</div><div class="line"></div><div class="line"><span class="keyword">for</span> x in data[<span class="string">'items'</span>]:</div><div class="line">    <span class="keyword">if</span> mydic.has_key(x[<span class="string">'kcmc'</span>]):</div><div class="line">        <span class="keyword">if</span> <span class="keyword">float</span>(mydic[x[<span class="string">'kcmc'</span>]])&lt;<span class="keyword">float</span>(x[<span class="string">'cj'</span>]):</div><div class="line">            countAllDefualt-=<span class="keyword">float</span>(<span class="keyword">self</span>.gpaCounterDefault(mydic[x[<span class="string">'kcmc'</span>]]))*<span class="keyword">float</span>(x[<span class="string">'xf'</span>])</div><div class="line">            countAllDefualt+=<span class="keyword">float</span>(<span class="keyword">self</span>.gpaCounterDefault(x[<span class="string">'cj'</span>]))*<span class="keyword">float</span>(x[<span class="string">'xf'</span>])</div><div class="line">            countAll-=<span class="keyword">float</span>(<span class="keyword">self</span>.gpaCounter(mydic[x[<span class="string">'kcmc'</span>]]))*<span class="keyword">float</span>(x[<span class="string">'xf'</span>])</div><div class="line">            countAll+=<span class="keyword">float</span>(<span class="keyword">self</span>.gpaCounter(x[<span class="string">'cj'</span>]))*<span class="keyword">float</span>(x[<span class="string">'xf'</span>])</div><div class="line">            mydic[x[<span class="string">'kcmc'</span>]] = x[<span class="string">'cj'</span>]</div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        mydic[x[<span class="string">'kcmc'</span>]] = x[<span class="string">'cj'</span>]</div><div class="line">        countAll+= <span class="keyword">float</span>(<span class="keyword">self</span>.gpaCounter(x[<span class="string">'cj'</span>]))*<span class="keyword">float</span>(x[<span class="string">'xf'</span>])</div><div class="line">        countAllDefualt+= <span class="keyword">float</span>(<span class="keyword">self</span>.gpaCounterDefault(x[<span class="string">'cj'</span>]))*<span class="keyword">float</span>(x[<span class="string">'xf'</span>])</div><div class="line">        countGpaAll += <span class="keyword">float</span>(x[<span class="string">'xf'</span>])</div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">for</span> z in mydic:</div><div class="line">    <span class="keyword">print</span> <span class="string">' '</span>+z+<span class="string">' '</span>+mydic[z]</div><div class="line"></div><div class="line"><span class="keyword">print</span> <span class="string">'\n学分(基于wes算法): '</span>+ str(countAll/countGpaAll)</div><div class="line"><span class="keyword">print</span> <span class="string">'\n学分(基于标准算法): '</span>+ str(countAllDefualt/countGpaAll)</div></pre></td></tr></table></figure>
+<p>由此就实现了从教务网查询成绩并且打印学分</p>
+<h1 id="命令行参数"><a href="#命令行参数" class="headerlink" title="命令行参数"></a>命令行参数</h1><p>现在这个程序还差灵活性，最好是通过命令行参数来录入账号密码和学期学年，并且学期学年可以缺省，这时候就需要<code>argparse</code>这个库来帮助了,使用也非常简单。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">parser = argparse.ArgumentParser(description='')</div><div class="line">parser.add_argument('-u', dest='username', type=str, <span class="keyword">help</span>=<span class="string">'Your username'</span>,<span class="keyword">required</span> = <span class="literal">True</span>)</div><div class="line">parser.add_argument(<span class="string">'-p'</span>, dest=<span class="string">'password'</span>, <span class="keyword">type</span>=<span class="keyword">str</span>, <span class="keyword">help</span>=<span class="string">'Your password'</span>,<span class="keyword">required</span> = <span class="literal">True</span>)</div><div class="line">parser.add_argument(<span class="string">'-y'</span>, dest=<span class="string">'year'</span>, <span class="keyword">type</span>=<span class="keyword">str</span>, <span class="keyword">help</span>=<span class="string">'Your school year,like [2016]'</span>,<span class="keyword">required</span> = <span class="literal">False</span>,<span class="keyword">default</span>=<span class="string">''</span>)</div><div class="line">parser.add_argument(<span class="string">'-s'</span>, dest=<span class="string">'semester'</span>, <span class="keyword">type</span> =<span class="keyword">str</span>, <span class="keyword">help</span>=<span class="string">'Your semester [1]or[2]'</span>,<span class="keyword">required</span> = <span class="literal">False</span>,<span class="keyword">default</span>=<span class="string">''</span>)</div><div class="line"></div><div class="line">myUserName = <span class="keyword">None</span></div><div class="line">myPassword = <span class="keyword">None</span></div><div class="line">myYear = <span class="keyword">None</span></div><div class="line">mySemester = <span class="keyword">None</span></div><div class="line"></div><div class="line">try:</div><div class="line">    options = parser.parse_args()</div><div class="line">    myUserName = options.username</div><div class="line">    myPassword = options.password</div><div class="line">    myYear = options.year</div><div class="line">    mySemester = options.semester</div><div class="line"><span class="keyword">except</span>:</div><div class="line">    print(parser.parse_args([<span class="string">'-h'</span>]))</div><div class="line">    <span class="keyword">exit</span>(<span class="number">0</span>)</div></pre></td></tr></table></figure>
 
     
 
@@ -447,8 +459,8 @@
     <!-- 多说评论框 start -->
     <div class="ds-thread"
         data-thread-key=""
-        data-url="http://pengtianhao.com/2016/04/14/包子行走隐私政策/"
-        data-title="包子行走隐私政策">
+        data-url="http://pengtianhao.com/2017/01/31/python抓取教务网成绩/"
+        data-title="python抓取教务网成绩">
     </div>
     <!-- 多说评论框 end -->
 </div>
@@ -464,21 +476,13 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2016/06/23/C++小总结/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2016/03/13/我用过的iOS开发SDK自我记录（不定时更新）/" id="post_nav-older" class="next-content">
+        <a href="/2017/01/23/快速实现基于Python的微信聊天机器人/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
