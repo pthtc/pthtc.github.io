@@ -4,6 +4,93 @@
   
     
     <entry>
+      <title><![CDATA[GRE笔记]]></title>
+      <url>http://pengtianhao.com/2017/03/25/GRE%E7%AC%94%E8%AE%B0/</url>
+      <content type="html"><![CDATA[<blockquote>
+<p>GRE上课的一些记录</p>
+</blockquote>
+<a id="more"></a>
+<h1 id="GRE写作"><a href="#GRE写作" class="headerlink" title="GRE写作"></a>GRE写作</h1><ul>
+<li>立论</li>
+<li>驳论</li>
+</ul>
+<p>400字以上</p>
+<p>电脑平分+人评分</p>
+<ol>
+<li>结构严谨</li>
+<li>大量连接词</li>
+<li>长音节单词</li>
+<li>argument中提出尽可能的问题和可能性，论据充分</li>
+<li><p>看范文，模仿style</p>
+</li>
+<li><p>320+4</p>
+</li>
+<li>无模板</li>
+<li>字数没关系</li>
+<li>不能背范文</li>
+<li><strong>看高频写作</strong></li>
+</ol>
+<h1 id="argument"><a href="#argument" class="headerlink" title="argument"></a>argument</h1><ol>
+<li>找出逻辑错误，3个以上</li>
+<li>分析错误</li>
+<li>用例子证明</li>
+</ol>
+<h2 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h2><ol>
+<li>审题(3min): 找出原文的论证和证据(1.5min)，同时找出逻辑错误和想好论证和例子(1.5min)</li>
+<li>第一段(3-5min): 开头段，归纳论点，说明论点有问题，有逻辑漏洞，准备发起进攻</li>
+<li>第二段-N段(15-20min): 分类别去攻击各个逻辑错误，至少找出3个逻辑问题</li>
+<li>第三段(3-5min): </li>
+</ol>
+<h2 id="开头段"><a href="#开头段" class="headerlink" title="开头段"></a>开头段</h2><p>CEF</p>
+<ol>
+<li>举出元论证的证据</li>
+<li>指出重要证据</li>
+<li>表明自己对原论证的判断 logical</li>
+<li>指出其存在的逻辑问题</li>
+</ol>
+<p>evidence 必须改写</p>
+<ol>
+<li>同义词</li>
+<li>换词性</li>
+</ol>
+<h2 id="主题段"><a href="#主题段" class="headerlink" title="主题段"></a>主题段</h2><ol>
+<li>写作顺序： 按照逻辑错误主次进行让步攻击，主次(结论最依靠的假设)</li>
+<li>写作内容: 逻辑问题分类『七宗罪』</li>
+<li>论证时所用的语言</li>
+</ol>
+<h2 id="调查数据类错误"><a href="#调查数据类错误" class="headerlink" title="调查数据类错误"></a>调查数据类错误</h2><ol>
+<li>调查取样survey/study/poll/bill/complaint</li>
+<li>数据变化number/percentage/chages</li>
+<li>被调查对象(respondents,animal)</li>
+</ol>
+<p>样本质量（样本代表性，意义，模糊，第三方）<br>样本数量(绝对值，相对值)</p>
+<h3 id="quality-of-sample"><a href="#quality-of-sample" class="headerlink" title="quality of sample"></a>quality of sample</h3><ul>
+<li><strong>representativeness 代表性</strong> selective/unrepresentative sample 随机性，不够大 性格学历群体家庭背景年龄职业地域</li>
+<li><strong>meaningfulness/vague data 无意义</strong> 张冠李戴</li>
+<li><strong>模糊数据</strong> 模糊：量词，程度副词，变化幅度，比较级</li>
+<li>invalid time</li>
+<li>cross-bencher;non-aligned surveyor</li>
+</ul>
+<h1 id="数学"><a href="#数学" class="headerlink" title="数学"></a>数学</h1><h2 id="代数"><a href="#代数" class="headerlink" title="代数"></a>代数</h2><ol>
+<li>指数运算 operations with exponents</li>
+<li>因式分解 factoring and simplifying</li>
+<li>函数 functions</li>
+<li>方程 equation</li>
+<li>不等式 inequalities</li>
+<li>解析几何</li>
+</ol>
+<p>斜率 slope 截距 intercept</p>
+<p>韦达定理<br>二次式通解<br>均值不等式和绝对值不等式<br>单位名称 单位换算</p>
+<h3 id="代数文字题"><a href="#代数文字题" class="headerlink" title="代数文字题"></a>代数文字题</h3><ol>
+<li>经济问题</li>
+<li>运动问题</li>
+<li>工作问题</li>
+<li>混合物问题</li>
+</ol>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[python抓取教务网成绩]]></title>
       <url>http://pengtianhao.com/2017/01/31/python%E6%8A%93%E5%8F%96%E6%95%99%E5%8A%A1%E7%BD%91%E6%88%90%E7%BB%A9/</url>
       <content type="html"><![CDATA[<blockquote>
