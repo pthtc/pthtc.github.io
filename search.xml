@@ -195,6 +195,11 @@
 <li>三维图形</li>
 <li>角度计算</li>
 </ul>
+<h2 id="数据分析"><a href="#数据分析" class="headerlink" title="数据分析"></a>数据分析</h2><ul>
+<li>统计学 平均值(mean),中位数(median),众数(mode),极差(range),方差(variance),标准差(stand deviation)</li>
+<li>正态分布(normal distribution) 68% 95% 99%</li>
+<li>排列组合(permutation and recombination)</li>
+</ul>
 ]]></content>
     </entry>
     
