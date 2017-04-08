@@ -135,22 +135,42 @@
 <h4 id="时间模板"><a href="#时间模板" class="headerlink" title="时间模板"></a>时间模板</h4><p>In the argument, the observation period is only limited in <code>____</code>. However, we have to doubt the time validity during the test time. In common sense, an observation period should be extensive enough to testify the effectiveness of a certain policy/product.</p>
 <h4 id="只给绝对值"><a href="#只给绝对值" class="headerlink" title="只给绝对值"></a>只给绝对值</h4><p>The argument tells us that “<code>____</code>“, However, the author fails to indicate the percentage of <code>____</code>. So this evidence is fall too vague to be meaningful.</p>
 <h4 id="只给相对值"><a href="#只给相对值" class="headerlink" title="只给相对值"></a>只给相对值</h4><p>The argument fails to provide information regarding the absolution number of <code>____</code>. So this evidence is far too vague to be meaningful.</p>
-<h2 id="充分条件和必要条件-Sufficient-Evidence-and-Necessary-Condition"><a href="#充分条件和必要条件-Sufficient-Evidence-and-Necessary-Condition" class="headerlink" title="充分条件和必要条件(Sufficient Evidence and Necessary Condition)"></a>充分条件和必要条件(Sufficient Evidence and Necessary Condition)</h2><ul>
+<h2 id="充分条件和必要条件-Sufficient-Evidence-and-Necessary-Condition"><a href="#充分条件和必要条件-Sufficient-Evidence-and-Necessary-Condition" class="headerlink" title="充分条件和必要条件(Sufficient Evidence and Necessary Condition)"></a>充分条件和必要条件(Sufficient Evidence and Necessary Condition)</h2><p>充分必要是<strong>还未发生的事情</strong></p>
+<ul>
 <li><strong>Sufficient evidence 攻击对方条件不充分</strong> 原因非唯一，可能由其他因素产生 <strong>定位</strong> <em>we should/could/the best way to</em></li>
 <li><strong>Unnecessary condition 不必要条件</strong> <strong>定位</strong> <em>the only way/we must do</em></li>
 </ul>
 <h3 id="正向模板"><a href="#正向模板" class="headerlink" title="正向模板"></a>正向模板</h3><p>In the argument, the author based on an assumption that A is sufficient enough to give birth to B. However, it is not necessarily the case. While A <code>____</code> may influence the result, it is not sufficient enough to bring about the resuly. For instance,<code>____</code> perhaps,<code>____</code>(哪些事情是的A不能导致B). <em>Without taking the above scenarios into consideration, it is not logical to claim that A could sufficiently result in B.</em></p>
 <h3 id="反向模板"><a href="#反向模板" class="headerlink" title="反向模板"></a>反向模板</h3><p>Even assuming A is sufficient enough to give birth to B/the above assumption is sound, it cannot guarantee without A, without B.</p>
 <h3 id="不必要模板"><a href="#不必要模板" class="headerlink" title="不必要模板"></a>不必要模板</h3><p>The author asumes A is a necessary condition for B. However, it is not necessarily the case since other solutions/factors could equally bring out the same result. For example, <code>____</code>. Or, is it possible <code>____</code>?</p>
-<h2 id="因果-Cause-and-Effect-Fallacies"><a href="#因果-Cause-and-Effect-Fallacies" class="headerlink" title="因果(Cause and Effect Fallacies)"></a>因果(Cause and Effect Fallacies)</h2><ul>
+<h2 id="因果-Cause-and-Effect-Fallacies"><a href="#因果-Cause-and-Effect-Fallacies" class="headerlink" title="因果(Cause and Effect Fallacies)"></a>因果(Cause and Effect Fallacies)</h2><p>因果是<strong>已经发生的事情</strong></p>
+<ul>
 <li><strong>Causal simplification</strong> 因果关系简单化</li>
 <li><strong>Post hoc/after-this fallacy</strong> 后此谬论</li>
 <li><strong>Confuse concurrence/correlation with causal relationship</strong> 把相关性当因果关系</li>
 <li><strong>Confuse cause with effect</strong> 因果混淆，没有出现的背景信息，可能是原因，眼前的原因都是结果</li>
 </ul>
 <h3 id="因果关系简单化"><a href="#因果关系简单化" class="headerlink" title="因果关系简单化"></a>因果关系简单化</h3><p>The arguer fails to establish te causal relationship between the fact that A and the fact that B. This argument is unacceptable unless there is compelling evidence to support the connection between these two events. Perhaps, for example, B may result froom C. Is it possible that it is D contribute to B.</p>
-<h3 id="后此谬论"><a href="#后此谬论" class="headerlink" title="后此谬论"></a>后此谬论</h3><p>Based on the fact that A occurred after B. The editor infers that B should be responsible for A. However, the author commits a post hoc fallacy, in other words; the sequence of these events, in itself, does not suffice to prove that earlier development caused the later one. It might have resulted from some other events instead; For instance, <code>____</code>;or perhaps <code>____</code>to just name a few possibilities.<em>Without ruling out scenarios such as these, the editor cannot estblish a cause-and-effect relationship between A and B.</em></p>
-<h3 id="把相关性当因果关系"><a href="#把相关性当因果关系" class="headerlink" title="把相关性当因果关系"></a>把相关性当因果关系</h3><p>The argument obseves a correlation/concurrence between A and B.Then concludes that the former is the cause of the latter. However, the argument fails to rule out other possible explanation for B. For example, <code>____</code>. Or perhaps <code>____</code>, any of which mimght lead to B. Without wuling out all other factors it is unfair to conclude that A is totally responsible for B.</p>
+<h3 id="后此谬论"><a href="#后此谬论" class="headerlink" title="后此谬论"></a>后此谬论</h3><p>Based on the fact that A occurred after B. The editor infers that B should be responsible for A. However, the author commits a post hoc fallacy, in other words; the sequence of these events, in itself, does not suffice to prove that earlier development caused the later one. It might have resulted from some other events instead; For instance, <code>____</code>;or perhaps <code>____</code>to just name a few possibilities.<em>Without ruling out scenarios such as these, the editor cannot establish a cause-and-effect relationship between A and B.</em></p>
+<h3 id="把相关性当因果关系"><a href="#把相关性当因果关系" class="headerlink" title="把相关性当因果关系"></a>把相关性当因果关系</h3><p>The argument observes a correlation/concurrence between A and B.Then concludes that the former is the cause of the latter. However, the argument fails to rule out other possible explanation for B. For example, <code>____</code>. Or perhaps <code>____</code>, any of which might lead to B. Without wuling out all other factors it is unfair to conclude that A is totally responsible for B.</p>
+<h2 id="类比于对比-Analogy-And-Comparison"><a href="#类比于对比-Analogy-And-Comparison" class="headerlink" title="类比于对比(Analogy And Comparison)"></a>类比于对比(Analogy And Comparison)</h2><p><strong>有类比必须先写因果谬论</strong><br><strong>类比例子可能无可实施性</strong></p>
+<ul>
+<li><strong>False analogy 错误类比</strong> 只看到表面上相似，忽略了其他或者深沉不同之处</li>
+<li><strong>Incomplete or selective comparison 不充分或者选择性比较</strong> 只比较少数几个方面或者比较对自己有力的方面/不同是建地点人群特征/缺乏对比基础</li>
+</ul>
+<h3 id="错误类比"><a href="#错误类比" class="headerlink" title="错误类比"></a>错误类比</h3><p>should also/follow the example/consequently/we should … as well/the same principle could be applied to …</p>
+<p>The arguer’s recommendation relies on what might be a poor analogy between A and B. The analogy falsely depends on the assumption that everything in both A and B are similar. However, it is entirely possible that there exist a substantial number of differences between A and B. Perhaps <code>____</code> Perhaps <code>____</code>. In short, without accounting for important possible differences between A and B, arguer cannot reasonably prove the proposed method will help…</p>
+<h3 id="不充分或者选择性比较"><a href="#不充分或者选择性比较" class="headerlink" title="不充分或者选择性比较"></a>不充分或者选择性比较</h3><p>The author falsely assumes that this comparison is reliable. However, it fails to take other significant aspects into consideration. While A,B are important factor to evaluate X, other fields should never be overlooked, such as C,D, since both are significantly vital to X according to our common sense.</p>
+<h2 id="错误推论"><a href="#错误推论" class="headerlink" title="错误推论"></a>错误推论</h2><ul>
+<li><strong>以大推小</strong> 适用于整体的原则也适用于整体中任何一个个体 prevalently/prevailing</li>
+<li><strong>以小推大</strong> 适用于某个体原则也适用于整体 </li>
+</ul>
+<p>area/region/dustrict/our city</p>
+<h3 id="大推小"><a href="#大推小" class="headerlink" title="大推小"></a>大推小</h3><p>One problem with the argument is that it assumes thta the nationwide/worldwide/all statistics about <code>____</code> applies equally to <code>个体成员</code>, yet this might not be the case, for a variety of possible reasons. Perhaps <code>子集特殊性</code>, or perhaps <code>子集特殊性</code>. Without ruling out such possibilities, the author cannot justifiably conclude that <code>____</code>.</p>
+<h2 id="词汇"><a href="#词汇" class="headerlink" title="词汇"></a>词汇</h2><ul>
+<li><strong>导致</strong> account for /result in/conduce/lead to/bring about/generate/give rise to</li>
+<li></li>
+</ul>
 <h1 id="数学"><a href="#数学" class="headerlink" title="数学"></a>数学</h1><h2 id="代数"><a href="#代数" class="headerlink" title="代数"></a>代数</h2><ol>
 <li>指数运算 operations with exponents</li>
 <li>因式分解 factoring and simplifying</li>
