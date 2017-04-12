@@ -4,6 +4,85 @@
   
     
     <entry>
+      <title><![CDATA[计算机系统结构笔记]]></title>
+      <url>http://pengtianhao.com/2017/04/12/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%AC%94%E8%AE%B0/</url>
+      <content type="html"><![CDATA[<blockquote>
+<p>计算机系统结构笔记</p>
+</blockquote>
+<h1 id="量化设计与分析基础"><a href="#量化设计与分析基础" class="headerlink" title="量化设计与分析基础"></a>量化设计与分析基础</h1><h2 id="计算机体系结构定义"><a href="#计算机体系结构定义" class="headerlink" title="计算机体系结构定义"></a>计算机体系结构定义</h2><p>指令集体系结构<br>组成或微体系结构<br>硬件</p>
+<p>ILP: 指令级并行<br>TLP：数据并行<br>DLP：处理器并行<br>RLP：请求并行<br><strong>ILP隐式并行，对用户透明，由硬件和编译器实现</strong><br><strong>DLP、TLP、RLP显示并行，程序员新增的负担</strong></p>
+<p><strong>五种主流计算平台</strong> 嵌入式/个人移动设备/桌面计算/服务器/集群/仓库级计算</p>
+<p><img src="https://d2ppvlu71ri8gs.cloudfront.net/items/0q0m0I0V2w411l2P0B0F/B633890B-969C-4BB7-BEC0-8BADA6E88A95.png?v=ea017f4d" alt=""></p>
+<h2 id="Flynn分类"><a href="#Flynn分类" class="headerlink" title="Flynn分类"></a>Flynn分类</h2><ul>
+<li><strong>单指令单数据流(SISD)</strong> SISD其实就是传统的顺序执行的单处理器计算机，其指令部件每次只对一条指令进行译码，并只对一个操作部件分配数据。流水线方式的单处理机有时也被当成SISD。</li>
+<li><strong>单指令多数据流(SIMD)</strong> 各处理机以同步的形式执行同一条指令</li>
+<li><strong>多指令单数据流(MISD)</strong> 被证明不可能,至少是不实际</li>
+<li><strong>多指令多数据流(MIMD)</strong> 能够实现作业,任务,指令等各级全面并行</li>
+</ul>
+<h2 id="量化设计原理"><a href="#量化设计原理" class="headerlink" title="量化设计原理"></a>量化设计原理</h2><ul>
+<li><strong>充分利用并行</strong></li>
+<li><strong>局域性原理</strong> 通过最近访问的指令和数据，预测未来要用的内容程序经常重复使用最近用过的数据或指令</li>
+<li><strong>二八法则</strong> 优先优化常见情景</li>
+<li><strong>Amdal定律</strong> 计算通过改进计算机某一部分之后可获得的性能增益</li>
+<li><strong>处理器性能公式</strong> </li>
+</ul>
+<h3 id="Amdal定律"><a href="#Amdal定律" class="headerlink" title="Amdal定律"></a>Amdal定律</h3><p><img src="https://d2ppvlu71ri8gs.cloudfront.net/items/2N3h230P2d293F1M381h/E11187F0-F9F0-4680-82EE-AA919C2DFE38.png?v=e382e7e3" alt=""></p>
+<h3 id="CPU性能公式"><a href="#CPU性能公式" class="headerlink" title="CPU性能公式"></a>CPU性能公式</h3><p><code>CPU时间 = 指令数*一条指令的所需周期*时钟周期时间</code></p>
+<h2 id="性能测试"><a href="#性能测试" class="headerlink" title="性能测试"></a>性能测试</h2><p>基准测试<br>实际程序<br>玩具程序<br>合成基准测试程序</p>
+<p>桌面基准测试SPEC CPU 206<br>服务器基准测试SPECrate</p>
+<h1 id="存储器层次结构"><a href="#存储器层次结构" class="headerlink" title="存储器层次结构"></a>存储器层次结构</h1><p><strong>存储性能增长</strong> 落后于处理器/多核要求高带宽</p>
+<h2 id="cache原理"><a href="#cache原理" class="headerlink" title="cache原理"></a>cache原理</h2><p>先在缓冲中查找，如果命中，返回值，如果没命中，在下一层中查找，并<strong>装载到缓冲中</strong></p>
+<ul>
+<li><strong>块如何放置</strong> 直接映射、全相连映射（full association map）、多路组映射</li>
+</ul>
+<p><img src="https://d2ppvlu71ri8gs.cloudfront.net/items/2b033A451g0Z0C0z2W2y/476BDE10-A27F-4FE8-BFD3-EA1684302283.png?v=dfe612ed" alt=""></p>
+<ul>
+<li><strong>置换</strong> LRU 最近最少使用、<strong>FIFO</strong> 先进先出、随机</li>
+<li><strong>存储器平均访问时间</strong> <code>T = 命中时间 + 缺失率 * 缺失代价</code> </li>
+<li><strong>写策略</strong></li>
+</ul>
+<p><strong>写透（write-through）</strong> 写入缓冲中的块和下一级存储器中的块</p>
+<p><strong>写回（write-back）</strong> 只改写缓冲区中的块，修改的值仅在置换出缓冲区时才写到主存储器</p>
+<ul>
+<li><p><strong>写入缺失</strong></p>
+<p>  写入分派：发生写入缺失时将该块读入缓冲区，再执行写入操作<br>  无写入分派：只修改下一级存储器中的块</p>
+</li>
+</ul>
+<p><strong>缺失类别</strong></p>
+<pre><code>强制缺失：第一次引用时的缺失，又称冷启动缺失或首次引用缺失
+容量缺失：缓冲无法容纳执行期间所需要的全部块，因此一些块要置换
+冲突缺失：直接映射或多路组映射实现中，多个块映射到同一个缓存块，或组中缓冲满
+</code></pre><p><strong>降低缺失损失</strong></p>
+<pre><code>降低缺失率: 较大的块、较大的缓存、较高的关联度
+降低缺失代价: 多级缓存、读操作优先于写操作
+缩短在缓冲中命中时间: 在索引缓存时避免地址转换
+</code></pre><h3 id="cache优化"><a href="#cache优化" class="headerlink" title="cache优化"></a>cache优化</h3><p><strong>基本方法</strong></p>
+<ol>
+<li>增大块大小以降低缺失率</li>
+<li>增大缓存以降低缺失率</li>
+<li>提高关联度以降低缺失率（多路）</li>
+<li>采用多级缓存降低缺失代价</li>
+<li>读缺失的优先级高于写缺失，以降低缺失代价</li>
+<li>避免在索引缓存期间进行地址转换，以缩短命中时间</li>
+</ol>
+<p><strong>高级方法</strong></p>
+<ol>
+<li>小而简单的第一级缓存，以缩短命中时间、功耗</li>
+<li>采用路预测以缩短命中时间：在缓存中保留一些位，用于预测下一次缓存访问组中的路或块，即优先访问这些预测的块。如果预测正确，则访问延迟为这一次快速命中时间；如果预测不正确，则尝试其他块，并修改路预测模块</li>
+<li>实现缓存访问的流水线，以提高缓存带宽</li>
+<li>采用无阻塞缓存，以提高缓存带宽</li>
+<li>采用多种缓存以提高缓存带宽</li>
+<li>关键字优先和提前启动以降低缺失代价</li>
+<li>合并缓冲区以降低缺失代价</li>
+<li>采用编译器优化以降低缺失率</li>
+<li>对指令和数据进行硬件预取，以降低缺失代价或缺失率</li>
+<li>用编译器控制预取，以降低缺失代价或缺失率</li>
+</ol>
+<p>## </p>
+<h1 id="指令级并行"><a href="#指令级并行" class="headerlink" title="指令级并行"></a>指令级并行</h1><h1 id="数据级并行"><a href="#数据级并行" class="headerlink" title="数据级并行"></a>数据级并行</h1><h1 id="线程级并行"><a href="#线程级并行" class="headerlink" title="线程级并行"></a>线程级并行</h1><h1 id="请求级并行"><a href="#请求级并行" class="headerlink" title="请求级并行"></a>请求级并行</h1>]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[在南极旅行是怎样的体验？]]></title>
       <url>http://pengtianhao.com/2017/04/06/%E5%9C%A8%E5%8D%97%E6%9E%81%E6%97%85%E8%A1%8C%E6%98%AF%E6%80%8E%E6%A0%B7%E7%9A%84%E4%BD%93%E9%AA%8C/</url>
       <content type="html"><![CDATA[<p>话不多说，先上图</p>
@@ -89,10 +168,11 @@
 <h1 id="argument"><a href="#argument" class="headerlink" title="argument"></a>argument</h1><h2 id="三种问法"><a href="#三种问法" class="headerlink" title="三种问法"></a>三种问法</h2><ol>
 <li>address question: what if = is it possible = is it likely = can we say = we have to ask wether = we may doubt = there lies/exists a question</li>
 <li>find the assumptions(最普遍)</li>
-<li><p>give suggestions</p>
-</li>
-<li><p>找出逻辑错误，3个以上</p>
-</li>
+<li>give suggestions</li>
+</ol>
+<hr>
+<ol>
+<li>找出逻辑错误，3个以上</li>
 <li>分析错误</li>
 <li>用例子证明</li>
 </ol>
@@ -355,11 +435,11 @@
 <p>形如<code>__func</code>的函数是私有的，无法被外部调用，虽然廖雪峰教程里写<code>_func</code>也是私有的，但是实际在pycharm里测试并没有成功</p>
 <h2 id="安装模块"><a href="#安装模块" class="headerlink" title="安装模块"></a>安装模块</h2><p>使用</p>
 <p><code>pip3 install xxx</code></p>
-<h1 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h1><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span>(<span class="title">object</span>):</span></div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(<span class="keyword">self</span>, name, score)</span></span>:</div><div class="line">        <span class="keyword">self</span>.name = name</div><div class="line">        <span class="keyword">self</span>.score = score</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">print_score</span><span class="params">(<span class="keyword">self</span>)</span></span>:</div><div class="line">        print(<span class="string">'%s: %s'</span> % (<span class="keyword">self</span>.name, <span class="keyword">self</span>.score))</div><div class="line"></div><div class="line">bart = Student(<span class="string">'Bart Simpson'</span>, <span class="number">59</span>)</div><div class="line">lisa = Student(<span class="string">'Lisa Simpson'</span>, <span class="number">87</span>)</div><div class="line">bart.print_score()</div><div class="line">lisa.print_score()</div></pre></td></tr></table></figure>
+<h1 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h1><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span>(<span class="title">object</span>):</span></div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> __init__<span class="params">(<span class="keyword">self</span>, name, score)</span></span>:</div><div class="line">        <span class="keyword">self</span>.name = name</div><div class="line">        <span class="keyword">self</span>.score = score</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">print_score</span><span class="params">(<span class="keyword">self</span>)</span></span>:</div><div class="line">        print(<span class="string">'%s: %s'</span> % (<span class="keyword">self</span>.name, <span class="keyword">self</span>.score))</div><div class="line"></div><div class="line">bart = Student(<span class="string">'Bart Simpson'</span>, <span class="number">59</span>)</div><div class="line">lisa = Student(<span class="string">'Lisa Simpson'</span>, <span class="number">87</span>)</div><div class="line">bart.print_score()</div><div class="line">lisa.print_score()</div></pre></td></tr></table></figure>
 <h2 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h2><ul>
 <li>实例属性</li>
 </ul>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span>(<span class="title">object</span>):</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(<span class="keyword">self</span>, name)</span></span>:</div><div class="line">        <span class="keyword">self</span>.name = name</div></pre></td></tr></table></figure>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span>(<span class="title">object</span>):</span></div><div class="line">    <span class="function"><span class="keyword">def</span> __init__<span class="params">(<span class="keyword">self</span>, name)</span></span>:</div><div class="line">        <span class="keyword">self</span>.name = name</div></pre></td></tr></table></figure>
 <ul>
 <li>类属性</li>
 </ul>
@@ -399,8 +479,8 @@
 <h2 id="property"><a href="#property" class="headerlink" title="@property"></a>@property</h2><p>oc里也有property，但是用法不一样,Python的property主要是为了方便读写属性</p>
 <figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span>(<span class="title">object</span>):</span></div><div class="line"></div><div class="line">    @property</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">birth</span><span class="params">(<span class="keyword">self</span>)</span></span>:</div><div class="line">        <span class="keyword">return</span> <span class="keyword">self</span>._birth</div><div class="line"></div><div class="line">    @birth.setter</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">birth</span><span class="params">(<span class="keyword">self</span>, value)</span></span>:</div><div class="line">        <span class="keyword">if</span> value &gt;=<span class="number">2015</span>:</div><div class="line">            print(<span class="string">'invalid'</span>)</div><div class="line">            <span class="keyword">self</span>._birth = <span class="number">2015</span></div><div class="line">        <span class="symbol">else:</span></div><div class="line">            <span class="keyword">self</span>._birth = value</div><div class="line"></div><div class="line">    @property</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">age</span><span class="params">(<span class="keyword">self</span>)</span></span>:</div><div class="line">        <span class="keyword">return</span> <span class="number">2015</span> - <span class="keyword">self</span>._birth</div><div class="line"></div><div class="line">stu = Student();</div><div class="line"></div><div class="line">stu.birth = <span class="number">2018</span></div><div class="line">print(stu.age)</div></pre></td></tr></table></figure>
 <h2 id="多重继承"><a href="#多重继承" class="headerlink" title="多重继承"></a>多重继承</h2><figure class="highlight haskell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="type">Bat</span>(<span class="type">Mammal</span>, <span class="type">Flyable</span>):</span></div><div class="line">    pass</div></pre></td></tr></table></figure>
-<h2 id="定制类"><a href="#定制类" class="headerlink" title="定制类"></a>定制类</h2><h3 id="iter"><a href="#iter" class="headerlink" title="__iter__"></a><code>__iter__</code></h3><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Fib</span>(<span class="title">object</span>):</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(<span class="keyword">self</span>)</span></span>:</div><div class="line">        <span class="keyword">self</span>.a, <span class="keyword">self</span>.b = <span class="number">0</span>, <span class="number">1</span> <span class="comment"># 初始化两个计数器a，b</span></div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__iter__</span><span class="params">(<span class="keyword">self</span>)</span></span>:</div><div class="line">        <span class="keyword">return</span> <span class="keyword">self</span> <span class="comment"># 实例本身就是迭代对象，故返回自己</span></div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__next__</span><span class="params">(<span class="keyword">self</span>)</span></span>:</div><div class="line">        <span class="keyword">self</span>.a, <span class="keyword">self</span>.b = <span class="keyword">self</span>.b, <span class="keyword">self</span>.a + <span class="keyword">self</span>.b <span class="comment"># 计算下一个值</span></div><div class="line">        <span class="keyword">if</span> <span class="keyword">self</span>.a &gt; <span class="number">100000</span>: <span class="comment"># 退出循环的条件</span></div><div class="line">            raise StopIteration();</div><div class="line">        <span class="keyword">return</span> <span class="keyword">self</span>.a <span class="comment"># 返回下一个值</span></div></pre></td></tr></table></figure>
-<h3 id="call"><a href="#call" class="headerlink" title="__call__"></a><code>__call__</code></h3><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span>(<span class="title">object</span>):</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(<span class="keyword">self</span>, name)</span></span>:</div><div class="line">        <span class="keyword">self</span>.name = name</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__call__</span><span class="params">(<span class="keyword">self</span>)</span></span>:</div><div class="line">        print(<span class="string">'My name is %s.'</span> % <span class="keyword">self</span>.name)</div><div class="line">        </div><div class="line">s = Student(<span class="string">'Michael'</span>)</div><div class="line">s() <span class="comment">#My name is Michael.</span></div></pre></td></tr></table></figure>
+<h2 id="定制类"><a href="#定制类" class="headerlink" title="定制类"></a>定制类</h2><h3 id="iter"><a href="#iter" class="headerlink" title="__iter__"></a><code>__iter__</code></h3><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Fib</span>(<span class="title">object</span>):</span></div><div class="line">    <span class="function"><span class="keyword">def</span> __init__<span class="params">(<span class="keyword">self</span>)</span></span>:</div><div class="line">        <span class="keyword">self</span>.a, <span class="keyword">self</span>.b = <span class="number">0</span>, <span class="number">1</span> <span class="comment"># 初始化两个计数器a，b</span></div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> __iter__<span class="params">(<span class="keyword">self</span>)</span></span>:</div><div class="line">        <span class="keyword">return</span> <span class="keyword">self</span> <span class="comment"># 实例本身就是迭代对象，故返回自己</span></div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> __next__<span class="params">(<span class="keyword">self</span>)</span></span>:</div><div class="line">        <span class="keyword">self</span>.a, <span class="keyword">self</span>.b = <span class="keyword">self</span>.b, <span class="keyword">self</span>.a + <span class="keyword">self</span>.b <span class="comment"># 计算下一个值</span></div><div class="line">        <span class="keyword">if</span> <span class="keyword">self</span>.a &gt; <span class="number">100000</span>: <span class="comment"># 退出循环的条件</span></div><div class="line">            raise StopIteration();</div><div class="line">        <span class="keyword">return</span> <span class="keyword">self</span>.a <span class="comment"># 返回下一个值</span></div></pre></td></tr></table></figure>
+<h3 id="call"><a href="#call" class="headerlink" title="__call__"></a><code>__call__</code></h3><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span>(<span class="title">object</span>):</span></div><div class="line">    <span class="function"><span class="keyword">def</span> __init__<span class="params">(<span class="keyword">self</span>, name)</span></span>:</div><div class="line">        <span class="keyword">self</span>.name = name</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> __call__<span class="params">(<span class="keyword">self</span>)</span></span>:</div><div class="line">        print(<span class="string">'My name is %s.'</span> % <span class="keyword">self</span>.name)</div><div class="line">        </div><div class="line">s = Student(<span class="string">'Michael'</span>)</div><div class="line">s() <span class="comment">#My name is Michael.</span></div></pre></td></tr></table></figure>
 <h2 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h2><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#从1开始</span></div><div class="line">Month = Enum(<span class="string">'Month'</span>, (<span class="string">'Jan'</span>, <span class="string">'Feb'</span>, <span class="string">'Mar'</span>, <span class="string">'Apr'</span>, <span class="string">'May'</span>, <span class="string">'Jun'</span>, <span class="string">'Jul'</span>, <span class="string">'Aug'</span>, <span class="string">'Sep'</span>, <span class="string">'Oct'</span>, <span class="string">'Nov'</span>, <span class="string">'Dec'</span>)) </div><div class="line"></div><div class="line"><span class="comment">#精确定义</span></div><div class="line">@unique <span class="comment">#<span class="doctag">@unique</span>装饰器可以帮助我们检查保证没有重复值。</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Weekday</span>(<span class="title">Enum</span>):</span></div><div class="line">    Sun = <span class="number">0</span> <span class="comment"># Sun的value被设定为0</span></div><div class="line">    Mon = <span class="number">1</span></div><div class="line">    Tue = <span class="number">2</span></div><div class="line">    Wed = <span class="number">3</span></div><div class="line">    Thu = <span class="number">4</span></div><div class="line">    Fri = <span class="number">5</span></div><div class="line">    Sat = <span class="number">6</span></div></pre></td></tr></table></figure>
 <h1 id="错误处理"><a href="#错误处理" class="headerlink" title="错误处理"></a>错误处理</h1><p>这里大家都差不多</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">try</span>:</div><div class="line">    print(<span class="string">'try...'</span>)</div><div class="line">    r = <span class="number">10</span> / <span class="number">0</span></div><div class="line">    print(<span class="string">'result:'</span>, r)</div><div class="line"><span class="keyword">except</span> ZeroDivisionError <span class="keyword">as</span> e:</div><div class="line">    print(<span class="string">'except:'</span>, e)</div><div class="line"><span class="keyword">finally</span>:</div><div class="line">    print(<span class="string">'finally...'</span>)</div></pre></td></tr></table></figure>

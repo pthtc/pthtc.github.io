@@ -10,7 +10,7 @@
     
     <title>
         
-            标签: C/C++ | 
+            计算机系统结构笔记 | 
         
         彭天浩的博客
     </title>
@@ -48,7 +48,7 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://pengtianhao.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="标签: C/C++ | 彭天浩的博客">
+    <meta property="og:title" content="计算机系统结构笔记 | 彭天浩的博客">
     <meta property="og:description" content="手持两把锟斤拷,口中高呼烫烫烫">
 
     <!--[if lte IE 9]>
@@ -200,163 +200,333 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
     
-        
-            <!-- Paradox Thumbnail -->
-            <div class="post_entry-module mdl-card mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#量化设计与分析基础"><span class="post-toc-number">1.</span> <span class="post-toc-text">量化设计与分析基础</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#计算机体系结构定义"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">计算机体系结构定义</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Flynn分类"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Flynn分类</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#量化设计原理"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">量化设计原理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Amdal定律"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">Amdal定律</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#CPU性能公式"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text">CPU性能公式</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#性能测试"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">性能测试</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#存储器层次结构"><span class="post-toc-number">2.</span> <span class="post-toc-text">存储器层次结构</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#cache原理"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">cache原理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#cache优化"><span class="post-toc-number">2.1.1.</span> <span class="post-toc-text">cache优化</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#指令级并行"><span class="post-toc-number">3.</span> <span class="post-toc-text">指令级并行</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#数据级并行"><span class="post-toc-number">4.</span> <span class="post-toc-text">数据级并行</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#线程级并行"><span class="post-toc-number">5.</span> <span class="post-toc-text">线程级并行</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#请求级并行"><span class="post-toc-number">6.</span> <span class="post-toc-text">请求级并行</span></a></li></ol>
+
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script>
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2016/06/23/C++小总结/">C++小总结</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-来自沈逸云的博客
-
-const定义一个常数
-1const int Max = 1000;
-保护被修饰的东西
-123void func(const int x)&#123;    cout &lt;&lt; x;&#125;
-指针函数返回一个指针的函数
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2016/06/23/C++小总结/" target="_self">继续阅读</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/head.jpg" width="44px" height="44px" alt="彭天浩's avatar">
-            </div>
-            <div>
-                <strong>彭天浩</strong>
-                <span>6月 23, 2016</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/计算机基础/">计算机基础</a>
-            </span>
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span class="ds-thread-count" data-thread-key="" data-count-type="comments"></span>
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-        
-        
-    
-        
-            <!-- Paradox Thumbnail -->
-            <div class="post_entry-module mdl-card mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2016/03/13/数据结构备忘（单链表-二叉树）/">数据结构备忘（单链表-二叉树）</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-二叉树和单链表是数据结构的重要基础
-
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2016/03/13/数据结构备忘（单链表-二叉树）/" target="_self">继续阅读</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/head.jpg" width="44px" height="44px" alt="彭天浩's avatar">
-            </div>
-            <div>
-                <strong>彭天浩</strong>
-                <span>3月 13, 2016</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/计算机基础/">计算机基础</a>
-            </span>
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span class="ds-thread-count" data-thread-key="" data-count-type="comments"></span>
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-        
-        
-    
-
-    
-
-    
-        <script>
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 20; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').css('background-image', 'url(' + '/img/random/material-' + randomNum + '.png' + ')')
-
-        locatePost = locatePost.next();
-    }
+    $('.post_thumbnail-random').css('background-image', 'url(' + '/img/random/material-' + randomNum + '.png' + ')');
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                计算机系统结构笔记
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/head.jpg" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>彭天浩</strong>
+        <span>4月 12, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/基础/">基础</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/计算机系统结构/">计算机系统结构</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=计算机系统结构笔记&url=http://pengtianhao.com//2017/04/12/计算机系统结构笔记/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=计算机系统结构笔记&url=http://pengtianhao.com//2017/04/12/计算机系统结构笔记/index.html&via=彭天浩" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://pengtianhao.com//2017/04/12/计算机系统结构笔记/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://pengtianhao.com//2017/04/12/计算机系统结构笔记/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=彭天浩的博客&title=计算机系统结构笔记&summary=手持两把锟斤拷,口中高呼烫烫烫&pics=http://pengtianhao.com/img/head.jpg&url=http://pengtianhao.com/2017/04/12/计算机系统结构笔记/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="markdown-Plain mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <blockquote>
+<p>计算机系统结构笔记</p>
+</blockquote>
+<h1 id="量化设计与分析基础"><a href="#量化设计与分析基础" class="headerlink" title="量化设计与分析基础"></a>量化设计与分析基础</h1><h2 id="计算机体系结构定义"><a href="#计算机体系结构定义" class="headerlink" title="计算机体系结构定义"></a>计算机体系结构定义</h2><p>指令集体系结构<br>组成或微体系结构<br>硬件</p>
+<p>ILP: 指令级并行<br>TLP：数据并行<br>DLP：处理器并行<br>RLP：请求并行<br><strong>ILP隐式并行，对用户透明，由硬件和编译器实现</strong><br><strong>DLP、TLP、RLP显示并行，程序员新增的负担</strong></p>
+<p><strong>五种主流计算平台</strong> 嵌入式/个人移动设备/桌面计算/服务器/集群/仓库级计算</p>
+<p><img src="https://d2ppvlu71ri8gs.cloudfront.net/items/0q0m0I0V2w411l2P0B0F/B633890B-969C-4BB7-BEC0-8BADA6E88A95.png?v=ea017f4d" alt=""></p>
+<h2 id="Flynn分类"><a href="#Flynn分类" class="headerlink" title="Flynn分类"></a>Flynn分类</h2><ul>
+<li><strong>单指令单数据流(SISD)</strong> SISD其实就是传统的顺序执行的单处理器计算机，其指令部件每次只对一条指令进行译码，并只对一个操作部件分配数据。流水线方式的单处理机有时也被当成SISD。</li>
+<li><strong>单指令多数据流(SIMD)</strong> 各处理机以同步的形式执行同一条指令</li>
+<li><strong>多指令单数据流(MISD)</strong> 被证明不可能,至少是不实际</li>
+<li><strong>多指令多数据流(MIMD)</strong> 能够实现作业,任务,指令等各级全面并行</li>
+</ul>
+<h2 id="量化设计原理"><a href="#量化设计原理" class="headerlink" title="量化设计原理"></a>量化设计原理</h2><ul>
+<li><strong>充分利用并行</strong></li>
+<li><strong>局域性原理</strong> 通过最近访问的指令和数据，预测未来要用的内容程序经常重复使用最近用过的数据或指令</li>
+<li><strong>二八法则</strong> 优先优化常见情景</li>
+<li><strong>Amdal定律</strong> 计算通过改进计算机某一部分之后可获得的性能增益</li>
+<li><strong>处理器性能公式</strong> </li>
+</ul>
+<h3 id="Amdal定律"><a href="#Amdal定律" class="headerlink" title="Amdal定律"></a>Amdal定律</h3><p><img src="https://d2ppvlu71ri8gs.cloudfront.net/items/2N3h230P2d293F1M381h/E11187F0-F9F0-4680-82EE-AA919C2DFE38.png?v=e382e7e3" alt=""></p>
+<h3 id="CPU性能公式"><a href="#CPU性能公式" class="headerlink" title="CPU性能公式"></a>CPU性能公式</h3><p><code>CPU时间 = 指令数*一条指令的所需周期*时钟周期时间</code></p>
+<h2 id="性能测试"><a href="#性能测试" class="headerlink" title="性能测试"></a>性能测试</h2><p>基准测试<br>实际程序<br>玩具程序<br>合成基准测试程序</p>
+<p>桌面基准测试SPEC CPU 206<br>服务器基准测试SPECrate</p>
+<h1 id="存储器层次结构"><a href="#存储器层次结构" class="headerlink" title="存储器层次结构"></a>存储器层次结构</h1><p><strong>存储性能增长</strong> 落后于处理器/多核要求高带宽</p>
+<h2 id="cache原理"><a href="#cache原理" class="headerlink" title="cache原理"></a>cache原理</h2><p>先在缓冲中查找，如果命中，返回值，如果没命中，在下一层中查找，并<strong>装载到缓冲中</strong></p>
+<ul>
+<li><strong>块如何放置</strong> 直接映射、全相连映射（full association map）、多路组映射</li>
+</ul>
+<p><img src="https://d2ppvlu71ri8gs.cloudfront.net/items/2b033A451g0Z0C0z2W2y/476BDE10-A27F-4FE8-BFD3-EA1684302283.png?v=dfe612ed" alt=""></p>
+<ul>
+<li><strong>置换</strong> LRU 最近最少使用、<strong>FIFO</strong> 先进先出、随机</li>
+<li><strong>存储器平均访问时间</strong> <code>T = 命中时间 + 缺失率 * 缺失代价</code> </li>
+<li><strong>写策略</strong></li>
+</ul>
+<p><strong>写透（write-through）</strong> 写入缓冲中的块和下一级存储器中的块</p>
+<p><strong>写回（write-back）</strong> 只改写缓冲区中的块，修改的值仅在置换出缓冲区时才写到主存储器</p>
+<ul>
+<li><p><strong>写入缺失</strong></p>
+<p>  写入分派：发生写入缺失时将该块读入缓冲区，再执行写入操作<br>  无写入分派：只修改下一级存储器中的块</p>
+</li>
+</ul>
+<p><strong>缺失类别</strong></p>
+<pre><code>强制缺失：第一次引用时的缺失，又称冷启动缺失或首次引用缺失
+容量缺失：缓冲无法容纳执行期间所需要的全部块，因此一些块要置换
+冲突缺失：直接映射或多路组映射实现中，多个块映射到同一个缓存块，或组中缓冲满
+</code></pre><p><strong>降低缺失损失</strong></p>
+<pre><code>降低缺失率: 较大的块、较大的缓存、较高的关联度
+降低缺失代价: 多级缓存、读操作优先于写操作
+缩短在缓冲中命中时间: 在索引缓存时避免地址转换
+</code></pre><h3 id="cache优化"><a href="#cache优化" class="headerlink" title="cache优化"></a>cache优化</h3><p><strong>基本方法</strong></p>
+<ol>
+<li>增大块大小以降低缺失率</li>
+<li>增大缓存以降低缺失率</li>
+<li>提高关联度以降低缺失率（多路）</li>
+<li>采用多级缓存降低缺失代价</li>
+<li>读缺失的优先级高于写缺失，以降低缺失代价</li>
+<li>避免在索引缓存期间进行地址转换，以缩短命中时间</li>
+</ol>
+<p><strong>高级方法</strong></p>
+<ol>
+<li>小而简单的第一级缓存，以缩短命中时间、功耗</li>
+<li>采用路预测以缩短命中时间：在缓存中保留一些位，用于预测下一次缓存访问组中的路或块，即优先访问这些预测的块。如果预测正确，则访问延迟为这一次快速命中时间；如果预测不正确，则尝试其他块，并修改路预测模块</li>
+<li>实现缓存访问的流水线，以提高缓存带宽</li>
+<li>采用无阻塞缓存，以提高缓存带宽</li>
+<li>采用多种缓存以提高缓存带宽</li>
+<li>关键字优先和提前启动以降低缺失代价</li>
+<li>合并缓冲区以降低缺失代价</li>
+<li>采用编译器优化以降低缺失率</li>
+<li>对指令和数据进行硬件预取，以降低缺失代价或缺失率</li>
+<li>用编译器控制预取，以降低缺失代价或缺失率</li>
+</ol>
+<p>## </p>
+<h1 id="指令级并行"><a href="#指令级并行" class="headerlink" title="指令级并行"></a>指令级并行</h1><h1 id="数据级并行"><a href="#数据级并行" class="headerlink" title="数据级并行"></a>数据级并行</h1><h1 id="线程级并行"><a href="#线程级并行" class="headerlink" title="线程级并行"></a>线程级并行</h1><h1 id="请求级并行"><a href="#请求级并行" class="headerlink" title="请求级并行"></a>请求级并行</h1>
+    
+
     
 </div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用多说评论 -->
+    <link rel="stylesheet" href="/css/duoshuo.min.css">
+<style>
+    #ds-thread #ds-reset .ds-post-button{
+        background-color: #0097A7 !important;
+    }
+    #ds-wrapper #ds-reset .ds-icons-32{
+        background-color: #0097A7 !important;
+    }
+    #ds-reset .ds-highlight {
+        color: #0097A7 !important;
+    }
+</style>
+<div id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread"
+        data-thread-key=""
+        data-url="http://pengtianhao.com/2017/04/12/计算机系统结构笔记/"
+        data-title="计算机系统结构笔记">
+    </div>
+    <!-- 多说评论框 end -->
+</div>
+
+
+
+
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/04/06/在南极旅行是怎样的体验/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
@@ -540,6 +710,14 @@ It will not impact the appearance and can give developers a lot of support :)
 </aside>
 
                     
+
+                    
+                        <!-- Footer Top Button -->
+                        <div class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
 
                     
 
