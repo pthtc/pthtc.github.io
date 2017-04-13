@@ -67,18 +67,29 @@
 </ol>
 <p><strong>高级方法</strong></p>
 <ol>
-<li>小而简单的第一级缓存，以缩短命中时间、功耗</li>
-<li>采用路预测以缩短命中时间：在缓存中保留一些位，用于预测下一次缓存访问组中的路或块，即优先访问这些预测的块。如果预测正确，则访问延迟为这一次快速命中时间；如果预测不正确，则尝试其他块，并修改路预测模块</li>
-<li>实现缓存访问的流水线，以提高缓存带宽</li>
-<li>采用无阻塞缓存，以提高缓存带宽</li>
-<li>采用多种缓存以提高缓存带宽</li>
-<li>关键字优先和提前启动以降低缺失代价</li>
-<li>合并缓冲区以降低缺失代价</li>
-<li>采用编译器优化以降低缺失率</li>
-<li>对指令和数据进行硬件预取，以降低缺失代价或缺失率</li>
-<li>用编译器控制预取，以降低缺失代价或缺失率</li>
+<li><strong>小而简单的第一级缓存，以缩短命中时间、功耗</strong></li>
+<li><strong>采用路预测以缩短命中时间</strong>：在缓存中保留一些位，用于预测下一次缓存访问组中的路或块，即优先访问这些预测的块。如果预测正确，则访问延迟为这一次快速命中时间；如果预测不正确，则尝试其他块，并修改路预测模块</li>
+<li><strong>实现缓存访问的流水线，以提高缓存带宽</strong>：将cache访问流水线化，这样使得多个访问重叠进行，从而提高带宽</li>
+<li><strong>采用无阻塞缓存，以提高缓存带宽</strong>：在运行乱序执行的机器上，处理器不必因一次数据缓存缺失而停顿，相关继续允许后序的缓存访问</li>
+<li><strong>采用多种缓存以提高缓存带宽</strong>：将缓存划分为几个相互独立、支持同时访问的缓存组<br>如果访问分布在缓存组之间，则效果最佳</li>
+<li><strong>关键字优先和提前启动以降低缺失代价</strong>： 不需要等待一个缓存块完整载入，而是在需要的数据载入后立刻发送给处理器</li>
+<li><strong>合并缓冲区以降低缺失代价</strong>：写操作时先写缓冲区，如写缓冲区已有数据，则比较其是否与当前数据的地址所在块是否相同，相同的话则合并。写合并还可以减少写缓冲满时带来的延迟</li>
+<li><strong>采用编译器优化以降低缺失率</strong></li>
+<li><strong>对指令和数据进行硬件预取，以降低缺失代价或缺失率</strong></li>
+<li><strong>用编译器控制预取，以降低缺失代价或缺失率</strong></li>
 </ol>
-<p>## </p>
+<h2 id="存储器技术与优化"><a href="#存储器技术与优化" class="headerlink" title="存储器技术与优化"></a>存储器技术与优化</h2><p>SRAM 静态的随机存取存储器，加电情况下，不需要刷新，数据不会丢失<br>DRAM 动态随机存取存储器，需要不断的刷新，才能保存数据<br>SDRAM 同步的DRAM,即数据的读写需要时钟来同步<br>闪存<br>PRAM 可编程随机存取存储器</p>
+<h2 id="虚拟存储-虚拟机"><a href="#虚拟存储-虚拟机" class="headerlink" title="虚拟存储/虚拟机"></a>虚拟存储/虚拟机</h2><p><strong>虚拟内存可提供进程之间的隔离和保护:</strong> 使进程拥有自己的分页表，指向存储器的不同页面，避免相互损害</p>
+<p><strong>分页</strong> 采用固定大小的块，有页编号和页偏移量，查找页表获取主存页首物理地址<br><strong>分段</strong> 采用可变大小的块</p>
+<h3 id="虚拟存储器"><a href="#虚拟存储器" class="headerlink" title="虚拟存储器"></a>虚拟存储器</h3><p>TLB是一个小的，虚拟寻址的缓存，其中每一行都保存着一个由单个PTE(Page Table Entry,页表项)组成的块。如果没有TLB，则每次取数据都需要两次访问内存，即查页表获得物理地址和取数据。</p>
+<p><code>虚拟地址&lt;64位&gt; → 虚拟页编号&lt;51&gt;+页偏移量&lt;13&gt;</code></p>
+<p><img src="https://d2ppvlu71ri8gs.cloudfront.net/items/2E1q423b2a431k3a2R0y/AA8369EF-6286-4425-AD28-87C6A0F00CC7.png?v=1c0a2cb5" alt=""></p>
+<p>首先要访问页表，再访问所对应的实际物理内存,利用TLB（Translation Lookaside Block）来cache页表项，减少访问页表的延迟</p>
+<p><img src="https://d2ppvlu71ri8gs.cloudfront.net/items/2L033b3F2Z1T3r0r3j3Y/0F089D5D-D640-417F-8D3D-20912C71831F.png?v=566626a4" alt=""></p>
+<p><img src="https://d2ppvlu71ri8gs.cloudfront.net/items/2B3X3K3M3v030S1Y3K2N/8F9A04D3-06E7-407E-B9AC-975453119BA8.png?v=117a4c78" alt=""></p>
+<p><img src="https://d2ppvlu71ri8gs.cloudfront.net/items/121H0Z2I0t0428123m3G/B58AC9A3-3FD2-4575-AB7A-9CF1CA9A5F0D.png?v=4d73dbe4" alt=""></p>
+<h3 id="虚拟机VM"><a href="#虚拟机VM" class="headerlink" title="虚拟机VM"></a>虚拟机VM</h3><p>虚拟机包括所有提供标准软件接口的仿真方法，比如JAVA VM<br>为虚拟机提供支持的软件成为<strong>虚拟机监视器VMM</strong>,决定了如何将虚拟资源映射到物理资源</p>
+<p><strong>虚拟机对虚拟内存和I/O的影响</strong> 因为虚拟机有自己的虚拟内存(虚拟的虚拟)，因此需要区分<strong>虚拟存储器、实际存储器、物理存储器</strong>，实际存储器在虚拟机看来就是物理存储器，是两端的中介，VMM页表将来宾存储器银蛇到物理存储器。</p>
 <h1 id="指令级并行"><a href="#指令级并行" class="headerlink" title="指令级并行"></a>指令级并行</h1><h1 id="数据级并行"><a href="#数据级并行" class="headerlink" title="数据级并行"></a>数据级并行</h1><h1 id="线程级并行"><a href="#线程级并行" class="headerlink" title="线程级并行"></a>线程级并行</h1><h1 id="请求级并行"><a href="#请求级并行" class="headerlink" title="请求级并行"></a>请求级并行</h1>]]></content>
     </entry>
     
