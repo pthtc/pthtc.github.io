@@ -90,7 +90,71 @@
 <p><img src="https://d2ppvlu71ri8gs.cloudfront.net/items/121H0Z2I0t0428123m3G/B58AC9A3-3FD2-4575-AB7A-9CF1CA9A5F0D.png?v=4d73dbe4" alt=""></p>
 <h3 id="虚拟机VM"><a href="#虚拟机VM" class="headerlink" title="虚拟机VM"></a>虚拟机VM</h3><p>虚拟机包括所有提供标准软件接口的仿真方法，比如JAVA VM<br>为虚拟机提供支持的软件成为<strong>虚拟机监视器VMM</strong>,决定了如何将虚拟资源映射到物理资源</p>
 <p><strong>虚拟机对虚拟内存和I/O的影响</strong> 因为虚拟机有自己的虚拟内存(虚拟的虚拟)，因此需要区分<strong>虚拟存储器、实际存储器、物理存储器</strong>，实际存储器在虚拟机看来就是物理存储器，是两端的中介，VMM页表将来宾存储器银蛇到物理存储器。</p>
-<h1 id="指令级并行"><a href="#指令级并行" class="headerlink" title="指令级并行"></a>指令级并行</h1><h1 id="数据级并行"><a href="#数据级并行" class="headerlink" title="数据级并行"></a>数据级并行</h1><h1 id="线程级并行"><a href="#线程级并行" class="headerlink" title="线程级并行"></a>线程级并行</h1><h1 id="请求级并行"><a href="#请求级并行" class="headerlink" title="请求级并行"></a>请求级并行</h1>]]></content>
+<h1 id="指令级并行"><a href="#指令级并行" class="headerlink" title="指令级并行"></a>指令级并行</h1><p><strong>概念</strong> 处理器采用流水线方式使指令的执行可以重叠进行，可以将指令间的关系看做是并行的，是一种指令间潜在的重叠</p>
+<p><strong>指令级并行方法分为两类：</strong></p>
+<ol>
+<li>依赖于硬件，占主导，动态地发现和开发指令级并行</li>
+<li>依赖于软件技术，在编译阶段静态地发现并行。</li>
+</ol>
+<h2 id="指令级并行概念"><a href="#指令级并行概念" class="headerlink" title="指令级并行概念"></a>指令级并行概念</h2><p><strong>循环级并行</strong> 为了提高指令级并行，最常用的方法是将一个循环中的各次迭代并行执行。在循环中，每个迭代可以与其他任何一次迭代重叠执行，在每次迭代内部没有重叠。</p>
+<h3 id="数据相关和冒险"><a href="#数据相关和冒险" class="headerlink" title="数据相关和冒险"></a>数据相关和冒险</h3><ul>
+<li><strong>两条指令是并行的</strong> 是指流水线有充足资源的情况下，这两条指令可以在任意深度的流水线上并行执行而不会产生停顿。</li>
+<li><strong>两条指令是相关的</strong> 是指它们只能以顺序的方式执行，尽管它们之间只存在部分重叠。</li>
+</ul>
+<p><strong>相关有三种不同的类型</strong>：数据相关、名字相关、控制相关</p>
+<h4 id="数据相关"><a href="#数据相关" class="headerlink" title="数据相关"></a>数据相关</h4><p>数据相关的两条指令是不能同时执行或完全重叠的，相关意味着在两条指令之间可能可能存在一条由一个或多个数据冒险组成的相关链；同时执行数据相关的指令会使内部互锁流水线的处理器检测到冒险，造成停顿，从而减小甚至消除指令间的重叠度</p>
+<ol>
+<li>数据相关表明存在冒险的可能</li>
+<li>数据相关决定了必须遵循的执行顺序</li>
+<li>数据相关决定了可以达到并行度的上限</li>
+</ol>
+<h4 id="名字相关"><a href="#名字相关" class="headerlink" title="名字相关"></a>名字相关</h4><p>名字相关发生在使用<strong>相同存储器或存储单元（称为名字）</strong>的两条指令之间，但名字相关的指令间不存在数据流，名字相关有两种类型（假设指令i位于指令j之前）：</p>
+<ol>
+<li><strong>反相关</strong> 指令i读一个寄存器或存储单元，而指令j写该寄存器或存储单元，必须保护原始的指令执行顺序。</li>
+<li><strong>输出相关</strong> 指令i和指令j写相同的寄存器时，为了保证该寄存器的值最后是由指令j写入的，必须保护指令的执行顺序。</li>
+</ol>
+<h4 id="控制相关"><a href="#控制相关" class="headerlink" title="控制相关"></a>控制相关</h4><p>控制相关决定了于转移指令有关的指令的执行顺序，从而使与转移有关的指令只在应当被执行时按程序顺序执行</p>
+<p><strong>最简单的例子</strong></p>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">if</span> <span class="built_in">p1</span> &#123;</div><div class="line">	<span class="built_in">S1</span><span class="comment">;</span></div><div class="line">&#125;</div><div class="line"><span class="symbol">if</span> <span class="built_in">p2</span> &#123;</div><div class="line">	<span class="built_in">S2</span><span class="comment">;</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>两类限制</strong></p>
+<ol>
+<li>与某一转移相关的指令不能被移动到该转移之前，这样的移动会使指令的执行不再受控于该转移，比如不能将if语句的then 部分中的指令移动到if语句之前</li>
+<li>与某一转移相关的指令不能被移动到该转移之后，这样的移动会使指令的执行受到该转移的控制，不能将if语句之前的指令移动到受控于该if语句的then部分中</li>
+</ol>
+<h4 id="数据冒险"><a href="#数据冒险" class="headerlink" title="数据冒险"></a>数据冒险</h4><p>依据指令读写顺序，数据冒险可以分为三类，<strong>写后读、写后写、读后写</strong></p>
+<ul>
+<li><strong>写后读（RAW）</strong></li>
+</ul>
+<p>J试图在i写一个数据之前读取它，这时j将错误地读出旧值，RAW是最常见的冒险类型，它对应于真实的数据相关</p>
+<ul>
+<li><strong>写后写（WAW）</strong></li>
+</ul>
+<p>J试图在i写一个数据之前写该数据，这时，如果执行顺序错误，那么当写操作结束时，留下的值将是i写的结果，而程序的本意是留下j写的值</p>
+<ul>
+<li><strong>读后写（WAR）</strong></li>
+</ul>
+<p>J试图在i读一个数据之前写该数据，这时，i将错误地读出新值，这类冒险是由反相关引起的。 WAR不会发生在静态流水线中，因为在静态流水线中，所以的读操作发生的早，写操作发生的晚。只有在指令流水过程中一些指令的写操 作提前完成、或者其他指令的读操作滞后完成、或者指令顺序被改变的情况下，才会发生WAR冒险</p>
+<h3 id="支持指令级并行的基本编译技术"><a href="#支持指令级并行的基本编译技术" class="headerlink" title="支持指令级并行的基本编译技术"></a>支持指令级并行的基本编译技术</h3><h4 id="基本流水线调度"><a href="#基本流水线调度" class="headerlink" title="基本流水线调度"></a>基本流水线调度</h4><p>为了避免流水线停顿，要去发现可以流水重叠的不相关的指令序列，将指令代码中相关的指令加以分离，使其相隔的时钟周期能正好等于原来指令在流水执行时的时延。编译器进行这类调度的能力既依赖于程序的指令级并行度，也依赖于流水线中功能单元的时延。</p>
+<h3 id="循环展开"><a href="#循环展开" class="headerlink" title="循环展开"></a>循环展开</h3><p>循环展开可以增加有效操作对转移和开销指令的比重，展开可以通过<strong>多次复制循环体和调整循环中止代码</strong>来实现。</p>
+<p>循环展开也可以用来改进调度的效果，由于它消除了转移，因此来自不同迭代的指令可以被一起调度，可以在迭代内加入不相关的指令来消除数据相关引起的停顿。</p>
+<ol>
+<li>如果迭代之间是互不相关的，则可以判定循环展开是有意义的</li>
+<li>为不同的计算使用相同的寄存器会引起额外的限制，需要使用不同的寄存器来避免这类限制</li>
+<li>消除额外的测试和转移指令，调整循环终止和迭代代码</li>
+<li>如果来自不同循环体的load和store是互不相关的，则可以在循环展开中将两者交换</li>
+<li>调度代码，保持相关性，确保与原始代码结果相同</li>
+</ol>
+<p><strong>循环展开的效果受制于三因素</strong>：展开使额外开销降低、代码量的大小和编译器的限制。</p>
+<p>循环展开次数越多，则额外开销的时钟周期越小；代码量的增长，特别是在规模较大的循环中，当代码量的增长使指令Cache的缺失率增加时，这类问题就更加明显；如果将展开和大规模调度相结合，寄存器不足是一个亟待解决的问题，特别是在多发射处理器中，由于要重叠执行更多的独立指令序列，寄存器不足带来的挑战更为严峻</p>
+<p>循环展开对<strong>简单流水线、超标量多发射结构、VLIW</strong>均适用</p>
+<h3 id="采用预测技术减小转移开销"><a href="#采用预测技术减小转移开销" class="headerlink" title="采用预测技术减小转移开销"></a>采用预测技术减小转移开销</h3><p>是另一种方法来降低分支的性能损失</p>
+<p><strong>相关预测:</strong> 利用其它分支行为来进行预测的分支预测器</p>
+<h3 id="采用动态调度克服数据冒险"><a href="#采用动态调度克服数据冒险" class="headerlink" title="采用动态调度克服数据冒险"></a>采用动态调度克服数据冒险</h3><p><strong>动态调度</strong> 通过硬件对指令执行顺序进行重组，在保持数据流和异常行为的同时减少停顿。</p>
+<p><strong>优点:</strong> 可以处理一些在编译阶段无法预见的相关情况，如存储器引用等，同时它简化了编译器的设计。更重要的是，它可以在等待时执行一些其他的代码，允许在别的流水线机器上编译的指令在不同的流水线上有效地运行</p>
+<p><strong>缺点:</strong> 动态调度会使硬件复杂度显著增加。</p>
+<p><strong>和静态流水线调度的区别</strong> 动态调度虽然不能改变数据流，但它会在相关性出现时尽力避免停顿，而由编译器执行的静态流水线调度则是将相关指令分离，使它们不再引起冒险，从而将停顿减至最小。</p>
+<p><strong>乱序执行</strong>：指令的发射仍采用按序的方式，但指令在它的操作数可用时马上开始执行，流水线采用乱序执行使得指令的结束也是乱序的，乱序执行会产生WAR和WAW冒险。指令的乱序完成会使异常处理变得复杂，异常行为必须保护，以确保除严格按照程序顺序执行时出现的异常之外，不会出现新的异常。即使异常行为被保护，动态调度也会产生一些不精确的异常。</p>
+<h1 id="数据级并行"><a href="#数据级并行" class="headerlink" title="数据级并行"></a>数据级并行</h1><h1 id="线程级并行"><a href="#线程级并行" class="headerlink" title="线程级并行"></a>线程级并行</h1><h1 id="请求级并行"><a href="#请求级并行" class="headerlink" title="请求级并行"></a>请求级并行</h1>]]></content>
     </entry>
     
     <entry>
@@ -155,7 +219,49 @@
 <p>GRE上课的一些记录</p>
 </blockquote>
 <a id="more"></a>
-<h1 id="GRE写作"><a href="#GRE写作" class="headerlink" title="GRE写作"></a>GRE写作</h1><ul>
+<h1 id="GRE写作"><a href="#GRE写作" class="headerlink" title="GRE写作"></a>GRE写作</h1><hr>
+<h2 id="七宗罪归纳"><a href="#七宗罪归纳" class="headerlink" title="七宗罪归纳"></a>七宗罪归纳</h2><h3 id="调查数据"><a href="#调查数据" class="headerlink" title="调查数据"></a>调查数据</h3><ul>
+<li><strong>代表性</strong></li>
+<li><strong>无意义</strong></li>
+<li><strong>模糊数据</strong></li>
+<li><strong>时间</strong></li>
+<li><strong>观测周期要长</strong></li>
+<li><strong>非公正性/专业性</strong></li>
+<li><strong>样本数量</strong></li>
+</ul>
+<h3 id="充要条件"><a href="#充要条件" class="headerlink" title="充要条件"></a>充要条件</h3><ul>
+<li><strong>条件不充分</strong> </li>
+<li><strong>Unnecessary condition 不必要条件</strong></li>
+</ul>
+<h3 id="因果"><a href="#因果" class="headerlink" title="因果"></a>因果</h3><ul>
+<li><strong>因果关系简单化</strong></li>
+<li><strong>后此谬论</strong> </li>
+<li><strong>把相关性当因果关系</strong> </li>
+<li><strong>因果混淆，没有出现的背景信息</strong></li>
+</ul>
+<h3 id="类比"><a href="#类比" class="headerlink" title="类比"></a>类比</h3><ul>
+<li><strong>False analogy 错误类比</strong> </li>
+<li><strong>Incomplete or selective comparison 不充分或者选择性比较</strong> </li>
+</ul>
+<h3 id="推测"><a href="#推测" class="headerlink" title="推测"></a>推测</h3><ul>
+<li><strong>以大推小</strong> </li>
+<li><strong>以小推大</strong></li>
+</ul>
+<h3 id="时间"><a href="#时间" class="headerlink" title="时间"></a>时间</h3><ul>
+<li><strong>过去的情况在今天和将来都保持不变</strong></li>
+<li><strong>目前情况将在将来保持不变</strong></li>
+</ul>
+<h3 id="二刀论"><a href="#二刀论" class="headerlink" title="二刀论"></a>二刀论</h3><ul>
+<li><strong>错误的二刀论法</strong></li>
+</ul>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><ul>
+<li><strong>利润问题</strong></li>
+<li><strong>承诺类</strong></li>
+<li><strong>可行性</strong></li>
+<li><strong>hasty generalization 草率归纳</strong></li>
+</ul>
+<hr>
+<h2 id="GRE写作情况"><a href="#GRE写作情况" class="headerlink" title="GRE写作情况"></a>GRE写作情况</h2><ul>
 <li>立论</li>
 <li>驳论</li>
 </ul>
@@ -277,7 +383,7 @@
 <h2 id="the-ether-or-thinking-black-white-fallacy-false-dilemma-错误的二刀论法"><a href="#the-ether-or-thinking-black-white-fallacy-false-dilemma-错误的二刀论法" class="headerlink" title="the ether-or thinking/black-white fallacy/false dilemma 错误的二刀论法"></a>the ether-or thinking/black-white fallacy/false dilemma 错误的二刀论法</h2><p><strong>认为有且只有两个解决方法</strong></p>
 <p>either or/instead of/rather than/it would be better to choose A other than B</p>
 <h3 id="模板-1"><a href="#模板-1" class="headerlink" title="模板"></a>模板</h3><p>Even if A and B are the only solutions to C, still the author assmumes these two choices are mutually exclusive. However, </p>
-<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ul>
+<h2 id="其他-1"><a href="#其他-1" class="headerlink" title="其他"></a>其他</h2><ul>
 <li><strong>利润问题</strong> 没有考虑收入的变化和成本的变化</li>
 <li><strong>承诺类</strong> 承诺可能无法实现</li>
 <li><strong>可行性</strong> 可能无法实现</li>
