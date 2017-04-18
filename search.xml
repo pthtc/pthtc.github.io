@@ -154,6 +154,12 @@
 <p><strong>缺点:</strong> 动态调度会使硬件复杂度显著增加。</p>
 <p><strong>和静态流水线调度的区别</strong> 动态调度虽然不能改变数据流，但它会在相关性出现时尽力避免停顿，而由编译器执行的静态流水线调度则是将相关指令分离，使它们不再引起冒险，从而将停顿减至最小。</p>
 <p><strong>乱序执行</strong>：指令的发射仍采用按序的方式，但指令在它的操作数可用时马上开始执行，流水线采用乱序执行使得指令的结束也是乱序的，乱序执行会产生WAR和WAW冒险。指令的乱序完成会使异常处理变得复杂，异常行为必须保护，以确保除严格按照程序顺序执行时出现的异常之外，不会出现新的异常。即使异常行为被保护，动态调度也会产生一些不精确的异常。</p>
+<p><strong>不精确异常：</strong> 是指当产生异常时，处理器的状态与严格按照程序顺序执行时的处理器状态不同，不精确异常的发生有两种可能：<strong>1、异常指令执行之前，流水线提前完成了后面的指令2、异常指令完成之前，流水线还没有完成前面的指令</strong></p>
+<p>为了实现乱序执行，需要将五级流水线的ID流水阶段分割为以下两个部分：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="bullet">1. </span>发射 译码指令，检测结构冒险</div><div class="line"><span class="bullet">2. </span>读操作数 等到不存在数据冒险时读操作数。在动态调度流水线中，所有的指令在发射阶段都是按序发射，但在读操作数阶段，则可能产生停顿，即进入乱序执行。</div></pre></td></tr></table></figure>
+<h4 id="用Tomasulo方法进行动态调度"><a href="#用Tomasulo方法进行动态调度" class="headerlink" title="用Tomasulo方法进行动态调度"></a>用Tomasulo方法进行动态调度</h4><p>通过对操作数何时可用进行跟踪以<strong>减少RAW冒险</strong>，通过引入寄存器<strong>重命名</strong>减少<strong>WAW和WAR冒险</strong>(寄存器重命名是指通过重命名所有的目标寄存器，包括指令序列中<strong>位置靠前</strong>的指令<strong>将要读和写的寄存器</strong>)。该方法的改进版本的共同特点是通过跟踪指令的相关性使指令在操作数可用时立即开始执行，通过寄存器重命名减少数据冒险</p>
+<p><strong>保留站</strong>：在Tomasulo算法中，寄存器重命名是通过保留站实现的，保留站为等待发射的指令保存操作数。基本思想是：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="bullet">1. </span>当操作数可用时，保留站马上取操作数并将其缓存，从而避免从寄存器中读操作数；</div><div class="line"><span class="bullet">2. </span>即将执行的指令指定保留站为其提供数据输入；</div><div class="line"><span class="bullet">3. </span>当对寄存器的后续写操作在执行过程中发生重叠时，只允许最后一个实际更新寄存器。</div><div class="line"><span class="code">    在指令被发射后，它所需要的操作数所对应的寄存器被重命名为保留站的名字</span></div></pre></td></tr></table></figure>
 <h1 id="数据级并行"><a href="#数据级并行" class="headerlink" title="数据级并行"></a>数据级并行</h1><h1 id="线程级并行"><a href="#线程级并行" class="headerlink" title="线程级并行"></a>线程级并行</h1><h1 id="请求级并行"><a href="#请求级并行" class="headerlink" title="请求级并行"></a>请求级并行</h1>]]></content>
     </entry>
     
