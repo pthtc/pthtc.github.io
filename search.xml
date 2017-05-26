@@ -163,7 +163,7 @@
     </entry>
     
     <entry>
-      <title><![CDATA[计算机系统结构笔记]]></title>
+      <title><![CDATA[计算机体系结构笔记]]></title>
       <url>http://pengtianhao.com/2017/04/12/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%AC%94%E8%AE%B0/</url>
       <content type="html"><![CDATA[<blockquote>
 <p>计算机系统结构笔记</p>
@@ -483,7 +483,10 @@
 <li><strong>顺序连贯性模型</strong> 要求任何程序每次执行的结果是一样的，就像每个处理器是顺序执行存储器访问</li>
 </ul>
 <p><strong>实现方法:</strong> 处理器推迟完成所有存储器访问，直到该访问操作锁导致的全部失效均完成</p>
-<h1 id="请求级并行"><a href="#请求级并行" class="headerlink" title="请求级并行"></a>请求级并行</h1>]]></content>
+<h1 id="仓库级计算机"><a href="#仓库级计算机" class="headerlink" title="仓库级计算机"></a>仓库级计算机</h1><h2 id="总括"><a href="#总括" class="headerlink" title="总括"></a>总括</h2><ol>
+<li></li>
+</ol>
+]]></content>
     </entry>
     
     <entry>
