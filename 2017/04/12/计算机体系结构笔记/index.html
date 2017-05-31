@@ -1,0 +1,1263 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.2.6 -->
+
+    <!-- Title -->
+    
+    <title>
+        
+            计算机体系结构笔记 | 
+        
+        彭天浩的博客
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/head.jpg">
+    <link rel="icon" sizes="192x192" href="/img/head.jpg">
+    <link rel="apple-touch-icon" href="/img/head.jpg">
+
+    <!-- Meta & Info -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0097A7">
+    <meta name="author" content="彭天浩">
+    <meta name="description" content="手持两把锟斤拷,口中高呼烫烫烫">
+    <meta name="keywords" content="“彭天浩”">
+
+    <!--iOS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-title" content="Title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="彭天浩的博客">
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://pengtianhao.com">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="计算机体系结构笔记 | 彭天浩的博客">
+    <meta property="og:description" content="手持两把锟斤拷,口中高呼烫烫烫">
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import CSS -->
+    <link rel="stylesheet" href="/css/material.min.css">
+    <link rel="stylesheet" href="/css/style.min.css">
+    <!-- Config CSS -->
+
+
+<!-- Other Styles -->
+<style>
+    body, html {
+        font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    }
+
+    a {
+        color: #00838F;
+    }
+
+    .mdl-card__media,
+    #search-label,
+    #search-form-label:after,
+    #scheme-Paradox .hot_tags-count,
+    #scheme-Paradox .sidebar_archives-count,
+    #scheme-Paradox .sidebar-colored .sidebar-header,
+    #scheme-Paradox .sidebar-colored .sidebar-badge{
+        background-color: #0097A7 !important;
+    }
+
+    /* Sidebar User Drop Down Menu Text Color */
+    #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+    #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+        color: #0097A7 !important;
+    }
+
+    #post_entry-right-info,
+    .sidebar-colored .sidebar-nav li:hover > a,
+    .sidebar-colored .sidebar-nav li:hover > a i,
+    .sidebar-colored .sidebar-nav li > a:hover,
+    .sidebar-colored .sidebar-nav li > a:hover i,
+    .sidebar-colored .sidebar-nav li > a:focus i,
+    .sidebar-colored .sidebar-nav > .open > a,
+    .sidebar-colored .sidebar-nav > .open > a:hover,
+    .sidebar-colored .sidebar-nav > .open > a:focus,
+    #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+        color: #0097A7 !important;
+    }
+
+    .toTop {
+        background: #757575 !important;
+    }
+
+    .material-layout .material-post>.material-nav,
+    .material-layout .material-index>.material-nav,
+    .material-nav a {
+        color: #757575;
+    }
+
+    #scheme-Paradox .MD-burger-layer {
+        background-color: #757575;
+    }
+
+    #scheme-Paradox #post-toc-trigger-btn {
+        color: #757575;
+    }
+
+    .post-toc a:hover {
+        color: #00838F;
+        text-decoration: underline;
+    }
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+        body{
+            background-color: #F5F5F5;
+        }
+
+        /* blog_info bottom background */
+        #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+            background-color: #fff;
+        }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+        .fade {
+            transition: all 800ms linear;
+            -webkit-transform: translate3d(0,0,0);
+            -moz-transform: translate3d(0,0,0);
+            -ms-transform: translate3d(0,0,0);
+            -o-transform: translate3d(0,0,0);
+            transform: translate3d(0,0,0);
+            opacity: 1;
+        }
+
+        .fade.out{
+            opacity: 0;
+        }
+    </style>
+
+
+    <script src="/js/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="/css/highlight/solarized-white.css">
+
+    <!-- UC Browser Compatible-->
+    <script>
+        var agent = navigator.userAgent.toLowerCase();
+        if(agent.indexOf('ucbrowser')>0) {
+            document.write('<link rel="stylesheet" href="/css/uc.css">');
+            alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+        }
+    </script>
+
+    <!-- Custom Head -->
+    
+</head>
+
+
+    
+        <body id="scheme-Paradox">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#量化设计与分析基础"><span class="post-toc-number">1.</span> <span class="post-toc-text">量化设计与分析基础</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#For考试"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">For考试</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#TIPS"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">TIPS</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Amdalh"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">Amdalh</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#CPU时间"><span class="post-toc-number">1.1.3.</span> <span class="post-toc-text">CPU时间</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#MTTF（平均无错时间）"><span class="post-toc-number">1.1.4.</span> <span class="post-toc-text">MTTF（平均无错时间）</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#计算机体系结构定义"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">计算机体系结构定义</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Flynn分类"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">Flynn分类</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#量化设计原理"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">量化设计原理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Amdal定律"><span class="post-toc-number">1.4.1.</span> <span class="post-toc-text">Amdal定律</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#CPU性能公式"><span class="post-toc-number">1.4.2.</span> <span class="post-toc-text">CPU性能公式</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#性能测试"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">性能测试</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#存储器层次结构"><span class="post-toc-number">2.</span> <span class="post-toc-text">存储器层次结构</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#cache原理"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">cache原理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#cache优化"><span class="post-toc-number">2.1.1.</span> <span class="post-toc-text">cache优化</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#存储器技术与优化"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">存储器技术与优化</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#虚拟存储-虚拟机"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">虚拟存储/虚拟机</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#虚拟存储器"><span class="post-toc-number">2.3.1.</span> <span class="post-toc-text">虚拟存储器</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#虚拟机VM"><span class="post-toc-number">2.3.2.</span> <span class="post-toc-text">虚拟机VM</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#指令级并行"><span class="post-toc-number">3.</span> <span class="post-toc-text">指令级并行</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#指令级并行概念"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">指令级并行概念</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#数据相关和冒险"><span class="post-toc-number">3.1.1.</span> <span class="post-toc-text">数据相关和冒险</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#数据相关"><span class="post-toc-number">3.1.1.1.</span> <span class="post-toc-text">数据相关</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#名字相关"><span class="post-toc-number">3.1.1.2.</span> <span class="post-toc-text">名字相关</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#控制相关"><span class="post-toc-number">3.1.1.3.</span> <span class="post-toc-text">控制相关</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#数据冒险"><span class="post-toc-number">3.1.1.4.</span> <span class="post-toc-text">数据冒险</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#结构冒险"><span class="post-toc-number">3.1.1.5.</span> <span class="post-toc-text">结构冒险</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#支持指令级并行的基本编译技术"><span class="post-toc-number">3.1.2.</span> <span class="post-toc-text">支持指令级并行的基本编译技术</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#基本流水线调度"><span class="post-toc-number">3.1.2.1.</span> <span class="post-toc-text">基本流水线调度</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#循环展开"><span class="post-toc-number">3.1.3.</span> <span class="post-toc-text">循环展开</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#采用预测技术减小转移开销"><span class="post-toc-number">3.1.4.</span> <span class="post-toc-text">采用预测技术减小转移开销</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#采用动态调度克服数据冒险"><span class="post-toc-number">3.1.5.</span> <span class="post-toc-text">采用动态调度克服数据冒险</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#用Tomasulo方法进行动态调度"><span class="post-toc-number">3.1.5.1.</span> <span class="post-toc-text">用Tomasulo方法进行动态调度</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#说人话"><span class="post-toc-number">3.1.5.1.1.</span> <span class="post-toc-text">说人话</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#保留站"><span class="post-toc-number">3.1.5.1.2.</span> <span class="post-toc-text">保留站</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#指令运行的三个阶段"><span class="post-toc-number">3.1.5.1.3.</span> <span class="post-toc-text">指令运行的三个阶段</span></a></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#基于硬件的推测"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">基于硬件的推测</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#重排序缓存（ROB）"><span class="post-toc-number">3.2.1.</span> <span class="post-toc-text">重排序缓存（ROB）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#指令执行过程"><span class="post-toc-number">3.2.2.</span> <span class="post-toc-text">指令执行过程</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#多发射技术"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">多发射技术</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#VLIW方法"><span class="post-toc-number">3.3.1.</span> <span class="post-toc-text">VLIW方法</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#指令传送和推测的高级技术"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">指令传送和推测的高级技术</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#提高取指令带宽"><span class="post-toc-number">3.4.1.</span> <span class="post-toc-text">提高取指令带宽</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#转移目标缓存"><span class="post-toc-number">3.4.2.</span> <span class="post-toc-text">转移目标缓存</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#返回地址预测器"><span class="post-toc-number">3.4.3.</span> <span class="post-toc-text">返回地址预测器</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#集成的取指令单元"><span class="post-toc-number">3.4.4.</span> <span class="post-toc-text">集成的取指令单元</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#推测的实现问题和扩展"><span class="post-toc-number">3.4.5.</span> <span class="post-toc-text">推测的实现问题和扩展</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#多分支预测"><span class="post-toc-number">3.4.5.1.</span> <span class="post-toc-text">多分支预测</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#值预测"><span class="post-toc-number">3.4.5.2.</span> <span class="post-toc-text">值预测</span></a></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#数据级并行"><span class="post-toc-number">4.</span> <span class="post-toc-text">数据级并行</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#向量体系结构"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">向量体系结构</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#VMIPS"><span class="post-toc-number">4.1.1.</span> <span class="post-toc-text">VMIPS</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#多媒体SIMD"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">多媒体SIMD</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#图形处理单元GPU"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">图形处理单元GPU</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#线程级并行"><span class="post-toc-number">5.</span> <span class="post-toc-text">线程级并行</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#简介"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">简介</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#分类"><span class="post-toc-number">5.1.1.</span> <span class="post-toc-text">分类</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#集中式共享存储器系统结构"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">集中式共享存储器系统结构</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一致性"><span class="post-toc-number">5.2.1.</span> <span class="post-toc-text">一致性</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一致性和连贯性的关系"><span class="post-toc-number">5.2.2.</span> <span class="post-toc-text">一致性和连贯性的关系</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一致性的基本实现方法"><span class="post-toc-number">5.2.3.</span> <span class="post-toc-text">一致性的基本实现方法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#监听一致性协议"><span class="post-toc-number">5.2.4.</span> <span class="post-toc-text">监听一致性协议</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#写入失效协议"><span class="post-toc-number">5.2.4.1.</span> <span class="post-toc-text">写入失效协议</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#实现"><span class="post-toc-number">5.2.4.1.1.</span> <span class="post-toc-text">实现</span></a></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#对称式共享存储器系统结构-SMP"><span class="post-toc-number">5.3.</span> <span class="post-toc-text">对称式共享存储器系统结构 SMP</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#分布式共享存储器-DSM-和目录一致性"><span class="post-toc-number">5.4.</span> <span class="post-toc-text">分布式共享存储器(DSM)和目录一致性</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#目录一致性协议"><span class="post-toc-number">5.4.1.</span> <span class="post-toc-text">目录一致性协议</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#举例"><span class="post-toc-number">5.4.1.1.</span> <span class="post-toc-text">举例</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#同步"><span class="post-toc-number">5.5.</span> <span class="post-toc-text">同步</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#基本同步原语"><span class="post-toc-number">5.5.1.</span> <span class="post-toc-text">基本同步原语</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用一致性实现锁"><span class="post-toc-number">5.5.2.</span> <span class="post-toc-text">使用一致性实现锁</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#存储器连贯性模型"><span class="post-toc-number">5.6.</span> <span class="post-toc-text">存储器连贯性模型</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#仓库级计算机"><span class="post-toc-number">6.</span> <span class="post-toc-text">仓库级计算机</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#总括"><span class="post-toc-number">6.1.</span> <span class="post-toc-text">总括</span></a></li></ol></li></ol>
+
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script>
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').css('background-image', 'url(' + '/img/random/material-' + randomNum + '.png' + ')');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                计算机体系结构笔记
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/head.jpg" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>彭天浩</strong>
+        <span>4月 12, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/基础/">基础</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/计算机体系结构/">计算机体系结构</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=计算机体系结构笔记&url=http://pengtianhao.com//2017/04/12/计算机体系结构笔记/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=计算机体系结构笔记&url=http://pengtianhao.com//2017/04/12/计算机体系结构笔记/index.html&via=彭天浩" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://pengtianhao.com//2017/04/12/计算机体系结构笔记/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://pengtianhao.com//2017/04/12/计算机体系结构笔记/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=彭天浩的博客&title=计算机体系结构笔记&summary=手持两把锟斤拷,口中高呼烫烫烫&pics=http://pengtianhao.com/img/head.jpg&url=http://pengtianhao.com/2017/04/12/计算机体系结构笔记/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="markdown-Plain mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <blockquote>
+<p>计算机系统结构笔记</p>
+</blockquote>
+<h1 id="量化设计与分析基础"><a href="#量化设计与分析基础" class="headerlink" title="量化设计与分析基础"></a>量化设计与分析基础</h1><h2 id="For考试"><a href="#For考试" class="headerlink" title="For考试"></a>For考试</h2><h3 id="TIPS"><a href="#TIPS" class="headerlink" title="TIPS"></a>TIPS</h3><ol>
+<li>指令看到数据就要想到除了数据本身还有一次指令</li>
+<li>数据冒险，什么RAW，在后面自动接上『的时候』，代表本该有的情况，中文和英文相反</li>
+</ol>
+<h3 id="Amdalh"><a href="#Amdalh" class="headerlink" title="Amdalh"></a>Amdalh</h3><p><code>加速比 = 老时间/新时间</code></p>
+<h3 id="CPU时间"><a href="#CPU时间" class="headerlink" title="CPU时间"></a>CPU时间</h3><p><code>CPU时间 = 指令数*一条指令需要的周期数*一周期消耗时间</code></p>
+<h3 id="MTTF（平均无错时间）"><a href="#MTTF（平均无错时间）" class="headerlink" title="MTTF（平均无错时间）"></a>MTTF（平均无错时间）</h3><p>MTTF = (设备数目*时间)/故障数目</p>
+<h2 id="计算机体系结构定义"><a href="#计算机体系结构定义" class="headerlink" title="计算机体系结构定义"></a>计算机体系结构定义</h2><p>指令集体系结构<br>组成或微体系结构<br>硬件</p>
+<p>ILP: 指令级并行<br>TLP：数据并行<br>DLP：处理器并行<br>RLP：请求并行<br><strong>ILP隐式并行，对用户透明，由硬件和编译器实现</strong><br><strong>DLP、TLP、RLP显示并行，程序员新增的负担</strong></p>
+<p><strong>五种主流计算平台</strong> 嵌入式/个人移动设备/桌面计算/服务器/集群/仓库级计算</p>
+<p><img src="https://d2ppvlu71ri8gs.cloudfront.net/items/0q0m0I0V2w411l2P0B0F/B633890B-969C-4BB7-BEC0-8BADA6E88A95.png?v=ea017f4d" alt=""></p>
+<h2 id="Flynn分类"><a href="#Flynn分类" class="headerlink" title="Flynn分类"></a>Flynn分类</h2><ul>
+<li><strong>单指令单数据流(SISD)</strong> SISD其实就是传统的顺序执行的单处理器计算机，其指令部件每次只对一条指令进行译码，并只对一个操作部件分配数据。流水线方式的单处理机有时也被当成SISD。</li>
+<li><strong>单指令多数据流(SIMD)</strong> 各处理机以同步的形式执行同一条指令</li>
+<li><strong>多指令单数据流(MISD)</strong> 被证明不可能,至少是不实际</li>
+<li><strong>多指令多数据流(MIMD)</strong> 能够实现作业,任务,指令等各级全面并行</li>
+</ul>
+<h2 id="量化设计原理"><a href="#量化设计原理" class="headerlink" title="量化设计原理"></a>量化设计原理</h2><ul>
+<li><strong>充分利用并行</strong></li>
+<li><strong>局域性原理</strong> 通过最近访问的指令和数据，预测未来要用的内容程序经常重复使用最近用过的数据或指令</li>
+<li><strong>二八法则</strong> 优先优化常见情景</li>
+<li><strong>Amdal定律</strong> 计算通过改进计算机某一部分之后可获得的性能增益</li>
+<li><strong>处理器性能公式</strong> </li>
+</ul>
+<h3 id="Amdal定律"><a href="#Amdal定律" class="headerlink" title="Amdal定律"></a>Amdal定律</h3><p><img src="https://d2ppvlu71ri8gs.cloudfront.net/items/2N3h230P2d293F1M381h/E11187F0-F9F0-4680-82EE-AA919C2DFE38.png?v=e382e7e3" alt=""></p>
+<h3 id="CPU性能公式"><a href="#CPU性能公式" class="headerlink" title="CPU性能公式"></a>CPU性能公式</h3><p><code>CPU时间 = 指令数*一条指令的所需周期*时钟周期时间</code></p>
+<h2 id="性能测试"><a href="#性能测试" class="headerlink" title="性能测试"></a>性能测试</h2><p>基准测试<br>实际程序<br>玩具程序<br>合成基准测试程序</p>
+<p>桌面基准测试SPEC CPU 206<br>服务器基准测试SPECrate</p>
+<h1 id="存储器层次结构"><a href="#存储器层次结构" class="headerlink" title="存储器层次结构"></a>存储器层次结构</h1><p><strong>存储性能增长</strong> 落后于处理器/多核要求高带宽</p>
+<h2 id="cache原理"><a href="#cache原理" class="headerlink" title="cache原理"></a>cache原理</h2><p>先在缓冲中查找，如果命中，返回值，如果没命中，在下一层中查找，并<strong>装载到缓冲中</strong></p>
+<ul>
+<li><strong>块如何放置</strong> 直接映射、全相连映射（full association map）、多路组映射</li>
+</ul>
+<p><img src="https://d2ppvlu71ri8gs.cloudfront.net/items/2b033A451g0Z0C0z2W2y/476BDE10-A27F-4FE8-BFD3-EA1684302283.png?v=dfe612ed" alt=""></p>
+<ul>
+<li><strong>置换</strong> LRU 最近最少使用、<strong>FIFO</strong> 先进先出、随机</li>
+<li><strong>存储器平均访问时间</strong> <code>T = 命中时间 + 缺失率 * 缺失代价</code> </li>
+<li><strong>写策略</strong> 为了缓存和存储器内容保持一致</li>
+</ul>
+<p><strong>写透（write-through）</strong> 写入缓冲中的块和下一级存储器中的块</p>
+<p><strong>写回（write-back）</strong> 只改写缓冲区中的块，修改的值仅在置换出缓冲区时才写到主存储器</p>
+<ul>
+<li><p><strong>写入缺失</strong> 写的时候，存储器的地址不在cache中</p>
+<p>  写入分派：发生写入缺失时将该块读入缓冲区，再执行写入操作</p>
+<p>  无写入分派：只修改存储器中的块</p>
+</li>
+</ul>
+<p><strong>缺失类别</strong></p>
+<pre><code>强制缺失：第一次引用时的缺失，又称冷启动缺失或首次引用缺失
+容量缺失：缓冲无法容纳执行期间所需要的全部块，因此一些块要置换
+冲突缺失：直接映射或多路组映射实现中，多个块映射到同一个缓存块，或组中缓冲满
+</code></pre><p><strong>降低缺失损失</strong></p>
+<pre><code>降低缺失率: 较大的块、较大的缓存、较高的关联度
+降低缺失代价: 多级缓存、读操作优先于写操作
+缩短在缓冲中命中时间: 在索引缓存时避免地址转换
+</code></pre><h3 id="cache优化"><a href="#cache优化" class="headerlink" title="cache优化"></a>cache优化</h3><p><strong>基本方法</strong></p>
+<ol>
+<li>增大块大小以降低缺失率</li>
+<li>增大缓存以降低缺失率</li>
+<li>提高关联度以降低缺失率（多路）</li>
+<li>采用多级缓存降低缺失代价</li>
+<li>读缺失的优先级高于写缺失，以降低缺失代价</li>
+<li>避免在索引缓存期间进行地址转换，以缩短命中时间</li>
+</ol>
+<p><strong>高级方法</strong></p>
+<ol>
+<li><strong>小而简单的第一级缓存，以缩短命中时间、功耗</strong></li>
+<li><strong>采用路预测以缩短命中时间</strong>：在缓存中保留一些位，用于预测下一次缓存访问组中的路或块，即优先访问这些预测的块。如果预测正确，则访问延迟为这一次快速命中时间；如果预测不正确，则尝试其他块，并修改路预测模块</li>
+<li><strong>实现缓存访问的流水线，以提高缓存带宽</strong>：将cache访问流水线化，这样使得多个访问重叠进行，从而提高带宽</li>
+<li><strong>采用无阻塞缓存，以提高缓存带宽</strong>：在运行乱序执行的机器上，处理器不必因一次数据缓存缺失而停顿，相关继续允许后序的缓存访问</li>
+<li><strong>采用多种缓存以提高缓存带宽</strong>：将缓存划分为几个相互独立、支持同时访问的缓存组<br>如果访问分布在缓存组之间，则效果最佳</li>
+<li><strong>关键字优先和提前启动以降低缺失代价</strong>： 不需要等待一个缓存块完整载入，而是在需要的数据载入后立刻发送给处理器</li>
+<li><strong>合并缓冲区以降低缺失代价</strong>：写操作时先写缓冲区，如写缓冲区已有数据，则比较其是否与当前数据的地址所在块是否相同，相同的话则合并。写合并还可以减少写缓冲满时带来的延迟</li>
+<li><strong>采用编译器优化以降低缺失率</strong></li>
+<li><strong>对指令和数据进行硬件预取，以降低缺失代价或缺失率</strong></li>
+<li><strong>用编译器控制预取，以降低缺失代价或缺失率</strong></li>
+</ol>
+<h2 id="存储器技术与优化"><a href="#存储器技术与优化" class="headerlink" title="存储器技术与优化"></a>存储器技术与优化</h2><p>SRAM 静态的随机存取存储器，加电情况下，不需要刷新，数据不会丢失<br>DRAM 动态随机存取存储器，需要不断的刷新，才能保存数据<br>SDRAM 同步的DRAM,即数据的读写需要时钟来同步<br>闪存<br>PRAM 可编程随机存取存储器</p>
+<h2 id="虚拟存储-虚拟机"><a href="#虚拟存储-虚拟机" class="headerlink" title="虚拟存储/虚拟机"></a>虚拟存储/虚拟机</h2><p><strong>虚拟内存可提供进程之间的隔离和保护:</strong> 使进程拥有自己的分页表，指向存储器的不同页面，避免相互损害</p>
+<p><strong>分页</strong> 采用固定大小的块，有页编号和页偏移量，查找页表获取主存页首物理地址<br><strong>分段</strong> 采用可变大小的块</p>
+<h3 id="虚拟存储器"><a href="#虚拟存储器" class="headerlink" title="虚拟存储器"></a>虚拟存储器</h3><p>TLB是一个小的，虚拟寻址的缓存，其中每一行都保存着一个由单个PTE(Page Table Entry,页表项)组成的块。如果没有TLB，则每次取数据都需要两次访问内存，即查页表获得物理地址和取数据。</p>
+<p><code>虚拟地址&lt;64位&gt; → 虚拟页编号&lt;51&gt;+页偏移量&lt;13&gt;</code></p>
+<p><img src="https://d2ppvlu71ri8gs.cloudfront.net/items/2E1q423b2a431k3a2R0y/AA8369EF-6286-4425-AD28-87C6A0F00CC7.png?v=1c0a2cb5" alt=""></p>
+<p>首先要访问页表，再访问所对应的实际物理内存,利用TLB（Translation Lookaside Block）来cache页表项，减少访问页表的延迟</p>
+<p><img src="https://d2ppvlu71ri8gs.cloudfront.net/items/2L033b3F2Z1T3r0r3j3Y/0F089D5D-D640-417F-8D3D-20912C71831F.png?v=566626a4" alt=""></p>
+<p><img src="https://d2ppvlu71ri8gs.cloudfront.net/items/2B3X3K3M3v030S1Y3K2N/8F9A04D3-06E7-407E-B9AC-975453119BA8.png?v=117a4c78" alt=""></p>
+<p><img src="https://d2ppvlu71ri8gs.cloudfront.net/items/121H0Z2I0t0428123m3G/B58AC9A3-3FD2-4575-AB7A-9CF1CA9A5F0D.png?v=4d73dbe4" alt=""></p>
+<h3 id="虚拟机VM"><a href="#虚拟机VM" class="headerlink" title="虚拟机VM"></a>虚拟机VM</h3><p>虚拟机包括所有提供标准软件接口的仿真方法，比如JAVA VM<br>为虚拟机提供支持的软件成为<strong>虚拟机监视器VMM</strong>,决定了如何将虚拟资源映射到物理资源</p>
+<p><strong>虚拟机对虚拟内存和I/O的影响</strong> 因为虚拟机有自己的虚拟内存(虚拟的虚拟)，因此需要区分<strong>虚拟存储器、实际存储器、物理存储器</strong>，实际存储器在虚拟机看来就是物理存储器，是两端的中介，VMM页表将来宾存储器映射到物理存储器。</p>
+<h1 id="指令级并行"><a href="#指令级并行" class="headerlink" title="指令级并行"></a>指令级并行</h1><p><strong>概念</strong> 处理器采用流水线方式使指令的执行可以重叠进行，可以将指令间的关系看做是并行的，是一种指令间潜在的重叠</p>
+<p><strong>指令级并行方法分为两类：</strong></p>
+<ol>
+<li>依赖于硬件，占主导，动态地发现和开发指令级并行</li>
+<li>依赖于软件技术，在编译阶段静态地发现并行。</li>
+</ol>
+<h2 id="指令级并行概念"><a href="#指令级并行概念" class="headerlink" title="指令级并行概念"></a>指令级并行概念</h2><p><strong>循环级并行</strong> 为了提高指令级并行，最常用的方法是将一个循环中的各次迭代并行执行。在循环中，每个迭代可以与其他任何一次迭代重叠执行，在每次迭代内部没有重叠。</p>
+<h3 id="数据相关和冒险"><a href="#数据相关和冒险" class="headerlink" title="数据相关和冒险"></a>数据相关和冒险</h3><ul>
+<li><strong>两条指令是并行的</strong> 是指流水线有充足资源的情况下，这两条指令可以在任意深度的流水线上并行执行而不会产生停顿。</li>
+<li><strong>两条指令是相关的</strong> 是指它们只能以顺序的方式执行，尽管它们之间只存在部分重叠。</li>
+</ul>
+<p><strong>相关有三种不同的类型</strong>：数据相关、名字相关、控制相关</p>
+<h4 id="数据相关"><a href="#数据相关" class="headerlink" title="数据相关"></a>数据相关</h4><p>数据相关的两条指令是不能同时执行或完全重叠的，相关意味着在两条指令之间可能可能存在一条由一个或多个数据冒险组成的相关链；同时执行数据相关的指令会使内部互锁流水线的处理器检测到冒险，造成停顿，从而减小甚至消除指令间的重叠度</p>
+<ol>
+<li>数据相关表明存在冒险的可能</li>
+<li>数据相关决定了必须遵循的执行顺序</li>
+<li>数据相关决定了可以达到并行度的上限</li>
+</ol>
+<h4 id="名字相关"><a href="#名字相关" class="headerlink" title="名字相关"></a>名字相关</h4><p>名字相关发生在使用<strong>相同存储器或存储单元（称为名字）</strong>的两条指令之间，但名字相关的指令间不存在数据流，名字相关有两种类型（假设指令i位于指令j之前）：</p>
+<ol>
+<li><strong>反相关</strong> 指令i读一个寄存器或存储单元，而指令j写该寄存器或存储单元，必须保护原始的指令执行顺序。</li>
+<li><strong>输出相关</strong> 指令i和指令j写相同的寄存器时，为了保证该寄存器的值最后是由指令j写入的，必须保护指令的执行顺序。</li>
+</ol>
+<h4 id="控制相关"><a href="#控制相关" class="headerlink" title="控制相关"></a>控制相关</h4><p>控制相关决定了于转移指令有关的指令的执行顺序，从而使与转移有关的指令只在应当被执行时按程序顺序执行</p>
+<p><strong>最简单的例子</strong></p>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">if</span> <span class="built_in">p1</span> &#123;</div><div class="line">	<span class="built_in">S1</span><span class="comment">;</span></div><div class="line">&#125;</div><div class="line"><span class="symbol">if</span> <span class="built_in">p2</span> &#123;</div><div class="line">	<span class="built_in">S2</span><span class="comment">;</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>两类限制</strong></p>
+<ol>
+<li>与某一转移相关的指令不能被移动到该转移之前，这样的移动会使指令的执行不再受控于该转移，比如不能将if语句的then 部分中的指令移动到if语句之前</li>
+<li>与某一转移相关的指令不能被移动到该转移之后，这样的移动会使指令的执行受到该转移的控制，不能将if语句之前的指令移动到受控于该if语句的then部分中</li>
+</ol>
+<h4 id="数据冒险"><a href="#数据冒险" class="headerlink" title="数据冒险"></a>数据冒险</h4><p>依据指令读写顺序，数据冒险可以分为三类，<strong>写后读、写后写、读后写</strong></p>
+<ul>
+<li><strong>写后读（RAW）</strong></li>
+</ul>
+<p>J试图在i写一个数据之前读取它，这时j将错误地读出旧值，RAW是最常见的冒险类型，它对应于真实的数据相关</p>
+<ul>
+<li><strong>写后写（WAW）</strong></li>
+</ul>
+<p>J试图在i写一个数据之前写该数据，这时，如果执行顺序错误，那么当写操作结束时，留下的值将是i写的结果，而程序的本意是留下j写的值</p>
+<ul>
+<li><strong>读后写（WAR）</strong></li>
+</ul>
+<p>J试图在i读一个数据之前写该数据，这时，i将错误地读出新值，这类冒险是由反相关引起的。 WAR不会发生在静态流水线中，因为在静态流水线中，所以的读操作发生的早，写操作发生的晚。只有在指令流水过程中一些指令的写操 作提前完成、或者其他指令的读操作滞后完成、或者指令顺序被改变的情况下，才会发生WAR冒险</p>
+<h4 id="结构冒险"><a href="#结构冒险" class="headerlink" title="结构冒险"></a>结构冒险</h4><p>硬件不能支持两条指令访问同一资源</p>
+<h3 id="支持指令级并行的基本编译技术"><a href="#支持指令级并行的基本编译技术" class="headerlink" title="支持指令级并行的基本编译技术"></a>支持指令级并行的基本编译技术</h3><h4 id="基本流水线调度"><a href="#基本流水线调度" class="headerlink" title="基本流水线调度"></a>基本流水线调度</h4><p>为了避免流水线停顿，要去发现可以流水重叠的不相关的指令序列，将指令代码中相关的指令加以分离，使其相隔的时钟周期能正好等于原来指令在流水执行时的时延。编译器进行这类调度的能力既依赖于程序的指令级并行度，也依赖于流水线中功能单元的时延。</p>
+<h3 id="循环展开"><a href="#循环展开" class="headerlink" title="循环展开"></a>循环展开</h3><p>循环展开可以增加有效操作对转移和开销指令的比重，展开可以通过<strong>多次复制循环体和调整循环中止代码</strong>来实现。</p>
+<p>循环展开也可以用来改进调度的效果，由于它消除了转移，因此来自不同迭代的指令可以被一起调度，可以在迭代内加入不相关的指令来消除数据相关引起的停顿。</p>
+<ol>
+<li>如果迭代之间是互不相关的，则可以判定循环展开是有意义的</li>
+<li>为不同的计算使用相同的寄存器会引起额外的限制，需要使用不同的寄存器来避免这类限制</li>
+<li>消除额外的测试和转移指令，调整循环终止和迭代代码</li>
+<li>如果来自不同循环体的load和store是互不相关的，则可以在循环展开中将两者交换</li>
+<li>调度代码，保持相关性，确保与原始代码结果相同</li>
+</ol>
+<p><strong>循环展开的效果受制于三因素</strong>：展开使额外开销降低、代码量的大小和编译器的限制。</p>
+<p>循环展开次数越多，则额外开销的时钟周期越小；代码量的增长，特别是在规模较大的循环中，当代码量的增长使指令Cache的缺失率增加时，这类问题就更加明显；如果将展开和大规模调度相结合，寄存器不足是一个亟待解决的问题，特别是在多发射处理器中，由于要重叠执行更多的独立指令序列，寄存器不足带来的挑战更为严峻</p>
+<p>循环展开对<strong>简单流水线、超标量多发射结构、VLIW</strong>均适用</p>
+<h3 id="采用预测技术减小转移开销"><a href="#采用预测技术减小转移开销" class="headerlink" title="采用预测技术减小转移开销"></a>采用预测技术减小转移开销</h3><p>是另一种方法来降低分支的性能损失</p>
+<p><strong>相关预测:</strong> 利用其它分支行为来进行预测的分支预测器</p>
+<h3 id="采用动态调度克服数据冒险"><a href="#采用动态调度克服数据冒险" class="headerlink" title="采用动态调度克服数据冒险"></a>采用动态调度克服数据冒险</h3><p><strong>动态调度</strong> 通过硬件对指令执行顺序进行重组，在保持数据流和异常行为的同时减少停顿。</p>
+<p><strong>优点:</strong> 可以处理一些在编译阶段无法预见的相关情况，如存储器引用等，同时它简化了编译器的设计。更重要的是，它可以在等待时执行一些其他的代码，允许在别的流水线机器上编译的指令在不同的流水线上有效地运行</p>
+<p><strong>缺点:</strong> 动态调度会使硬件复杂度显著增加。</p>
+<p><strong>和静态流水线调度的区别</strong> 动态调度虽然不能改变数据流，但它会在相关性出现时尽力避免停顿，而由编译器执行的静态流水线调度则是将相关指令分离，使它们不再引起冒险，从而将停顿减至最小。</p>
+<p><strong>乱序执行</strong>：指令的发射仍采用<strong>按序</strong>的方式，但指令在它的操作数可用时马上开始执行，流水线采用乱序执行使得指令的结束也是乱序的，乱序执行会产生WAR和WAW冒险。指令的乱序完成会使异常处理变得复杂，异常行为必须保护，以确保除严格按照程序顺序执行时出现的异常之外，不会出现新的异常。即使异常行为被保护，动态调度也会产生一些不精确的异常。</p>
+<p><strong>不精确异常：</strong> 是指当产生异常时，处理器的状态与严格按照程序顺序执行时的处理器状态不同，不精确异常的发生有两种可能：<strong>1、异常指令执行之前，流水线提前完成了后面的指令2、异常指令完成之前，流水线还没有完成前面的指令</strong></p>
+<p>为了实现乱序执行，需要将五级流水线的ID流水阶段分割为以下两个部分：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">发射 译码指令，检测结构冒险</div><div class="line">读操作数 等到不存在数据冒险时读操作数。在动态调度流水线中，所有的指令在发射阶段都是按序发射，但在读操作数阶段，则可能产生停顿，即进入乱序执行。</div></pre></td></tr></table></figure>
+<h4 id="用Tomasulo方法进行动态调度"><a href="#用Tomasulo方法进行动态调度" class="headerlink" title="用Tomasulo方法进行动态调度"></a>用Tomasulo方法进行动态调度</h4><p>通过对操作数何时可用进行跟踪以<strong>减少RAW冒险</strong>，通过引入寄存器<strong>重命名</strong>减少<strong>WAW和WAR冒险</strong>(寄存器重命名是指通过重命名所有的目标寄存器，包括指令序列中<strong>位置靠前</strong>的指令<strong>将要读和写的寄存器</strong>)。该方法的改进版本的共同特点是通过跟踪指令的相关性使指令在操作数可用时立即开始执行，通过寄存器重命名减少数据冒险</p>
+<p>Tomasulo方法采用<strong>总线广播结果</strong>的方式，由保留站监听，这种方法实现了静态流水线调度中直接通路和旁路技术的功能，而在动态调度方法中，为了达到同样的目标，需要在源和结果之间增加一个时钟周期的时延，与功能单元产生结果相比，动态调度流水线中生产指令和消费指令之间的有效时延至少要多花一个时钟周期。</p>
+<h5 id="说人话"><a href="#说人话" class="headerlink" title="说人话"></a>说人话</h5><p>事实上就是顺序开始执行指令，在执行中乱序，如果有指令的输入操作数还没准备好，就把指令放进缓冲，一旦有操作数准备好，就放入保留站，直到所有操作数都准备好了，传给等待的指令进行执行。</p>
+<p>具体可以参考<a href="http://blog.sina.com.cn/s/blog_488c30d301013kuv.html" target="_blank" rel="external">学习笔记——Tomasulo算法</a></p>
+<blockquote>
+<p>在一个混沌的宇宙中，有一条车道，在这条车道上，行使了很多条指令，他们在往前赶，这些指令不是顺序安排的的，而是乱七八糟的，例如标号20的指令可能赶在标号2的指令之前，而在标号20之前，可能是一条标号50的指令，但标号30的指令还在标号2的指令后面。接下来问题来了：那么，这时候指令在离开车道，准备结束其使命（写寄存器、读操作数、跳转等等）的时候该怎么办呢？我们之前也看到了，如果两条指令违反次序的结束，可能导致的是对某个寄存器产生错误的操作。为此，方法也来了：在车道结束地后面放一个大停车场，所有的指令都在停车场等着，然后停车场设置一个出口，这个出口对指令来说，必须是顺序的，并且指令必须在出口的时候进行写寄存器操作。这样，从出口看，指令就按照原来的逻辑顺序一条条出去，并且写寄存器。这样，从系统角度看，指令就是：顺序出发、乱序指令、顺序结束。<strong>专家们对停车场起了个名字，叫重排序缓存ROB</strong></p>
+</blockquote>
+<h5 id="保留站"><a href="#保留站" class="headerlink" title="保留站"></a>保留站</h5><p><strong>保留站</strong>：在Tomasulo算法中，寄存器重命名是通过保留站实现的，<strong>保留站为等待发射的指令保存操作数</strong>，并且指令的操作数指针指向保留站，而不是寄存器。基本思想是：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">当操作数可用时，保留站马上取操作数并将其缓存，从而避免从寄存器中读操作数；</div><div class="line">即将执行的指令指定保留站为其提供数据输入；</div><div class="line">当对寄存器的后续写操作在执行过程中发生重叠时，只允许最后一个实际更新寄存器。在指令被发射后，它所需要的操作数所对应的寄存器被重命名为保留站的名字</div></pre></td></tr></table></figure>
+<p>保留站与寄存器堆相比有两个重要特点，首先，<strong>冒险检测和执行控制是分布的</strong>，一个单元中的指令何时可以开始执行是由该单元保留站所掌握的信息决定的；其次，<strong>结果将从缓存它们的保留站中直接传送给功能单元</strong>，而不是通过寄存器传送，这是通过一条公共结果总线/公共数据总线实现的，它使得等待操作数的所有单元可以同时取到操作数。</p>
+<h5 id="指令运行的三个阶段"><a href="#指令运行的三个阶段" class="headerlink" title="指令运行的三个阶段"></a>指令运行的三个阶段</h5><ol>
+<li><strong>发射</strong>：从指令队列中取到下一条指令，指令队列按FIFO顺序维护，以保证正确的数据流。如果有匹配的空闲保留站，并且指令的操作数的值也保存在寄存器中，则将指令和操作数的值一起发射到该保留站中。如果没有空闲的保留站，则说明发生结构冒险，指令会被停顿，直至出现可用的保留站或缓存。如果操作数不在寄存器中，则需要跟踪将要产生该操作数的功能单元，寄存器重命名在这一步进行。</li>
+<li><strong>执行</strong>：如果有一个或多个操作数处于不可用状态，则监视公共数据总线，等待这些操作数被计算出来。<strong>当一个操作数可用时，该操作数将被放入等待它的保留站中。</strong>当指令所需的所有操作数都已就绪时，该指令将在相应的功能单元中执行。通过在操作数可用之前延迟指令的执行，避免了RAW冒险。如果多条指令在同一个时钟周期内就绪，则功能单元将被迫在就绪指令间做出选择。为了保护异常行为，在程序顺序中的所有前序转移完成之前，任何指令都不能开始执行。这个约束可以确保在执行过程中引起异常的指令会被执行。</li>
+<li><strong>写结果</strong>：当结果就绪时，将其写到公共数据总线上，并由此送往等待它的寄存器和保留站。<strong>当指令已经被发射且正在等待源操作数时，标签字段将指向包含将产生源操作数指令的保留站号</strong>，比如0则表明操作数已经在寄存器中就绪。</li>
+</ol>
+<h2 id="基于硬件的推测"><a href="#基于硬件的推测" class="headerlink" title="基于硬件的推测"></a>基于硬件的推测</h2><p>通过动态转移预测选择要执行的指令，通过推测技术允许指令在控制相关消除之前开始执行（能够消除错误推测序列的影响），通过动态调度处理几个不同的基本块之间的调度（作为比较，没有推测的动态调度只能在基本块之间实现部分重叠）</p>
+<p>为了扩展Tomasulo算法并使其支持推测技术，必须<strong>将指令结果的旁路操作（推测执行指令需要指令结果的旁路操作）从实际的指令完成中分离出来</strong>。通过这种分离，可以允许指令将它的执行结果旁路给其他指令，而在确定而不是推测指令的执行之前，不允许做任何更新</p>
+<p>实现推测技术的<strong>关键思想是允许指令乱序执行</strong>，但是要求<strong>指令必须按序提交</strong>，并且在指令提交之前阻止所有不可恢复的动作（比如更新状态或产生异常）。当使用推测技术扩展动态调度时，必须<strong>将指令的完成与指令提交区分开来</strong>，因为指令可能在提交之前已经完成。在指令执行过程中需要一组<strong>硬件缓存</strong>的支持，使用这些缓存保存已经执行完但还没有提交的指令执行结果，这些硬件缓存称为<strong>重排序缓存ROB</strong></p>
+<p><img src="https://d2ppvlu71ri8gs.cloudfront.net/items/3a3X0q2X2x3a2U0D0V0G/8B2EE9A5-287E-4238-84DA-DBC8B8910D67.png?v=a1704f8e" alt=""></p>
+<h3 id="重排序缓存（ROB）"><a href="#重排序缓存（ROB）" class="headerlink" title="重排序缓存（ROB）"></a>重排序缓存（ROB）</h3><p>重排序缓存提供了<strong>附加的寄存器</strong>，这种方法与Tomasulo算法通过保留站扩展寄存器集类似。在指令运算完成到提交这段时间内，<strong>重排序缓存为指令保存结果</strong>。即在这段时间内， ROB是指令的操作数源，但ROB与保留站的重要区别是：<strong>在Tomasulo算法中，当指令完成写结果的操作后，所有的后继指令都将从寄存器文件中读取结果；而在推测技术中，只有在指令提交之后寄存器文件才会被更新。</strong></p>
+<p>重排序缓存每一个入口都包含4个字段：<strong>指令类型、目标字段、值字段和就绪字段</strong>。<br>指令类型字段表明指令是转移运算、store操作还是寄存器运算。<br>目标字段提供寄存器序号或存储器地址，指令将把结果写向目标字段指向的寄存器或存储器<br>值字段用来在指令提交之前，保存指令执行结果的值，就绪字段表明指令已经完成它的执行，其结果已经可用。</p>
+<p><img src="https://d2ppvlu71ri8gs.cloudfront.net/items/1a3o0L2q0A2J0e2x070y/6C0B7AB4-BD9D-4510-A01A-93026CD602B5.png?v=8f878fd6" alt=""></p>
+<h3 id="指令执行过程"><a href="#指令执行过程" class="headerlink" title="指令执行过程"></a>指令执行过程</h3><p>指令的执行包括<strong>发射、执行、写结果和提交</strong>4个步骤，其中前3个步骤与Tomasulo算法类似，只增加了提交最后一个阶段。<strong>提交阶段是完成指令</strong>的最后一个阶段，这之后只有指令的结果被保留。当指令提交后，<strong>指令在ROB中的入口将被收回</strong>，寄存器或存储器将被<strong>更新</strong>，无须再占用ROB的入口。如果ROB已被填满，则只需要停止指令的发射，直到有可用的入口出现为止。</p>
+<h2 id="多发射技术"><a href="#多发射技术" class="headerlink" title="多发射技术"></a>多发射技术</h2><p>多发射技术可以把CPI下降到1以下，允许在一个时钟周期内发射多条指令</p>
+<h3 id="VLIW方法"><a href="#VLIW方法" class="headerlink" title="VLIW方法"></a>VLIW方法</h3><p>VLIW（超长指令字）处理器每时钟周期发射固定数目的指令，<strong>这些指令被组织成一条长指令或一个固定的指令包</strong>，指令间的并行度由指令显式地表示出来。VLIW处理器采用编译器静态调度的方式。<br>VLIW采用多个独立的功能单元，将多个运算打包成一条长指令，或者要求发射包中的指令满足相同的约束，两种方法本质上相同。</p>
+<p>对于宽发射情况，VLIW的优势更加明显。为了使功能单元始终处于工作状态，代码序列必须含有足够的并行度，以填满功能单元的可用运算槽。代码序列中的并行度可用通过将循环展开，在每个单独的、更大的循环体中进行代码调度而实现。若并行度要求跨转移调度代码，则需要使用更复杂的全局调度算法</p>
+<p><strong>多发射处理器的优势</strong> 在于他们能够从结构化较差的代码中开发并行度，而且有能力缓存所有格式的数据，这些原因使得多发射处理器成为开发指令级并行度的首选方法</p>
+<p><img src="https://d2ppvlu71ri8gs.cloudfront.net/items/2o0k2i2l3u2e2i2X2A1S/746B0F9A-BFAB-45F5-B042-D4CBFABE3FA0.png?v=2baf6d93" alt=""></p>
+<h2 id="指令传送和推测的高级技术"><a href="#指令传送和推测的高级技术" class="headerlink" title="指令传送和推测的高级技术"></a>指令传送和推测的高级技术</h2><h3 id="提高取指令带宽"><a href="#提高取指令带宽" class="headerlink" title="提高取指令带宽"></a>提高取指令带宽</h3><p>多发射处理器要求每时钟周期取到的平均指令数目不低于平均吞吐量，这要求<strong>通向指令Cache的路径足够宽</strong>，但最困难的还是转移的处理</p>
+<h3 id="转移目标缓存"><a href="#转移目标缓存" class="headerlink" title="转移目标缓存"></a>转移目标缓存</h3><p>为了减小流水线的转移代价，必须确定当前正在译码的指令是否是转移指令，如果是，那么下一条指令的地址是什么，<strong>如果是转移指令且知道下一条指令的地址</strong>，那么就可以将转移代价降为0。<strong>把为转移的后继指令保存预测地址</strong>的<strong>转移预测Cache</strong>称为转移目标缓存或转移目标Cache。</p>
+<p>由于转移目标缓存要预测下一条指令的地址，并且<strong>在指令译码结束前将预测地址发送出去</strong>，因此必须确定取到的指令<strong>是否是一条被预测为将被选中的转移指令</strong>。如果<strong>地址匹配</strong>，则相应的<strong>预测指令地址将作为下一条指令的地址</strong>。转移预测缓存的硬件结构本质上与Cache的硬件结构一致</p>
+<p>如果在转移目标缓存中发现了一个<strong>匹配的入口</strong>，则取指令<strong>立即从预测指令地址开始</strong>。由于在确定指令是否转移之前将预测地址发送出去，因此转移目标缓存的预测入口必须与指令完全匹配，<strong>若处理器不对这种匹配进行核实，那么在当前指令不是转移的情况下，发送出去的预测地址就是错误的</strong>，这会降低处理器的速度。在转移目标缓存中，<strong>只保存那些预测为被选中的转移</strong>。</p>
+<p>在缓存中<strong>存在匹配的转移入口且预测正确</strong>的情况下，是不存在转移延迟的；否则，将至少付出2个时钟周期的转移代价。处理缓存缺失和预测错误是一个艰巨的挑战，因为必须在重写缓存入口的同时停止取指令的操作。</p>
+<p>转移目标缓存的<strong>另外一种形式是在缓存中保存一条或多条目标指令</strong>，以此作为预测目标地址的替代或补充。这种形式有两个潜在优势，首先，这种方法允许转移目标缓存的访问时间<strong>超过两个相继取指令操作的时间间隔</strong>，也可能允许更大的转移目标缓存；其次，通过缓存实际的指令可以实现优化，称之为<strong>转移隐含</strong>，使用转移隐含，可以将无条件转移代价降为0时钟周期。</p>
+<h3 id="返回地址预测器"><a href="#返回地址预测器" class="headerlink" title="返回地址预测器"></a>返回地址预测器</h3><p>当要提高推测的准确性时，将面临间接转移带来的挑战，<strong>间接转移目标地址是在运行时确定的</strong>。高级编程语言会为间接程序调用、case选择语句以及goto语句生成这类转移，但间接转移大部分还是来自过程返回，而在面向对象的语言中，比如c++或Java，过程返回更加频繁。</p>
+<p>过程返回<strong>可使用堆栈作为返回地址缓存</strong>，该结构用来缓存最近的几个返回地址，当调用发生时将返回地址压入堆栈，调用返回时再将其弹出。若Cache足够大的话，它将出色地预测返回地址。</p>
+<h3 id="集成的取指令单元"><a href="#集成的取指令单元" class="headerlink" title="集成的取指令单元"></a>集成的取指令单元</h3><p>为了满足多发射处理器的要求，可选择<strong>集成取指令单元</strong>的方法，<strong>将取指令作为一个独立自主的单元来实现</strong>，由该单元为流水线的其他部分提供指令，当然，这会增加多发射的复杂性，不再将取指令视为一个单独的流水段。在最新设计中，集成取指令单元包含以下功能：<strong>集成的转移预测、指令预取、指令存储器访问和缓存</strong>。</p>
+<ol>
+<li><strong>集成的转移预测</strong> 转移预测成为取指令的一部分，并且持续对转移进  行预测，以驱动流水线的取指令操作。</li>
+<li><strong>指令预取</strong> 为实现一个时钟周期内传送多条指令，取指令单元自主管理指令的预取，并将它同转移预测整合在一起。</li>
+<li><strong>指令存储器访问和缓存</strong> 取指令单元提供缓存功能，作为一个按需单元为发射流水段提供所需的指令。</li>
+</ol>
+<h3 id="推测的实现问题和扩展"><a href="#推测的实现问题和扩展" class="headerlink" title="推测的实现问题和扩展"></a>推测的实现问题和扩展</h3><p>探讨三个问题：<strong>寄存器重命名与重排序缓存、多分支推测和值预测</strong>。</p>
+<p>支持推测：<strong>寄存器重命名与重排序缓存</strong></p>
+<p>在寄存器重命名方法中，<strong>物理寄存器的扩展集被用来保存结构可见寄存器和临时值，扩展寄存器替代了ROB和保留站的功能</strong>。重命名方法较ROB方法的一个优势在于指令提交的简化，但撤销分配寄存器的工作会更复杂，因为在释放物理寄存器之前，必须确定它与任何系统结构寄存器不再对应，且对该寄存器的使用已全部完成。</p>
+<h4 id="多分支预测"><a href="#多分支预测" class="headerlink" title="多分支预测"></a>多分支预测</h4><p>有三种情况可以从多转移预测中受益：<strong>转移频率非常高，转移明显成簇，以及功能单元延迟较长</strong>。前两种情况下，获得高性能意味着同时有多条转移被推测，甚至是每时钟周期处理一条以上的转移。数据库程序以及其他一些结构化较差的定点计算通常具有此类特性，因此，推测多条转移对于此类程序非常重要。同样，多转移是一种在长流水线中避免停顿的方法。</p>
+<h4 id="值预测"><a href="#值预测" class="headerlink" title="值预测"></a>值预测</h4><p><strong>值预测</strong>是一种提高程序中<strong>可用指令级并行度</strong>的技术。值预测尝试对指令将要产生结果的值进行预测。由于大多数指令在执行时产生的结果并不相同，因此值预测的成功率是有限的。但是，值预测对于某些特定类型的指令来说却是可行的，如读取一个常量池，或是一个相对稳定变量的 load指令。</p>
+<p>值预测的研究大多集中在<strong>load指令上</strong>，可以通过<strong>检测load返回值与最近几次load执行结果的匹配比率</strong>来确定<strong>值预测可能达到的最高准确率</strong>，最简单的情况是检查load返回值与上一次执行得到的值是否匹配。</p>
+<h1 id="数据级并行"><a href="#数据级并行" class="headerlink" title="数据级并行"></a>数据级并行</h1><p>单指令多数据(SMID)体系结构</p>
+<ul>
+<li>单条指令启动许多数据计算</li>
+<li>采用顺序编程的思路获得并行加速</li>
+</ul>
+<h2 id="向量体系结构"><a href="#向量体系结构" class="headerlink" title="向量体系结构"></a>向量体系结构</h2><p><strong>向量体系</strong> </p>
+<ol>
+<li>将存储器中的数据放在顺序寄存器堆中，对寄存器堆中的数据操作，然后写回存储器</li>
+<li>一条指令对数据向量执行，同时有多个寄存器-寄存器操作</li>
+<li>向量的载入和写回流水线化</li>
+</ol>
+<h3 id="VMIPS"><a href="#VMIPS" class="headerlink" title="VMIPS"></a>VMIPS</h3><p>V-MIPS<br>    以Gray-1为基础<br>    标量（串行）部分MIPS<br>    向量部分是MIPS的扩展<br>主要部件<br>    向量寄存器、标量寄存器<br>    向量功能单元<br>    向量Load/Store单元</p>
+<p><img src="https://d2ppvlu71ri8gs.cloudfront.net/items/0q352c192V1244182q0v/B398D8C7-285E-44ED-BB48-6EDD0FF20D47.png?v=19b70ed2" alt=""></p>
+<p><img src="https://d2ppvlu71ri8gs.cloudfront.net/items/3c2L0c1p3E100g3E2R0I/95B72D14-98F8-4F21-B37B-EB8A9257A52D.png?v=f0e830cc" alt=""></p>
+<h2 id="多媒体SIMD"><a href="#多媒体SIMD" class="headerlink" title="多媒体SIMD"></a>多媒体SIMD</h2><h2 id="图形处理单元GPU"><a href="#图形处理单元GPU" class="headerlink" title="图形处理单元GPU"></a>图形处理单元GPU</h2><h1 id="线程级并行"><a href="#线程级并行" class="headerlink" title="线程级并行"></a>线程级并行</h1><ul>
+<li><strong>多指令流多数据流</strong> 每个处理器取自己的指令并对自己的数据进行操作，多个线程按并行操作，<strong>计算机实现线程级并行</strong></li>
+<li><strong>多核</strong> 又称为片内多处理器或单芯片多处理器，在一个单独的晶片上设计多个处理器，多个内核共享一些资源如二级缓存、存储器和I/O总线</li>
+<li><strong>进程</strong> 是可以独立运行的一段代码，进程的状态包含了处理器运行这个进程的所有必要信息。</li>
+<li><strong>线程</strong> 指运行在不同处理器上的多个执行过程，允许不同的地址空间上多个进程同时执行，也允许共享的地址空间上多个线程同时执行。</li>
+</ul>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><p>根据<strong>存储器组织方式</strong>分类</p>
+<ul>
+<li><strong>集中式共享存储器系统结构</strong> 最多拥有几十个处理器，但随着处理器数目的增多，共享单个集中式存储器方案前景不被看好.存储器对每个处理器都是对等的，顾也称为对称多处理器系统，该系统是目前最流行的系统结构</li>
+<li><strong>分布式存储器系统结构</strong> 支持更多的处理器，存储器按照分布式组织。系统基本结构由多个独立节点构成，每个节点包含处理器、存储器、输入输出和互连网络接口，各个节点通过互连网络连接在一起。分布式存储器结构优点是缩短了本地存储器访问的时延，缺点是处理器间的数据通信变得更加复杂且时延也更大</li>
+</ul>
+<p>根据<strong>处理器间传递数据的方法</strong>分类</p>
+<ul>
+<li><strong>通过共享的地址空间进行通信</strong></li>
+<li><strong>通过私有的地址空间进行通信</strong></li>
+</ul>
+<h2 id="集中式共享存储器系统结构"><a href="#集中式共享存储器系统结构" class="headerlink" title="集中式共享存储器系统结构"></a>集中式共享存储器系统结构</h2><p>采用对称共享存储器的计算机 对共享数据和专用数据进行缓冲<br>共享数据在不同处理器之间共享 缓冲一致性</p>
+<p><img src="https://d2ppvlu71ri8gs.cloudfront.net/items/242W0g3t132Q0g1d280y/423F5318-C8CE-4D4D-B767-B157217557AB.png?v=39cc892d" alt=""></p>
+<h3 id="一致性"><a href="#一致性" class="headerlink" title="一致性"></a>一致性</h3><ol>
+<li>处理器P读取位置X，在此之前是由P对X进行写人，在P执行的这一写人与读取操作之间，没有其他处理器对位置X执行写人操作，此读取操作总是返回P写人的值。</li>
+<li>—个处理器向位置X执行写人操作之后，另一个处理器读取该位置，如果读写操作的 间隔时间足够长，而且在两次访问之间没有其他处理器向X写人，那该读取操作将返回写人值。</li>
+<li>对同一位置执行的写人操作被串行化，也就是说，在所有处理器看来，任意两个处理 对相间位置执行的两次写人操作看起来都是相同顺序。例如，如果数值1、数值2被依次先后写到一个位B,那处理器永远不可能先从该位置读取到数值2,之后再读取到数值1。</li>
+</ol>
+<h3 id="一致性和连贯性的关系"><a href="#一致性和连贯性的关系" class="headerlink" title="一致性和连贯性的关系"></a>一致性和连贯性的关系</h3><p> 尽管上述三条属性足以确保一致性了，但什么时候才能看到写入值也是一个很重要的问题。 比如，我们不能要求在某个处理器向X中写入一个取值之后，另一个读取X的处理器能够马上看到这个写入值。比如，如果一个处理器对X的写入操作仅比另一个处理器对X的读取操作提前很短的一点时间，那就不可能确保该读取操作会返回这个写入值，因为写入值当时甚至可能还没有离开处理器。写入值到底在多久之后必须能被读取操作读到?这一问题由存储连贯性模型回答<br>一致性和连贯性是互补的:一致性确定了向同一存储器位置的读写行为，而连贯性则确定了有关访问其他存储器位置的读写行为。现在，作出以下两条假定。</p>
+<ol>
+<li>只有在所有处理器都能看到写人结果之后，写人搡作才算完成(并允许进行下一次写入)。</li>
+<li>处理器不能改变有关任意其他存储器访问的任意写A顺序。</li>
+</ol>
+<p>这两个条件是指：如果一个处理器先写入位置A， 然后再写入位置B，那么任何能够看到B中新值的处理器也必须能够看到A的新值。这些限制条件允许处理器调整读取操作的顺序，但强制要求处理器必须按照程序顺序来完成写入操作。</p>
+<h3 id="一致性的基本实现方法"><a href="#一致性的基本实现方法" class="headerlink" title="一致性的基本实现方法"></a>一致性的基本实现方法</h3><ul>
+<li><strong>一致性多处理器</strong> 缓存提供了共享数据项的迁移与复制</li>
+<li><strong>缓存一致性协议</strong> 使多个处理器之间保持缓存一致性</li>
+</ul>
+<ol>
+<li><strong>目录式</strong> 特定物理存储器块的共享状态的位置成为目录 ———— 集中式、分布式</li>
+<li><strong>监听式</strong> 如果缓存拥有某一物理块的数据副本，则可以跟踪该块的共享状态————总线监听（广播式）</li>
+</ol>
+<h3 id="监听一致性协议"><a href="#监听一致性协议" class="headerlink" title="监听一致性协议"></a>监听一致性协议</h3><ul>
+<li><strong>监听式协议在每次发生缓存缺失时都需要与所有缓存通信，包括对共享数据的写入操作</strong></li>
+</ul>
+<p>优点：没有用于跟踪缓存状态变化的集中式数据结构（目录）<br>缺点：扩展性（可伸缩性）不好</p>
+<ul>
+<li>可通过分布式存储器来提高存储器带宽和互联带宽</li>
+</ul>
+<h4 id="写入失效协议"><a href="#写入失效协议" class="headerlink" title="写入失效协议"></a>写入失效协议</h4><ul>
+<li>确保处理器在写入数据前，获取对该数据的独占访问</li>
+<li>执行写入操作会使其他副本失效</li>
+<li>写入时不存在该数据的其他可读或可写副本</li>
+</ul>
+<p><img src="https://d2ppvlu71ri8gs.cloudfront.net/items/0G33283Q2p2Y3H2Z3y0L/CDBB8333-0820-40C2-9043-4AF99F645D9A.png?v=bf68fe61" alt=""></p>
+<p><strong>写入失效协议的替代方法</strong></p>
+<p>写入数据项时更新该数据项的所有副本<br>称为写入更新协议或写入广播协议</p>
+<h5 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h5><ul>
+<li><strong>使用总线或其他广播介质来执行失效操作</strong> 共享存储器访问总线/总线是专用缓存和共享外存之间的连接</li>
+<li><strong>为了执行一次失效</strong> 处理器获得总线访问，并广播失效地址。所有处理器监听总线，观测这些地址，如果地址在自己的缓存中，则失效缓存中的相应数据</li>
+</ul>
+<p>写回缓存实现</p>
+<ul>
+<li><strong>为缓存块增加一个状态位，用于标记是否共享</strong> 以判断在写入操作时是否执行失效操作</li>
+<li><strong>在写入时，标记该块为独占</strong> 在发送失效操作时，拥有该缓存块的状态由共享改为非共享（独占)，如果另一处理器稍后请求该数据，必须把状态改为共享</li>
+</ul>
+<h2 id="对称式共享存储器系统结构-SMP"><a href="#对称式共享存储器系统结构-SMP" class="headerlink" title="对称式共享存储器系统结构 SMP"></a>对称式共享存储器系统结构 SMP</h2><p>对称式共享存储器系统支持共享和私有数据的缓存，私有数据被单个处理器使用，共享数据被多个处理器使用，基本上是通过读写共享数据完成处理器之间的通信。<br>  把私有数据缓存后，对该数据的访问可以在Cache中进行，共享数据可以在Cache中形成多个副本，这样可以减少访问时延和降低对存储器带宽的要求，但会产生Cache一致性问题。</p>
+<h2 id="分布式共享存储器-DSM-和目录一致性"><a href="#分布式共享存储器-DSM-和目录一致性" class="headerlink" title="分布式共享存储器(DSM)和目录一致性"></a>分布式共享存储器(DSM)和目录一致性</h2><p>通过分配存储器的方式可以增加存储器带宽和互连带宽，这种方式可以将本地存储器通信和远程存储器通信迅速分开，这就减少了对存储器系统和互连网络的带宽要求。</p>
+<h3 id="目录一致性协议"><a href="#目录一致性协议" class="headerlink" title="目录一致性协议"></a>目录一致性协议</h3><p><img src="https://d2ppvlu71ri8gs.cloudfront.net/items/0L2T462c2c0r120c3P1D/94A3FB81-42A8-4967-AADB-5E3ABEA1C4B5.png?v=cc1a7f65" alt=""></p>
+<ul>
+<li><strong>两种操作</strong> 处理读取缺失/处理共享、干净的缓存块的写入操作</li>
+<li><strong>目录</strong> 跟踪每个缓存块/缓存块状态(共享、未共享、已修改)</li>
+</ul>
+<ol>
+<li><strong>共享</strong> 多个节点缓存了该块，缓存及存储器的值都是最新的</li>
+<li><strong>未共享</strong> 所有节点都没有该块</li>
+<li><strong>已修改</strong> 只有一个节点有这个块的副本，拥有者/该块进行了写操作/存储器值已过期</li>
+</ol>
+<p><strong>缓存块状态转换</strong></p>
+<p><img src="https://d2ppvlu71ri8gs.cloudfront.net/items/3N433d172s1U2C261A3w/70F78AE1-0072-416F-8F17-219A5F8DDA99.png?v=4d06247b" alt=""></p>
+<h4 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h4><p><img src="https://d2ppvlu71ri8gs.cloudfront.net/items/3j2I292y2G0t2y1T0x1B/EFF72409-DF67-40C5-9AFB-D2A061F15A3C.png?v=40e700ac" alt=""></p>
+<p><img src="https://d2ppvlu71ri8gs.cloudfront.net/items/0y2j2g2j1g3m2x3P2l0U/38EE21D6-0668-4EAC-A2DD-E27DBAC5AF68.png?v=a25a5043" alt=""></p>
+<h2 id="同步"><a href="#同步" class="headerlink" title="同步"></a>同步</h2><ul>
+<li><strong>通常用户级软件实现</strong> 硬件同步指令(原子操作)/锁</li>
+<li><strong>在高争用情况下，同步是性能的瓶颈</strong> 争用导致延迟</li>
+</ul>
+<h3 id="基本同步原语"><a href="#基本同步原语" class="headerlink" title="基本同步原语"></a>基本同步原语</h3><ul>
+<li>以原子方式读取和修改存储的硬件原语</li>
+</ul>
+<p><strong>同步原语</strong></p>
+<ol>
+<li><strong>原子交换</strong> 将一个寄存器内容与存储器的一个值进行交换（第一个处理器执行swap时返回0，其余处理器执行swap时返回1，消除了竞争）</li>
+<li><strong>测试并设置</strong> <code>test_and_set</code></li>
+<li><strong>提取并递增</strong> <code>fetch_and_inc</code></li>
+</ol>
+<h3 id="使用一致性实现锁"><a href="#使用一致性实现锁" class="headerlink" title="使用一致性实现锁"></a>使用一致性实现锁</h3><ul>
+<li><strong>自旋锁 忙等待，直到获得锁</strong> 两种情况下使用</li>
+</ul>
+<ol>
+<li>短时间内获得锁</li>
+<li>锁定过程比较短</li>
+<li>可用使用原子交换来实现</li>
+</ol>
+<p><img src="https://d2ppvlu71ri8gs.cloudfront.net/items/0k3i1j2G2E1U25291W2H/616A55A6-7E2E-4CEA-9261-26327EF78959.png?v=56f82ce2" alt=""></p>
+<h2 id="存储器连贯性模型"><a href="#存储器连贯性模型" class="headerlink" title="存储器连贯性模型"></a>存储器连贯性模型</h2><ul>
+<li><strong>缓存一致性</strong> 保证了多个处理器看到的存储器内容是一致的,但没有回答这些内容应当保持何种程度的一致性,一个处理器何时能看到其他处理器的修改,即处理器以何种顺序来观测另一个处理器的数据写入</li>
+<li><strong>顺序连贯性模型</strong> 要求任何程序每次执行的结果是一样的，就像每个处理器是顺序执行存储器访问</li>
+</ul>
+<p><strong>实现方法:</strong> 处理器推迟完成所有存储器访问，直到该访问操作锁导致的全部失效均完成</p>
+<h1 id="仓库级计算机"><a href="#仓库级计算机" class="headerlink" title="仓库级计算机"></a>仓库级计算机</h1><h2 id="总括"><a href="#总括" class="headerlink" title="总括"></a>总括</h2><ol>
+<li></li>
+</ol>
+
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用多说评论 -->
+    <link rel="stylesheet" href="/css/duoshuo.min.css">
+<style>
+    #ds-thread #ds-reset .ds-post-button{
+        background-color: #0097A7 !important;
+    }
+    #ds-wrapper #ds-reset .ds-icons-32{
+        background-color: #0097A7 !important;
+    }
+    #ds-reset .ds-highlight {
+        color: #0097A7 !important;
+    }
+</style>
+<div id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread"
+        data-thread-key=""
+        data-url="http://pengtianhao.com/2017/04/12/计算机体系结构笔记/"
+        data-title="计算机体系结构笔记">
+    </div>
+    <!-- 多说评论框 end -->
+</div>
+
+
+
+
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2017/05/12/GRE词根/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/04/06/在南极旅行是怎样的体验/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/head.jpg" alt="彭天浩's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        pengtianhao48@gmail.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="mailto:pengtianhao48@gmail.com" target="_blank" title="Email Me">
+                        <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    <li id="sidebar-first-li">
+        <a href="/" target="_self">
+            <i class="material-icons sidebar-material-icons">home</i>
+            主页
+        </a>
+    </li>
+
+    <!-- I'm Feeling Lucky -->
+    <!--
+    <li class="dropdown">
+        <a href="" target="_self">
+            <i class="material-icons sidebar-material-icons">explore</i>
+             sidebar.imlucky
+        </a>
+    </li>
+    -->
+
+    <!-- Archives  -->
+    <li class="dropdown">
+        <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+            <i class="material-icons sidebar-material-icons">inbox</i>
+             归档
+            <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu">
+            <li>
+            <a class="sidebar_archives-link" href="/archives/2017/05/">五月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/04/">四月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">三月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/01/">一月 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/11/">十一月 2016<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/10/">十月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/09/">九月 2016<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/08/">八月 2016<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/06/">六月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/04/">四月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/03/">三月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/01/">一月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2015/12/">十二月 2015<span class="sidebar_archives-count">2</span></a>
+        </ul>
+    </li>
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/MacOS/">MacOS<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Python/">Python<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/iOS/">iOS<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/创业/">创业<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/杂烩/">杂烩<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/科技文章/">科技文章<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/英语/">英语<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/计算机基础/">计算机基础<span class="sidebar_archives-count">11</span></a></li><li><a class="sidebar_archives-link" href="/categories/转载/">转载<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/随感/">随感<span class="sidebar_archives-count">2</span></a>
+            </ul>
+        </li>
+    
+
+    <!-- Divider -->
+    <li class="divider"></li>
+
+
+    <!-- Pages  -->
+  	
+        <li>
+            <a href="/about" title="关于">
+                
+                    <i class="material-icons sidebar-material-icons">person</i>
+                
+                关于
+            </a>
+        </li>
+  	
+
+    <!-- Article Numebr  -->
+    <li>
+        <a href="/archives">
+            文章总数
+            <span class="sidebar-badge">30</span>
+        </a>
+    </li>
+</ul>
+
+
+        <!-- Sidebar Divider -->
+        <div class="sidebar-divider"></div>
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Theme Material -->
+<a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+        主题 - Material
+        <span class="sidebar-badge badge-circle">i</span>
+    </div>
+</a>
+
+<!-- Help & Support -->
+<!--
+<a href="mailto:hiviosey@gmail.com" class="sidebar-footer-text-a">
+    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+    sidebar.help
+    <span class="mdl-button__ripple-container">
+      <span class="mdl-ripple"></span>
+    </span>
+  </div>
+</a>
+-->
+
+<!-- Feedback -->
+<!--
+<a href="https://github.com/viosey/hexo-theme-material/issues" target="_blank" class="sidebar-footer-text-a">
+    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+         sidebar.feedback
+                    <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></div>
+</a>
+-->
+
+<!-- Abount Theme -->
+<!--
+<a href="https://blog.viosey.com/index.php/Material.html" target="_blank" class="sidebar-footer-text-a">
+    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+         sidebar.about_theme
+        <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></div>
+</a>-->
+
+    </div>
+
+    <!-- Sidebar Sponsor -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+        <a href="https://twitter.com/twitter" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-twitter.png);">
+                <span class="visuallyhidden">Twitter</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Facebook -->
+    
+        <a href="https://www.facebook.com/tim.peng.378" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-facebook.png);">
+                <span class="visuallyhidden">Facebook</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/pthtc" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-github.png);">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+        <a href="https://www.zhihu.com/people/peng-tian-hao-23/activities" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-zhihu.png);">
+                <span class="visuallyhidden">Zhihu</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;
+            <script type="text/javascript">
+                var fd = new Date();
+                document.write(fd.getFullYear());
+            </script>
+            &nbsp;彭天浩的博客
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import File -->
+<script src="/js/highlight.min.js"></script>
+<script src="/js/js.min.js"></script>
+<script src="/js/nprogress.js"></script>
+
+<script type="text/javascript">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+
+    $('#nprogress .bar').css({
+        'background': '#FF4081'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #FF4081, 0 0 15px #FF4081'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#FF4081',
+        'border-left-color': '#FF4081'
+    });
+
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+    <!-- Busuanzi -->
+    <script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+    <!-- 多说公共 js 代码 start -->
+    <script type="text/javascript">
+        var duoshuoQuery = {
+            short_name: 'pengtianhao'
+        };
+        (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';
+            ds.async = true;
+            ds.src = 'https://static.duoshuo.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0]
+             || document.getElementsByTagName('body')[0]).appendChild(ds);
+        })();
+    </script>
+    <!-- 多说公共 js 代码 end -->
+
+
+
+
+
+<!-- Swiftye -->
+
+
+<!-- Local Search-->
+
+    <script>
+    var searchFunc = function(path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: 'xml',
+            success: function( xmlResponse ) {
+                // get the contents from search data
+                var datas = $( 'entry', xmlResponse ).map(function() {
+                    return {
+                        title: $( 'title', this ).text(),
+                        content: $('content',this).text(),
+                        url: $( 'url' , this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function() {
+                    var str='<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function(data) {
+                        var isMatch = true;
+                        var content_index = [];
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                        var data_url = data.url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if(data_title != '' && data_content != '') {
+                            keywords.forEach(function(keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if( index_title < 0 && index_content < 0 ) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += '<li><a href="'+ data_url +'" class="search-result-title" target="_blank">'+ data_title;
+                            var content = data.content.trim().replace(/<[^>]+>/g, '');
+                            if (first_occur >= 0) {
+                                // cut out characters
+                                var start = first_occur - 6;
+                                var end = first_occur + 6;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 10;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function(keyword) {
+                                    var regS = new RegExp(keyword, 'gi');
+                                    match_content = match_content.replace(regS, '<em class="search-keyword">'+keyword+'</em>');
+                                })
+                                str += '<p class="search-result">' + match_content +'...</p>' +'</a>';
+                            }
+                        }
+                    });
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    }
+</script>
+
+
+    <script>
+        var inputArea = document.querySelector('#search');
+        var getSearchFile = function() {
+            var path = 'search.xml';
+            searchFunc(path, 'search', 'local-search-result');
+        }
+
+        if(inputArea) {
+            inputArea.onfocus = function() {
+                getSearchFile();
+            }
+        }
+    </script>
+
+
+<!-- Window Load-->
+<script>
+    $(window).load(function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+</script>
+
+<!-- MathJax Load-->
+
+
+                </main>
+            </div>
+        </body>
+    
+</html>

@@ -164,11 +164,18 @@
     
     <entry>
       <title><![CDATA[计算机体系结构笔记]]></title>
-      <url>http://pengtianhao.com/2017/04/12/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%AC%94%E8%AE%B0/</url>
+      <url>http://pengtianhao.com/2017/04/12/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E7%AC%94%E8%AE%B0/</url>
       <content type="html"><![CDATA[<blockquote>
 <p>计算机系统结构笔记</p>
 </blockquote>
-<h1 id="量化设计与分析基础"><a href="#量化设计与分析基础" class="headerlink" title="量化设计与分析基础"></a>量化设计与分析基础</h1><h2 id="计算机体系结构定义"><a href="#计算机体系结构定义" class="headerlink" title="计算机体系结构定义"></a>计算机体系结构定义</h2><p>指令集体系结构<br>组成或微体系结构<br>硬件</p>
+<h1 id="量化设计与分析基础"><a href="#量化设计与分析基础" class="headerlink" title="量化设计与分析基础"></a>量化设计与分析基础</h1><h2 id="For考试"><a href="#For考试" class="headerlink" title="For考试"></a>For考试</h2><h3 id="TIPS"><a href="#TIPS" class="headerlink" title="TIPS"></a>TIPS</h3><ol>
+<li>指令看到数据就要想到除了数据本身还有一次指令</li>
+<li>数据冒险，什么RAW，在后面自动接上『的时候』，代表本该有的情况，中文和英文相反</li>
+</ol>
+<h3 id="Amdalh"><a href="#Amdalh" class="headerlink" title="Amdalh"></a>Amdalh</h3><p><code>加速比 = 老时间/新时间</code></p>
+<h3 id="CPU时间"><a href="#CPU时间" class="headerlink" title="CPU时间"></a>CPU时间</h3><p><code>CPU时间 = 指令数*一条指令需要的周期数*一周期消耗时间</code></p>
+<h3 id="MTTF（平均无错时间）"><a href="#MTTF（平均无错时间）" class="headerlink" title="MTTF（平均无错时间）"></a>MTTF（平均无错时间）</h3><p>MTTF = (设备数目*时间)/故障数目</p>
+<h2 id="计算机体系结构定义"><a href="#计算机体系结构定义" class="headerlink" title="计算机体系结构定义"></a>计算机体系结构定义</h2><p>指令集体系结构<br>组成或微体系结构<br>硬件</p>
 <p>ILP: 指令级并行<br>TLP：数据并行<br>DLP：处理器并行<br>RLP：请求并行<br><strong>ILP隐式并行，对用户透明，由硬件和编译器实现</strong><br><strong>DLP、TLP、RLP显示并行，程序员新增的负担</strong></p>
 <p><strong>五种主流计算平台</strong> 嵌入式/个人移动设备/桌面计算/服务器/集群/仓库级计算</p>
 <p><img src="https://d2ppvlu71ri8gs.cloudfront.net/items/0q0m0I0V2w411l2P0B0F/B633890B-969C-4BB7-BEC0-8BADA6E88A95.png?v=ea017f4d" alt=""></p>
@@ -198,13 +205,14 @@
 <ul>
 <li><strong>置换</strong> LRU 最近最少使用、<strong>FIFO</strong> 先进先出、随机</li>
 <li><strong>存储器平均访问时间</strong> <code>T = 命中时间 + 缺失率 * 缺失代价</code> </li>
-<li><strong>写策略</strong></li>
+<li><strong>写策略</strong> 为了缓存和存储器内容保持一致</li>
 </ul>
 <p><strong>写透（write-through）</strong> 写入缓冲中的块和下一级存储器中的块</p>
 <p><strong>写回（write-back）</strong> 只改写缓冲区中的块，修改的值仅在置换出缓冲区时才写到主存储器</p>
 <ul>
-<li><p><strong>写入缺失</strong></p>
-<p>  写入分派：发生写入缺失时将该块读入缓冲区，再执行写入操作<br>  无写入分派：只修改下一级存储器中的块</p>
+<li><p><strong>写入缺失</strong> 写的时候，存储器的地址不在cache中</p>
+<p>  写入分派：发生写入缺失时将该块读入缓冲区，再执行写入操作</p>
+<p>  无写入分派：只修改存储器中的块</p>
 </li>
 </ul>
 <p><strong>缺失类别</strong></p>
@@ -248,7 +256,7 @@
 <p><img src="https://d2ppvlu71ri8gs.cloudfront.net/items/2B3X3K3M3v030S1Y3K2N/8F9A04D3-06E7-407E-B9AC-975453119BA8.png?v=117a4c78" alt=""></p>
 <p><img src="https://d2ppvlu71ri8gs.cloudfront.net/items/121H0Z2I0t0428123m3G/B58AC9A3-3FD2-4575-AB7A-9CF1CA9A5F0D.png?v=4d73dbe4" alt=""></p>
 <h3 id="虚拟机VM"><a href="#虚拟机VM" class="headerlink" title="虚拟机VM"></a>虚拟机VM</h3><p>虚拟机包括所有提供标准软件接口的仿真方法，比如JAVA VM<br>为虚拟机提供支持的软件成为<strong>虚拟机监视器VMM</strong>,决定了如何将虚拟资源映射到物理资源</p>
-<p><strong>虚拟机对虚拟内存和I/O的影响</strong> 因为虚拟机有自己的虚拟内存(虚拟的虚拟)，因此需要区分<strong>虚拟存储器、实际存储器、物理存储器</strong>，实际存储器在虚拟机看来就是物理存储器，是两端的中介，VMM页表将来宾存储器银蛇到物理存储器。</p>
+<p><strong>虚拟机对虚拟内存和I/O的影响</strong> 因为虚拟机有自己的虚拟内存(虚拟的虚拟)，因此需要区分<strong>虚拟存储器、实际存储器、物理存储器</strong>，实际存储器在虚拟机看来就是物理存储器，是两端的中介，VMM页表将来宾存储器映射到物理存储器。</p>
 <h1 id="指令级并行"><a href="#指令级并行" class="headerlink" title="指令级并行"></a>指令级并行</h1><p><strong>概念</strong> 处理器采用流水线方式使指令的执行可以重叠进行，可以将指令间的关系看做是并行的，是一种指令间潜在的重叠</p>
 <p><strong>指令级并行方法分为两类：</strong></p>
 <ol>
