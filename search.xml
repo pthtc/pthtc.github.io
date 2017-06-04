@@ -4,6 +4,99 @@
   
     
     <entry>
+      <title><![CDATA[计算机安全]]></title>
+      <url>http://pengtianhao.com/2017/06/04/%E5%AE%89%E5%85%A8%E6%A6%82%E8%BF%B0/</url>
+      <content type="html"><![CDATA[<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><ul>
+<li>信息： 事物运动的状态机器状态变化的方式</li>
+<li>媒体： 在不同对象中实现互相沟通</li>
+<li>脆弱点： 为安全事件发生提供了条件</li>
+<li>安全需求： 保密、安全、可用</li>
+<li>核心要素： 人、技术、操作</li>
+</ul>
+<h2 id="新信息安全防护的原则"><a href="#新信息安全防护的原则" class="headerlink" title="新信息安全防护的原则"></a>新信息安全防护的原则</h2><ol>
+<li>整体性： 从整体上构思、设计整体安全框架（木桶原理）</li>
+<li>分层性： 不依赖单一机制，保证存在荣誉，增加安全层次</li>
+</ol>
+<p>粉碎棱镜： 加密</p>
+<h1 id="设备与环境安全"><a href="#设备与环境安全" class="headerlink" title="设备与环境安全"></a>设备与环境安全</h1><h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><ol>
+<li>环境事故造成的设备故障： 天灾、灰尘、电磁干扰等</li>
+<li>硬件缺乏安全防护： 机箱拆卸、内存条读取等</li>
+<li>硬件恶意代码</li>
+<li>旁路攻击： 分析键盘声音、cpu电磁波等</li>
+<li>在线威胁： 设备连接互联网后在黑客攻击范围内</li>
+</ol>
+<h2 id="物理防护"><a href="#物理防护" class="headerlink" title="物理防护"></a>物理防护</h2><ol>
+<li>环境安全</li>
+<li>电磁安全</li>
+<li>PC物理防护： 锁扣等</li>
+<li>设备访问控制： 保护文件不被非法访问（安全芯片、软件狗）</li>
+</ol>
+<h1 id="数据安全"><a href="#数据安全" class="headerlink" title="数据安全"></a>数据安全</h1><h2 id="散列函数和数据完整性"><a href="#散列函数和数据完整性" class="headerlink" title="散列函数和数据完整性"></a>散列函数和数据完整性</h2><h3 id="散列函数（哈希）"><a href="#散列函数（哈希）" class="headerlink" title="散列函数（哈希）"></a>散列函数（哈希）</h3><ol>
+<li>只有加密，没有解密</li>
+<li>不可预见</li>
+<li>任意大小信息</li>
+<li>抗碰撞</li>
+<li><p><code>h = H(M)</code></p>
+</li>
+<li><p><strong>校验数据完整性、重复数据</strong></p>
+</li>
+<li><strong>消息认证，避免伪装</strong></li>
+<li><strong>数字签名</strong></li>
+<li><strong>保护用户口令</strong></li>
+</ol>
+<p>MD5已经被碰撞攻破</p>
+<h2 id="数字签名与数据不可否认性和可认证性"><a href="#数字签名与数据不可否认性和可认证性" class="headerlink" title="数字签名与数据不可否认性和可认证性"></a>数字签名与数据不可否认性和可认证性</h2><h3 id="数字签名"><a href="#数字签名" class="headerlink" title="数字签名"></a>数字签名</h3><p>用于确保当事人身份真实和信息的不可否认</p>
+<p><strong>秘钥分发中心： 双方均认可实体</strong></p>
+<ol>
+<li>不可否认</li>
+<li>不可伪造</li>
+<li>可认证</li>
+</ol>
+<h4 id="基于公钥的数字签名"><a href="#基于公钥的数字签名" class="headerlink" title="基于公钥的数字签名"></a>基于公钥的数字签名</h4><ol>
+<li>发送者用私钥对明文加密为密文，形成数字签名</li>
+<li>同时发送密文和公钥</li>
+<li>接收者用公钥解密得到明文</li>
+</ol>
+<h3 id="基于散列函数和公钥的数字签名"><a href="#基于散列函数和公钥的数字签名" class="headerlink" title="基于散列函数和公钥的数字签名"></a>基于散列函数和公钥的数字签名</h3><ol>
+<li>发送者对明文计算散列值，再用私钥对<strong>散列值</strong>进行数字签名</li>
+<li>发送明文和签名和公钥</li>
+<li>对签名解密，获得散列值，同时用明文计算散列值，相等则成功</li>
+</ol>
+<h1 id="身份与访问安全"><a href="#身份与访问安全" class="headerlink" title="身份与访问安全"></a>身份与访问安全</h1><h2 id="身份认证技术"><a href="#身份认证技术" class="headerlink" title="身份认证技术"></a>身份认证技术</h2><ol>
+<li>利用用户所知道的认知： 口令、图片</li>
+<li>利用用户所拥有的认证： 密保卡、动态口令牌、USB KEY</li>
+<li>利用用户本身的特诊认证： 指纹、虹膜、人脸、生物行为（按键、鼠标、步态等）</li>
+</ol>
+<h2 id="身份认证机制"><a href="#身份认证机制" class="headerlink" title="身份认证机制"></a>身份认证机制</h2><ol>
+<li>一次性口令： 验证码、动态密码</li>
+<li>可信第三方： PKI（https）</li>
+</ol>
+<h3 id="PKI公钥基础设施"><a href="#PKI公钥基础设施" class="headerlink" title="PKI公钥基础设施"></a>PKI公钥基础设施</h3><p>围绕数字证书产生，可根据数字签名判断证书出处</p>
+<ul>
+<li>注册授权中心RA： 用户和CA的中间人，对于第一次使用PKI的用户，负责建立和认证用户身份，将请求转发给CA</li>
+<li>认证授权中心CA： 存储管理发放数字证书</li>
+<li>数字证书库：存储数字证书</li>
+</ul>
+<p><img src="https://d2ppvlu71ri8gs.cloudfront.net/items/2v0b3M2k0O0F0f2m3k0a/IMG_5600.JPG?v=794373b3" alt=""></p>
+<p>通讯过程:</p>
+<ol>
+<li>A获取B证书，提取B公钥</li>
+<li>使用B公钥加密key，key用于加密通讯内容</li>
+<li>发送加密后的key和公钥A</li>
+<li>B收到之后，验证A证书是否来自可信CA</li>
+<li>B用私钥解密，获得key，通讯开始</li>
+</ol>
+<h4 id="信任模型"><a href="#信任模型" class="headerlink" title="信任模型"></a>信任模型</h4><p>独立PKI之间的互信</p>
+<ol>
+<li>层次模型： 上级是下级的信任锚</li>
+<li>交叉模型</li>
+<li>网状模型： </li>
+<li>混合模型</li>
+</ol>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[GRE词根]]></title>
       <url>http://pengtianhao.com/2017/05/12/GRE%E8%AF%8D%E6%A0%B9/</url>
       <content type="html"><![CDATA[<blockquote>
