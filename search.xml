@@ -411,7 +411,7 @@
 <ul>
 <li><strong>置换</strong> LRU 最近最少使用、<strong>FIFO</strong> 先进先出、随机</li>
 <li><strong>存储器平均访问时间</strong> <code>T = 命中时间 + 缺失率 * 缺失代价</code> </li>
-<li><strong>写策略</strong> 为了缓存和存储器内容保持一致</li>
+<li><strong>写策略</strong> 为了缓存和存储器内容保持一致，<strong>发生在CPU向CACHE写入时</strong></li>
 </ul>
 <p><strong>写透（write-through）</strong> 写入缓冲中的块和下一级存储器中的块</p>
 <p><strong>写回（write-back）</strong> 只改写缓冲区中的块，修改的值仅在置换出缓冲区时才写到主存储器</p>
@@ -452,7 +452,9 @@
 <li><strong>用编译器控制预取，以降低缺失代价或缺失率</strong></li>
 </ol>
 <h2 id="存储器技术与优化"><a href="#存储器技术与优化" class="headerlink" title="存储器技术与优化"></a>存储器技术与优化</h2><p>SRAM 静态的随机存取存储器，加电情况下，不需要刷新，数据不会丢失<br>DRAM 动态随机存取存储器，需要不断的刷新，才能保存数据<br>SDRAM 同步的DRAM,即数据的读写需要时钟来同步<br>闪存<br>PRAM 可编程随机存取存储器</p>
-<h2 id="虚拟存储-虚拟机"><a href="#虚拟存储-虚拟机" class="headerlink" title="虚拟存储/虚拟机"></a>虚拟存储/虚拟机</h2><p><strong>虚拟内存可提供进程之间的隔离和保护:</strong> 使进程拥有自己的分页表，指向存储器的不同页面，避免相互损害</p>
+<h2 id="虚拟存储-虚拟机"><a href="#虚拟存储-虚拟机" class="headerlink" title="虚拟存储/虚拟机"></a>虚拟存储/虚拟机</h2><p><strong>虚拟内存</strong>是计算机系统内存管理的一种技术。它使得应用程序认为它拥有连续的可用的内存（一个连续完整的地址空间），而实际上，它通常是被分隔成多个物理内存碎片，还有部分暂时存储在外部磁盘存储器上，在需要时进行数据交换。</p>
+<p><strong>程序其实使用的都是虚拟内存！！！</strong></p>
+<p><strong>虚拟内存可提供进程之间的隔离和保护:</strong> 使进程拥有自己的分页表，指向存储器的不同页面，避免相互损害</p>
 <p><strong>分页</strong> 采用固定大小的块，有页编号和页偏移量，查找页表获取主存页首物理地址<br><strong>分段</strong> 采用可变大小的块</p>
 <h3 id="虚拟存储器"><a href="#虚拟存储器" class="headerlink" title="虚拟存储器"></a>虚拟存储器</h3><p>TLB是一个小的，虚拟寻址的缓存，其中每一行都保存着一个由单个PTE(Page Table Entry,页表项)组成的块。如果没有TLB，则每次取数据都需要两次访问内存，即查页表获得物理地址和取数据。</p>
 <p><code>虚拟地址&lt;64位&gt; → 虚拟页编号&lt;51&gt;+页偏移量&lt;13&gt;</code></p>
