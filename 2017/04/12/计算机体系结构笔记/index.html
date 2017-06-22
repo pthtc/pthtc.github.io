@@ -433,11 +433,12 @@
 <li><strong>写策略</strong> 为了缓存和存储器内容保持一致，<strong>发生在CPU向CACHE写入时</strong></li>
 </ul>
 <p><strong>写透（write-through）</strong> 写入缓冲中的块和下一级存储器中的块</p>
-<p><strong>写回（write-back）</strong> 只改写缓冲区中的块，修改的值仅在置换出缓冲区时才写到主存储器</p>
+<p><strong>写回（write-back）</strong> 只改写缓冲区中的块，修改的值仅在置换出缓冲区时才写到主存储器’[</p>
 <ul>
 <li><p><strong>写入缺失</strong> 写的时候，存储器的地址不在cache中</p>
 <p>  写入分派：发生写入缺失时将该块读入缓冲区，再执行写入操作</p>
 <p>  无写入分派：只修改存储器中的块</p>
+<p>  <strong>写入分派本质上是为了获取目标内存的独占权，在多核的情况下，写入前先将目标内存中的内容导入，意味着告诉其他CPU已经这块内存已经独占，因此就不会出现不一致的情况，因此在多核的情况下，无写入分派意味着</strong></p>
 </li>
 </ul>
 <p><strong>缺失类别</strong></p>
