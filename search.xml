@@ -4,6 +4,517 @@
   
     
     <entry>
+      <title><![CDATA[逆向解构：摩拜单车月卡系统]]></title>
+      <url>http://pengtianhao.com/2017/10/06/%E9%80%86%E5%90%91%E8%A7%A3%E6%9E%84%EF%BC%9A%E6%91%A9%E6%8B%9C%E5%8D%95%E8%BD%A6%E6%9C%88%E5%8D%A1%E7%B3%BB%E7%BB%9F/</url>
+      <content type="html"><![CDATA[<blockquote>
+<p>在共享单车市场已成红海、小型创业公司不断倒下的今天，月卡成为摩拜、OFO等玩家拉新、留存的不二选择。在本文探究了摩拜单车的月卡系统运行方式，以下就是作者探究的过程和结论，其中必有疏漏，欢迎指正、讨论。</p>
+</blockquote>
+<h2 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h2><ol>
+<li>178开头手机号、185开头手机号，均未注册摩拜单车</li>
+<li>测试日期为2017年10月3日</li>
+</ol>
+<h2 id="探究过程、现象和结论"><a href="#探究过程、现象和结论" class="headerlink" title="探究过程、现象和结论"></a>探究过程、现象和结论</h2><h3 id="一、初次注册"><a href="#一、初次注册" class="headerlink" title="一、初次注册"></a>一、初次注册</h3><ul>
+<li><strong>描述</strong></li>
+</ul>
+<p>无</p>
+<ul>
+<li><strong>过程</strong></li>
+</ul>
+<ol>
+<li>注册新用户</li>
+<li>跳过实名认证</li>
+<li>跳过交纳押金</li>
+</ol>
+<ul>
+<li><strong>数据</strong></li>
+</ul>
+<p><strong>178</strong></p>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th style="text-align:center">操作前</th>
+<th style="text-align:center">操作后</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>是否有押金</td>
+<td style="text-align:center">否</td>
+<td style="text-align:center">否</td>
+</tr>
+<tr>
+<td>月卡剩余时间</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+</tr>
+</tbody>
+</table>
+<p><strong>185</strong></p>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th style="text-align:center">操作前</th>
+<th style="text-align:center">操作后</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>是否有押金</td>
+<td style="text-align:center">否</td>
+<td style="text-align:center">否</td>
+</tr>
+<tr>
+<td>月卡剩余时间</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>结论</strong></li>
+</ul>
+<p>无</p>
+<h3 id="二、H5页面领取月卡"><a href="#二、H5页面领取月卡" class="headerlink" title="二、H5页面领取月卡"></a>二、H5页面领取月卡</h3><ul>
+<li><strong>描述</strong></li>
+</ul>
+<p>此时我们先不缴纳押金，寻找是否有免费的月卡可以领取。</p>
+<ul>
+<li><strong>过程</strong></li>
+</ul>
+<p><strong>1.</strong> 下图为国信证券推文，从中我们可以看到，小编很明确地告诉我们领取时间为<code>9月1日——9月30日</code>，但是扫描二维码进入页面，使用说明却显示<code>本活动领取月卡的最后期限是10月30日</code>。</p>
+<p><img src="https://i.loli.net/2017/10/03/59d34db7a7303.png" alt="01930659-9130-4B4E-8789-4EC524D5B504.png"></p>
+<p><strong>2.</strong> 我们可以看到下图是两个不同的活动H5页面，左边为官方活动，右边为飞马旅的联名月卡，这两张月卡推文页所写的时间均为<code>10.1-10.30</code>，且页面模板也与国信证券的有所不同。观察到，两个页面除了颜色和卡名以外完全一致，但是左边月卡作为官方的发放的卡片，卡名却依然为<code>联名月卡</code>。</p>
+<p><img src="https://i.loli.net/2017/10/03/59d348670795a.png" alt="0D1711E1-5025-4CCE-9269-0AF6C2FE3406.png"></p>
+<p><strong>3.</strong> 作者输入<code>185手机号</code>，成功领取了第一张官方赠送的月卡。但是在尝试领取第二张同模板联名月卡的时候，页面却显示<code>您已领取过月卡 不能重复领取</code>的提示。于是作者又尝试领取国信证券的联名月卡，<code>提示成功</code>。</p>
+<p><strong>4.</strong> 使用<code>178手机号</code>领取一张免费月卡</p>
+<p><strong>5.</strong> 分析页面URL，发现<br><code>https://m.mobike.com/h5/partner_coupon/zh/index.html?citycode=021&amp;src=weishuba&amp;from=timeline&amp;isappinstalled=0</code><br>中页面内容随着<code>src</code>的改变而改变</p>
+<p><strong>6.</strong> 分析H5页面源码，发现资源文件中存储了所有页面的文字</p>
+<p><img src="https://i.loli.net/2017/10/06/59d76d6f3d571.jpg" alt="5961507290473_.pic_hd.jpg"></p>
+<ul>
+<li><strong>数据</strong></li>
+</ul>
+<p><strong>178</strong></p>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th style="text-align:center">操作前</th>
+<th style="text-align:center">操作后</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>是否有押金</td>
+<td style="text-align:center">否</td>
+<td style="text-align:center">否</td>
+</tr>
+<tr>
+<td>月卡剩余时间</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">30</td>
+</tr>
+</tbody>
+</table>
+<p><strong>185</strong></p>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th style="text-align:center">操作前</th>
+<th style="text-align:center">操作后</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>是否有押金</td>
+<td style="text-align:center">否</td>
+<td style="text-align:center">否</td>
+</tr>
+<tr>
+<td>月卡剩余时间</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">60</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>结论</strong></li>
+</ul>
+<ol>
+<li><strong><code>摩拜联名月卡领取页自动续期了</code></strong></li>
+<li><strong><code>摩拜官方月卡与其他联名月卡使用了统一模板</code></strong></li>
+<li><strong><code>所有联名卡均指向某一模板，相同模板下属的不同联名卡不得重复领取</code></strong></li>
+<li><strong><code>领取月卡时并不会检测是否已缴纳押金</code></strong></li>
+<li><strong><code>月卡计算时间只到30天后的24点，而非精确到秒的标准30天时长</code></strong></li>
+</ol>
+<h3 id="三、缴纳押金"><a href="#三、缴纳押金" class="headerlink" title="三、缴纳押金"></a>三、缴纳押金</h3><ul>
+<li><strong>描述</strong></li>
+</ul>
+<p>按照规则，缴纳押金以后应该会赠送一张月卡，事实上却没有发现增加；只有剩余天数小于30天（事实上30天也可）才被允许退款</p>
+<ul>
+<li><strong>过程</strong></li>
+</ul>
+<ol>
+<li>向185账户缴纳押金，发现剩余时间并没有增加</li>
+<li>向178账户缴纳押金，发现剩余时间并没有增加</li>
+</ol>
+<ul>
+<li><strong>数据</strong></li>
+</ul>
+<p><strong>178</strong></p>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th style="text-align:center">操作前</th>
+<th style="text-align:center">操作后</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>是否有押金</td>
+<td style="text-align:center">否</td>
+<td style="text-align:center">是</td>
+</tr>
+<tr>
+<td>月卡剩余时间</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">30</td>
+</tr>
+</tbody>
+</table>
+<p><strong>185</strong></p>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th style="text-align:center">操作前</th>
+<th style="text-align:center">操作后</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>是否有押金</td>
+<td style="text-align:center">否</td>
+<td style="text-align:center">是</td>
+</tr>
+<tr>
+<td>月卡剩余时间</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">60</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>结论</strong></li>
+</ul>
+<ol>
+<li><strong><code>赠送的月卡会立即生效，几张有效期重叠的免费月卡允许同时存在，月卡剩余时间以最晚为准</code></strong></li>
+<li><strong><code>首充赠送的月卡与H5页面赠送的联名月卡应属同种</code></strong></li>
+</ol>
+<h3 id="四、续费"><a href="#四、续费" class="headerlink" title="四、续费"></a>四、续费</h3><ul>
+<li><strong>描述</strong></li>
+</ul>
+<p>按照规则，与领取的月卡不同，续费之后时间应该在原有基础上增加，事实上也确实如此</p>
+<ul>
+<li><strong>过程</strong></li>
+</ul>
+<ol>
+<li>向<code>178手机号</code>续费一张<code>一个月月卡</code>，续费之后月卡剩余天数变为<code>60天</code>，在原有基础上增加了30天，与规则符合。</li>
+<li>使用<code>185手机号</code>续费，提示失败，与规则符合</li>
+</ol>
+<ul>
+<li><strong>数据</strong></li>
+</ul>
+<p><strong>178</strong></p>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th style="text-align:center">操作前</th>
+<th style="text-align:center">操作后</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>是否有押金</td>
+<td style="text-align:center">是</td>
+<td style="text-align:center">是</td>
+</tr>
+<tr>
+<td>月卡剩余时间</td>
+<td style="text-align:center">30</td>
+<td style="text-align:center">60</td>
+</tr>
+</tbody>
+</table>
+<p><strong>185</strong></p>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th style="text-align:center">操作前</th>
+<th style="text-align:center">操作后</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>是否有押金</td>
+<td style="text-align:center">是</td>
+<td style="text-align:center">是</td>
+</tr>
+<tr>
+<td>月卡剩余时间</td>
+<td style="text-align:center">60</td>
+<td style="text-align:center">60</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>结论</strong></li>
+</ul>
+<p>无</p>
+<h3 id="五、退押金"><a href="#五、退押金" class="headerlink" title="五、退押金"></a>五、退押金</h3><ul>
+<li><strong>描述</strong></li>
+</ul>
+<p>按照规则，退款之后，免费月卡将消失，只剩下收费月卡</p>
+<ul>
+<li><strong>过程</strong></li>
+</ul>
+<ol>
+<li>使用<code>178手机号</code>退款，剩余天数归零，与规则符合</li>
+<li>使用<code>185手机号</code>退款，剩余天数为31天，比想象中多1天</li>
+<li>此时点击退款退款时，在摩拜的iOS端可以看到这段文字：</li>
+</ol>
+<p><img src="https://i.loli.net/2017/10/03/59d345460bcf3.jpg" alt="退款文字"></p>
+<ul>
+<li><strong>数据</strong></li>
+</ul>
+<p><strong>178</strong></p>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th style="text-align:center">操作前</th>
+<th style="text-align:center">操作后</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>是否有押金</td>
+<td style="text-align:center">是</td>
+<td style="text-align:center">否</td>
+</tr>
+<tr>
+<td>月卡剩余时间</td>
+<td style="text-align:center">60</td>
+<td style="text-align:center">0</td>
+</tr>
+</tbody>
+</table>
+<p><strong>185</strong></p>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th style="text-align:center">操作前</th>
+<th style="text-align:center">操作后</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>是否有押金</td>
+<td style="text-align:center">是</td>
+<td style="text-align:center">否</td>
+</tr>
+<tr>
+<td>月卡剩余时间</td>
+<td style="text-align:center">60</td>
+<td style="text-align:center">31</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>结论</strong></li>
+</ul>
+<ol>
+<li><strong><code>摩拜的月卡分为免费月卡和购买的月卡</code></strong></li>
+<li><strong><code>在有付费卡的情况下，退款仍然会改变到期日</code></strong></li>
+</ol>
+<h3 id="六、再次续费"><a href="#六、再次续费" class="headerlink" title="六、再次续费"></a>六、再次续费</h3><ul>
+<li><strong>描述</strong></li>
+</ul>
+<ul>
+<li><strong>过程</strong></li>
+</ul>
+<ol>
+<li>使用<code>178手机号</code>充值3个月，剩余天数变为91天，比想象中多1天</li>
+<li>使用<code>185手机号</code>充值，提示失败，与规则符合</li>
+</ol>
+<ul>
+<li><strong>数据</strong></li>
+</ul>
+<p><strong>178</strong></p>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th style="text-align:center">操作前</th>
+<th style="text-align:center">操作后</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>是否有押金</td>
+<td style="text-align:center">否</td>
+<td style="text-align:center">否</td>
+</tr>
+<tr>
+<td>月卡剩余时间</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">91</td>
+</tr>
+</tbody>
+</table>
+<p><strong>185</strong></p>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th style="text-align:center">操作前</th>
+<th style="text-align:center">操作后</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>是否有押金</td>
+<td style="text-align:center">否</td>
+<td style="text-align:center">否</td>
+</tr>
+<tr>
+<td>月卡剩余时间</td>
+<td style="text-align:center">31</td>
+<td style="text-align:center">31</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>结论</strong></li>
+</ul>
+<p>无</p>
+<h3 id="七、再次领取H5页面月卡"><a href="#七、再次领取H5页面月卡" class="headerlink" title="七、再次领取H5页面月卡"></a>七、再次领取H5页面月卡</h3><ul>
+<li><strong>描述</strong></li>
+</ul>
+<p>按照规则，每张月卡只能领取一次，但是规则又写，如果已领用且仍在有效期内，则不能再次领取，目前的情况是账号因为退款失去了全部免费额度，那么是否可以再次领取呢？</p>
+<ul>
+<li><strong>过程</strong></li>
+</ul>
+<ol>
+<li>使用<code>185手机号</code>领取H5页面月卡，提示<code>您已领取过月卡 不能重复领取</code></li>
+</ol>
+<ul>
+<li><strong>数据</strong></li>
+</ul>
+<p><strong>178</strong></p>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th style="text-align:center">操作前</th>
+<th style="text-align:center">操作后</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>是否有押金</td>
+<td style="text-align:center">是</td>
+<td style="text-align:center">是</td>
+</tr>
+<tr>
+<td>月卡剩余时间</td>
+<td style="text-align:center">30</td>
+<td style="text-align:center">60</td>
+</tr>
+</tbody>
+</table>
+<p><strong>185</strong></p>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th style="text-align:center">操作前</th>
+<th style="text-align:center">操作后</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>是否有押金</td>
+<td style="text-align:center">是</td>
+<td style="text-align:center">是</td>
+</tr>
+<tr>
+<td>月卡剩余时间</td>
+<td style="text-align:center">60</td>
+<td style="text-align:center">60</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>结论</strong></li>
+</ul>
+<ol>
+<li><strong><code>免费月卡在失效之后，并未删除，而是设置为失效状态</code></strong></li>
+</ol>
+<h3 id="八、联系官方客服"><a href="#八、联系官方客服" class="headerlink" title="八、联系官方客服"></a>八、联系官方客服</h3><ul>
+<li><strong>描述</strong></li>
+</ul>
+<p>打电话过去，客服的态度非常不耐烦，但还是拿到了想要的信息</p>
+<ul>
+<li><strong>结论</strong></li>
+</ul>
+<ol>
+<li><strong><code>月卡只按照月卡创建的先后顺序使用，不考虑免费/收费</code></strong></li>
+</ol>
+<h2 id="疑惑和推测解决方案"><a href="#疑惑和推测解决方案" class="headerlink" title="疑惑和推测解决方案"></a>疑惑和推测解决方案</h2><p>到这里，还有两个问题没有解决</p>
+<ol>
+<li>为什么3个月月卡购买后为91天（31+30+30），而1个月月卡购买只有30天</li>
+<li>一个月免费月卡+一个月购买月卡的账户，退款前为60天，退款后余额为31天而不是30天</li>
+</ol>
+<ul>
+<li><p>针对第一个疑惑，如果<strong><code>摩拜计算日期，仅仅是简单地改变年份和月份而不是真实计算90天以后的日期</code></strong>（这样做只需处理2月29日这一种特殊情况），那么2017年10月3日到2018年1月3日相差92天，2017年10月3日到2017年11月3日相差31天，两个天数均减去1天（即购买瞬间已默认消耗一天），就可以解释91天和30天的现象了</p>
+</li>
+<li><p>针对第二个疑惑，按前一算法，2017年10月3日到2017年12月3日相差61天，减去当天为60天，60天可以解释；按照客服说法，依据月卡获得顺序使用，那么消耗的首先是免费月卡，购买的月卡未被使用，要得出31天这个数据，必须有两个前提：</p>
+</li>
+</ul>
+<ol>
+<li><strong><code>摩拜购买的月卡未被使用前，并不直接写死到期天数，而是以未使用状态的卡片存在</code></strong></li>
+<li><strong><code>退押金当日的消费仍然算在上一张卡上,天数计算无需减扣当天使用</code></strong></li>
+</ol>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>总结一下现在所有的推测：</p>
+<ol>
+<li><strong><code>摩拜联名月卡领取页自动续期了</code></strong></li>
+<li><strong><code>摩拜官方月卡与其他联名月卡使用了统一模板</code></strong></li>
+<li><strong><code>所有联名卡均指向某一模板，相同模板下属的不同联名卡不得重复领取</code></strong></li>
+<li><strong><code>领取月卡时并不会检测是否已缴纳押金</code></strong></li>
+<li><strong><code>月卡计算时间只到30天后的24点，而非精确到秒的标准30天时长</code></strong></li>
+<li><strong><code>赠送的月卡会立即生效，几张有效期重叠的免费月卡允许同时存在，月卡剩余时间以最晚为准</code></strong></li>
+<li><strong><code>首充赠送的月卡与H5页面赠送的联名月卡应属同种</code></strong></li>
+<li><strong><code>月卡分为免费月卡和购买的月卡</code></strong></li>
+<li><strong><code>在有付费卡的情况下，退款仍然会改变到期日</code></strong></li>
+<li><strong><code>免费月卡在失效之后，并未删除，而是设置为失效状态</code></strong></li>
+<li><strong><code>月卡只按照月卡创建的先后顺序使用，不考虑免费/收费</code></strong></li>
+<li><strong><code>摩拜在计算日期时，仅仅是简单地改变年份和月份而不是真实计算90天以后的日期</code></strong></li>
+<li><strong><code>购买的月卡未被使用前，并不直接写死到期天数，而是以未使用状态的卡片存在</code></strong></li>
+<li><strong><code>退押金当日的消费仍然算在上一张卡上,天数计算无需减扣当天使用</code></strong></li>
+</ol>
+<p>根据以上结论，可以设计一个最简版本月卡，满足当前需求：</p>
+<p><img src="https://i.loli.net/2017/10/06/59d7725b2156d.png" alt="25AC0297-A4CC-43D3-8127-FE8ACD8DB95B.png"></p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[腾讯家的移动医疗：丁香医生、微医、好大夫产品分析]]></title>
       <url>http://pengtianhao.com/2017/09/25/%E8%85%BE%E8%AE%AF%E5%AE%B6%E7%9A%84%E7%A7%BB%E5%8A%A8%E5%8C%BB%E7%96%97%EF%BC%9A%E4%B8%81%E9%A6%99%E5%8C%BB%E7%94%9F%E3%80%81%E5%BE%AE%E5%8C%BB%E3%80%81%E5%A5%BD%E5%A4%A7%E5%A4%AB%E4%BA%A7%E5%93%81%E5%88%86%E6%9E%90/</url>
       <content type="html"><![CDATA[<blockquote>
