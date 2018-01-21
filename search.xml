@@ -4,6 +4,55 @@
   
     
     <entry>
+      <title><![CDATA[【附源码】为了帮助程序员谈恋爱，我做了这个APP]]></title>
+      <url>http://pengtianhao.com/2018/01/21/%E3%80%90%E9%99%84%E6%BA%90%E7%A0%81%E3%80%91%E4%B8%BA%E4%BA%86%E5%B8%AE%E5%8A%A9%E7%A8%8B%E5%BA%8F%E5%91%98%E8%B0%88%E6%81%8B%E7%88%B1%EF%BC%8C%E6%88%91%E5%81%9A%E4%BA%86%E8%BF%99%E4%B8%AAAPP/</url>
+      <content type="html"><![CDATA[<blockquote>
+<p>前段时间，21岁的我第一次开启了名为『恋爱』的副本，开始打名叫『女朋友』的BOSS，深感过程艰难，整个过程仿佛0级的菜鸡进入了布满世界迷雾的地图，只能小心翼翼才能平安通过。然而在打怪升级的过程中，偶然看见有人感叹：要是谈恋爱有进度条该多好！于是基于这个idea，身为iOS开发者的我决定开发一款能够像技术手册一般的app，帮助程序员以及其他恋爱初学者入门，并且更健康的恋爱。当然，女朋友也作为顾问参与了app内容的准备，对此我是感激涕零的。</p>
+</blockquote>
+<a id="more"></a>
+<p>APP的思路是通过任务系统，让用户明白恋爱每个阶段要做的最基本的事情，并且通过做任务的过程来联动其他功能，最终达到能够推送关系深入的效果。</p>
+<h1 id="APP信息"><a href="#APP信息" class="headerlink" title="APP信息"></a>APP信息</h1><ul>
+<li>名称：恋爱进度条</li>
+<li>iOS版下载地址：<a href="http://www.loveprogress.cn" target="_blank" rel="external">恋爱进度条</a></li>
+<li>扫码下载：</li>
+</ul>
+<p><img src="https://user-gold-cdn.xitu.io/2018/1/21/16118d52faf3c032?w=280&amp;h=280&amp;f=png&amp;s=4991" alt=""></p>
+<ul>
+<li>截图：</li>
+</ul>
+<p><img src="https://user-gold-cdn.xitu.io/2018/1/21/161180358ea35bcf?w=2606&amp;h=1160&amp;f=jpeg&amp;s=964998" alt=""></p>
+<h1 id="技术背景"><a href="#技术背景" class="headerlink" title="技术背景"></a>技术背景</h1><p>首先介绍一下技术背景：</p>
+<ol>
+<li>某渣一本大四计算机专业</li>
+<li>还算OK的iOS开发技术，做过几个商业项目，带过技术团队</li>
+<li>职业方向转型为产品，拿了某大厂OFFER，有能力搞定原型&amp;UI</li>
+</ol>
+<h1 id="工具选择"><a href="#工具选择" class="headerlink" title="工具选择"></a>工具选择</h1><ul>
+<li>前期准备:金数据、墨刀</li>
+<li>开发：Leancloud、Xcode</li>
+</ul>
+<h1 id="主要功能模块"><a href="#主要功能模块" class="headerlink" title="主要功能模块"></a>主要功能模块</h1><ul>
+<li>任务系统：主要包含关系阶段（等级）、任务清单、已完成任务记录、单个任务完成度（即用户向功能表添加的条目）</li>
+<li>纪念：实现了计算纪念日已过天数与对应的下一个周年日的倒数天数</li>
+<li>行动：实现了记录计划的日期和行动详情</li>
+<li>记录：实现了<strong>精简版的朋友圈</strong>，包括内容、时间、tag、六宫格图片顺序存储</li>
+<li>喜好：实现了根据是否喜欢和根据场景记录对方喜好，并且可以分类显示的功能</li>
+</ul>
+<h1 id="开发相关"><a href="#开发相关" class="headerlink" title="开发相关"></a>开发相关</h1><h2 id="后端选择"><a href="#后端选择" class="headerlink" title="后端选择"></a>后端选择</h2><p>虽然Python水平还可以，可以使用Django开发后端，但是为了上线速度，最后还是决定用BAAS服务做后端。之前一直使用Bmob，这回试了一下Leancloud，文档清晰，社区活跃，开发体验非常不错，就是免费额度比较低，商业版收费比较贵。</p>
+<h2 id="数据库设计"><a href="#数据库设计" class="headerlink" title="数据库设计"></a>数据库设计</h2><p>开发中唯一的难点是任务不分的设计，由此我的数据库的设计如下<br><img src="https://user-gold-cdn.xitu.io/2018/1/21/1611886c8acd5a77?w=898&amp;h=1144&amp;f=png&amp;s=179105" alt=""></p>
+<h2 id="开发"><a href="#开发" class="headerlink" title="开发"></a>开发</h2><p>开发本身比较简单，只说一下使用的第三方库</p>
+<ul>
+<li>MJRefresh：下拉刷新</li>
+<li>WSDaePickerView：日期选择</li>
+<li>MBProgressHUD：小菊花</li>
+<li>SDWebImage：异步图片加载</li>
+<li>ZLPhotoBrowser：图片选择器</li>
+</ul>
+<h1 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h1><p><a href="https://github.com/pthtc/Loveprogress" target="_blank" rel="external">github（顺便点个赞吧）</a></p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[逆向解构：摩拜单车月卡系统]]></title>
       <url>http://pengtianhao.com/2017/10/06/%E9%80%86%E5%90%91%E8%A7%A3%E6%9E%84%EF%BC%9A%E6%91%A9%E6%8B%9C%E5%8D%95%E8%BD%A6%E6%9C%88%E5%8D%A1%E7%B3%BB%E7%BB%9F/</url>
       <content type="html"><![CDATA[<blockquote>
