@@ -4,6 +4,220 @@
   
     
     <entry>
+      <title><![CDATA[【翻译】想帮助用户做决定？你的APP可以这样设计！]]></title>
+      <url>http://pengtianhao.com/2018/02/02/%E3%80%90%E7%BF%BB%E8%AF%91%E3%80%91%E6%83%B3%E5%B8%AE%E5%8A%A9%E7%94%A8%E6%88%B7%E5%81%9A%E5%86%B3%E5%AE%9A%EF%BC%9F%E4%BD%A0%E7%9A%84APP%E5%8F%AF%E4%BB%A5%E8%BF%99%E6%A0%B7%E8%AE%BE%E8%AE%A1%EF%BC%81/</url>
+      <content type="html"><![CDATA[<blockquote>
+<ul>
+<li>原文地址：<a href="https://medium.com/googleplaydev/design-your-app-for-decision-making-e9e5745508e4" target="_blank" rel="external">Design your app for decision-making</a><a id="more"></a></li>
+<li>原文作者：<a href="https://medium.com/@_jeniwren?source=post_header_lockup" target="_blank" rel="external">Jeni</a></li>
+<li>译文出自：<a href="https://github.com/xitu/gold-miner" target="_blank" rel="external">掘金翻译计划</a></li>
+<li>本文永久链接：<a href="https://github.com/xitu/gold-miner/blob/master/TODO/design-your-app-for-decision-making.md" target="_blank" rel="external">https://github.com/xitu/gold-miner/blob/master/TODO/design-your-app-for-decision-making.md</a></li>
+<li>译者：<a href="https://github.com/pthtc" target="_blank" rel="external">PTHFLY</a></li>
+<li>校对者：<a href="https://github.com/ryouaki" target="_blank" rel="external">ryouaki</a></li>
+</ul>
+</blockquote>
+<h1 id="想帮助用户做决定？你的APP可以这样设计！"><a href="#想帮助用户做决定？你的APP可以这样设计！" class="headerlink" title="想帮助用户做决定？你的APP可以这样设计！"></a>想帮助用户做决定？你的APP可以这样设计！</h1><h2 id="简单化，触发器，激励-—-一个优化用户行为的三步走方法-1"><a href="#简单化，触发器，激励-—-一个优化用户行为的三步走方法-1" class="headerlink" title="简单化，触发器，激励 — 一个优化用户行为的三步走方法[1]"></a><em>简单化，触发器，激励 — 一个优化用户行为的三步走方法</em><sup><a href="#note1">[1]</a></sup></h2><p><img src="https://user-gold-cdn.xitu.io/2018/1/31/1614bac5beae7b27?w=800&amp;h=421&amp;f=jpeg&amp;s=32383" alt=""></p>
+<p>如果你从事移动APP行业，每一天你都有潜在机会影响几百万人的行动。无论是参与使用一个新功能，每天访问你的应用，或是订阅你的增值服务， 你往往很可能在心里有一个希望更多用户会做的关键行为。但是你如何才能增加用户行动的机会呢？</p>
+<p>无论你希望的行为是什么， 这篇博文将会把一个优化用户行为结果的三步走方法介绍给你，分别是简化、触发器、积极性（其中的第一部分借鉴了来自于行为经济学、心理学和游戏化的理念）。特别地，在这篇博文中我们将覆盖前两步，也就是简化和触发器。</p>
+<p>当考虑鼓励某个特定的用户行为策略的时候，你应该从哪里开始？斯坦福 <a href="http://captology.stanford.edu/" target="_blank" rel="external">Persuasive Tech Lab</a> 的院长，BJ Fogg博士创建了 Fogg 行为模型，来评估三个因素（能力、触发器、积极性）对于给定行为发生可能性的影响：</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/1/31/1614bac5bae13fab?w=484&amp;h=471&amp;f=png&amp;s=36933" alt=""></p>
+<p>Fogg 行为模型</p>
+<p>模型指出三个影响用户行为的原因，并由此导出三个驱动行为改变的关键步骤</p>
+<ul>
+<li>步骤一：<strong>简化</strong>所需的行为。通过降低（最好是移除）不利于行为发生的阻碍来鼓励有参与感、有积极性的用户发生行为。</li>
+<li>步骤二：<strong>触发</strong>来自于积极用户<sup><a href="#note2">[2]</a></sup>的行为。『触发器』（提示、提示音、行为召唤）的出现甚至可以在积极性水平略低的情况下驱动行为。</li>
+<li>步骤三：激发用户的<strong>积极性</strong>。积极性很难被影响，但是如果所需的行为相当『容易』去做，通过吸引人的信息或者加入游戏因素来提升积极性水平可以激励用户按你的想法行动。</li>
+</ul>
+<p>到此为止还不错。但是你如何执行这些步骤呢？以下我们将会深入探讨前两项步骤。（我会在未来的博文中讨论第三步，激发用户积极性）</p>
+<h3 id="步骤一，简化所需行为"><a href="#步骤一，简化所需行为" class="headerlink" title="步骤一，简化所需行为"></a>步骤一，简化所需行为</h3><p>你希望用户去做的行为必须非常容易做到（做起来很少或者没有阻碍）并且容易作出决定（有清晰易懂的好处）。我们做出的每个行为都需要付出代价（比如时间、金钱和认知负担）。这些代价是一种阻碍，每个决定都在代价和收获的好处之间权衡的结果。比如，我们中许多人在年初都会有变得健康的强烈冲动，但是当真需要付出必要锻炼的时候又会导致许多决心的破产。</p>
+<p>什么阻碍或者『要求』会降低你的用户进行行动的机会呢？通常用户会付出代价的阻碍包括繁琐的手动输入，冗余的界面，过量的选择，以及因为没有清晰告诉用户要干什么从而引起困惑的信息。这些阻碍可以通过分析用户在应用内的行为数据来定量辨别，也可以通过用户搜索等方式定性识别。一旦你已经识别了用户行动的阻碍，就到了降低或者移除它们的时候了。</p>
+<h4 id="降低行动所需时间"><a href="#降低行动所需时间" class="headerlink" title="降低行动所需时间"></a><strong>降低行动所需时间</strong></h4><p>从应用被发现到下载需要有几次点击，更不用说等待下载完成的时间。然而 <a href="https://developer.android.com/topic/instant-apps/index.html" target="_blank" rel="external">Android Instant Apps</a> 是一个通过立即进行本地体验无需下载门槛，让用户快速完成许多任务的选择（例如看一个视频或者支付）。</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/1/31/1614bac5bcd4dd2e?w=440&amp;h=449&amp;f=png&amp;s=24523" alt=""></p>
+<p>一旦你的用户打开了你的应用，注册过程是下一个繁琐、耗时的雷区。比起每次都要求用户登录，开发者们喜欢的 <a href="https://play.google.com/store/apps/details?id=com.ticketmaster.mobile.android.uk" target="_blank" rel="external">Ticketmaster</a> 和 <a href="https://play.google.com/store/apps/details?id=com.alibaba.aliexpresshd" target="_blank" rel="external">AliExpress</a> 通过整合 <a href="http://get.google.com/smartlock/#for-passwords" target="_blank" rel="external">Google Smart Lock</a> 能够有效省略手动密码这一步骤。它们随后就能看见登录失败的比例大幅下降。</p>
+<p>通过进行漏斗分析，开发者能够跟踪核心流程中的用户流失情况，帮助定位所需行为的阻碍。在实行漏斗分析方面，食品配送公司 <a href="https://play.google.com/store/apps/details?id=com.deliveroo.orderapp" target="_blank" rel="external">Deliveroo</a> 识别了一个在首次结账环节的转换流失。他们注意到同样的流失情况并不会在已经将支付和配送信息的存储在应用中的老用户身上发生。意识到他们的注册流程可能是问题的一部分，团队优先考虑部署 <a href="https://developers.google.com/android-pay/" target="_blank" rel="external">Android Pay</a> 来为新用户创造一个简单的结账体验。</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/1/31/1614bac5d843d04b?w=446&amp;h=457&amp;f=png&amp;s=40081" alt=""></p>
+<h4 id="降低（实际存在或是可察觉的）花费"><a href="#降低（实际存在或是可察觉的）花费" class="headerlink" title="降低（实际存在或是可察觉的）花费"></a><strong>降低（实际存在或是可察觉的）花费</strong></h4><p>降低花费不是意味着你应该全盘降低价格！真实含义是每个预期的购买者有一个不同的『甜蜜点』，根据应用匹配程度、用户位置以及用户综合支付能力反映出他们认为合适的价格。</p>
+<p>Tamzin Taylor，Google Play的西欧应用主管，曾经讲出了一些有关于价格优化的最佳关键实践，比如使用 <a href="http://www.economist.com/content/big-mac-index" target="_blank" rel="external">Big Mac Index</a> 进行购买力对比，从而评估每个市场的实际支付能力。</p>
+<p><a href="https://www.youtube.com/embed/LQ6MsPmUa38" target="_blank" rel="external"><img src="https://user-gold-cdn.xitu.io/2018/1/31/1614bac627dd9c00?w=639&amp;h=390&amp;f=png&amp;s=34324" alt="Watch the video"></a></p>
+<p>另一个降低成为潜在购买者门槛花费的方法是降低初始消费要求。我们最近为应用订购做的 <a href="https://support.google.com/googleplay/android-developer/answer/140504#intro" target="_blank" rel="external">Introductory Pricing</a> 功能允许你做到这件事。</p>
+<p>当我们考虑可察觉的花费的时候，价格显示的方式对价格的感知有重大的影响这件事很有必要被注意带。</p>
+<p><strong>1. 锚定效应</strong></p>
+<p>开发者和零售商经常通过<a href="https://hbr.org/2013/02/why-good-better-best-prices-are-so-effective" target="_blank" rel="external">堆叠『好』、『更好』、『最好』等词</a>试图『推动』用户去购买某个特定商品。这个方法会因为标志价格与更便宜或更贵的价格点一起放置而起作用。更高价格的『最好』选择扮演了一个参考点，或者说锚点，让用户认为标准价格看起来是个更便宜和超值的选择。</p>
+<blockquote>
+<p>在一定情境里，我们倾向于中间价格因为他们看起来『公平』。<br>— <a href="https://medium.com/@dkthomp" target="_blank" rel="external">Derek Thompson</a>, The Atlantic</p>
+</blockquote>
+<p>Dan Ariely 通过一个在他的书《Predictably Irrational.》中一个现在很著名的关于经济学家价格策略的例子引起了我们的注意。杂志提供了三种选择：一个 59 美金的电子版，一个 125 美金的纸质版和一个 125 美金包含纸质和电子两种版本的套餐。Ariely 指出『相对于纯纸质选择，电子+纸质的选择看起来明显超值』，这个说服我们购买第三个选择因为这个『更容易』评估某物的价值当它被放置在有另一个明显不如它的选择旁边。</p>
+<p><strong>2. 框架效应</strong></p>
+<p>给你两个选择：一个付 60 美金一年，一个付 5 美金每个月，你会选哪个？许多有订阅功能的应用会向潜在购买者高亮显示年付的价格，而不是月付价格。因为这会显得被察觉的价格更低，虽然在一年中他们的花费是一样的。</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/1/31/1614bac5bd18a428?w=451&amp;h=446&amp;f=png&amp;s=38131" alt=""></p>
+<h4 id="降低认知负担"><a href="#降低认知负担" class="headerlink" title="降低认知负担"></a><strong>降低认知负担</strong></h4><p>你给用户提供越多选择，用户在比较选择和做决定中的心理负担就越沉重。</p>
+<p>作为开发者，在用户使用过程的关键节点，除了评估你提供给用户的选择本身，评估你显示选择的方式也值得，因为这将会对做决定的过程有巨大的影响。</p>
+<p><strong>限制的价值</strong></p>
+<p>比如，在航班应用 <a href="https://play.google.com/store/apps/details?id=net.skyscanner.android.main" target="_blank" rel="external">Skyscanner</a> 中搜索经常获得上千条结果。你可以理性地辩解说顾客们应该衡量每个单独结果的价值。但是在有限时间和认知负担的阻碍下，Skyscanner 决定以一种更好理解的方式聚合结果，从而限制选择。当同样数量的结果被返回，这个页面展示上的简单改变提升了 14% 的转化率。</p>
+<p><strong>默认的重要性</strong></p>
+<p>总的来说，人们跟随最少阻碍的路径行动。这意味着预先设置的选项是优化用户行为的有力工具，尤其是当这些默认选项对用户有明显好处的时候。</p>
+<ul>
+<li><p>例如，食谱应用 <a href="https://play.google.com/store/apps/details?id=com.simplefeast.android.app" target="_blank" rel="external">Simple Feast</a> 决定在增值服务的页面强调他们年付订阅。他们用视觉强调的方式展示，并设定为默认用户选择。结果他们发现选择年付订阅的用户增加了。</p>
+</li>
+<li><p>复选框一个表面上的小改变也有巨大的影响。默认的力量已经被利用并产生了巨大的影响，并在诸如器官捐献领域，很多国家的表格都有『自愿退出』的政策。<a href="http://www.dangoldstein.com/papers/JohnsonGoldstein_Defaults_Transplantation2004.pdf" target="_blank" rel="external">点击查看更高的器官捐献同意比例</a>。为什么？因为人们倾向于继续维持现状。</p>
+</li>
+</ul>
+<h3 id="Step-2-触发积极用户的行为"><a href="#Step-2-触发积极用户的行为" class="headerlink" title="Step 2. 触发积极用户的行为"></a>Step 2. 触发积极用户的行为</h3><p>鼓励所需用户行为的第二步是在主动用户的相关路径中设置相关触发，从而表现出可操作性。BJ Fogg有一个一个值得纪念名言：『在积极用户的使用路径上放置热点触发器』。触发器往往对于用户来说是陌生的，因为它是一个从开发者角度给出的想要影响用户下一步行为的提示、提醒或者行为召唤。一个推送在这个意义上是一个触发器，并且当它是可操作、定制化、时间合适的时候会非常有效。</p>
+<p>语言学习软件的 <a href="https://play.google.com/store/apps/dev?id=8335366955203612525" target="_blank" rel="external">Busuu</a> 的产品主管 <a href="https://medium.com/@antoinesakho" target="_blank" rel="external">Antoine Sakho</a> 在他的 <a href="https://medium.com/@antoinesakho/designing-push-notifications-that-dont-suck-af6aaa0ea85" target="_blank" rel="external">Medium 文章</a> 中介绍了他们如何在他们的推送策略中应用 <a href="https://medium.com/@nireyal" target="_blank" rel="external">Nir Eyal</a>的<a href="http://www.nirandfar.com/hooked" target="_blank" rel="external">钩子模型</a> ，从而获得推送打开率300%的增长。他写道：</p>
+<blockquote>
+<p><em>首先，我们通过个性化推送提示用户</em> <strong><em> (外部触发) </em></strong> <em>从而引发好奇</em> <strong><em>(内部触发)</em></strong><em>. 点击推送， 他们会经历一个测试 **</em>(行为)<em>**</em>。 在测试的最后， 他们会看到一个包含分数的恭喜页面<em> **</em>(奖励)<em>**</em>。 最后，通过训练他们已经学到的词汇，他们强化了长期记忆<em> **</em>(投入)_**.</p>
+</blockquote>
+<p><img src="https://user-gold-cdn.xitu.io/2018/1/31/1614bac5d339dd56?w=800&amp;h=484&amp;f=gif&amp;s=116216" alt=""></p>
+<p>钩子模型，应用于 Busuu 的用户召回活动</p>
+<p>尽管推送对于有效召回用户有一定保证，你还是应该避开这些常见陷阱：</p>
+<ol>
+<li>在不合适的时间推送通知或者推送与用户环境无关的信息，只会产生巨大的反作用。</li>
+<li>总是推送相同消息会很快被用户厌烦：跟随Busuu的指引，永远不要把同一条通知推送两遍。</li>
+<li>不要归于依赖推送来驱动用户行为。当无需提醒用户也能主动参与应用内容的时候，应用习惯才会最终养成。<a href="https://medium.com/@nireyal" target="_blank" rel="external">Nir Eyal</a> 在他 <a href="https://medium.com/behavior-design/the-psychology-of-notifications-how-to-send-triggers-that-work-25c7be3d84d3#.e4sbkzj7l" target="_blank" rel="external">Medium 文章</a>中总结了这些：</li>
+</ol>
+<blockquote>
+<p><em>能让人养成习惯的产品会在内部触发被感知的时候（比如不确定感或者无聊感）结合外部触发器（例如推送），让用户养成习惯。</em></p>
+</blockquote>
+<p>最成功的外部刺激是立即反馈。因此你如何构建清晰的时刻。所以你如何在用户应该在确定时刻采取行动的思想下构建这种反馈？根据 <a href="https://en.wikipedia.org/wiki/Prospect_theory" target="_blank" rel="external">Prospect 理论</a>，人们行动会倾向于避免损失，因为同样数量下损失的痛苦会大于获得。这意味着比起有维护的已得的事物，我们更倾向于避免错过一些事情。</p>
+<p>限时限量促销是核心工具，许多开发者用它来驱动用户立即购买而不是之后再说。这些手段被我们对失去的厌恶驱动。毕竟，不行动很快导致一种可能性 —— 『错过』交易或者物品。这个点子也可以被用作构建更具说服力的信息。例如，你可以选择聚焦在你用户在不行动可能失去，行动了才会获得的东西。</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/1/31/1614bac6aac2a7fe?w=412&amp;h=729&amp;f=png&amp;s=126270" alt=""></p>
+<p>健康和生活方式 app <a href="https://play.google.com/store/apps/details?id=com.sillens.shapeupclub" target="_blank" rel="external">Lifesum</a> 在加入为新用户准备的限时『新手套装』的第一天就看到了 15% 的增长。 『仅在今天』的信息形成了一种防止错过的紧迫感，驱使用户立即行动。</p>
+<p><strong>关键结论总结:</strong></p>
+<ul>
+<li>在代价和必要资源没有清晰地与最终价值挂钩的时候，用户将不会行动。</li>
+<li>如果在可选项之间很难进行评估和选择，用户也不倾向于行动。</li>
+<li>如果你在内容中给用户提供相关、可操作的触发，用户更倾向于进行按开发者意愿行动。</li>
+</ul>
+<p>在 <strong>3月19日周五**</strong>8:30 am (PST)** 加入或者访问 <a href="https://events.google.com/io/schedule/?sid=b187c653-5143-4b2d-addc-103e1f04fbc2#may-19" target="_blank" rel="external">Google I/O talk, “Boost User Retention with Behavioral Insights”</a> ，你可以获得更多的信息<br>。我将会和 <a href="https://play.google.com/store/apps/details?id=co.thefabulous.app" target="_blank" rel="external">The Fabulous</a> 的 CEO Sami Ben Hassine 一起，讨论开发者如何才能应用行为观点来构建更多有吸引力的应用体验。</p>
+<hr>
+<h4 id="你怎么想"><a href="#你怎么想" class="headerlink" title="你怎么想?"></a>你怎么想?</h4><p>你有关于在优化用户决定方面的问题或者想法吗？在下面评论区继续讨论或者通过井号标签 #AskPlayDev 通知我们，我们会在 <a href="http://twitter.com/googleplaydev" target="_blank" rel="external">@GooglePlayDev</a> （我们会定期分享在上面就如何在Google Play成功的话题分享新闻和小贴士）上回复。</p>
+<hr>
+<p><em>在我</em> <a href="https://medium.com/googleplaydev/the-right-app-rewards-to-boost-motivation-c1ec86390450" target="_blank" rel="external">第二篇博文</a><em>，我会解释一些行为改变第三步 —— 激发用户积极性的细节。我将探索积极性心理，它与游戏化的关系以及，正确的奖励方法。</em></p>
+<p><em>尤其感谢</em> <a href="https://medium.com/@aaronotani" target="_blank" rel="external">Aaron Otani</a> <em>为写这篇博文草稿时提供的反馈。</em></p>
+<hr>
+<p>译者注：</p>
+<ol>
+<li><a name="note1"></a> 这篇文章是作者三部曲的第一篇，续集详见：<a href="https://medium.com/googleplaydev/the-right-app-rewards-to-boost-motivation-c1ec86390450" target="_blank" rel="external">传送门</a></li>
+<li><a name="note2"></a> 原文为<code>motivated users</code>，此处翻译为积极用户，期待指正</li>
+</ol>
+<hr>
+<blockquote>
+<p><a href="https://github.com/xitu/gold-miner" target="_blank" rel="external">掘金翻译计划</a> 是一个翻译优质互联网技术文章的社区，文章来源为 <a href="https://juejin.im" target="_blank" rel="external">掘金</a> 上的英文分享文章。内容覆盖 <a href="https://github.com/xitu/gold-miner#android" target="_blank" rel="external">Android</a>、<a href="https://github.com/xitu/gold-miner#ios" target="_blank" rel="external">iOS</a>、<a href="https://github.com/xitu/gold-miner#前端" target="_blank" rel="external">前端</a>、<a href="https://github.com/xitu/gold-miner#后端" target="_blank" rel="external">后端</a>、<a href="https://github.com/xitu/gold-miner#区块链" target="_blank" rel="external">区块链</a>、<a href="https://github.com/xitu/gold-miner#产品" target="_blank" rel="external">产品</a>、<a href="https://github.com/xitu/gold-miner#设计" target="_blank" rel="external">设计</a>、<a href="https://github.com/xitu/gold-miner#人工智能" target="_blank" rel="external">人工智能</a>等领域，想要查看更多优质译文请持续关注 <a href="https://github.com/xitu/gold-miner" target="_blank" rel="external">掘金翻译计划</a>、<a href="http://weibo.com/juejinfanyi" target="_blank" rel="external">官方微博</a>、<a href="https://zhuanlan.zhihu.com/juejinfanyi" target="_blank" rel="external">知乎专栏</a>。</p>
+</blockquote>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[【翻译】断点：像专家一样调试代码]]></title>
+      <url>http://pengtianhao.com/2018/02/02/%E3%80%90%E7%BF%BB%E8%AF%91%E3%80%91%E6%96%AD%E7%82%B9%EF%BC%9A%E5%83%8F%E4%B8%93%E5%AE%B6%E4%B8%80%E6%A0%B7%E8%B0%83%E8%AF%95%E4%BB%A3%E7%A0%81/</url>
+      <content type="html"><![CDATA[<blockquote>
+<ul>
+<li>原文地址：<a href="https://cheesecakelabs.com/blog/breakpoints-debugging-like-pro/" target="_blank" rel="external">Breakpoints: Debugging like a Pro</a><a id="more"></a></li>
+<li>原文作者：<a href="https://cheesecakelabs.com/blog/author/alan/" target="_blank" rel="external">Alan Ostanik</a></li>
+<li>译文出自：<a href="https://github.com/xitu/gold-miner" target="_blank" rel="external">掘金翻译计划</a></li>
+<li>本文永久链接：<a href="https://github.com/xitu/gold-miner/blob/master/TODO/breakpoints-debugging-like-pro.md" target="_blank" rel="external">https://github.com/xitu/gold-miner/blob/master/TODO/breakpoints-debugging-like-pro.md</a></li>
+<li>译者：<a href="https://github.com/pthtc" target="_blank" rel="external">PTHFLY</a></li>
+<li>校对者：<a href="https://github.com/ryouaki" target="_blank" rel="external">ryouaki</a></li>
+</ul>
+</blockquote>
+<h1 id="断点：像专家一样调试代码"><a href="#断点：像专家一样调试代码" class="headerlink" title="断点：像专家一样调试代码"></a>断点：像专家一样调试代码</h1><p><img src="https://user-gold-cdn.xitu.io/2018/2/1/1615037100dcf8e5?w=2000&amp;h=720&amp;f=png&amp;s=12549" alt=""></p>
+<p>当我刚开始成为一名iOS开发者的时候，我最大的问题是：当应用崩溃时，我真的不知道 iOS 、 Swift 、Objective-C 都是如何工作的。那时候，我写了很多烂代码，从不担心内存使用、内存访问、 ARC （译者注：Automatic Reference Counting ）。那仅仅是因为我不知道那些事情。看在上帝的份上，我是个菜鸟。</p>
+<p>就像许多新手一样， <a href="http://www.stackoverflow.com" title="Stack Overflow" target="_blank" rel="external">Stack Overflow</a> 社区教会我许多关于『如何做正确的事情』的方法。我学到了许多帮助提升工作过程的窍门。在这篇文章中，我将分享在这一阶段过程中最重要的一些工具，那就是<strong>断点</strong>！</p>
+<p>那么，撸起袖子干起来吧。🙂</p>
+<h1 id="断点"><a href="#断点" class="headerlink" title="断点"></a>断点</h1><p>毫无疑问， Xcode 断点是一个强大的工具。其主要目的是调试代码，但是如果我说他们还要更多作用呢？ OK，那我们从一些窍门开始吧。</p>
+<h2 id="Conditioning-breakpoints-条件断点"><a href="#Conditioning-breakpoints-条件断点" class="headerlink" title="Conditioning breakpoints 条件断点"></a>Conditioning breakpoints 条件断点</h2><p>也许你已经陷入了这样一种困境：你的 <em>TableView</em> 对于所有用户 model 都运行良好，可就是有那么一个引起来一些麻烦。为了调试这个实例，首先你可能会想：『 <em>Ok ， 我会在 cell 装载的地方打个断点看看什么情况</em>』。但是对于每个 cell ，甚至是暂时正常的那些，你的断点都会被激活，你不得不不停跳过直到你抵达你想要调试的那个。</p>
+<p><a href="https://user-gold-cdn.xitu.io/2018/2/1/161503705af0e010?w=240&amp;h=196&amp;f=gif&amp;s=3600395" target="_blank" rel="external"><img src="https://user-gold-cdn.xitu.io/2018/2/1/161503705af0e010?w=240&amp;h=196&amp;f=gif&amp;s=3600395" alt="The Office TV show gif, saying &quot;please god, no&quot;"></a></p>
+<p>为了解决这些问题，你可以继续然后给断点设置一个停止的条件，就像我对用户『 Charlinho 』做的那样。<br><img src="https://user-gold-cdn.xitu.io/2018/2/1/161503702f39fd73?w=476&amp;h=146&amp;f=png&amp;s=14899" alt="A conditional breakpoint screenshot"></p>
+<h2 id="Symbolic-Breakpoints-标志断点"><a href="#Symbolic-Breakpoints-标志断点" class="headerlink" title="Symbolic Breakpoints 标志断点"></a>Symbolic Breakpoints 标志断点</h2><blockquote>
+<p><em>“放轻松，我会用 pod ，那应该会给我们省点工作量。”</em></p>
+</blockquote>
+<p>谁都无法保证永远不会说这句话。但是使用 pod 或者一个外部库意味着你向你的工程引入了外部代码并且也许你并不知道它是怎么写出来的。比如说你发现在 pod 内部一堆方法里存在一个错误，但是你不知道这个方法在哪里。做个深呼吸，保持冷静。你有<strong><em>Symbolic Breakpoints</em></strong><em>.</em></p>
+<p>当事先声明的 <em>标志</em> 被唤醒，这些断点会被激活。 <em>标志</em> 可以是任何非成员函数、实例、类方法，是否在你的类里都可以。因此在函数中加一个断点，无论谁唤醒它，你只要加一个  <em>Symbolic Breakpoint</em> 来观察你想要调试的函数。在我下面的样例中，我观察  <em>UIViewAlertForUnsatisfiableConstraints</em> 方法。每当 Xcode 发现 <em>Autolayout</em> 问题的时候，这个方法都会被唤醒。你可以看在<a href="http://nshint.io/blog/2015/08/17/autolayout-breakpoints/" target="_blank" rel="external">这篇博文</a>看一个更深入的例子。</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/2/1/161503703cba303b?w=476&amp;h=191&amp;f=png&amp;s=18623" alt="A Symbolic breakpoint option screenshot"></p>
+<h2 id="Customizing-breakpoints-自定义断点"><a href="#Customizing-breakpoints-自定义断点" class="headerlink" title="Customizing breakpoints 自定义断点"></a>Customizing breakpoints 自定义断点</h2><p>像我之前说的，断点是一个强大的工具。你知道吗？你甚至可以在端点上自定义动作。是的，你可以这么做！你可以运行 AppleScript ，捕获 CPU 框架，使用 LLDB ( Low-level Debugger ， XCode 内置的调试工具)命令，甚至 shell 命令。</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/2/1/161503703ed256a5?w=459&amp;h=176&amp;f=png&amp;s=31832" alt=""></p>
+<p>你只需要简单地点击右边的按钮，选择 <em>edit breakpoint</em> 。</p>
+<h3 id="好了，你看会想-“酷！但是为什么要这么做？”"><a href="#好了，你看会想-“酷！但是为什么要这么做？”" class="headerlink" title="好了，你看会想: “酷！但是为什么要这么做？”"></a>好了，你看会想: “酷！但是为什么要这么做？”</h3><p>我会给你一个很好的使用案例来帮助你的理解。一个 APP 中最常见的功能是登录，有时候测试它有点无聊。如果你正在同时使用管理员账号和普通账号，你需要不停地输入用户和密码，会让这个过程变得难以忍受。一般的『自动化』登录页面的方法是创建一个 <em>模拟</em> 实例，并把它应用于 <em>if debug</em> 分句。像这样：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">struct</span> <span class="title">TestCredentials</span> </span>&#123;</div><div class="line">    <span class="keyword">static</span> <span class="keyword">let</span> username = <span class="string">"robo1"</span></div><div class="line">    <span class="keyword">static</span> <span class="keyword">let</span> password = <span class="string">"xxxxxx"</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">private</span> <span class="function"><span class="keyword">func</span> <span class="title">fillDebugData</span><span class="params">()</span></span> &#123;</div><div class="line">     <span class="keyword">self</span>.userNameTxtField.text = <span class="type">TestCredentials</span>.username</div><div class="line">     <span class="keyword">self</span>.passwordTxtField.text = <span class="type">TestCredentials</span>.password</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="但是你可以用断点来让事情变得简单一点！"><a href="#但是你可以用断点来让事情变得简单一点！" class="headerlink" title="但是你可以用断点来让事情变得简单一点！"></a>但是你可以用断点来让事情变得简单一点！</h3><p>进入登录页面，加一个断点，然后加了两个填写账号密码的 LLDB 表达式。像我下面的例子一样：</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/2/1/161503703dfc124e?w=485&amp;h=258&amp;f=png&amp;s=22672" alt="A Custom breakpoint executing express commands. "></p>
+<p>考虑到这一点，你可以加两个不同身份的断点。你只要生效/失效你想要测试的那个，就可以在两个身份间切换了。一旦你在运行中切换用户，也不需要重新构建。</p>
+<p>很酷，不是吗？</p>
+<h1 id="COMBO-BREAKER"><a href="#COMBO-BREAKER" class="headerlink" title="COMBO BREAKER!"></a>COMBO BREAKER!</h1><p>在我写这篇文章的时候，WWDC 2017 正在举行。他们发布了一些例如新版 Xcode 9 这样的酷炫家伙。如果你想知道在 Xcode 9 中有哪些新的调试工具，我强烈推荐看 <a href="https://developer.apple.com/videos/play/wwdc2017/404/" target="_blank" rel="external">Session 404</a>。</p>
+<p><a href="https://user-gold-cdn.xitu.io/2018/2/1/161503707b70c131" target="_blank" rel="external"><img src="https://user-gold-cdn.xitu.io/2018/2/1/161503707b70c131" alt=""></a></p>
+<p>这就是全部内容了！现在你知道了一些在我还是新手的时候帮助巨大的最基础的断点窍门。还有哪些我没有提到的酷炫窍门呢？你也有好的主意？请在评论区随意讨论！</p>
+<hr>
+<blockquote>
+<p><a href="https://github.com/xitu/gold-miner" target="_blank" rel="external">掘金翻译计划</a> 是一个翻译优质互联网技术文章的社区，文章来源为 <a href="https://juejin.im" target="_blank" rel="external">掘金</a> 上的英文分享文章。内容覆盖 <a href="https://github.com/xitu/gold-miner#android" target="_blank" rel="external">Android</a>、<a href="https://github.com/xitu/gold-miner#ios" target="_blank" rel="external">iOS</a>、<a href="https://github.com/xitu/gold-miner#前端" target="_blank" rel="external">前端</a>、<a href="https://github.com/xitu/gold-miner#后端" target="_blank" rel="external">后端</a>、<a href="https://github.com/xitu/gold-miner#区块链" target="_blank" rel="external">区块链</a>、<a href="https://github.com/xitu/gold-miner#产品" target="_blank" rel="external">产品</a>、<a href="https://github.com/xitu/gold-miner#设计" target="_blank" rel="external">设计</a>、<a href="https://github.com/xitu/gold-miner#人工智能" target="_blank" rel="external">人工智能</a>等领域，想要查看更多优质译文请持续关注 <a href="https://github.com/xitu/gold-miner" target="_blank" rel="external">掘金翻译计划</a>、<a href="http://weibo.com/juejinfanyi" target="_blank" rel="external">官方微博</a>、<a href="https://zhuanlan.zhihu.com/juejinfanyi" target="_blank" rel="external">知乎专栏</a>。</p>
+</blockquote>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[【翻译】17个Xcode小技巧，每个iOS开发者都该知道]]></title>
+      <url>http://pengtianhao.com/2018/02/02/%E3%80%90%E7%BF%BB%E8%AF%91%E3%80%9117%E4%B8%AAXcode%E5%B0%8F%E6%8A%80%E5%B7%A7%EF%BC%8C%E6%AF%8F%E4%B8%AAiOS%E5%BC%80%E5%8F%91%E8%80%85%E9%83%BD%E8%AF%A5%E7%9F%A5%E9%81%93/</url>
+      <content type="html"><![CDATA[<blockquote>
+<ul>
+<li>原文地址：<a href="https://www.detroitlabs.com/blog/2017/04/13/17-xcode-tips-and-tricks-that-every-ios-developer-should-know/" target="_blank" rel="external">17 Xcode Tips and Tricks That Every iOS Developer Should Know</a><a id="more"></a></li>
+<li>原文作者：<a href="https://www.detroitlabs.com/blog/author/elyse-turner/" target="_blank" rel="external">Elyse Turner</a></li>
+<li>译文出自：<a href="https://github.com/xitu/gold-miner" target="_blank" rel="external">掘金翻译计划</a></li>
+<li>本文永久链接：<a href="https://github.com/xitu/gold-miner/blob/master/TODO/17-xcode-tips-and-tricks-that-every-ios-developer-should-know.md" target="_blank" rel="external">https://github.com/xitu/gold-miner/blob/master/TODO/17-xcode-tips-and-tricks-that-every-ios-developer-should-know.md</a></li>
+<li>译者：<a href="https://github.com/pthtc" target="_blank" rel="external">PTHFLY</a></li>
+<li>校对者：<a href="https://github.com/Danny1451" target="_blank" rel="external">Danny1451</a>、<a href="https://github.com/ryouaki" target="_blank" rel="external">ryouaki</a></li>
+</ul>
+</blockquote>
+<h1 id="每个-iOS-开发者都该知道的-17-个-Xcode-小技巧"><a href="#每个-iOS-开发者都该知道的-17-个-Xcode-小技巧" class="headerlink" title="每个 iOS 开发者都该知道的 17 个 Xcode 小技巧"></a>每个 iOS 开发者都该知道的 17 个 Xcode 小技巧</h1><p><img src="https://user-gold-cdn.xitu.io/2018/1/31/1614bbc57b84639e?w=1920&amp;h=1279&amp;f=png&amp;s=55685" alt=""></p>
+<p>对于 iOS 开发者，尤其是新手，来说，Xcode 可谓太过复杂，但是不要害怕！我们在这里帮助你。 Xcode 可以帮助你、允许你做的事情非常多。熟悉你的 IDE 是最简单有效增进实力的方法之一。</p>
+<p>在对抗越来越臃肿的 Xcode 方面，我们底特律实验室没有新手，并且想与你分享我们的对抗策略。在底特律实验室的开发者投票之后，这是 17 个我们最受欢迎的 Xcode 小技巧。</p>
+<p><strong>键位参考：</strong></p>
+<ul>
+<li><code>⌃</code>: Control</li>
+<li><code>⌘</code>: Command</li>
+<li><code>⌥</code>: Option</li>
+<li><code>⇧</code>: Shift</li>
+<li><code>⏎</code>: Return</li>
+</ul>
+<hr>
+<p><strong>1)</strong> 上下移动一整行或者许多行代码：使用 <code>⌘ ⌥ {</code> 上移 或者 <code>⌘ ⌥ }</code> 下移。如果你选择了一些内容, Xcode 会移动所有你选择的代码行；否则，只会移动光标所在的那一行。</p>
+<p><strong>2)</strong> 使用 tabs 来保持聚焦。Tab 可以在不同使用情况下被单独配置和优化。Tab可以在<code>Behaviors</code><sup><a href="#note1">[1]</a></sup>中被命名以及使用。</p>
+<p><strong>3)</strong> 使用 <code>Behaviors</code> 来根据上下文显示有用的面板。</p>
+<ul>
+<li><code>Behaviors</code> 在 Xcode 回应某个事项时是重要的偏好设置。当你开始构建的时候，你可以设置一个偏好来打开一个窗口来响应成功、失败、开始调试等等。</li>
+<li><strong>有趣的事实:</strong> 在测试失败的时候，你可以将播放音乐作为一个 <code>behavior</code> 。一个这儿的开发者喜欢用『 The Price is Right. 』的音乐当做失败音。</li>
+</ul>
+<p><strong>4)</strong> 以辅助编辑窗模式打开文件。当使用『快速打开』( <code>⌘ ⇧ O</code> )时，按住 <code>⌥</code> 的同时按 <code>return</code>。</p>
+<p><strong>5)</strong>  当光标处于显示『 Copy Qualified Symbol Name 』命令的方法内，使用 <code>⌘ ⇧ ⌃ ⌥ C</code> 会以一个优质、容易粘贴的格式拷贝方法名称。（译者注：例如<code>[UIColor colorWithRed:255/255.0f green:127/255.0f blue:80/255.0f alpha:1]</code>将会被拷贝为<code>+[UIColor colorWithRed:green:blue:alpha:]</code>。）</p>
+<p><strong>6)</strong> 当按住 <code>⌥</code> 并点击代码或方法时，有效地使用 Xcode 解析的行内文档可以提供帮助。</p>
+<p><strong>7)</strong> 在全局范围一次性更改某个变量名，可以使用 <code>⌘ ⇧ E</code><sup><a href="#note2">[2]</a></sup>。</p>
+<p><strong>8)</strong> 你是否使用终端进入一个文件夹并且不确定你的工程使用的是 Xcode 的 workspaces 或者 仅仅是 project ？只需要运行 <code>open -a Xcode</code> 来打开文件夹本身 Xcode 会自动识别。专业提示：把这个加入你的 <code>.bash_profile</code> ，使用一个牛逼的名字（比如 <code>workit</code> ）来让你看起来像一个真的骇客。</p>
+<p><strong>9)</strong> Xcode 中显示和隐藏的快捷键。</p>
+<ul>
+<li><code>⌘ ⇧ Y</code> : 显示/隐藏调试区域</li>
+<li><code>⌘ ⌥ ⏎</code> : 显示辅助编辑器</li>
+<li><code>⌘ ⏎</code> : 隐藏辅助编辑器</li>
+</ul>
+<p><strong>10)</strong> 使用 <code>⌘ A ^ I</code> 进行自动缩进代码</p>
+<p><strong>11)</strong> <a href="http://www.cockos.com/licecap/" target="_blank" rel="external">LICEcap</a> 对于制作在模拟器中的 GIF 动图非常有帮助，用于项目评审非常棒。在 LICEcap 上方，你可以使用 QuickTime 在屏幕上来分享你的硬件（做一个示范或者使用 LICEcap 制作 GIF ）。 在你的 iPhone 或者 iPad 插入的情况下，打开 QuickTime Player，点击 File -&gt; New Movie Recording。然后点击记录按钮旁边的向下箭头，选择你的连接设备。这对于远程展示很有用，使用 LICEcap 来制作 GIF 或者为展示制作真机视频。<img src="https://user-gold-cdn.xitu.io/2018/1/31/1614bbc58c67f5ec?w=599&amp;h=338&amp;f=png&amp;s=161701" alt=""></p>
+<p><strong>12)</strong> 按下 <code>⌥ ⇧</code> 然后点击项目导航栏中的文件打开一个选择窗口，这时你可以选择在编辑器的哪个位置显示打开的文件。 </p>
+<p><strong>13)</strong> 按住 <code>⌥</code> 的同时点击一个项目导航栏中的文件，它会显示在辅助编辑器中。</p>
+<p><strong>14)</strong> 把导航面板（显示在 Xcode 界面的左边）想成是『 Command 』面板。那是因为按住 <code>⌘</code> 的同时按一个数字键可以切换到导航栏内相关的『标签』。例如，<code>⌘ 1</code> 打开项目导航；<code>⌘ 7</code> 打开断点导航。相似的，把工具面板看作『 Command+Option 』窗口，<code>⌘ ⌥ 1</code> 也可以打开那个面板的第一个标签 —— 文件检查器。</p>
+<p><strong>15)</strong> <code>⌥ ⌘ ↑</code> 和 <code>⌥ ⌘ ↓</code> 在相关文件中进行导航(例如 .m .h 和 .xib 文件)。</p>
+<p><strong>16)</strong> 如果你在与 <code>code signing</code> 作战而 Xcode 说你没有一个有效的符合 <code>provisioning profile</code> 的签名身份，它可能会显示给你一个看起来随机、没有什么意义的码。find-identity 会很有帮助。命令 <code>Security find-identity -v</code> 会显示出一件安装的有效身份。</p>
+<p><strong>17)</strong> 在你的层层叠叠的文件夹中讯中某个文件夹非常浪费时间。在 Xcode 8 中，你可以使用『 Open Quickly 』对话框或者 <code>⌘ ⇧ O</code> 来省点时间。当它打开了你可以输入你正寻找的文件的文件名的任何部分来找到它。</p>
+<p>你是一个 iOS 开发者吗？看看在这里工作是怎样的体验，如果你有兴趣的话，<a href="https://detroitlabs.workable.com/j/F1D69FF0B5" target="_blank" rel="external">点此申请</a>！</p>
+<p>译者注：</p>
+<ol>
+<li><a name="note1"></a> <code>Behaviors</code> 可以在<code>偏好设置</code>中找到</li>
+<li><a name="note2"></a> 此处意思是缓存选中的变量名，此时进行 <code>Replace</code> 操作时，替换内容将会直接显示为缓存的内容，而不是空白一片。</li>
+</ol>
+<hr>
+<blockquote>
+<p><a href="https://github.com/xitu/gold-miner" target="_blank" rel="external">掘金翻译计划</a> 是一个翻译优质互联网技术文章的社区，文章来源为 <a href="https://juejin.im" target="_blank" rel="external">掘金</a> 上的英文分享文章。内容覆盖 <a href="https://github.com/xitu/gold-miner#android" target="_blank" rel="external">Android</a>、<a href="https://github.com/xitu/gold-miner#ios" target="_blank" rel="external">iOS</a>、<a href="https://github.com/xitu/gold-miner#前端" target="_blank" rel="external">前端</a>、<a href="https://github.com/xitu/gold-miner#后端" target="_blank" rel="external">后端</a>、<a href="https://github.com/xitu/gold-miner#区块链" target="_blank" rel="external">区块链</a>、<a href="https://github.com/xitu/gold-miner#产品" target="_blank" rel="external">产品</a>、<a href="https://github.com/xitu/gold-miner#设计" target="_blank" rel="external">设计</a>、<a href="https://github.com/xitu/gold-miner#人工智能" target="_blank" rel="external">人工智能</a>等领域，想要查看更多优质译文请持续关注 <a href="https://github.com/xitu/gold-miner" target="_blank" rel="external">掘金翻译计划</a>、<a href="http://weibo.com/juejinfanyi" target="_blank" rel="external">官方微博</a>、<a href="https://zhuanlan.zhihu.com/juejinfanyi" target="_blank" rel="external">知乎专栏</a>。</p>
+</blockquote>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[【附源码】为了帮助程序员谈恋爱，我做了这个APP]]></title>
       <url>http://pengtianhao.com/2018/01/21/%E3%80%90%E9%99%84%E6%BA%90%E7%A0%81%E3%80%91%E4%B8%BA%E4%BA%86%E5%B8%AE%E5%8A%A9%E7%A8%8B%E5%BA%8F%E5%91%98%E8%B0%88%E6%81%8B%E7%88%B1%EF%BC%8C%E6%88%91%E5%81%9A%E4%BA%86%E8%BF%99%E4%B8%AAAPP/</url>
       <content type="html"><![CDATA[<blockquote>
